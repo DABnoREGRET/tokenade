@@ -1,0 +1,18 @@
+
+Configuration IP de Windows
+
+
+Carte Ethernet Ethernet :
+
+   Suffixe DNS propre � la connexion. . . : lan
+   Adresse IPv6. . . . . . . . . . .�. . .: fd17:625c:f037:2:d80e:aca4:20c8:e73d
+   Adresse IPv6 temporaire . . . . . . . .: fd17:625c:f037:2:38eb:1600:264a:5e35
+   Adresse IPv6 temporaire . . . . . . . .: fd17:625c:f037:2:402a:b2d2:5856:e0a3
+   Adresse IPv6 temporaire . . . . . . . .: fd17:625c:f037:2:8de5:ad8d:b0d4:56d5
+   Adresse IPv6 temporaire . . . . . . . .: fd17:625c:f037:2:9c6f:d68c:cc13:79e
+   Adresse IPv6 temporaire . . . . . . . .: fd17:625c:f037:2:d5d2:fbe5:de74:32d8
+   Adresse IPv6 de liaison locale. . . . .: fe80::4d4:f2c8:d747:79bf%9
+   Adresse IPv4. . . . . . . . . . . . . .: 10.0.2.15
+   Masque de sous-r�seau. . . .�. . . . . : 255.255.255.0
+   Passerelle par d�faut. . . .�. . . . . : fe80::2%9
+	                               10.0.2.2

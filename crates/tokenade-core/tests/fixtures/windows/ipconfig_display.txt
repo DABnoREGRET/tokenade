@@ -1,0 +1,23 @@
+
+Configuration IP de Windows
+
+    array811.prod.do.dsp.mp.microsoft.com
+    ----------------------------------------
+    Nom d'enregistrement. : array811.prod.do.dsp.mp.microsoft.com
+    Type d'enregistrement : 1
+    Dur�e de vie  . . . . : 805
+    Longueur de donn�es . : 4
+    Section . . . . . . . : R�ponse
+    Enregistrement (h�te) : 72.154.7.104
+
+
+    array813.prod.do.dsp.mp.microsoft.com
+    ----------------------------------------
+    Nom d'enregistrement. : array813.prod.do.dsp.mp.microsoft.com
+    Type d'enregistrement : 1
+    Dur�e de vie  . . . . : 70
+    Longueur de donn�es . : 4
+    Section . . . . . . . : R�ponse
+    Enregistrement (h�te) : 72.154.7.106
+
+

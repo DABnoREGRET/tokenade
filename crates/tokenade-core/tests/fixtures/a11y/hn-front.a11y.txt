@@ -1,0 +1,1046 @@
+- table [ref=e3]:
+  - rowgroup [ref=e4]:
+    - row "Hacker Newsnew | past | comments | ask | show | jobs | submit login" [ref=e5]:
+      - cell "Hacker Newsnew | past | comments | ask | show | jobs | submit login" [ref=e6]:
+        - table [ref=e7]:
+          - rowgroup [ref=e8]:
+            - row "Hacker Newsnew | past | comments | ask | show | jobs | submit login" [ref=e9]:
+              - cell [ref=e10]:
+                - link [ref=e11] [cursor=pointer]:
+                  - /url: https://news.ycombinator.com
+                  - img [ref=e12]
+              - cell "Hacker Newsnew | past | comments | ask | show | jobs | submit" [ref=e13]:
+                - generic [ref=e14]:
+                  - link "Hacker News" [ref=e16] [cursor=pointer]:
+                    - /url: news
+                  - link "new" [ref=e17] [cursor=pointer]:
+                    - /url: newest
+                  - text: "|"
+                  - link "past" [ref=e18] [cursor=pointer]:
+                    - /url: front
+                  - text: "|"
+                  - link "comments" [ref=e19] [cursor=pointer]:
+                    - /url: newcomments
+                  - text: "|"
+                  - link "ask" [ref=e20] [cursor=pointer]:
+                    - /url: ask
+                  - text: "|"
+                  - link "show" [ref=e21] [cursor=pointer]:
+                    - /url: show
+                  - text: "|"
+                  - link "jobs" [ref=e22] [cursor=pointer]:
+                    - /url: jobs
+                  - text: "|"
+                  - link "submit" [ref=e23] [cursor=pointer]:
+                    - /url: submit
+              - cell "login" [ref=e24]:
+                - link "login" [ref=e26] [cursor=pointer]:
+                  - /url: login?goto=news
+    - row [ref=e27]
+    - row [ref=e28]:
+      - cell [ref=e29]:
+        - table [ref=e30]:
+          - rowgroup [ref=e31]:
+            - row "1. upvote Don't be a meat proxy (gruhn.me)" [ref=e32]:
+              - cell "1." [ref=e33]
+              - cell "upvote" [ref=e34]:
+                - link "upvote" [ref=e36] [cursor=pointer]:
+                  - /url: vote?id=49151933&how=up&goto=news
+                  - generic "upvote" [ref=e37]
+              - cell "Don't be a meat proxy (gruhn.me)" [ref=e38]:
+                - generic [ref=e39]:
+                  - link "Don't be a meat proxy" [ref=e40] [cursor=pointer]:
+                    - /url: https://gruhn.me/blog/2026-08-03/
+                  - generic [ref=e41]:
+                    - text: (
+                    - link "gruhn.me" [ref=e42] [cursor=pointer]:
+                      - /url: from?site=gruhn.me
+                    - text: )
+            - row "688 points by ngruhn 4 hours ago | hide | 300 comments" [ref=e43]:
+              - cell [ref=e44]
+              - cell "688 points by ngruhn 4 hours ago | hide | 300 comments" [ref=e45]:
+                - generic [ref=e46]:
+                  - text: 688 points by
+                  - link "ngruhn" [ref=e47] [cursor=pointer]:
+                    - /url: user?id=ngruhn
+                  - generic "2026-08-03T06:28:01 1785738481" [ref=e48]:
+                    - link "4 hours ago" [ref=e49] [cursor=pointer]:
+                      - /url: item?id=49151933
+                  - text: "|"
+                  - link "hide" [ref=e50] [cursor=pointer]:
+                    - /url: hide?id=49151933&goto=news
+                  - text: "|"
+                  - link "300 comments" [ref=e51] [cursor=pointer]:
+                    - /url: item?id=49151933
+            - row [ref=e52]
+            - 'row "2. upvote Qwen3.8-Max: A New Bar for Coding and Cowork (qwen.ai)" [ref=e53]':
+              - cell "2." [ref=e54]
+              - cell "upvote" [ref=e55]:
+                - link "upvote" [ref=e57] [cursor=pointer]:
+                  - /url: vote?id=49150470&how=up&goto=news
+                  - generic "upvote" [ref=e58]
+              - 'cell "Qwen3.8-Max: A New Bar for Coding and Cowork (qwen.ai)" [ref=e59]':
+                - generic [ref=e60]:
+                  - 'link "Qwen3.8-Max: A New Bar for Coding and Cowork" [ref=e61] [cursor=pointer]':
+                    - /url: https://qwen.ai/blog?id=qwen3.8
+                  - generic [ref=e62]:
+                    - text: (
+                    - link "qwen.ai" [ref=e63] [cursor=pointer]:
+                      - /url: from?site=qwen.ai
+                    - text: )
+            - row "633 points by ai2027 8 hours ago | hide | 316 comments" [ref=e64]:
+              - cell [ref=e65]
+              - cell "633 points by ai2027 8 hours ago | hide | 316 comments" [ref=e66]:
+                - generic [ref=e67]:
+                  - text: 633 points by
+                  - link "ai2027" [ref=e68] [cursor=pointer]:
+                    - /url: user?id=ai2027
+                  - generic "2026-08-03T02:16:09 1785723369" [ref=e69]:
+                    - link "8 hours ago" [ref=e70] [cursor=pointer]:
+                      - /url: item?id=49150470
+                  - text: "|"
+                  - link "hide" [ref=e71] [cursor=pointer]:
+                    - /url: hide?id=49150470&goto=news
+                  - text: "|"
+                  - link "316 comments" [ref=e72] [cursor=pointer]:
+                    - /url: item?id=49150470
+            - row [ref=e73]
+            - 'row "3. upvote Bonsai: Janestreet''s UI Library (github.com/janestreet)" [ref=e74]':
+              - cell "3." [ref=e75]
+              - cell "upvote" [ref=e76]:
+                - link "upvote" [ref=e78] [cursor=pointer]:
+                  - /url: vote?id=49152842&how=up&goto=news
+                  - generic "upvote" [ref=e79]
+              - 'cell "Bonsai: Janestreet''s UI Library (github.com/janestreet)" [ref=e80]':
+                - generic [ref=e81]:
+                  - 'link "Bonsai: Janestreet''s UI Library" [ref=e82] [cursor=pointer]':
+                    - /url: https://github.com/janestreet/bonsai
+                  - generic [ref=e83]:
+                    - text: (
+                    - link "github.com/janestreet" [ref=e84] [cursor=pointer]:
+                      - /url: from?site=github.com/janestreet
+                    - text: )
+            - row "62 points by KolmogorovComp 2 hours ago | hide | 17 comments" [ref=e85]:
+              - cell [ref=e86]
+              - cell "62 points by KolmogorovComp 2 hours ago | hide | 17 comments" [ref=e87]:
+                - generic [ref=e88]:
+                  - text: 62 points by
+                  - link "KolmogorovComp" [ref=e89] [cursor=pointer]:
+                    - /url: user?id=KolmogorovComp
+                  - generic "2026-08-03T08:29:57 1785745797" [ref=e90]:
+                    - link "2 hours ago" [ref=e91] [cursor=pointer]:
+                      - /url: item?id=49152842
+                  - text: "|"
+                  - link "hide" [ref=e92] [cursor=pointer]:
+                    - /url: hide?id=49152842&goto=news
+                  - text: "|"
+                  - link "17 comments" [ref=e93] [cursor=pointer]:
+                    - /url: item?id=49152842
+            - row [ref=e94]
+            - row "4. upvote Prevent cognitive debt by manually retyping LLM-generated code (ankursethi.com)" [ref=e95]:
+              - cell "4." [ref=e96]
+              - cell "upvote" [ref=e97]:
+                - link "upvote" [ref=e99] [cursor=pointer]:
+                  - /url: vote?id=49153374&how=up&goto=news
+                  - generic "upvote" [ref=e100]
+              - cell "Prevent cognitive debt by manually retyping LLM-generated code (ankursethi.com)" [ref=e101]:
+                - generic [ref=e102]:
+                  - link "Prevent cognitive debt by manually retyping LLM-generated code" [ref=e103] [cursor=pointer]:
+                    - /url: https://ankursethi.com/blog/prevent-cognitive-debt-by-manually-retyping-llm-generated-code/
+                  - generic [ref=e104]:
+                    - text: (
+                    - link "ankursethi.com" [ref=e105] [cursor=pointer]:
+                      - /url: from?site=ankursethi.com
+                    - text: )
+            - row "76 points by mpweiher 1 hour ago | hide | 54 comments" [ref=e106]:
+              - cell [ref=e107]
+              - cell "76 points by mpweiher 1 hour ago | hide | 54 comments" [ref=e108]:
+                - generic [ref=e109]:
+                  - text: 76 points by
+                  - link "mpweiher" [ref=e110] [cursor=pointer]:
+                    - /url: user?id=mpweiher
+                  - generic "2026-08-03T09:32:07 1785749527" [ref=e111]:
+                    - link "1 hour ago" [ref=e112] [cursor=pointer]:
+                      - /url: item?id=49153374
+                  - text: "|"
+                  - link "hide" [ref=e113] [cursor=pointer]:
+                    - /url: hide?id=49153374&goto=news
+                  - text: "|"
+                  - link "54 comments" [ref=e114] [cursor=pointer]:
+                    - /url: item?id=49153374
+            - row [ref=e115]
+            - row "5. upvote What DMARC Protects You From, and What It Does Not (senderledger.com)" [ref=e116]:
+              - cell "5." [ref=e117]
+              - cell "upvote" [ref=e118]:
+                - link "upvote" [ref=e120] [cursor=pointer]:
+                  - /url: vote?id=49153361&how=up&goto=news
+                  - generic "upvote" [ref=e121]
+              - cell "What DMARC Protects You From, and What It Does Not (senderledger.com)" [ref=e122]:
+                - generic [ref=e123]:
+                  - link "What DMARC Protects You From, and What It Does Not" [ref=e124] [cursor=pointer]:
+                    - /url: https://senderledger.com/articles/what-dmarc-actually-protects-you-from
+                  - generic [ref=e125]:
+                    - text: (
+                    - link "senderledger.com" [ref=e126] [cursor=pointer]:
+                      - /url: from?site=senderledger.com
+                    - text: )
+            - row "22 points by adulion 1 hour ago | hide | 5 comments" [ref=e127]:
+              - cell [ref=e128]
+              - cell "22 points by adulion 1 hour ago | hide | 5 comments" [ref=e129]:
+                - generic [ref=e130]:
+                  - text: 22 points by
+                  - link "adulion" [ref=e131] [cursor=pointer]:
+                    - /url: user?id=adulion
+                  - generic "2026-08-03T09:29:46 1785749386" [ref=e132]:
+                    - link "1 hour ago" [ref=e133] [cursor=pointer]:
+                      - /url: item?id=49153361
+                  - text: "|"
+                  - link "hide" [ref=e134] [cursor=pointer]:
+                    - /url: hide?id=49153361&goto=news
+                  - text: "|"
+                  - link "5 comments" [ref=e135] [cursor=pointer]:
+                    - /url: item?id=49153361
+            - row [ref=e136]
+            - 'row "6. upvote Rust project goals: Immobile types and guaranteed destructors (github.com/rust-lang)" [ref=e137]':
+              - cell "6." [ref=e138]
+              - cell "upvote" [ref=e139]:
+                - link "upvote" [ref=e141] [cursor=pointer]:
+                  - /url: vote?id=49152023&how=up&goto=news
+                  - generic "upvote" [ref=e142]
+              - 'cell "Rust project goals: Immobile types and guaranteed destructors (github.com/rust-lang)" [ref=e143]':
+                - generic [ref=e144]:
+                  - 'link "Rust project goals: Immobile types and guaranteed destructors" [ref=e145] [cursor=pointer]':
+                    - /url: https://github.com/rust-lang/rust-project-goals/blob/main/src/2026/move-trait.md
+                  - generic [ref=e146]:
+                    - text: (
+                    - link "github.com/rust-lang" [ref=e147] [cursor=pointer]:
+                      - /url: from?site=github.com/rust-lang
+                    - text: )
+            - row "89 points by paavohtl 4 hours ago | hide | 19 comments" [ref=e148]:
+              - cell [ref=e149]
+              - cell "89 points by paavohtl 4 hours ago | hide | 19 comments" [ref=e150]:
+                - generic [ref=e151]:
+                  - text: 89 points by
+                  - link "paavohtl" [ref=e152] [cursor=pointer]:
+                    - /url: user?id=paavohtl
+                  - generic "2026-08-03T06:42:00 1785739320" [ref=e153]:
+                    - link "4 hours ago" [ref=e154] [cursor=pointer]:
+                      - /url: item?id=49152023
+                  - text: "|"
+                  - link "hide" [ref=e155] [cursor=pointer]:
+                    - /url: hide?id=49152023&goto=news
+                  - text: "|"
+                  - link "19 comments" [ref=e156] [cursor=pointer]:
+                    - /url: item?id=49152023
+            - row [ref=e157]
+            - row "7. upvote Octane – React's programming model, compiled (octanejs.dev)" [ref=e158]:
+              - cell "7." [ref=e159]
+              - cell "upvote" [ref=e160]:
+                - link "upvote" [ref=e162] [cursor=pointer]:
+                  - /url: vote?id=49152640&how=up&goto=news
+                  - generic "upvote" [ref=e163]
+              - cell "Octane – React's programming model, compiled (octanejs.dev)" [ref=e164]:
+                - generic [ref=e165]:
+                  - link "Octane – React's programming model, compiled" [ref=e166] [cursor=pointer]:
+                    - /url: https://octanejs.dev
+                  - generic [ref=e167]:
+                    - text: (
+                    - link "octanejs.dev" [ref=e168] [cursor=pointer]:
+                      - /url: from?site=octanejs.dev
+                    - text: )
+            - row "28 points by nnx 3 hours ago | hide | 11 comments" [ref=e169]:
+              - cell [ref=e170]
+              - cell "28 points by nnx 3 hours ago | hide | 11 comments" [ref=e171]:
+                - generic [ref=e172]:
+                  - text: 28 points by
+                  - link "nnx" [ref=e173] [cursor=pointer]:
+                    - /url: user?id=nnx
+                  - generic "2026-08-03T08:04:04 1785744244" [ref=e174]:
+                    - link "3 hours ago" [ref=e175] [cursor=pointer]:
+                      - /url: item?id=49152640
+                  - text: "|"
+                  - link "hide" [ref=e176] [cursor=pointer]:
+                    - /url: hide?id=49152640&goto=news
+                  - text: "|"
+                  - link "11 comments" [ref=e177] [cursor=pointer]:
+                    - /url: item?id=49152640
+            - row [ref=e178]
+            - row "8. upvote The true power of regular expressions (2012) (npopov.com)" [ref=e179]:
+              - cell "8." [ref=e180]
+              - cell "upvote" [ref=e181]:
+                - link "upvote" [ref=e183] [cursor=pointer]:
+                  - /url: vote?id=49152973&how=up&goto=news
+                  - generic "upvote" [ref=e184]
+              - cell "The true power of regular expressions (2012) (npopov.com)" [ref=e185]:
+                - generic [ref=e186]:
+                  - link "The true power of regular expressions (2012)" [ref=e187] [cursor=pointer]:
+                    - /url: https://www.npopov.com/2012/06/15/The-true-power-of-regular-expressions.html
+                  - generic [ref=e188]:
+                    - text: (
+                    - link "npopov.com" [ref=e189] [cursor=pointer]:
+                      - /url: from?site=npopov.com
+                    - text: )
+            - row "13 points by uneven9434 2 hours ago | hide | 5 comments" [ref=e190]:
+              - cell [ref=e191]
+              - cell "13 points by uneven9434 2 hours ago | hide | 5 comments" [ref=e192]:
+                - generic [ref=e193]:
+                  - text: 13 points by
+                  - link "uneven9434" [ref=e194] [cursor=pointer]:
+                    - /url: user?id=uneven9434
+                  - generic "2026-08-03T08:47:23 1785746843" [ref=e195]:
+                    - link "2 hours ago" [ref=e196] [cursor=pointer]:
+                      - /url: item?id=49152973
+                  - text: "|"
+                  - link "hide" [ref=e197] [cursor=pointer]:
+                    - /url: hide?id=49152973&goto=news
+                  - text: "|"
+                  - link "5 comments" [ref=e198] [cursor=pointer]:
+                    - /url: item?id=49152973
+            - row [ref=e199]
+            - 'row "9. upvote Show HN: Isopolis – Isometric pixel map of SF (isopolis.city)" [ref=e200]':
+              - cell "9." [ref=e201]
+              - cell "upvote" [ref=e202]:
+                - link "upvote" [ref=e204] [cursor=pointer]:
+                  - /url: vote?id=49149966&how=up&goto=news
+                  - generic "upvote" [ref=e205]
+              - 'cell "Show HN: Isopolis – Isometric pixel map of SF (isopolis.city)" [ref=e206]':
+                - generic [ref=e207]:
+                  - 'link "Show HN: Isopolis – Isometric pixel map of SF" [ref=e208] [cursor=pointer]':
+                    - /url: https://sf.isopolis.city/
+                  - generic [ref=e209]:
+                    - text: (
+                    - link "isopolis.city" [ref=e210] [cursor=pointer]:
+                      - /url: from?site=isopolis.city
+                    - text: )
+            - row "237 points by nuwandavek 10 hours ago | hide | 52 comments" [ref=e211]:
+              - cell [ref=e212]
+              - cell "237 points by nuwandavek 10 hours ago | hide | 52 comments" [ref=e213]:
+                - generic [ref=e214]:
+                  - text: 237 points by
+                  - link "nuwandavek" [ref=e215] [cursor=pointer]:
+                    - /url: user?id=nuwandavek
+                  - generic "2026-08-03T00:46:38 1785717998" [ref=e216]:
+                    - link "10 hours ago" [ref=e217] [cursor=pointer]:
+                      - /url: item?id=49149966
+                  - text: "|"
+                  - link "hide" [ref=e218] [cursor=pointer]:
+                    - /url: hide?id=49149966&goto=news
+                  - text: "|"
+                  - link "52 comments" [ref=e219] [cursor=pointer]:
+                    - /url: item?id=49149966
+            - row [ref=e220]
+            - row "10. upvote Train Simulator Controller (z80.me)" [ref=e221]:
+              - cell "10." [ref=e222]
+              - cell "upvote" [ref=e223]:
+                - link "upvote" [ref=e225] [cursor=pointer]:
+                  - /url: vote?id=49115935&how=up&goto=news
+                  - generic "upvote" [ref=e226]
+              - cell "Train Simulator Controller (z80.me)" [ref=e227]:
+                - generic [ref=e228]:
+                  - link "Train Simulator Controller" [ref=e229] [cursor=pointer]:
+                    - /url: https://z80.me/blog/tsc-2026-july/
+                  - generic [ref=e230]:
+                    - text: (
+                    - link "z80.me" [ref=e231] [cursor=pointer]:
+                      - /url: from?site=z80.me
+                    - text: )
+            - row "12 points by austinallegro 3 hours ago | hide | 1 comment" [ref=e232]:
+              - cell [ref=e233]
+              - cell "12 points by austinallegro 3 hours ago | hide | 1 comment" [ref=e234]:
+                - generic [ref=e235]:
+                  - text: 12 points by
+                  - link "austinallegro" [ref=e236] [cursor=pointer]:
+                    - /url: user?id=austinallegro
+                  - generic "2026-07-30T21:18:39 1785446319" [ref=e237]:
+                    - link "3 hours ago" [ref=e238] [cursor=pointer]:
+                      - /url: item?id=49115935
+                  - text: "|"
+                  - link "hide" [ref=e239] [cursor=pointer]:
+                    - /url: hide?id=49115935&goto=news
+                  - text: "|"
+                  - link "1 comment" [ref=e240] [cursor=pointer]:
+                    - /url: item?id=49115935
+            - row [ref=e241]
+            - 'row "11. upvote Show HN: We Fixed UniFi''s Slow PPPoE Performance with PPPoE Half-Bridge (arcbox.dev)" [ref=e242]':
+              - cell "11." [ref=e243]
+              - cell "upvote" [ref=e244]:
+                - link "upvote" [ref=e246] [cursor=pointer]:
+                  - /url: vote?id=49152871&how=up&goto=news
+                  - generic "upvote" [ref=e247]
+              - 'cell "Show HN: We Fixed UniFi''s Slow PPPoE Performance with PPPoE Half-Bridge (arcbox.dev)" [ref=e248]':
+                - generic [ref=e249]:
+                  - 'link "Show HN: We Fixed UniFi''s Slow PPPoE Performance with PPPoE Half-Bridge" [ref=e250] [cursor=pointer]':
+                    - /url: https://arcbox.dev/blog/unifi-pppoe-half-bridge-acceleration
+                  - generic [ref=e251]:
+                    - text: (
+                    - link "arcbox.dev" [ref=e252] [cursor=pointer]:
+                      - /url: from?site=arcbox.dev
+                    - text: )
+            - row "14 points by uneven9434 2 hours ago | hide | 7 comments" [ref=e253]:
+              - cell [ref=e254]
+              - cell "14 points by uneven9434 2 hours ago | hide | 7 comments" [ref=e255]:
+                - generic [ref=e256]:
+                  - text: 14 points by
+                  - link "uneven9434" [ref=e257] [cursor=pointer]:
+                    - /url: user?id=uneven9434
+                  - generic "2026-08-03T08:34:24 1785746064" [ref=e258]:
+                    - link "2 hours ago" [ref=e259] [cursor=pointer]:
+                      - /url: item?id=49152871
+                  - text: "|"
+                  - link "hide" [ref=e260] [cursor=pointer]:
+                    - /url: hide?id=49152871&goto=news
+                  - text: "|"
+                  - link "7 comments" [ref=e261] [cursor=pointer]:
+                    - /url: item?id=49152871
+            - row [ref=e262]
+            - 'row "12. upvote PISIGuard: Protect your personal and sensitive info when you chat with AI (github.com/mohamed--abdel-maksoud)" [ref=e263]':
+              - cell "12." [ref=e264]
+              - cell "upvote" [ref=e265]:
+                - link "upvote" [ref=e267] [cursor=pointer]:
+                  - /url: vote?id=49153029&how=up&goto=news
+                  - generic "upvote" [ref=e268]
+              - 'cell "PISIGuard: Protect your personal and sensitive info when you chat with AI (github.com/mohamed--abdel-maksoud)" [ref=e269]':
+                - generic [ref=e270]:
+                  - 'link "PISIGuard: Protect your personal and sensitive info when you chat with AI" [ref=e271] [cursor=pointer]':
+                    - /url: https://github.com/mohamed--abdel-maksoud/pisiguard
+                  - generic [ref=e272]:
+                    - text: (
+                    - link "github.com/mohamed--abdel-maksoud" [ref=e273] [cursor=pointer]:
+                      - /url: from?site=github.com/mohamed--abdel-maksoud
+                    - text: )
+            - row "7 points by mohamed_am83 2 hours ago | hide | 7 comments" [ref=e274]:
+              - cell [ref=e275]
+              - cell "7 points by mohamed_am83 2 hours ago | hide | 7 comments" [ref=e276]:
+                - generic [ref=e277]:
+                  - text: 7 points by
+                  - link "mohamed_am83" [ref=e278] [cursor=pointer]:
+                    - /url: user?id=mohamed_am83
+                  - generic "2026-08-03T08:54:00 1785747240" [ref=e279]:
+                    - link "2 hours ago" [ref=e280] [cursor=pointer]:
+                      - /url: item?id=49153029
+                  - text: "|"
+                  - link "hide" [ref=e281] [cursor=pointer]:
+                    - /url: hide?id=49153029&goto=news
+                  - text: "|"
+                  - link "7 comments" [ref=e282] [cursor=pointer]:
+                    - /url: item?id=49153029
+            - row [ref=e283]
+            - row "13. upvote The Shape of Things to Come (yegge.ai)" [ref=e284]:
+              - cell "13." [ref=e285]
+              - cell "upvote" [ref=e286]:
+                - link "upvote" [ref=e288] [cursor=pointer]:
+                  - /url: vote?id=49152316&how=up&goto=news
+                  - generic "upvote" [ref=e289]
+              - cell "The Shape of Things to Come (yegge.ai)" [ref=e290]:
+                - generic [ref=e291]:
+                  - link "The Shape of Things to Come" [ref=e292] [cursor=pointer]:
+                    - /url: https://yegge.ai/essays/the-shape-of-things-to-come/
+                  - generic [ref=e293]:
+                    - text: (
+                    - link "yegge.ai" [ref=e294] [cursor=pointer]:
+                      - /url: from?site=yegge.ai
+                    - text: )
+            - row "27 points by tosh 3 hours ago | hide | 24 comments" [ref=e295]:
+              - cell [ref=e296]
+              - cell "27 points by tosh 3 hours ago | hide | 24 comments" [ref=e297]:
+                - generic [ref=e298]:
+                  - text: 27 points by
+                  - link "tosh" [ref=e299] [cursor=pointer]:
+                    - /url: user?id=tosh
+                  - generic "2026-08-03T07:22:27 1785741747" [ref=e300]:
+                    - link "3 hours ago" [ref=e301] [cursor=pointer]:
+                      - /url: item?id=49152316
+                  - text: "|"
+                  - link "hide" [ref=e302] [cursor=pointer]:
+                    - /url: hide?id=49152316&goto=news
+                  - text: "|"
+                  - link "24 comments" [ref=e303] [cursor=pointer]:
+                    - /url: item?id=49152316
+            - row [ref=e304]
+            - 'row "14. upvote Show HN: ssh ssh.place (ssh.place)" [ref=e305]':
+              - cell "14." [ref=e306]
+              - cell "upvote" [ref=e307]:
+                - link "upvote" [ref=e309] [cursor=pointer]:
+                  - /url: vote?id=49149805&how=up&goto=news
+                  - generic "upvote" [ref=e310]
+              - 'cell "Show HN: ssh ssh.place (ssh.place)" [ref=e311]':
+                - generic [ref=e312]:
+                  - 'link "Show HN: ssh ssh.place" [ref=e313] [cursor=pointer]':
+                    - /url: https://ssh.place
+                  - generic [ref=e314]:
+                    - text: (
+                    - link "ssh.place" [ref=e315] [cursor=pointer]:
+                      - /url: from?site=ssh.place
+                    - text: )
+            - row "122 points by jeninh 10 hours ago | hide | 74 comments" [ref=e316]:
+              - cell [ref=e317]
+              - cell "122 points by jeninh 10 hours ago | hide | 74 comments" [ref=e318]:
+                - generic [ref=e319]:
+                  - text: 122 points by
+                  - link "jeninh" [ref=e320] [cursor=pointer]:
+                    - /url: user?id=jeninh
+                  - generic "2026-08-03T00:23:21 1785716601" [ref=e321]:
+                    - link "10 hours ago" [ref=e322] [cursor=pointer]:
+                      - /url: item?id=49149805
+                  - text: "|"
+                  - link "hide" [ref=e323] [cursor=pointer]:
+                    - /url: hide?id=49149805&goto=news
+                  - text: "|"
+                  - link "74 comments" [ref=e324] [cursor=pointer]:
+                    - /url: item?id=49149805
+            - row [ref=e325]
+            - 'row "15. upvote Show HN: A Handwritten Blogging Platform (handwritten.blog)" [ref=e326]':
+              - cell "15." [ref=e327]
+              - cell "upvote" [ref=e328]:
+                - link "upvote" [ref=e330] [cursor=pointer]:
+                  - /url: vote?id=49119751&how=up&goto=news
+                  - generic "upvote" [ref=e331]
+              - 'cell "Show HN: A Handwritten Blogging Platform (handwritten.blog)" [ref=e332]':
+                - generic [ref=e333]:
+                  - 'link "Show HN: A Handwritten Blogging Platform" [ref=e334] [cursor=pointer]':
+                    - /url: https://handwritten.blog/
+                  - generic [ref=e335]:
+                    - text: (
+                    - link "handwritten.blog" [ref=e336] [cursor=pointer]:
+                      - /url: from?site=handwritten.blog
+                    - text: )
+            - row "117 points by emilesilvis 10 hours ago | hide | 57 comments" [ref=e337]:
+              - cell [ref=e338]
+              - cell "117 points by emilesilvis 10 hours ago | hide | 57 comments" [ref=e339]:
+                - generic [ref=e340]:
+                  - text: 117 points by
+                  - link "emilesilvis" [ref=e341] [cursor=pointer]:
+                    - /url: user?id=emilesilvis
+                  - generic "2026-07-31T06:37:42 1785479862" [ref=e342]:
+                    - link "10 hours ago" [ref=e343] [cursor=pointer]:
+                      - /url: item?id=49119751
+                  - text: "|"
+                  - link "hide" [ref=e344] [cursor=pointer]:
+                    - /url: hide?id=49119751&goto=news
+                  - text: "|"
+                  - link "57 comments" [ref=e345] [cursor=pointer]:
+                    - /url: item?id=49119751
+            - row [ref=e346]
+            - row "16. upvote Why we write our own C and C++ inference engines (localai.io)" [ref=e347]:
+              - cell "16." [ref=e348]
+              - cell "upvote" [ref=e349]:
+                - link "upvote" [ref=e351] [cursor=pointer]:
+                  - /url: vote?id=49125065&how=up&goto=news
+                  - generic "upvote" [ref=e352]
+              - cell "Why we write our own C and C++ inference engines (localai.io)" [ref=e353]:
+                - generic [ref=e354]:
+                  - link "Why we write our own C and C++ inference engines" [ref=e355] [cursor=pointer]:
+                    - /url: https://localai.io/blog/why-we-write-our-own-engines/
+                  - generic [ref=e356]:
+                    - text: (
+                    - link "localai.io" [ref=e357] [cursor=pointer]:
+                      - /url: from?site=localai.io
+                    - text: )
+            - row "65 points by eatonphil 8 hours ago | hide | 29 comments" [ref=e358]:
+              - cell [ref=e359]
+              - cell "65 points by eatonphil 8 hours ago | hide | 29 comments" [ref=e360]:
+                - generic [ref=e361]:
+                  - text: 65 points by
+                  - link "eatonphil" [ref=e362] [cursor=pointer]:
+                    - /url: user?id=eatonphil
+                  - generic "2026-07-31T16:17:04 1785514624" [ref=e363]:
+                    - link "8 hours ago" [ref=e364] [cursor=pointer]:
+                      - /url: item?id=49125065
+                  - text: "|"
+                  - link "hide" [ref=e365] [cursor=pointer]:
+                    - /url: hide?id=49125065&goto=news
+                  - text: "|"
+                  - link "29 comments" [ref=e366] [cursor=pointer]:
+                    - /url: item?id=49125065
+            - row [ref=e367]
+            - row "17. upvote CP/M-386 – CP/M for 386 protected mode, derived from CP/M‑68K (github.com/johnsonjh)" [ref=e368]:
+              - cell "17." [ref=e369]
+              - cell "upvote" [ref=e370]:
+                - link "upvote" [ref=e372] [cursor=pointer]:
+                  - /url: vote?id=49149898&how=up&goto=news
+                  - generic "upvote" [ref=e373]
+              - cell "CP/M-386 – CP/M for 386 protected mode, derived from CP/M‑68K (github.com/johnsonjh)" [ref=e374]:
+                - generic [ref=e375]:
+                  - link "CP/M-386 – CP/M for 386 protected mode, derived from CP/M‑68K" [ref=e376] [cursor=pointer]:
+                    - /url: https://github.com/johnsonjh/cpm386
+                  - generic [ref=e377]:
+                    - text: (
+                    - link "github.com/johnsonjh" [ref=e378] [cursor=pointer]:
+                      - /url: from?site=github.com/johnsonjh
+                    - text: )
+            - row "70 points by TMWNN 10 hours ago | hide | 31 comments" [ref=e379]:
+              - cell [ref=e380]
+              - cell "70 points by TMWNN 10 hours ago | hide | 31 comments" [ref=e381]:
+                - generic [ref=e382]:
+                  - text: 70 points by
+                  - link "TMWNN" [ref=e383] [cursor=pointer]:
+                    - /url: user?id=TMWNN
+                  - generic "2026-08-03T00:38:10 1785717490" [ref=e384]:
+                    - link "10 hours ago" [ref=e385] [cursor=pointer]:
+                      - /url: item?id=49149898
+                  - text: "|"
+                  - link "hide" [ref=e386] [cursor=pointer]:
+                    - /url: hide?id=49149898&goto=news
+                  - text: "|"
+                  - link "31 comments" [ref=e387] [cursor=pointer]:
+                    - /url: item?id=49149898
+            - row [ref=e388]
+            - row "18. upvote Autoregressive Language Model on the 6502 Processor (mattbeton.com)" [ref=e389]:
+              - cell "18." [ref=e390]
+              - cell "upvote" [ref=e391]:
+                - link "upvote" [ref=e393] [cursor=pointer]:
+                  - /url: vote?id=49122655&how=up&goto=news
+                  - generic "upvote" [ref=e394]
+              - cell "Autoregressive Language Model on the 6502 Processor (mattbeton.com)" [ref=e395]:
+                - generic [ref=e396]:
+                  - link "Autoregressive Language Model on the 6502 Processor" [ref=e397] [cursor=pointer]:
+                    - /url: https://mattbeton.com/blog/bitnet-6502.html
+                  - generic [ref=e398]:
+                    - text: (
+                    - link "mattbeton.com" [ref=e399] [cursor=pointer]:
+                      - /url: from?site=mattbeton.com
+                    - text: )
+            - row "113 points by nmstoker 13 hours ago | hide | 10 comments" [ref=e400]:
+              - cell [ref=e401]
+              - cell "113 points by nmstoker 13 hours ago | hide | 10 comments" [ref=e402]:
+                - generic [ref=e403]:
+                  - text: 113 points by
+                  - link "nmstoker" [ref=e404] [cursor=pointer]:
+                    - /url: user?id=nmstoker
+                  - generic "2026-07-31T13:08:30 1785503310" [ref=e405]:
+                    - link "13 hours ago" [ref=e406] [cursor=pointer]:
+                      - /url: item?id=49122655
+                  - text: "|"
+                  - link "hide" [ref=e407] [cursor=pointer]:
+                    - /url: hide?id=49122655&goto=news
+                  - text: "|"
+                  - link "10 comments" [ref=e408] [cursor=pointer]:
+                    - /url: item?id=49122655
+            - row [ref=e409]
+            - row "19. upvote Why Book Corners won't sync contributions back to OpenStreetMap (andreagrandi.it)" [ref=e410]:
+              - cell "19." [ref=e411]
+              - cell "upvote" [ref=e412]:
+                - link "upvote" [ref=e414] [cursor=pointer]:
+                  - /url: vote?id=49149746&how=up&goto=news
+                  - generic "upvote" [ref=e415]
+              - cell "Why Book Corners won't sync contributions back to OpenStreetMap (andreagrandi.it)" [ref=e416]:
+                - generic [ref=e417]:
+                  - link "Why Book Corners won't sync contributions back to OpenStreetMap" [ref=e418] [cursor=pointer]:
+                    - /url: https://www.andreagrandi.it/posts/why-book-corners-wont-sync-contributions-back-to-openstreetmap/
+                  - generic [ref=e419]:
+                    - text: (
+                    - link "andreagrandi.it" [ref=e420] [cursor=pointer]:
+                      - /url: from?site=andreagrandi.it
+                    - text: )
+            - row "109 points by pizzaiolo 11 hours ago | hide | 63 comments" [ref=e421]:
+              - cell [ref=e422]
+              - cell "109 points by pizzaiolo 11 hours ago | hide | 63 comments" [ref=e423]:
+                - generic [ref=e424]:
+                  - text: 109 points by
+                  - link "pizzaiolo" [ref=e425] [cursor=pointer]:
+                    - /url: user?id=pizzaiolo
+                  - generic "2026-08-03T00:12:16 1785715936" [ref=e426]:
+                    - link "11 hours ago" [ref=e427] [cursor=pointer]:
+                      - /url: item?id=49149746
+                  - text: "|"
+                  - link "hide" [ref=e428] [cursor=pointer]:
+                    - /url: hide?id=49149746&goto=news
+                  - text: "|"
+                  - link "63 comments" [ref=e429] [cursor=pointer]:
+                    - /url: item?id=49149746
+            - row [ref=e430]
+            - 'row "20. upvote Show HN: Kakehashi – Experimental userspace to run macOS binaries on Linux ARM (github.com/wie-project)" [ref=e431]':
+              - cell "20." [ref=e432]
+              - cell "upvote" [ref=e433]:
+                - link "upvote" [ref=e435] [cursor=pointer]:
+                  - /url: vote?id=49145937&how=up&goto=news
+                  - generic "upvote" [ref=e436]
+              - 'cell "Show HN: Kakehashi – Experimental userspace to run macOS binaries on Linux ARM (github.com/wie-project)" [ref=e437]':
+                - generic [ref=e438]:
+                  - 'link "Show HN: Kakehashi – Experimental userspace to run macOS binaries on Linux ARM" [ref=e439] [cursor=pointer]':
+                    - /url: https://github.com/wie-project/kakehashi
+                  - generic [ref=e440]:
+                    - text: (
+                    - link "github.com/wie-project" [ref=e441] [cursor=pointer]:
+                      - /url: from?site=github.com/wie-project
+                    - text: )
+            - row "223 points by vlad_kalinkin 18 hours ago | hide | 55 comments" [ref=e442]:
+              - cell [ref=e443]
+              - cell "223 points by vlad_kalinkin 18 hours ago | hide | 55 comments" [ref=e444]:
+                - generic [ref=e445]:
+                  - text: 223 points by
+                  - link "vlad_kalinkin" [ref=e446] [cursor=pointer]:
+                    - /url: user?id=vlad_kalinkin
+                  - generic "2026-08-02T16:26:40 1785688000" [ref=e447]:
+                    - link "18 hours ago" [ref=e448] [cursor=pointer]:
+                      - /url: item?id=49145937
+                  - text: "|"
+                  - link "hide" [ref=e449] [cursor=pointer]:
+                    - /url: hide?id=49145937&goto=news
+                  - text: "|"
+                  - link "55 comments" [ref=e450] [cursor=pointer]:
+                    - /url: item?id=49145937
+            - row [ref=e451]
+            - row "21. upvote MPs demand answers on Fujitsu's inclusion in lucrative frameworks (computerweekly.com)" [ref=e452]:
+              - cell "21." [ref=e453]
+              - cell "upvote" [ref=e454]:
+                - link "upvote" [ref=e456] [cursor=pointer]:
+                  - /url: vote?id=49153308&how=up&goto=news
+                  - generic "upvote" [ref=e457]
+              - cell "MPs demand answers on Fujitsu's inclusion in lucrative frameworks (computerweekly.com)" [ref=e458]:
+                - generic [ref=e459]:
+                  - link "MPs demand answers on Fujitsu's inclusion in lucrative frameworks" [ref=e460] [cursor=pointer]:
+                    - /url: https://www.computerweekly.com/news/366646721/MPs-demand-answers-on-Fujitsus-inclusion-in-lucrative-frameworks
+                  - generic [ref=e461]:
+                    - text: (
+                    - link "computerweekly.com" [ref=e462] [cursor=pointer]:
+                      - /url: from?site=computerweekly.com
+                    - text: )
+            - row "23 points by latein 1 hour ago | hide | 8 comments" [ref=e463]:
+              - cell [ref=e464]
+              - cell "23 points by latein 1 hour ago | hide | 8 comments" [ref=e465]:
+                - generic [ref=e466]:
+                  - text: 23 points by
+                  - link "latein" [ref=e467] [cursor=pointer]:
+                    - /url: user?id=latein
+                  - generic "2026-08-03T09:25:15 1785749115" [ref=e468]:
+                    - link "1 hour ago" [ref=e469] [cursor=pointer]:
+                      - /url: item?id=49153308
+                  - text: "|"
+                  - link "hide" [ref=e470] [cursor=pointer]:
+                    - /url: hide?id=49153308&goto=news
+                  - text: "|"
+                  - link "8 comments" [ref=e471] [cursor=pointer]:
+                    - /url: item?id=49153308
+            - row [ref=e472]
+            - row "22. upvote Situational Awareness and the Impending Stock Market Volatility (emergingtrajectories.com)" [ref=e473]:
+              - cell "22." [ref=e474]
+              - cell "upvote" [ref=e475]:
+                - link "upvote" [ref=e477] [cursor=pointer]:
+                  - /url: vote?id=49151871&how=up&goto=news
+                  - generic "upvote" [ref=e478]
+              - cell "Situational Awareness and the Impending Stock Market Volatility (emergingtrajectories.com)" [ref=e479]:
+                - generic [ref=e480]:
+                  - link "Situational Awareness and the Impending Stock Market Volatility" [ref=e481] [cursor=pointer]:
+                    - /url: https://www.emergingtrajectories.com/lh/situational-awareness-bigger-picture/
+                  - generic [ref=e482]:
+                    - text: (
+                    - link "emergingtrajectories.com" [ref=e483] [cursor=pointer]:
+                      - /url: from?site=emergingtrajectories.com
+                    - text: )
+            - row "18 points by cl42 4 hours ago | hide | 10 comments" [ref=e484]:
+              - cell [ref=e485]
+              - cell "18 points by cl42 4 hours ago | hide | 10 comments" [ref=e486]:
+                - generic [ref=e487]:
+                  - text: 18 points by
+                  - link "cl42" [ref=e488] [cursor=pointer]:
+                    - /url: user?id=cl42
+                  - generic "2026-08-03T06:17:53 1785737873" [ref=e489]:
+                    - link "4 hours ago" [ref=e490] [cursor=pointer]:
+                      - /url: item?id=49151871
+                  - text: "|"
+                  - link "hide" [ref=e491] [cursor=pointer]:
+                    - /url: hide?id=49151871&goto=news
+                  - text: "|"
+                  - link "10 comments" [ref=e492] [cursor=pointer]:
+                    - /url: item?id=49151871
+            - row [ref=e493]
+            - row "23. upvote Note-Taking and Personal Knowledge Management (unattributed.cc)" [ref=e494]:
+              - cell "23." [ref=e495]
+              - cell "upvote" [ref=e496]:
+                - link "upvote" [ref=e498] [cursor=pointer]:
+                  - /url: vote?id=49084324&how=up&goto=news
+                  - generic "upvote" [ref=e499]
+              - cell "Note-Taking and Personal Knowledge Management (unattributed.cc)" [ref=e500]:
+                - generic [ref=e501]:
+                  - link "Note-Taking and Personal Knowledge Management" [ref=e502] [cursor=pointer]:
+                    - /url: https://unattributed.cc/note-taking-and-personal-knowledge-management
+                  - generic [ref=e503]:
+                    - text: (
+                    - link "unattributed.cc" [ref=e504] [cursor=pointer]:
+                      - /url: from?site=unattributed.cc
+                    - text: )
+            - row "208 points by surprisetalk 16 hours ago | hide | 69 comments" [ref=e505]:
+              - cell [ref=e506]
+              - cell "208 points by surprisetalk 16 hours ago | hide | 69 comments" [ref=e507]:
+                - generic [ref=e508]:
+                  - text: 208 points by
+                  - link "surprisetalk" [ref=e509] [cursor=pointer]:
+                    - /url: user?id=surprisetalk
+                  - generic "2026-07-28T14:21:10 1785248470" [ref=e510]:
+                    - link "16 hours ago" [ref=e511] [cursor=pointer]:
+                      - /url: item?id=49084324
+                  - text: "|"
+                  - link "hide" [ref=e512] [cursor=pointer]:
+                    - /url: hide?id=49084324&goto=news
+                  - text: "|"
+                  - link "69 comments" [ref=e513] [cursor=pointer]:
+                    - /url: item?id=49084324
+            - row [ref=e514]
+            - row "24. upvote Developers are attached to tools because tools encode trust (stackoverflow.blog)" [ref=e515]:
+              - cell "24." [ref=e516]
+              - cell "upvote" [ref=e517]:
+                - link "upvote" [ref=e519] [cursor=pointer]:
+                  - /url: vote?id=49097961&how=up&goto=news
+                  - generic "upvote" [ref=e520]
+              - cell "Developers are attached to tools because tools encode trust (stackoverflow.blog)" [ref=e521]:
+                - generic [ref=e522]:
+                  - link "Developers are attached to tools because tools encode trust" [ref=e523] [cursor=pointer]:
+                    - /url: https://stackoverflow.blog/2026/07/29/developers-are-attached-to-tools-because-tools-encode-trust/
+                  - generic [ref=e524]:
+                    - text: (
+                    - link "stackoverflow.blog" [ref=e525] [cursor=pointer]:
+                      - /url: from?site=stackoverflow.blog
+                    - text: )
+            - row "217 points by HieronymusBosch 18 hours ago | hide | 120 comments" [ref=e526]:
+              - cell [ref=e527]
+              - cell "217 points by HieronymusBosch 18 hours ago | hide | 120 comments" [ref=e528]:
+                - generic [ref=e529]:
+                  - text: 217 points by
+                  - link "HieronymusBosch" [ref=e530] [cursor=pointer]:
+                    - /url: user?id=HieronymusBosch
+                  - generic "2026-07-29T14:25:54 1785335154" [ref=e531]:
+                    - link "18 hours ago" [ref=e532] [cursor=pointer]:
+                      - /url: item?id=49097961
+                  - text: "|"
+                  - link "hide" [ref=e533] [cursor=pointer]:
+                    - /url: hide?id=49097961&goto=news
+                  - text: "|"
+                  - link "120 comments" [ref=e534] [cursor=pointer]:
+                    - /url: item?id=49097961
+            - row [ref=e535]
+            - row "25. upvote SwiftUI After 7 Years (ykvm.com)" [ref=e536]:
+              - cell "25." [ref=e537]
+              - cell "upvote" [ref=e538]:
+                - link "upvote" [ref=e540] [cursor=pointer]:
+                  - /url: vote?id=49147263&how=up&goto=news
+                  - generic "upvote" [ref=e541]
+              - cell "SwiftUI After 7 Years (ykvm.com)" [ref=e542]:
+                - generic [ref=e543]:
+                  - link "SwiftUI After 7 Years" [ref=e544] [cursor=pointer]:
+                    - /url: https://ykvm.com/2026/07/swiftui-a-story-of-mediocrity/
+                  - generic [ref=e545]:
+                    - text: (
+                    - link "ykvm.com" [ref=e546] [cursor=pointer]:
+                      - /url: from?site=ykvm.com
+                    - text: )
+            - row "205 points by mpweiher 16 hours ago | hide | 183 comments" [ref=e547]:
+              - cell [ref=e548]
+              - cell "205 points by mpweiher 16 hours ago | hide | 183 comments" [ref=e549]:
+                - generic [ref=e550]:
+                  - text: 205 points by
+                  - link "mpweiher" [ref=e551] [cursor=pointer]:
+                    - /url: user?id=mpweiher
+                  - generic "2026-08-02T18:59:05 1785697145" [ref=e552]:
+                    - link "16 hours ago" [ref=e553] [cursor=pointer]:
+                      - /url: item?id=49147263
+                  - text: "|"
+                  - link "hide" [ref=e554] [cursor=pointer]:
+                    - /url: hide?id=49147263&goto=news
+                  - text: "|"
+                  - link "183 comments" [ref=e555] [cursor=pointer]:
+                    - /url: item?id=49147263
+            - row [ref=e556]
+            - row "26. upvote The AI Productivity Gap (bjornroche.com)" [ref=e557]:
+              - cell "26." [ref=e558]
+              - cell "upvote" [ref=e559]:
+                - link "upvote" [ref=e561] [cursor=pointer]:
+                  - /url: vote?id=49152222&how=up&goto=news
+                  - generic "upvote" [ref=e562]
+              - cell "The AI Productivity Gap (bjornroche.com)" [ref=e563]:
+                - generic [ref=e564]:
+                  - link "The AI Productivity Gap" [ref=e565] [cursor=pointer]:
+                    - /url: https://bjorg.bjornroche.com/management/ai-productivity-gap/
+                  - generic [ref=e566]:
+                    - text: (
+                    - link "bjornroche.com" [ref=e567] [cursor=pointer]:
+                      - /url: from?site=bjornroche.com
+                    - text: )
+            - row "57 points by kiyanwang 4 hours ago | hide | 58 comments" [ref=e568]:
+              - cell [ref=e569]
+              - cell "57 points by kiyanwang 4 hours ago | hide | 58 comments" [ref=e570]:
+                - generic [ref=e571]:
+                  - text: 57 points by
+                  - link "kiyanwang" [ref=e572] [cursor=pointer]:
+                    - /url: user?id=kiyanwang
+                  - generic "2026-08-03T07:07:20 1785740840" [ref=e573]:
+                    - link "4 hours ago" [ref=e574] [cursor=pointer]:
+                      - /url: item?id=49152222
+                  - text: "|"
+                  - link "hide" [ref=e575] [cursor=pointer]:
+                    - /url: hide?id=49152222&goto=news
+                  - text: "|"
+                  - link "58 comments" [ref=e576] [cursor=pointer]:
+                    - /url: item?id=49152222
+            - row [ref=e577]
+            - row "27. upvote Convergence is not enough (inkandswitch.com)" [ref=e578]:
+              - cell "27." [ref=e579]
+              - cell "upvote" [ref=e580]:
+                - link "upvote" [ref=e582] [cursor=pointer]:
+                  - /url: vote?id=49076945&how=up&goto=news
+                  - generic "upvote" [ref=e583]
+              - cell "Convergence is not enough (inkandswitch.com)" [ref=e584]:
+                - generic [ref=e585]:
+                  - link "Convergence is not enough" [ref=e586] [cursor=pointer]:
+                    - /url: https://www.inkandswitch.com/livelymerge/notebook/lm-02/
+                  - generic [ref=e587]:
+                    - text: (
+                    - link "inkandswitch.com" [ref=e588] [cursor=pointer]:
+                      - /url: from?site=inkandswitch.com
+                    - text: )
+            - row "35 points by zdw 7 hours ago | hide | 7 comments" [ref=e589]:
+              - cell [ref=e590]
+              - cell "35 points by zdw 7 hours ago | hide | 7 comments" [ref=e591]:
+                - generic [ref=e592]:
+                  - text: 35 points by
+                  - link "zdw" [ref=e593] [cursor=pointer]:
+                    - /url: user?id=zdw
+                  - generic "2026-07-27T23:23:07 1785194587" [ref=e594]:
+                    - link "7 hours ago" [ref=e595] [cursor=pointer]:
+                      - /url: item?id=49076945
+                  - text: "|"
+                  - link "hide" [ref=e596] [cursor=pointer]:
+                    - /url: hide?id=49076945&goto=news
+                  - text: "|"
+                  - link "7 comments" [ref=e597] [cursor=pointer]:
+                    - /url: item?id=49076945
+            - row [ref=e598]
+            - row "28. upvote The myth of Snow Leopard (rubenerd.au)" [ref=e599]:
+              - cell "28." [ref=e600]
+              - cell "upvote" [ref=e601]:
+                - link "upvote" [ref=e603] [cursor=pointer]:
+                  - /url: vote?id=49146960&how=up&goto=news
+                  - generic "upvote" [ref=e604]
+              - cell "The myth of Snow Leopard (rubenerd.au)" [ref=e605]:
+                - generic [ref=e606]:
+                  - link "The myth of Snow Leopard" [ref=e607] [cursor=pointer]:
+                    - /url: https://www.rubenerd.au/the-myth-of-snow-leopard/
+                  - generic [ref=e608]:
+                    - text: (
+                    - link "rubenerd.au" [ref=e609] [cursor=pointer]:
+                      - /url: from?site=rubenerd.au
+                    - text: )
+            - row "103 points by speckx 16 hours ago | hide | 84 comments" [ref=e610]:
+              - cell [ref=e611]
+              - cell "103 points by speckx 16 hours ago | hide | 84 comments" [ref=e612]:
+                - generic [ref=e613]:
+                  - text: 103 points by
+                  - link "speckx" [ref=e614] [cursor=pointer]:
+                    - /url: user?id=speckx
+                  - generic "2026-08-02T18:21:45 1785694905" [ref=e615]:
+                    - link "16 hours ago" [ref=e616] [cursor=pointer]:
+                      - /url: item?id=49146960
+                  - text: "|"
+                  - link "hide" [ref=e617] [cursor=pointer]:
+                    - /url: hide?id=49146960&goto=news
+                  - text: "|"
+                  - link "84 comments" [ref=e618] [cursor=pointer]:
+                    - /url: item?id=49146960
+            - row [ref=e619]
+            - row "29. upvote Read the novels and forget everything else (hedgehogreview.com)" [ref=e620]:
+              - cell "29." [ref=e621]
+              - cell "upvote" [ref=e622]:
+                - link "upvote" [ref=e624] [cursor=pointer]:
+                  - /url: vote?id=49129676&how=up&goto=news
+                  - generic "upvote" [ref=e625]
+              - cell "Read the novels and forget everything else (hedgehogreview.com)" [ref=e626]:
+                - generic [ref=e627]:
+                  - link "Read the novels and forget everything else" [ref=e628] [cursor=pointer]:
+                    - /url: https://hedgehogreview.com/web-features/thr/posts/read-the-novels-and-forget-everything-else
+                  - generic [ref=e629]:
+                    - text: (
+                    - link "hedgehogreview.com" [ref=e630] [cursor=pointer]:
+                      - /url: from?site=hedgehogreview.com
+                    - text: )
+            - row "107 points by samclemens 14 hours ago | hide | 91 comments" [ref=e631]:
+              - cell [ref=e632]
+              - cell "107 points by samclemens 14 hours ago | hide | 91 comments" [ref=e633]:
+                - generic [ref=e634]:
+                  - text: 107 points by
+                  - link "samclemens" [ref=e635] [cursor=pointer]:
+                    - /url: user?id=samclemens
+                  - generic "2026-07-31T23:31:28 1785540688" [ref=e636]:
+                    - link "14 hours ago" [ref=e637] [cursor=pointer]:
+                      - /url: item?id=49129676
+                  - text: "|"
+                  - link "hide" [ref=e638] [cursor=pointer]:
+                    - /url: hide?id=49129676&goto=news
+                  - text: "|"
+                  - link "91 comments" [ref=e639] [cursor=pointer]:
+                    - /url: item?id=49129676
+            - row [ref=e640]
+            - row "30. upvote Norway became a global salmon behemoth. Now it's facing the consequences (abc.net.au)" [ref=e641]:
+              - cell "30." [ref=e642]
+              - cell "upvote" [ref=e643]:
+                - link "upvote" [ref=e645] [cursor=pointer]:
+                  - /url: vote?id=49078283&how=up&goto=news
+                  - generic "upvote" [ref=e646]
+              - cell "Norway became a global salmon behemoth. Now it's facing the consequences (abc.net.au)" [ref=e647]:
+                - generic [ref=e648]:
+                  - link "Norway became a global salmon behemoth. Now it's facing the consequences" [ref=e649] [cursor=pointer]:
+                    - /url: https://www.abc.net.au/news/2026-07-28/how-norway-s-salmon-industry-became-a-global-behemoth/106949872
+                  - generic [ref=e650]:
+                    - text: (
+                    - link "abc.net.au" [ref=e651] [cursor=pointer]:
+                      - /url: from?site=abc.net.au
+                    - text: )
+            - row "167 points by CHB0403085482 1 day ago | hide | 128 comments" [ref=e652]:
+              - cell [ref=e653]
+              - cell "167 points by CHB0403085482 1 day ago | hide | 128 comments" [ref=e654]:
+                - generic [ref=e655]:
+                  - text: 167 points by
+                  - link "CHB0403085482" [ref=e656] [cursor=pointer]:
+                    - /url: user?id=CHB0403085482
+                  - generic "2026-07-28T01:54:31 1785203671" [ref=e657]:
+                    - link "1 day ago" [ref=e658] [cursor=pointer]:
+                      - /url: item?id=49078283
+                  - text: "|"
+                  - link "hide" [ref=e659] [cursor=pointer]:
+                    - /url: hide?id=49078283&goto=news
+                  - text: "|"
+                  - link "128 comments" [ref=e660] [cursor=pointer]:
+                    - /url: item?id=49078283
+            - row [ref=e661]
+            - row [ref=e662]
+            - row "More" [ref=e663]:
+              - cell [ref=e664]
+              - cell "More" [ref=e665]:
+                - link "More" [ref=e666] [cursor=pointer]:
+                  - /url: "?p=2"
+    - row "Consider applying for YC's Fall 2026 batch! Applications are open till July 27. Guidelines | FAQ | Lists | API | Security | Legal | Apply to YC | Contact Search:" [ref=e667]:
+      - cell "Consider applying for YC's Fall 2026 batch! Applications are open till July 27. Guidelines | FAQ | Lists | API | Security | Legal | Apply to YC | Contact Search:" [ref=e668]:
+        - img
+        - table [ref=e669]:
+          - rowgroup [ref=e670]:
+            - row [ref=e671]:
+              - cell [ref=e672]
+        - link "Consider applying for YC's Fall 2026 batch! Applications are open till July 27." [ref=e674] [cursor=pointer]:
+          - /url: https://www.ycombinator.com/apply/
+        - generic [ref=e675]:
+          - generic [ref=e676]:
+            - link "Guidelines" [ref=e677] [cursor=pointer]:
+              - /url: newsguidelines.html
+            - text: "|"
+            - link "FAQ" [ref=e678] [cursor=pointer]:
+              - /url: newsfaq.html
+            - text: "|"
+            - link "Lists" [ref=e679] [cursor=pointer]:
+              - /url: lists
+            - text: "|"
+            - link "API" [ref=e680] [cursor=pointer]:
+              - /url: https://github.com/HackerNews/API
+            - text: "|"
+            - link "Security" [ref=e681] [cursor=pointer]:
+              - /url: security.html
+            - text: "|"
+            - link "Legal" [ref=e682] [cursor=pointer]:
+              - /url: https://www.ycombinator.com/legal/
+            - text: "|"
+            - link "Apply to YC" [ref=e683] [cursor=pointer]:
+              - /url: https://www.ycombinator.com/apply/
+            - text: "|"
+            - link "Contact" [ref=e684] [cursor=pointer]:
+              - /url: mailto:hn@ycombinator.com
+          - generic [ref=e685]:
+            - text: "Search:"
+            - textbox [ref=e686]

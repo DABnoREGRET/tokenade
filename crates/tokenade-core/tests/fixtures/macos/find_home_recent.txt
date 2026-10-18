@@ -1,0 +1,30 @@
+/Users/macos/Library/Application Support/CrashReporter/Intervals_D8299EB9-EE13-E146-8746-41192CE823FB.plist
+/Users/macos/Library/Saved Application State/com.apple.installer.savedState/windows.plist
+/Users/macos/Library/Saved Application State/com.apple.installer.savedState/data.data
+/Users/macos/Library/Saved Application State/com.apple.finder.savedState/windows.plist
+/Users/macos/Library/Saved Application State/com.apple.finder.savedState/data.data
+/Users/macos/Library/Saved Application State/com.apple.Terminal.savedState/data.data
+/Users/macos/Library/IdentityServices/ids-pub-id.db
+/Users/macos/Library/IdentityServices/ids-pub-id.db-wal
+/Users/macos/Library/IdentityServices/ids-pub-id.db-shm
+/Users/macos/Library/Preferences/com.apple.rapport.plist
+/Users/macos/Library/Preferences/com.apple.screencapture.plist
+/Users/macos/Library/Preferences/ByHost/com.apple.configurationprofiles.user.D8299EB9-EE13-E146-8746-41192CE823FB.plist
+/Users/macos/Library/Preferences/com.apple.dock.plist
+/Users/macos/Library/Preferences/com.apple.talagent.plist
+/Users/macos/Library/Preferences/.GlobalPreferences.plist
+/Users/macos/Library/Preferences/com.apple.systemuiserver.plist
+/Users/macos/Library/Preferences/com.apple.Safari.PasswordBreachAgent.plist
+/Users/macos/Library/Preferences/com.apple.quicklook.ThumbnailsAgent.plist
+/Users/macos/Library/HomeKit/eventcounters-datastore
+/Users/macos/Library/Keychains/login.keychain-db
+/Users/macos/Library/Keychains/D8299EB9-EE13-E146-8746-41192CE823FB/keychain-2.db-wal
+/Users/macos/Library/HTTPStorages/com.apple.gke.notary.tool/httpstorages.sqlite-wal
+/Users/macos/Library/HTTPStorages/com.apple.gke.notary.tool/httpstorages.sqlite-shm
+/Users/macos/Library/Weather/geocode.db-wal
+/Users/macos/Library/Weather/weather-data.db-wal
+/Users/macos/Library/Weather/countrycodes.db-wal
+/Users/macos/Library/Containers/com.apple.weather.widget/Data/Library/Caches/com.apple.weather.widget/fsCachedData/DB9601C1-2319-4294-9E9C-292A64172665
+/Users/macos/Library/Containers/com.apple.weather.widget/Data/Library/Caches/com.apple.weather.widget/fsCachedData/8B67C226-64BA-482C-A4C9-5F18DB4C211C
+/Users/macos/Library/Containers/com.apple.weather.widget/Data/Library/Caches/com.apple.weather.widget/Cache.db-wal
+/Users/macos/Library/Containers/com.apple.weather.widget/Data/SystemData/com.apple.chrono/timelines/com.apple.weather/systemSmall---32561769820711371--164.00w--164.00h--20.00r.chrono-timeline

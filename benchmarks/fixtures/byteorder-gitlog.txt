@@ -1,0 +1,20 @@
+commit 5a82625fae462e8ba64cec8146b24a372b4d75c6
+Author: Andrew Gallant <jamslam@gmail.com>
+Date:   Wed Sep 25 16:46:14 2024 -0400
+
+    github: add FUNDING
+
+ .github/FUNDING.yml      |    1 +
+ .github/workflows/ci.yml |  183 +++
+ .gitignore               |    6 +
+ CHANGELOG.md             |  143 ++
+ COPYING                  |    3 +
+ Cargo.toml               |   34 +
+ LICENSE-MIT              |   21 +
+ README.md                |   77 +
+ UNLICENSE                |   24 +
+ benches/bench.rs         |  326 ++++
+ rustfmt.toml             |    2 +
+ src/io.rs                | 1592 +++++++++++++++++++
+ src/lib.rs               | 3915 ++++++++++++++++++++++++++++++++++++++++++++++
+ 13 files changed, 6327 insertions(+)

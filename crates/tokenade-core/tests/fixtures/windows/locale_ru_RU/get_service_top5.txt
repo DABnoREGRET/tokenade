@@ -1,0 +1,10 @@
+
+Status  Name              DisplayName                        
+------  ----              -----------                        
+Stopped UserDataSvc_5b590 Accès aux données utilisateur_5b590
+Stopped stisvc            Acquisition d’image Windows (WIA)  
+Stopped AarSvc_5b590      Agent Activation Runtime_5b590     
+Stopped PolicyAgent       Agent de stratégie IPsec           
+Running Power             Alimentation                       
+
+

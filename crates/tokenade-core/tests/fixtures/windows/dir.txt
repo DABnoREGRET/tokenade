@@ -1,0 +1,36 @@
+ Le volume dans le lecteur C n'a pas de nom.
+ Le num�ro de s�rie du volume est 4E07-707C
+
+ R�pertoire de C:\Users\Virtualbox
+
+05/03/2026  18:06    <DIR>          .
+05/03/2026  18:06    <DIR>          ..
+01/09/2025  13:39    <DIR>          -p
+18/02/2026  17:17    <DIR>          .cache
+10/02/2026  19:17                53 .git-for-windows-updater
+24/03/2025  16:21                10 .node_repl_history
+24/03/2025  16:21                 0 .python_history
+01/09/2025  12:37    <DIR>          .ssh
+10/02/2026  20:16                 0 0
+02/06/2023  22:26    <DIR>          3D Objects
+10/02/2026  20:16                 0 Checking
+02/06/2023  22:26    <DIR>          Contacts
+18/02/2026  17:09    <DIR>          Desktop
+24/03/2025  16:16    <DIR>          Documents
+18/02/2026  17:08    <DIR>          Downloads
+02/06/2023  22:26    <DIR>          Favorites
+10/02/2026  20:16                 0 Generated
+10/02/2026  20:16                 0 Langue
+02/06/2023  22:26    <DIR>          Links
+05/03/2026  18:06    <DIR>          demo-app-desktop-app
+02/06/2023  22:26    <DIR>          Music
+10/02/2026  20:16                 0 null
+02/06/2023  22:29    <DIR>          OneDrive
+02/06/2023  22:29    <DIR>          Pictures
+10/02/2026  20:16                 0 ra2u3jjazjjuetbpxb8lg5t1
+02/06/2023  22:26    <DIR>          Saved Games
+02/06/2023  22:28    <DIR>          Searches
+10/02/2026  20:16                 0 Update
+23/06/2023  08:39    <DIR>          Videos
+              10 fichier(s)               63 octets
+              19 R�p(s)   5�427�204�096 octets libres

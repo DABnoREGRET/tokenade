@@ -1,0 +1,40 @@
+    thread 'gain::e2e_distinct_commands_in_one_second_are_each_credited' (1962622) panicked at crates/tokenade-cli/tests/e2e/gain.rs:1064:49:
+    called `Result::unwrap()` on an `Err` value: Os { code: 28, kind: StorageFull, message: "No space left on device" }
+    note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+        FAIL [   0.007s] ( 5/25) tokenade-cli::e2e gain::e2e_every_surface_that_prints_a_total_names_its_approximated_slice
+    thread 'gain::e2e_every_surface_that_prints_a_total_names_its_approximated_slice' (1962655) panicked at crates/tokenade-cli/tests/e2e/gain.rs:876:6:
+    called `Result::unwrap()` on an `Err` value: Os { code: 28, kind: StorageFull, message: "No space left on device" }
+    note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+        FAIL [   0.030s] ( 6/25) tokenade-cli::e2e gain::e2e_dashboard_default_skips_html_when_headless
+    thread 'gain::e2e_dashboard_default_skips_html_when_headless' (1962544) panicked at crates/tokenade-cli/tests/e2e/gain.rs:266:5:
+    assertion `left == right` failed
+      left: Some(1)
+     right: Some(0)
+    note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+    thread 'gain::e2e_dashboard_html_writes_to_explicit_path_with_mkdir' (1962623) panicked at crates/tokenade-cli/tests/e2e/gain.rs:193:5:
+    assertion `left == right` failed: exit 0 expected — stdout: 
+      left: 1
+     right: 0
+    note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+    thread 'gain::e2e_a_recovery_credit_nets_what_the_round_delivered' (1962542) panicked at crates/tokenade-cli/tests/e2e/gain.rs:730:32:
+    no expand-ref handle in the banner:
+    <TS> INFO worker <N1> processed batch <N2>  [×6000 lines · distinct TS=60,N1=6000,N2=6000 · e.g. TS=2024-01-01T00:00:00Z, N1=0, N2=0]
+
+    note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+    thread 'gain::e2e_distinct_commands_in_one_second_are_each_credited' (1962622) panicked at crates/tokenade-cli/tests/e2e/gain.rs:1064:49:
+    called `Result::unwrap()` on an `Err` value: Os { code: 28, kind: StorageFull, message: "No space left on device" }
+    note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+        FAIL [   0.007s] ( 5/25) tokenade-cli::e2e gain::e2e_every_surface_that_prints_a_total_names_its_approximated_slice
+    thread 'gain::e2e_every_surface_that_prints_a_total_names_its_approximated_slice' (1962655) panicked at crates/tokenade-cli/tests/e2e/gain.rs:876:6:
+    called `Result::unwrap()` on an `Err` value: Os { code: 28, kind: StorageFull, message: "No space left on device" }
+    note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+        FAIL [   0.030s] ( 6/25) tokenade-cli::e2e gain::e2e_dashboard_default_skips_html_when_headless
+    thread 'gain::e2e_dashboard_default_skips_html_when_headless' (1962544) panicked at crates/tokenade-cli/tests/e2e/gain.rs:266:5:
+    assertion `left == right` failed
+      left: Some(1)
+     right: Some(0)
+    note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

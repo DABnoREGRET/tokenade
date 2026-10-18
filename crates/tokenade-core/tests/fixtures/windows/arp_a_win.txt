@@ -1,0 +1,10 @@
+
+Interface�: 10.0.2.15 --- 0x9
+  Adresse Internet      Adresse physique      Type
+  10.0.2.2              52-54-00-12-35-00     dynamique 
+  10.0.2.255            ff-ff-ff-ff-ff-ff     statique  
+  224.0.0.22            01-00-5e-00-00-16     statique  
+  224.0.0.251           01-00-5e-00-00-fb     statique  
+  224.0.0.252           01-00-5e-00-00-fc     statique  
+  239.255.255.250       01-00-5e-7f-ff-fa     statique  
+  255.255.255.255       ff-ff-ff-ff-ff-ff     statique  

@@ -1,0 +1,40 @@
+tcp:
+	0 packet sent
+		0 data packet (0 byte)
+		0 data packet (0 byte) retransmitted
+		0 resend initiated by MTU discovery
+		0 ack-only packet (0 delayed)
+		0 URG only packet
+		0 window probe packet
+		0 window update packet
+		0 control packet
+		0 data packet sent after flow control
+		0 challenge ACK sent due to unexpected SYN
+		0 challenge ACK sent due to unexpected RST
+		0 checksummed in software
+			0 segment (0 byte) over IPv4
+			0 segment (0 byte) over IPv6
+	0 packet received
+		0 ack (for 0 byte)
+		0 duplicate ack
+		0 ack for unsent data
+		0 packet (0 byte) received in-sequence
+		0 completely duplicate packet (0 byte)
+		0 old duplicate packet
+		0 received packet dropped due to low memory
+		0 packet with some dup. data (0 byte duped)
+		0 out-of-order packet (0 byte)
+		0 packet (0 byte) of data after window
+		0 window probe
+		0 window update packet
+		0 packet recovered after loss
+		0 packet received after close
+		0 bad reset
+		0 discarded for bad checksum
+		0 checksummed in software
+			0 segment (0 byte) over IPv4
+			0 segment (0 byte) over IPv6
+		0 discarded for bad header offset field
+		0 discarded because packet too short
+	0 connection request
+	0 connection accept

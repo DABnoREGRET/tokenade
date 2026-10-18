@@ -1,0 +1,7 @@
+Server:		1.1.1.1
+Address:	1.1.1.1#53
+
+Non-authoritative answer:
+Name:	apple.com
+Address: 17.253.144.10
+

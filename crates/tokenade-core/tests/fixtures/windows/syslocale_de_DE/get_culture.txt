@@ -1,0 +1,6 @@
+
+LCID             Name             DisplayName                                                                          
+----             ----             -----------                                                                          
+1031             de-DE            Allemand (Allemagne)                                                                 
+
+

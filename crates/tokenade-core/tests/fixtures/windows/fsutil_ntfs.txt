@@ -1,0 +1,24 @@
+Num�ro de s�rie de volume NTFS :        0xa84e07aa4e07707c
+Version NTFS      :                3.1
+Version LFS       :                2.0
+Nombre total de secteurs     :                103�651�092  (49,4 Go)
+Nombre total de clusters    :                 12�956�386  (49,4 Go)
+Clusters libres     :                  2�958�156  (11,3 Go)
+Clusters r�serv�s :            1�634�090  ( 6,2 Go)
+R�serv�s pour la r�serve de stockage :       1�616�520  ( 6,2 Go)
+Octets par secteur  :                512
+Octets par secteur physique :        512
+Octets par cluster :                4096
+Octets par segment FileRecord    :  1024
+Clusters par segment FileRecord :  0
+Longueur de donn�es valide MFT :            753,00 Mo
+LCN de d�marrage MFT  :                   0x00000000000c0000
+LCN de d�marrage Mft2 :                   0x0000000000000002
+D�but de la zone MFT :                   0x0000000000b40720
+Fin de la zone MFT   :                   0x0000000000b40a00
+Taille de la zone MFT  :                   2,88 Mo
+Nombre max d'�tendues de r�glage d'appareil :     0
+Nombre max d'octets de r�glage de l'appareil :       0
+Nombre max d'�tendues de r�glage de volume :     62
+Nombre max d'octets de r�glage de volume :       0x40000000
+Identificateur du Gestionnaire de ressources�:        28653C8D-0187-11EE-9B92-DCBD105C47D2

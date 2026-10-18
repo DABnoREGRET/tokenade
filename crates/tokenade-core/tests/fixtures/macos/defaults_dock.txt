@@ -1,0 +1,30 @@
+{
+    "last-analytics-stamp" =     (
+        "794326979.126161"
+    );
+    loc = "fr_FR:FR";
+    "mod-count" = 31;
+    "persistent-apps" =     (
+                {
+            GUID = 13562965;
+            "tile-data" =             {
+                book = {length = 580, bytes = 0x626f6f6b 44020000 00000410 30000000 ... 04000000 00000000 };
+                "bundle-identifier" = "com.apple.launchpad.launcher";
+                "dock-extra" = 0;
+                "file-data" =                 {
+                    "_CFURLString" = "file:///System/Applications/Launchpad.app/";
+                    "_CFURLStringType" = 15;
+                };
+                "file-label" = Launchpad;
+                "file-mod-date" = 3717372638;
+                "file-type" = 169;
+                "is-beta" = 0;
+                "parent-mod-date" = 3717372638;
+            };
+            "tile-type" = "file-tile";
+        },
+                {
+            GUID = 13562966;
+            "tile-data" =             {
+                book = {length = 536, bytes = 0x626f6f6b 18020000 00000410 30000000 ... 04000000 00000000 };
+                "bundle-identifier" = "com.apple.Safari";

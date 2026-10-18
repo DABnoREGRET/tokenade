@@ -1,0 +1,85 @@
+[
+  {
+    "query": "python asyncio vs threading",
+    "type": "informational",
+    "correct": [
+      "https://discuss.python.org/t/what-are-the-advantages-of-asyncio-over-threads/2112",
+      "https://docs.python.org/3/library/asyncio-queue.html",
+      "https://www.geeksforgeeks.org/python/asyncio-vs-threading-in-python/",
+      "https://www.geeksforgeeks.org/asyncio-vs-threading-in-python/"
+    ]
+  },
+  {
+    "query": "rust async runtime",
+    "type": "informational",
+    "correct": ["https://tokio.rs", "https://docs.rs/tokio"]
+  },
+  {
+    "query": "python asyncio",
+    "type": "navigational",
+    "correct": ["https://docs.python.org/3/library/asyncio.html"]
+  },
+  {
+    "query": "github",
+    "type": "navigational",
+    "correct": ["https://github.com"]
+  },
+  {
+    "query": "wikipedia rust programming language",
+    "type": "navigational",
+    "correct": ["https://en.wikipedia.org/wiki/Rust_(programming_language)"]
+  },
+  {
+    "query": "how to reverse a linked list in python",
+    "type": "long-tail",
+    "correct": [
+      "https://www.geeksforgeeks.org/python-reverse-a-linked-list/",
+      "https://www.geeksforgeeks.org/reverse-a-linked-list/"
+    ]
+  },
+  {
+    "query": "météo Paris demain",
+    "type": "informational",
+    "correct": ["https://meteofrance.com", "https://www.meteociel.fr"]
+  },
+  {
+    "query": "東京 天気",
+    "type": "informational",
+    "correct": ["https://tenki.jp", "https://weather.yahoo.co.jp"]
+  },
+  {
+    "query": "npm install react",
+    "type": "navigational",
+    "correct": ["https://www.npmjs.com/package/react"]
+  },
+  {
+    "query": "mdn fetch api",
+    "type": "navigational",
+    "correct": ["https://developer.mozilla.org/en-US/docs/Web/API/Window/fetch"]
+  },
+  {
+    "query": "best rust web framework 2026",
+    "type": "long-tail",
+    "correct": ["https://www.arewewebyet.org", "https://actix.rs", "https://github.com/tokio-rs/axum"]
+  },
+  {
+    "query": "kubernetes deployment yaml example",
+    "type": "long-tail",
+    "correct": ["https://kubernetes.io/docs/concepts/workloads/controllers/deployment/"]
+  },
+  {
+    "query": "openstreetmap",
+    "type": "navigational",
+    "correct": ["https://www.openstreetmap.org"]
+  },
+  {
+    "query": "django models tutorial",
+    "type": "informational",
+    "correct": ["https://docs.djangoproject.com/en/stable/topics/db/models/"]
+  },
+  {
+    "query": "stripe api documentation",
+    "type": "navigational",
+    "correct": ["https://stripe.com/docs/api", "https://docs.stripe.com/api"]
+  }
+]

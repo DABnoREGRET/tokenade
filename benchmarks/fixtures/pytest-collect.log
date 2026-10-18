@@ -1,0 +1,500 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.5, pytest-9.0.3, pluggy-1.6.0
+Using --randomly-seed=1672248070
+rootdir: /home/username/.devworkspace/projects/super-token-saver/benchmarks/repos/click
+configfile: pyproject.toml
+testpaths: tests
+plugins: randomly-4.1.0, timeout-2.4.0, cov-7.1.0, inline-snapshot-0.32.6, xdist-3.8.0, typeguard-4.5.1, examples-0.0.18, anyio-4.13.0, asyncio-1.3.0, hypothesis-6.152.4
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 31510 items / 1 error / 30000 deselected / 1510 selected
+
+<Dir click>
+  <Dir tests>
+    <Module test_commands.py>
+      <Function test_group_with_args[args3-2-Show this message and exit.]>
+      <Function test_other_command_invoke_with_defaults[opt_params3-None]>
+      <Function test_other_command_invoke_with_defaults[opt_params9-expected9]>
+      <Function test_other_command_invoke_with_defaults[opt_params1-15]>
+      <Function test_iter_params_for_processing[invocation_order26-declaration_order26-expected_order26]>
+      <Function test_iter_params_for_processing[invocation_order17-declaration_order17-expected_order17]>
+      <Function test_other_command_invoke_with_defaults[opt_params7-3.14]>
+      <Function test_abort_exceptions_with_disabled_standalone_mode[KeyboardInterrupt]>
+      <Function test_aliased_command_canonical_name>
+      <Function test_iter_params_for_processing[invocation_order10-declaration_order10-expected_order10]>
+      <Function test_iter_params_for_processing[invocation_order21-declaration_order21-expected_order21]>
+      <Function test_suggest_possible_commands[decline-(Did you mean one of: 'declare', 'refine'?)]>
+      <Function test_group_invoke_collects_used_option_prefixes>
+      <Function test_iter_params_for_processing[invocation_order6-declaration_order6-expected_order6]>
+      <Function test_iter_params_for_processing[invocation_order2-declaration_order2-expected_order2]>
+      <Function test_iter_params_for_processing[invocation_order33-declaration_order33-expected_order33]>
+      <Function test_unknown_command>
+      <Function test_iter_params_for_processing[invocation_order25-declaration_order25-expected_order25]>
+      <Function test_iter_params_for_processing[invocation_order14-declaration_order14-expected_order14]>
+      <Function test_group_with_args[args1-0-Show this message and exit.]>
+      <Function test_iter_params_for_processing[invocation_order7-declaration_order7-expected_order7]>
+      <Function test_iter_params_for_processing[invocation_order3-declaration_order3-expected_order3]>
+      <Function test_other_command_invoke_with_defaults[opt_params12-/tmp]>
+      <Function test_help_param_priority>
+      <Function test_deprecated_in_help_messages[USE OTHER COMMAND INSTEAD-CLI HELP]>
+      <Function test_abort_exceptions_with_disabled_standalone_mode[EOFError]>
+      <Function test_auto_shorthelp>
+      <Function test_other_command_invoke_with_defaults[opt_params0-42]>
+      <Function test_iter_params_for_processing[invocation_order30-declaration_order30-expected_order30]>
+      <Function test_other_command_invoke_with_defaults[opt_params16-secret]>
+      <Function test_iter_params_for_processing[invocation_order19-declaration_order19-expected_order19]>
+      <Function test_iter_params_for_processing[invocation_order13-declaration_order13-expected_order13]>
+      <Function test_deprecated_in_invocation[USE OTHER COMMAND INSTEAD]>
+      <Function test_other_command_invoke_with_defaults[opt_params5-False]>
+      <Function test_iter_params_for_processing[invocation_order22-declaration_order22-expected_order22]>
+      <Function test_iter_params_for_processing[invocation_order28-declaration_order28-expected_order28]>
+      <Function test_other_command_invoke_with_defaults[opt_params13-False]>
+      <Function test_default_maps>
+      <Function test_suggest_possible_commands[pause-Did you mean 'push'?]>
+      <Function test_unprocessed_options>
+      <Function test_other_command_invoke_with_defaults[opt_params8-expected8]>
+      <Function test_other_command_forward>
+      <Function test_group_with_args[args2-0-obj=obj1\nmove\n]>
+      <Function test_iter_params_for_processing[invocation_order27-declaration_order27-expected_order27]>
+      <Function test_other_command_invoke_with_defaults[opt_params2-expected2]>
+      <Function test_iter_params_for_processing[invocation_order16-declaration_order16-expected_order16]>
+      <Function test_iter_params_for_processing[invocation_order9-declaration_order9-expected_order9]>
+      <Function test_iter_params_for_processing[invocation_order1-declaration_order1-expected_order1]>
+      <Function test_iter_params_for_processing[invocation_order5-declaration_order5-expected_order5]>
+      <Function test_iter_params_for_processing[invocation_order11-declaration_order11-expected_order11]>
+      <Function test_group_parse_args_collects_base_option_prefixes>
+      <Function test_object_propagation>
+      <Function test_iter_params_for_processing[invocation_order20-declaration_order20-expected_order20]>
+      <Function test_deprecated_in_help_messages[USE OTHER COMMAND INSTEAD-None]>
+      <Function test_invoked_subcommand>
+      <Function test_deprecated_in_invocation[True]>
+      <Function test_forwarded_params_consistency>
+      <Function test_other_command_invoke_with_defaults[opt_params14-True]>
+      <Function test_iter_params_for_processing[invocation_order32-declaration_order32-expected_order32]>
+      <Function test_iter_params_for_processing[invocation_order24-declaration_order24-expected_order24]>
+      <Function test_iter_params_for_processing[invocation_order15-declaration_order15-expected_order15]>
+      <Function test_command_no_args_is_help>
+      <Function test_other_command_invoke_with_defaults[opt_params6-True]>
+      <Function test_other_command_invoke_with_defaults[opt_params4-None]>
+      <Function test_group_add_command_name>
+      <Function test_other_command_invoke_with_defaults[opt_params10-None]>
+      <Function test_iter_params_for_processing[invocation_order0-declaration_order0-expected_order0]>
+      <Function test_iter_params_for_processing[invocation_order4-declaration_order4-expected_order4]>
+      <Function test_iter_params_for_processing[invocation_order8-declaration_order8-expected_order8]>
+      <Function test_deprecated_in_help_messages[True-None]>
+      <Function test_deprecated_in_help_messages[True-CLI HELP]>
+      <Function test_iter_params_for_processing[invocation_order31-declaration_order31-expected_order31]>
+      <Function test_other_command_invoke_with_defaults[opt_params15-0]>
+      <Function test_other_command_invoke_with_defaults[opt_params11-b]>
+      <Function test_iter_params_for_processing[invocation_order18-declaration_order18-expected_order18]>
+      <Function test_iter_params_for_processing[invocation_order12-declaration_order12-expected_order12]>
+      <Function test_iter_params_for_processing[invocation_order23-declaration_order23-expected_order23]>
+      <Function test_command_parse_args_collects_option_prefixes>
+      <Function test_iter_params_for_processing[invocation_order29-declaration_order29-expected_order29]>
+      <Function test_group_with_args[args0-2-Error: Missing command.]>
+      <Function test_other_command_invoke>
+      <Function test_custom_parser>
+    <Module test_basic.py>
+      <Function test_hidden_option>
+      <Function test_string_option[args0-S:[no value]]>
+      <Function test_boolean_conversion[y-True]>
+      <Function test_flag_value_dual_options[Sentinel.UNSET-args6-upper]>
+      <Function test_boolean_switch[args8-True-True]>
+      <Function test_boolean_flag[True-args1-True]>
+      <Function test_boolean_switch[args0-True-True]>
+      <Function test_float_option[--f=x-Error: Invalid value for '--f': 'x' is not a valid float.]>
+      <Function test_required_option>
+      <Function test_float_option[args0-F:[42.0]]>
+      <Function test_boolean_switch[args5-False-False]>
+      <Function test_path_option>
+      <Function test_string_option[args3-S:[]]>
+      <Function test_boolean_switch[args7-Sentinel.UNSET-False]>
+      <Function test_boolean_conversion[off-False]>
+      <Function test_flag_value_dual_options[12.3-args20-12.3]>
+      <Function test_boolean_conversion[true-True]>
+      <Function test_flag_value_dual_options[None-args5-lower]>
+      <Function test_boolean_switch[args9-False-False]>
+      <Function test_datetime_option_custom>
+      <Function test_uuid_option[args0-U:[ba122011-349f-423b-873b-9d6a79c688ab]]>
+      <Function test_basic_functionality>
+      <Function test_boolean_switch[args4-True-False]>
+      <Function test_string_option[args4-S:[\u2603]]>
+      <Function test_flag_value_dual_options[False-args3-lower]>
+      <Function test_return_values>
+      <Function test_flag_value_dual_options[None-args15-None]>
+      <Function test_evaluation_order>
+      <Function test_summary_line>
+      <Function test_repr>
+      <Function test_boolean_flag[False-args2-True]>
+      <Function test_string_option[args2-Error: Option '--s' requires an argument.]>
+      <Function test_file_lazy_mode>
+      <Function test_boolean_switch[args1-False-True]>
+      <Function test_boolean_conversion[t-True]>
+      <Function test_flag_value_dual_options[False-args18-False]>
+      <Function test_flag_value_dual_options[True-args9-upper]>
+      <Function test_flag_value_dual_options[True-args0-upper]>
+      <Function test_boolean_switch[args10-None-None]>
+      <Function test_boolean_conversion[f-False]>
+      <Function test_boolean_conversion[1-True]>
+      <Function test_flag_value_dual_options[lower-args11-lower]>
+      <Function test_boolean_conversion[no-False]>
+      <Function test_datetime_option_default>
+      <Function test_boolean_switch[args11-Sentinel.UNSET-False]>
+      <Function test_choice_option>
+      <Function test_flag_value_dual_options[True-args17-upper]>
+      <Function test_flag_value_dual_options[uPPer-args12-uPPer]>
+      <Function test_choice_argument_none>
+      <Function test_choice_argument>
+      <Function test_flag_value_dual_options[lOwEr-args13-lOwEr]>
+      <Function test_int_option[args2-Error: Invalid value for '--i': 'x' is not a valid integer.]>
+      <Function test_basic_group>
+      <Function test_flag_value_dual_options[42-args19-42]>
+      <Function test_float_option[--f=23.5-F:[23.5]]>
+      <Function test_boolean_conversion[false-False]>
+      <Function test_flag_value_dual_options[Sentinel.UNSET-args7-lower]>
+      <Function test_flag_value_dual_options[Sentinel.UNSET-args16-None]>
+      <Function test_boolean_switch[args3-Sentinel.UNSET-True]>
+      <Function test_flag_value_dual_options[None-args4-upper]>
+      <Function test_boolean_conversion[n-False]>
+      <Function test_boolean_conversion[on-True]>
+      <Function test_int_option[args1-I:[46]]>
+      <Function test_boolean_flag[True-args0-True]>
+      <Function test_boolean_switch[args2-None-True]>
+      <Function test_uuid_option[args2-Error: Invalid value for '--u': 'x' is not a valid UUID.]>
+      <Function test_string_option[args1-S:[42]]>
+      <Function test_choice_argument_custom_type>
+      <Function test_boolean_flag[None-args4-True]>
+      <Function test_file_option>
+      <Function test_flag_value_dual_options[ \u1555( \u141b )\u1557 -args14- \u1555( \u141b )\u1557 ]>
+      <Function test_hidden_group>
+      <Function test_flag_value_dual_options[False-args2-upper]>
+      <Function test_flag_value_dual_options[upper-args10-upper]>
+      <Function test_group_commands_dict>
+      <Function test_hidden_command>
+      <Function test_boolean_flag[False-args3-False]>
+      <Function test_group_from_list>
+      <Function test_flag_value_dual_options[True-args1-lower]>
+      <Function test_uuid_option[args1-U:[821592c1-c50e-4971-9cd6-e89dc6832f86]]>
+      <Function test_boolean_conversion[0-False]>
+      <Function test_boolean_conversion[yes-True]>
+      <Function test_boolean_switch[args6-None-False]>
+      <Function test_help_invalid_default>
+      <Function test_int_option[args0-I:[84]]>
+      <Function test_boolean_flag[None-args5-None]>
+      <Function test_choice_argument_enum>
+      <Function test_flag_value_dual_options[True-args8-lower]>
+    <Module test_normalization.py>
+      <Function test_command_normalization>
+      <Function test_option_normalization>
+      <Function test_choice_normalization>
+    <Module test_custom_classes.py>
+      <Function test_context_invoke_type>
+      <Function test_context_formatter_class>
+      <Function test_group_command_class>
+      <Function test_group_group_class>
+      <Function test_group_group_class_self>
+      <Function test_command_context_class>
+    <Module test_formatting.py>
+      <Function test_help_formatter_write_usage[empty-args-indented]>
+      <Function test_formatting_usage_error_help_hint[help_names3-extra_options3-None]>
+      <Function test_help_formatter_write_usage[empty-args-default-prefix]>
+      <Function test_help_formatter_write_usage[empty-args-long-prog]>
+      <Function test_write_usage_styled_prefix_keeps_options_on_one_line>
+      <Function test_help_formatter_write_usage_without_args_styled_prefix>
+      <Function test_wrapping_long_command_name>
+      <Function test_formatting_usage_error_nested>
+      <Function test_formatting_usage_error_metavar_missing_arg>
+      <Function test_wrapping_long_options_strings>
+      <Function test_formatting_usage_error_help_hint[help_names5-extra_options5-Try 'cli foo --help' for help.]>
+      <Function test_formatting_with_options_metavar_empty>
+      <Function test_wrap_text_visible_width[styled-body-wraps-on-visible-width]>
+      <Function test_formatting_empty_help_lines>
+      <Function test_formatting_usage_error_help_hint[help_names1-extra_options1-Try 'cli foo --help' for help.]>
+      <Function test_help_formatter_write_usage[with-args-default-prefix]>
+      <Function test_formatting_usage_error_metavar_bad_arg>
+      <Function test_formatting_usage_error_help_hint[help_names0-extra_options0-Try 'cli foo --help' for help.]>
+      <Function test_truncating_docstring>
+      <Function test_basic_functionality>
+      <Function test_formatting_usage_error_help_hint[help_names4-extra_options4-Try 'cli foo --man' for help.]>
+      <Function test_wrap_text_visible_width[styled-initial-indent-does-not-break-body]>
+      <Function test_formatting_usage_error_help_hint[help_names2-extra_options2-Try 'cli foo -h' for help.]>
+      <Function test_wrap_text_visible_width[styled-long-word-breaks-on-visible-width]>
+      <Function test_removing_multiline_marker>
+      <Function test_help_formatter_write_usage[empty-args-custom-prefix]>
+      <Function test_formatting_usage_error_no_help>
+      <Function test_truncating_docstring_no_help>
+      <Function test_command_write_usage_no_args[none-options-metavar-no-params]>
+      <Function test_command_write_usage_no_args[empty-options-metavar-no-params]>
+      <Function test_global_show_default>
+      <Function test_formatting_usage_error>
+      <Function test_help_formatter_write_text>
+      <Function test_formatting_custom_type_metavar>
+      <Function test_formatting_usage_custom_help>
+    <Module test_chain.py>
+      <Function test_chaining_with_options>
+      <Function test_chaining_help[args2-SDIST HELP]>
+      <Function test_group_chaining>
+      <Function test_args_and_chain>
+      <Function test_chaining_help[args0-COMMAND1 [ARGS]... [COMMAND2 [ARGS]...]...]>
+      <Function test_group_arg_behavior>
+      <Function test_chaining_help[args3-BDIST HELP]>
+      <Function test_chaining_help[args4-SDIST HELP]>
+      <Function test_pipeline[args0-foo\nbar-expect0]>
+      <Function test_no_command_result_callback[False-1]>
+      <Function test_chaining_help[args1-ROOT HELP]>
+      <Function test_pipeline[args2-foo \n bar-expect2]>
+      <Function test_chaining_with_arguments>
+      <Function test_no_command_result_callback[True-[]]>
+      <Function test_basic_chaining>
+      <Function test_pipeline[args1-foo \n bar-expect1]>
+    <Module test_context.py>
+      <Function test_with_resource_nested_exception>
+      <Function test_parameter_source[commandline short]>
+      <Function test_close_before_exit>
+      <Function test_get_context_objects>
+      <Function test_with_resource_exception>
+      <Function test_parameter_source[default_map]>
+      <Function test_parameter_source[commandline long]>
+      <Function test_pass_obj>
+      <Function test_context_meta>
+      <Function test_make_pass_meta_decorator_doc>
+      <Function test_parameter_source[environment auto]>
+      <Function test_multiple_eager_callbacks[natural_order]>
+      <Function test_multi_enter>
+      <Function test_context_pushing>
+      <Function test_propagate_opt_prefixes>
+      <Function test_no_state_leaks>
+      <Function test_close_before_pop>
+      <Function test_parameter_source[default]>
+      <Function test_get_context_objects_missing>
+      <Function test_multiple_eager_callbacks[eagerness_precedence]>
+      <Function test_exit_not_standalone>
+      <Function test_get_context_objects_no_ensuring>
+      <Function test_hiding_of_unset_sentinel_in_callbacks>
+      <Function test_ensure_context_objects>
+      <Function test_with_resource>
+      <Function test_propagate_show_default_setting>
+      <Function test_parameter_source[environment manual]>
+      <Function test_make_pass_meta_decorator>
+      <Function test_make_pass_decorator_args>
+      <Function test_global_context_object>
+    <Module test_testing.py>
+      <Function test_getchar>
+      <Function test_runner_with_stream>
+      <Function test_capture_fd_stderr_separation>
+      <Function test_pdb_uses_real_streams>
+      <Function test_capture_fd_nesting>
+      <Function test_args[--foo "one two"-one two\n]>
+      <Function test_capture_pytest_matrix[capfd-fd]>
+      <Function test_prompts>
+      <Function test_capture_sys_fileno_raises>
+      <Function test_with_color>
+      <Function test_pdb_explicit_streams_honored>
+      <Function test_isolation_stderr_errors>
+      <Function test_command_standalone_mode_returns_value>
+      <Function test_with_echo_via_pager>
+      <Function test_capture_invalid_mode>
+      <Function test_exit_code_and_output_from_sys_exit>
+      <Function test_catch_exceptions>
+      <Function test_args[-bar\n]>
+      <Function test_catch_exceptions_cli_runner>
+      <Function test_capture_fd_os_write>
+      <Function test_capture_fd_logging_handler>
+      <Function test_pdb_init_restored_after_invoke>
+      <Function test_stderr>
+      <Function test_isolation_flushes_unflushed_stderr>
+      <Function test_capture_fd_faulthandler>
+      <Function test_with_color_but_pause_not_blocking>
+      <Function test_capture_fd_windows_error>
+      <Function test_capture_pytest_matrix[capfd-sys]>
+      <Function test_env>
+      <Function test_echo_stdin_stream>
+      <Function test_args[args1-bar\n]>
+      <Function test_capture_pytest_matrix[capsys-fd]>
+      <Function test_isolated_runner>
+      <Function test_args[None-bar\n]>
+      <Function test_with_color_errors>
+      <Function test_capture_pytest_matrix[capsys-sys]>
+      <Function test_args[args3-one two\n]>
+      <Function test_isolated_runner_custom_tempdir>
+      <Function test_file_stdin_attrs>
+      <Function test_runner>
+      <Function test_echo_stdin_prompts>
+      <Function test_setting_prog_name_in_extra>
+      <Function test_capture_fd_stale_reference>
+    <Module test_options.py>
+      <Function test_bool_flag_group_competition[explicit-default-true-on-negative]>
+      <Function test_envvar_string_flag_value[bar--None]>
+      <Function test_boolean_flag_envvar[SHOUT-True-True]>
+      <Function test_show_envvar>
+      <Function test_envvar_string_flag_value[true-None-None]>
+      <Function test_option_names[option_args9-_ret]>
+      <Function test_bool_flag_group_competition_with_envvar[1-args3-False]>
+      <Function test_bool_flag_group_parameter_source[loser-default-map-restores-winner-source]>
+      <Function test_good_defaults_for_multiple[True-1-default15-expected15]>
+      <Function test_flag_value_and_default[opt_params63-args63-None]>
+      <Function test_option_names[option_args0-aggressive]>
+      <Function test_flag_value_and_default[opt_params4-args4-None]>
+      <Function test_flag_value_and_default[opt_params73-args73-False]>
+      <Function test_duplicate_names_warning[opts_one0-opts_two0]>
+      <Function test_option_names[option_args2-apple]>
+      <Function test_help_option_custom_names_and_class[name_specs2-  --help  Show this message and exit.\n-False]>
+      <Function test_type_from_flag_value>
+      <Function test_flag_value_and_default[opt_params49-args49-True]>
+      <Function test_flag_value_and_default[opt_params41-args41-True]>
+      <Function test_default_dual_option_callback[Sentinel.UNSET-args6-js]>
+      <Function test_custom_type_flag_value_standalone_option[opt_params23-args23-42]>
+      <Function test_default_dual_option_callback[js-args10-js]>
+      <Function test_flag_value_and_default[opt_params47-args47-None]>
+      <Function test_envvar_string_flag_value[ 1 2 - 1 2 - 1 2 ]>
+      <Function test_envvar_string_flag_value[True--None1]>
+      <Function test_envvar_string_flag_value[bar-f-False]>
+      <Function test_choice_default_rendering[choices0-bar-bar]>
+      <Function test_flag_value_and_default[opt_params13-args13-True]>
+      <Function test_envvar_string_flag_value[False-None-None0]>
+      <Function test_suggest_possible_options[--bounds-(Did you mean one of: '--bound', '--count'?)]>
+      <Function test_flag_value_and_default[opt_params38-args38-False]>
+      <Function test_dual_options_custom_type_sentinel_flag_value[args5-Usage: main \\[OPTIONS\\]\\nTry 'main --help' for help.\\n\\nError: Got unexpected extra argument (.+)\\n-sentinel0]>
+      <Function test_good_defaults_for_multiple[True-2-default25-expected25]>
+      <Function test_envvar_string_flag_value[bar-t-bar]>
+      <Function test_bool_flag_group_competition[both-explicit-defaults-last-wins-swapped]>
+      <Function test_flag_value_on_option_with_zero_or_one_args[int-args4-1\n]>
+      <Function test_boolean_flag_envvar[SHOUT-n-False]>
+      <Function test_bool_flag_pair_default[None-args1-True]>
+      <Function test_boolean_flag_envvar[SHOUT-FaLsE-False]>
+      <Function test_flag_auto_detection[-a-opt_params8-False-False]>
+      <Function test_show_default_boolean_flag_name[False-no-cache]>
+      <Function test_help_option_custom_names_and_class[name_specs1-  -h      Show this message and exit.\n  --help  Show this message and exit.\n-False]>
+      <Function test_counting>
+      <Function test_envvar_string_flag_value[BAR-bar-None]>
+      <Function test_option_with_optional_value[args8-expect8]>
+      <Function test_required_option[12-False-12_1]>
+      <Function test_boolean_flag_envvar[RANDOM-True-False]>
+      <Function test_boolean_flag_envvar[SHOUT-on-True]>
+      <Function test_flag_value_and_default[opt_params39-args39-None]>
+      <Function test_flag_value_and_default[opt_params25-args25-True]>
+      <Function test_dual_options_custom_type_sentinel_flag_value[args9-foo.conf-sentinel0]>
+      <Function test_intrange_default_help_text[type3-x<=32]>
+      <Function test_choice_default_rendering[Color-GREEN-GREEN]>
+      <Function test_bool_flag_group_competition[3403-reproducer-with-then-without]>
+      <Function test_bool_flag_group_competition[three-flags-explicit-first]>
+      <Function test_boolean_flag_envvar[SHOUT-FALSE-False]>
+      <Function test_boolean_flag_envvar[NO_SHOUT-True-False]>
+      <Function test_boolean_envvar_bad_values[randomstring]>
+      <Function test_choice_default_rendering[Letter-Value_2-NAME_2]>
+      <Function test_envvar_string_flag_value[bar-true-bar]>
+      <Function test_flag_group_competition_non_boolean[string-explicit-default-wins-over-absent]>
+      <Function test_flag_value_and_default[opt_params76-args76-bar]>
+      <Function test_choice_default_rendering[Number-2-TWO]>
+      <Function test_boolean_flag_envvar[SHOUT-       -False]>
+      <Function test_boolean_flag_envvar[SHOUT-None-False]>
+      <Function test_option_with_optional_value[args3-expect3]>
+      <Function test_envvar_string_flag_value[False-None-None1]>
+      <Function test_help_option_custom_names_and_class[name_specs2-  --help  Show this message and exit.\n-True]>
+      <Function test_bool_flag_pair_default[None-args2-False]>
+      <Function test_required_option[Sentinel.UNSET-True-None]>
+      <Function test_envvar_string_flag_value[true--None]>
+      <Function test_flag_auto_detection[-a-opt_params4-True-False]>
+      <Function test_flag_value_and_default[opt_params43-args43-False]>
+      <Function test_flag_group_competition_duplicate_option_name>
+      <Function test_bool_flag_group_competition[cmdline-beats-explicit-default]>
+      <Function test_option_names[option_args1-first]>
+      <Function test_envvar_string_flag_value[ bar -bar-None]>
+      <Function test_missing_required_flag>
+      <Function test_flag_value_and_default[opt_params30-args30-False]>
+      <Function test_required_option[12-False-12_0]>
+      <Function test_envvar_string_flag_value[BAR-BAR-BAR]>
+      <Function test_help_option_custom_names_and_class[name_specs1-  -h      Show this message and exit.\n  --help  Show this message and exit.\n-True]>
+      <Function test_callable_flag_value_not_instantiated[opt_params2-args2-Class1]>
+      <Function test_custom_type_flag_value_standalone_option[opt_params7-args7-None]>
+      <Function test_flag_group_competition_non_boolean[unset-default-cmdline-still-works]>
+      <Function test_flag_value_and_default[opt_params7-args7-True]>
+      <Function test_intrange_default_help_text[type0-1<=x<=32]>
+      <Function test_boolean_envvar_bad_values[i/o]>
+      <Function test_default_dual_option_callback[None-args4-js]>
+      <Function test_do_not_show_default_empty_multiple>
+      <Function test_boolean_flag_envvar[SHOUT-  true  -True]>
+      <Function test_dual_options_custom_type_sentinel_flag_value[args9-foo.conf-EnumSentinel.FALSY_SENTINEL]>
+      <Function test_flag_auto_detection[-a-opt_params5-True-True]>
+      <Function test_flag_value_and_default[opt_params34-args34-False]>
+      <Function test_flag_value_and_default[opt_params45-args45-foo]>
+      <Function test_flag_value_and_default[opt_params0-args0-False]>
+      <Function test_good_defaults_for_multiple[True-1-default5-expected5]>
+      <Function test_dual_options_custom_type_sentinel_flag_value[args2-Error:\\ Option\\ '\\-\\-config'\\ requires\\ an\\ argument\\.\\\n-EnumSentinel.FALSY_SENTINEL]>
+      <Function test_envvar_string_flag_value[bar-  FALSE  -False]>
+      <Function test_choice_default_rendering[Letter-42_value-NAME_3]>
+      <Function test_bool_flag_pair_default[True-args3-True]>
+      <Function test_show_envvar_auto_prefix>
+      <Function test_envvar_string_flag_value[True--None0]>
+      <Function test_envvar_string_flag_value[bar-faLse-False]>
+      <Function test_dual_options_custom_type_sentinel_flag_value[args7-Usage: main \\[OPTIONS\\]\\nTry 'main --help' for help.\\n\\nError: Invalid value for '-c' / '--config': File '--no-config' does not exist.\\n-EnumSentinel.FALSY_SENTINEL]>
+      <Function test_custom_type_flag_value_dual_options[opt1_params5-opt2_params5-args5-Class2]>
+      <Function test_flag_group_competition_non_boolean[mixed-bool-and-string-last-wins]>
+      <Function test_flag_value_and_default[opt_params3-args3-True]>
+      <Function test_flag_group_competition_non_boolean[string-explicit-default-wins-from-second-position]>
+      <Function test_option_names[option_args8-_from]>
+      <Function test_choice_default_rendering[HashType-HashType.SHA1-SHA1]>
+      <Function test_non_flag_with_non_negatable_default>
+      <Function test_good_defaults_for_multiple[True-2-default17-expected17]>
+      <Function test_dual_options_custom_type_sentinel_flag_value[args8-Usage: main \\[OPTIONS\\]\\nTry 'main --help' for help.\\n\\nError: Invalid value for '-c' / '--config': File '--no-config' does not exist.\\n-EnumSentinel.FALSY_SENTINEL]>
+      <Function test_option_with_optional_value[args1-expect1]>
+      <Function test_good_defaults_for_multiple[True-1-default2-expected2]>
+      <Function test_file_type_help_default>
+      <Function test_flag_value_and_default[opt_params60-args60-foo]>
+      <Function test_envvar_string_flag_value[bar-no-False]>
+      <Function test_flag_group_competition_repeated_cmdline[args3-False]>
+      <Function test_invalid_flag_definition[args1-opts1]>
+      <Function test_boolean_flag_envvar[SHOUT-    true-True]>
+      <Function test_boolean_flag_envvar[    SHOUT-True-False]>
+      <Function test_flag_group_competition_non_boolean[string-default-true-substitutes-to-flag-value]>
+      <Function test_custom_type_flag_value_dual_options[opt1_params15-opt2_params15-args15-1]>
+      <Function test_choice_default_rendering[choices3-0-0]>
+      <Function test_envvar_string_flag_value[false--None]>
+      <Function test_callable_flag_value_not_instantiated[opt_params7-args7-upper]>
+      <Function test_callable_flag_value_get_default_override[opt_params0-True-Class1]>
+      <Function test_default_dual_option_callback[False-args2-js]>
+      <Function test_choice_default_rendering[choices10-foo-foo]>
+      <Function test_custom_type_flag_value_dual_options[opt1_params1-opt2_params1-args1-EngineType.OSS]>
+      <Function test_multiple_default_type>
+      <Function test_choice_default_rendering[choices4-0.0-0.0]>
+      <Function test_good_defaults_for_multiple[True-2-default31-expected31]>
+      <Function test_bool_flag_group_competition[both-explicit-defaults-last-wins]>
+      <Function test_flag_value_and_default[opt_params61-args61-foo]>
+      <Function test_deprecated_usage[USE B INSTEAD]>
+      <Function test_choice_usage_rendering[ColorInt-[COLORINT]]>
+      <Function test_choice_default_rendering[choices7-2.0-2.0]>
+      <Function test_custom_type_flag_value_dual_options[opt1_params8-opt2_params8-args8-Class1]>
+      <Function test_choice_default_rendering[ColorInt-2-GREEN]>
+      <Function test_flag_value_and_default[opt_params12-args12-True]>
+      <Function test_choice_default_rendering[HashType-SHA256-SHA256]>
+      <Function test_good_defaults_for_multiple[True-1-default12-expected12]>
+      <Function test_dual_options_custom_type_sentinel_flag_value[args5-Usage: main \\[OPTIONS\\]\\nTry 'main --help' for help.\\n\\nError: Got unexpected extra argument (.+)\\n-EnumSentinel.FALSY_SENTINEL]>
+      <Function test_flag_value_and_default[opt_params50-args50-False]>
+      <Function test_bool_flag_pair_default[None-args0-None]>
+      <Function test_envvar_string_flag_value[BAR--None]>
+      <Function test_option_with_optional_value[args12-expect12]>
+      <Function test_bool_flag_group_competition[explicit-default-false-on-negative]>
+      <Function test_good_defaults_for_multiple[True-1-None-expected6]>
+      <Function test_dual_options_custom_type_sentinel_flag_value[args3-No configuration file provided.-EnumSentinel.FALSY_SENTINEL]>
+      <Function test_boolean_flag_envvar[SHOUT- -False]>
+      <Function test_custom_type_flag_value_standalone_option[opt_params26-args26-1]>
+      <Function test_good_defaults_for_multiple[True-1-default8-expected8]>
+      <Function test_boolean_flag_envvar[SHOUT-  false -False]>
+      <Function test_envvar_string_flag_value[ bar - bar - bar ]>
+      <Function test_help_option_custom_names_and_class[name_specs0-  -h, --help  Show this message and exit.\n-False]>
+      <Function test_boolean_flag_envvar[NOSHOUT-True-False]>
+      <Function test_option_custom_class_can_override_type_cast_value_and_never_sees_unset[--req-option_kwargs4-pass_argv4]>
+      <Function test_flag_auto_detection[-a-opt_params0-False-False]>
+      <Function test_callable_flag_value_default_map>
+      <Function test_bool_flag_group_competition[three-flags-explicit-in-middle]>
+      <Function test_flag_value_and_default[opt_params64-args64-True]>
+      <Function test_flag_value_and_default[opt_params62-args62-None]>
+      <Function test_good_defaults_for_multiple[True-2-default22-expected22]>
+      <Function test_hide_false_default_boolean_flag_value[None]>
+      <Function test_boolean_envvar_bad_values[1.1]>
+      <Function test_deprecated_warning[True]>
+      <Function test_callable_flag_value_not_instantiated[opt_params1-args1-Class1]>
+      <Function test_bad_defaults_for_multiple[True-1-False-None-Error: Invalid value for '-a': Value must be an iterable.]>
+      <Function test_show_envvar_auto_prefix_dash_in_command>
+      <Function test_boolean_envvar_bad_values[fa lse]>
+      <Function test_flag_group_competition_non_boolean[none-flag-value-cmdline-passes-other]>
+      <Function test_flag_value_and_default[opt_params46-args46-None]>

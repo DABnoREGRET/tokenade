@@ -1,0 +1,1 @@
+MD5 (/etc/hosts) = a3f51a033f988bc3c16d343ac53bb25f

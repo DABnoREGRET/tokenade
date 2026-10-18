@@ -1,0 +1,30 @@
+SATA:
+
+    Intel ICH8-M AHCI:
+
+      Vendor: Intel
+      Product: ICH8-M AHCI
+      Link Speed: 3 Gigabit
+      Negotiated Link Speed: 3 Gigabit
+      Physical Interconnect: SATA
+      Description: AHCI Version 1.10 Supported
+
+        VBOX HARDDISK:
+
+          Capacity: 107,37 GB (107 374 182 400 bytes)
+          Model: VBOX HARDDISK                           
+          Revision: 1,000000
+          Serial Number: VB8a3c9626-49019128 
+          Native Command Queuing: Yes
+          Queue Depth: 32
+          Removable Media: No
+          Detachable Drive: No
+          BSD Name: disk0
+          Medium Type: Rotational
+          Partition Map Type: GPT (GUID Partition Table)
+          S.M.A.R.T. status: Verified
+          Volumes:
+            EFI:
+              Capacity: 209,7 MB (209 715 200 bytes)
+              File System: MS-DOS FAT32
+              BSD Name: disk0s1

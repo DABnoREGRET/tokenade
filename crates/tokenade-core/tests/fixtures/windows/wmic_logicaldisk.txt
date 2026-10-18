@@ -1,0 +1,13 @@
+
+
+Caption=C:
+FreeSpace=5422858240
+Size=53069357056
+
+
+Caption=D:
+FreeSpace=0
+Size=53442560
+
+
+

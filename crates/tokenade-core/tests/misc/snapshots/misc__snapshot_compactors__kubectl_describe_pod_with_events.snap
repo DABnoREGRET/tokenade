@@ -1,0 +1,18 @@
+---
+source: crates/tokenade-core/tests/snapshot_compactors.rs
+assertion_line: 189
+expression: out
+---
+ Name=web-7d8b9c-xj4kf, Namespace=production, Priority=0, Node=ip-10-0-1-23/10.0.1.23, Start Time=Mon, 02 Jun 2026 14:30:00 +0000, Status=Running, IP=10.0.1.45, QoS=Burstable
+labels: app=web
+
+containers (1):
+  web: Running, restarts: 3, image=myorg/web:v2.4.1
+
+events (6 total: 1 Warning, 5 Normal):
+  Warning Unhealthy   9m (x3 over 10m)kubelet                  Liveness probe failed: HTTP probe failed with statuscode: 503
+  Normal  Scheduled   10m       default-scheduler        Successfully assigned production/web-7d8b9c-xj4kf to ip-10-0-1-23
+  Normal  Killing     9m (x3 over 10m)kubelet                  Container web failed liveness probe, will be restarted
+  Normal  Pulled      9m (x4 over 10m)kubelet                  Container image "myorg/web:v2.4.1" already present on machine
+  Normal  Created     9m (x4 over 10m)kubelet                  Created container web
+  Normal  Started     9m (x4 over 10m)kubelet                  Started container web

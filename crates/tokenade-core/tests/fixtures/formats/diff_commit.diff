@@ -1,0 +1,1819 @@
+diff --git a/crates/tokenade-bench/Cargo.toml b/crates/tokenade-bench/Cargo.toml
+index b2da2027..25eaf45b 100644
+--- a/crates/tokenade-bench/Cargo.toml
++++ b/crates/tokenade-bench/Cargo.toml
+@@ -5,6 +5,10 @@ edition.workspace = true
+ license.workspace = true
+ description = "Benchmarking framework for Tokenade and competitor mechanisms"
+ 
++[lib]
++name = "tokenade_bench"
++path = "src/lib.rs"
++
+ [[bin]]
+ name = "tokenade-bench"
+ path = "src/main.rs"
+diff --git a/crates/tokenade-bench/src/bin/value_ranking.rs b/crates/tokenade-bench/src/bin/value_ranking.rs
+new file mode 100644
+index 00000000..7748bc9d
+--- /dev/null
++++ b/crates/tokenade-bench/src/bin/value_ranking.rs
+@@ -0,0 +1,205 @@
++//! Régénère `docs/_value-ranking.md` — la hiérarchie de valeur MESURÉE.
++//!
++//! Elle existe parce qu'une hiérarchie déclarée est une opinion. Celle-ci sort
++//! du registre d'usage réel (`tokenade gain --json`), donc elle dit ce que les
++//! agents empruntent vraiment et ce que ça coûte encore.
++//!
++//! ## Le premier classement était faux, et sa première utilisation l'a montré
++//!
++//! Il triait les « chemins chers et peu efficaces » par octets encore livrés,
++//! sans les rapporter au total. `sysinfo` arrivait donc en tête avec 59 307
++//! usages — et 3 879 492 octets d'entrée, soit **65 octets par appel**. Le gain
++//! restant y valait 1,6 Mo sur 833 Mo économisés : 0,2 %. Trier sur un total
++//! non rapporté sur-pondère les opérations très fréquentes à charge minuscule.
++//!
++//! Corrigé, l'image s'inverse : **76 % de tout ce qui est encore livré vient de
++//! DEUX opérations** (`html-to-markdown` 40,9 %, `auto-compact` 35,0 %), déjà à
++//! −95 % mais si volumineuses que leur résidu domine. Gagner un point sur
++//! `html-to-markdown` rapporte plus que perfectionner `sysinfo` entièrement.
++//!
++//! ## Et il faut écarter mes propres sondes
++//!
++//! `a11y-compact` pesait 11,2 % du livré — 5 appels, tous le même jour. C'est
++//! une sonde d'une itération passée, pas un usage. Le registre porte
++//! `heaviest_day_share` : une opération concentrée sur un seul jour ET peu
++//! employée est du bruit que j'ai fabriqué.
++
++use tokenade_bench::Bench;
++
++/// Une opération concentrée sur UN jour et peu employée est une sonde à moi,
++/// pas un usage réel.
++fn is_self_probe(heaviest_day_share: f64, count: u64) -> bool {
++    heaviest_day_share >= 0.95 && count < 50
++}
++
++/// Ce qu'une opération livre ENCORE — la seule quantité qui dise où il reste à
++/// gagner. `percent` seul sur-pondère le minuscule, `count` seul le fréquent.
++fn still_delivered(before: u64, saved: u64) -> u64 {
++    before.saturating_sub(saved)
++}
++
++fn main() {
++    let bench = match Bench::reading_real_state() {
++        Ok(b) => b,
++        Err(e) => {
++            eprintln!("value_ranking: pas de binaire tokenade à mesurer: {e}");
++            std::process::exit(2);
++        }
++    };
++    let run = match bench.run(&["gain", "--json"]) {
++        Ok(r) => r,
++        Err(e) => {
++            eprintln!("value_ranking: `gain --json` n'a pas pu tourner: {e}");
++            std::process::exit(2);
++        }
++    };
++    if !run.survived() {
++        eprintln!("value_ranking: `gain --json` a été tué par un signal");
++        std::process::exit(2);
++    }
++    let v: serde_json::Value = match serde_json::from_slice(&run.stdout) {
++        Ok(v) => v,
++        Err(e) => {
++            eprintln!("value_ranking: sortie de `gain --json` illisible: {e}");
++            std::process::exit(2);
++        }
++    };
++
++    let delivered_total = v["after"].as_u64().unwrap_or(0).max(1);
++    let ops = v["by_op"].as_array().cloned().unwrap_or_default();
++    let mut rows: Vec<(String, u64, u64, f64, f64, bool)> = ops
++        .iter()
++        .map(|o| {
++            let name = o["op"].as_str().unwrap_or("?").to_string();
++            let count = o["count"].as_u64().unwrap_or(0);
++            let before = o["before"].as_u64().unwrap_or(0);
++            let saved = o["saved"].as_u64().unwrap_or(0);
++            let pct = o["percent"].as_f64().unwrap_or(0.0);
++            let share = o["heaviest_day_share"].as_f64().unwrap_or(0.0);
++            (
++                name,
++                count,
++                still_delivered(before, saved),
++                pct,
++                share,
++                is_self_probe(share, count),
++            )
++        })
++        .collect();
++    rows.sort_by(|a, b| b.2.cmp(&a.2));
++
++    let span = &v["span"];
++    let mut md = String::new();
++    md.push_str("# Classement de valeur — dérivé de l'usage RÉEL\n\n");
++    md.push_str(&format!(
++        "Source : `tokenade gain --json`. **{} opérations**, {} jours, du {} au {}.\n\
++         Régénéré par `cargo run -p tokenade-bench --bin value_ranking`.\n\n",
++        v["operations"].as_u64().unwrap_or(0),
++        span["days"].as_u64().unwrap_or(0),
++        span["first_iso"].as_str().unwrap_or("?").get(..10).unwrap_or("?"),
++        span["last_iso"].as_str().unwrap_or("?").get(..10).unwrap_or("?"),
++    ));
++    md.push_str(
++        "> Une hiérarchie de valeur DÉCLARÉE est une opinion ; celle-ci se mesure.\n\
++         > Rafraîchir si elle a plus de 7 jours, sinon la lire et travailler de haut en bas.\n\n",
++    );
++    md.push_str(&format!(
++        "**Total encore livré aux agents : {} octets.** C'est le gisement.\n\n",
++        thousands(delivered_total)
++    ));
++    md.push_str("## Où il reste à gagner (et où une régression coûte le plus)\n\n");
++    md.push_str("| # | op | usages | encore livré | part du livré | taux |\n");
++    md.push_str("|---|---|---|---|---|---|\n");
++    let mut i = 0;
++    for (name, count, rest, pct, _share, probe) in rows.iter().filter(|r| !r.5) {
++        i += 1;
++        if i > 15 {
++            break;
++        }
++        let _ = probe;
++        md.push_str(&format!(
++            "| {i} | `{name}` | {}× | {} | {:.1}% | −{:.0}% |\n",
++            thousands(*count),
++            thousands(*rest),
++            100.0 * *rest as f64 / delivered_total as f64,
++            pct
++        ));
++    }
++    let probes: Vec<&String> = rows.iter().filter(|r| r.5).map(|r| &r.0).collect();
++    md.push_str(&format!(
++        "\n## Écartées comme sondes ({})\n\nConcentrées sur un seul jour et peu employées : \
++         c'est du trafic que j'ai fabriqué en mesurant, pas de l'usage.\n\n{}\n",
++        probes.len(),
++        probes
++            .iter()
++            .map(|p| format!("`{p}`"))
++            .collect::<Vec<_>>()
++            .join(", ")
++    ));
++    md.push_str(
++        "\n## Comment s'en servir\n\n\
++         - Le tableau dit deux choses à la fois : où une **régression** coûte le plus, et où une \
++         **amélioration** rapporte encore.\n\
++         - Un taux déjà excellent sur un énorme volume bat un taux médiocre sur un petit : gagner \
++         un point sur la première ligne rapporte plus que perfectionner la quatrième.\n\
++         - Ne pas trier sur le taux seul (sur-pondère le minuscule) ni sur le nombre d'usages seul \
++         (sur-pondère le fréquent) : c'est l'erreur que la première version de ce fichier faisait.\n",
++    );
++
++    let out = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
++        .join("../../docs/_value-ranking.md");
++    if let Err(e) = std::fs::write(&out, md) {
++        eprintln!("value_ranking: écriture impossible: {e}");
++        std::process::exit(2);
++    }
++    println!("écrit {} ({} op, {} écartées)", out.display(), rows.len(), probes.len());
++}
++
++fn thousands(n: u64) -> String {
++    let s = n.to_string();
++    let mut out = String::new();
++    for (i, c) in s.chars().enumerate() {
++        if i > 0 && (s.len() - i) % 3 == 0 {
++            out.push(' ');
++        }
++        out.push(c);
++    }
++    out
++}
++
++#[cfg(test)]
++mod tests {
++    use super::*;
++
++    /// Le tri qui a envoyé la première itération sur une cible à 0,2 %.
++    #[test]
++    fn what_is_still_delivered_is_volume_times_inefficiency() {
++        // Fréquent mais minuscule : 59 307 appels de 65 octets.
++        assert_eq!(still_delivered(3_879_492, 2_270_587), 1_608_905);
++        // Rare mais énorme : bat le précédent malgré un taux excellent.
++        assert!(still_delivered(430_000_000, 408_000_000) > still_delivered(3_879_492, 2_270_587));
++        // Un `saved` incohérent avec `before` ne doit pas déborder.
++        assert_eq!(still_delivered(10, 99), 0);
++    }
++
++    #[test]
++    fn a_one_day_burst_of_a_few_calls_is_my_own_probe() {
++        assert!(is_self_probe(1.0, 5), "5 appels le même jour : une sonde");
++        assert!(
++            !is_self_probe(1.0, 4162),
++            "4162 appels concentrés restent un usage réel — le seuil porte sur les DEUX"
++        );
++        assert!(
++            !is_self_probe(0.61, 12),
++            "peu d'appels mais étalés sur plusieurs jours : pas une sonde"
++        );
++    }
++
++    #[test]
++    fn thousands_groups_from_the_right() {
++        assert_eq!(thousands(1), "1");
++        assert_eq!(thousands(999), "999");
++        assert_eq!(thousands(1_000), "1 000");
++        assert_eq!(thousands(52_688_864), "52 688 864");
++    }
++}
+diff --git a/crates/tokenade-bench/src/lib.rs b/crates/tokenade-bench/src/lib.rs
+new file mode 100644
+index 00000000..fc3fad7b
+--- /dev/null
++++ b/crates/tokenade-bench/src/lib.rs
+@@ -0,0 +1,449 @@
++//! Le banc de mesure de bout en bout — voir `docs/_loop-charter.md`, règle 2.
++//!
++//! Les autres binaires de ce crate mesurent la BIBLIOTHÈQUE, en process
++//! (`dispatch_named` & co). C'est le bon outil pour « ce compacteur replie-t-il
++//! bien ? », et c'est pour cette raison qu'aucun d'eux n'a jamais rencontré les
++//! pièges qui ont coûté **37 fautes d'instrument consignées** : ces pièges sont
++//! tous des propriétés du chemin CLI de bout en bout.
++//!
++//! Ce module est l'endroit unique où ce chemin se mesure, pour que ces pièges
++//! soient payés une fois :
++//!
++//! 1. **La sortie ne passe jamais par mon terminal.** Un `Bash` d'agent traverse
++//!    le hook, qui compacte — j'ai déjà lu ma propre sortie compactée en croyant
++//!    lire celle du produit. Ici c'est `Command::output()`, donc des octets.
++//! 2. **État neuf par banc** (`TOKENADE_CONFIG_DIR`, `TOKENADE_STASH_DIR`,
++//!    `TOKENADE_DEDUP_DB`). Sans ça le second bras d'un A/B voit un doublon que
++//!    le premier vient d'enregistrer, et rapporte « DIFFERS » à tort.
++//! 3. **La vraie extension** par document : le routage se fait par extension, et
++//!    des fichiers sondes nommés `.dat` n'atteignent aucun compacteur — un fuzz
++//!    a rendu « 0 hit » sur une version dont on SAVAIT qu'elle plantait.
++//! 4. **Le profil est déclaré**, et [`Run::ms_comparable`] refuse un temps
++//!    mesuré en debug (43× l'écart avec release, mesuré).
++//! 5. **Un signal n'est pas un succès** : [`Run::survived`] lit `code.is_some()`,
++//!    parce qu'un test dont la condition est « sortie non nulle » accepte le kill
++//!    OOM qu'il devait empêcher.
++//! 6. **Canari obligatoire** : [`conclude`] refuse de rendre « rien trouvé »
++//!    tant que la sonde n'a pas d'abord reproduit un défaut connu.
++//!
++//! Quand une sonde ment, la correction va ICI, avec un test. Jamais un
++//! contournement dans l'itération — c'est ce contournement qui a fait 37 fois.
++
++use std::path::{Path, PathBuf};
++use std::process::Command;
++use std::time::Instant;
++
++/// Quel binaire a été mesuré.
++#[derive(Debug, Clone, Copy, PartialEq, Eq)]
++pub enum Profile {
++    Release,
++    Debug,
++}
++
++/// Ce qu'une sonde a le droit de conclure.
++#[derive(Debug, Clone, PartialEq, Eq)]
++pub enum Verdict {
++    /// La sonde a trouvé quelque chose, et son canari avait tiré.
++    Found(Vec<String>),
++    /// Rien trouvé, ET le canari a tiré — donc l'instrument atteignait le code.
++    Clean,
++    /// Le canari n'a pas tiré : la sonde n'a rien prouvé, dans aucun sens.
++    InstrumentNotValidated(String),
++}
++
++/// Un silence ne vaut que si l'instrument a d'abord montré qu'il voyait.
++///
++/// C'est la règle qui manquait quand un fuzz de 2 568 variantes a rendu « 0 sur
++/// 1.1.9 » sur une version dont une ligne plantait à coup sûr : les fichiers
++/// sondes s'appelaient `.dat`. Sans canari, « rien trouvé » et « rien atteint »
++/// rendent le même mot.
++pub fn conclude(canary_fired: bool, findings: Vec<String>) -> Verdict {
++    if !canary_fired {
++        return Verdict::InstrumentNotValidated(
++            "le canari n'a pas reproduit le défaut connu — la sonde n'atteint pas \
++             le code qu'elle prétend mesurer, donc son silence ne dit rien"
++                .to_string(),
++        );
++    }
++    if findings.is_empty() {
++        Verdict::Clean
++    } else {
++        Verdict::Found(findings)
++    }
++}
++
++/// Le résultat d'UNE invocation du CLI.
++#[derive(Debug)]
++pub struct Run {
++    pub stdout: Vec<u8>,
++    pub stderr: Vec<u8>,
++    /// `None` = tué par un signal. Un OOM kill n'est PAS un succès.
++    pub code: Option<i32>,
++    ms: u128,
++    profile: Profile,
++}
++
++impl Run {
++    pub fn bytes(&self) -> usize {
++        self.stdout.len()
++    }
++
++    pub fn text(&self) -> String {
++        String::from_utf8_lossy(&self.stdout).into_owned()
++    }
++
++    /// Le processus s'est-il terminé de lui-même ?
++    pub fn survived(&self) -> bool {
++        self.code.is_some()
++    }
++
++    /// Le temps mesuré, **seulement s'il est comparable**.
++    ///
++    /// En debug il ne l'est pas : mesuré 2,85 s/Mo en debug contre 66 ms/Mo en
++    /// release sur le même travail, soit 43×. Un rapport avant/après reste
++    /// valide en debug ; une VALEUR ABSOLUE n'y veut rien dire.
++    pub fn ms_comparable(&self) -> Option<u128> {
++        match self.profile {
++            Profile::Release => Some(self.ms),
++            Profile::Debug => None,
++        }
++    }
++
++    /// Le temps brut, pour un RAPPORT avant/après dans le même profil.
++    pub fn ms_ratio_only(&self) -> u128 {
++        self.ms
++    }
++}
++
++/// Un banc : un binaire, un état neuf, un répertoire de fixtures.
++pub struct Bench {
++    exe: PathBuf,
++    profile: Profile,
++    state: PathBuf,
++    work: PathBuf,
++    /// `false` = le CLI lit l'état RÉEL de l'opérateur. Voir
++    /// [`Bench::reading_real_state`] : c'est une exception nommée, pas un
++    /// oubli, et elle interdit toute mesure de compaction.
++    isolated: bool,
++    exe_found: bool,
++}
++
++impl Bench {
++    /// Les seules commandes qu'un banc NON isolé a le droit de lancer : leur
++    /// réponse est l'état de l'opérateur, pas un pli à mesurer.
++    const READS_REAL_STATE: &'static [&'static str] = &["gain", "dashboard", "health"];
++
++    /// Résout le binaire (release de préférence) et s'ouvre un état neuf.
++    ///
++    /// `TOKENADE_BENCH_EXE` force un binaire précis — c'est ce qui permet de
++    /// mesurer une version PUBLIÉE à côté de l'arbre courant.
++    pub fn new() -> std::io::Result<Bench> {
++        // La résolution du binaire ne fait PAS échouer la construction : sur un
++        // clone neuf il n'y a rien dans `target/`, et un banc qui refuse de
++        // naître y ferait tomber toute la suite du workspace. L'absence surgit
++        // dans `run`, là où elle compte.
++        let (exe, profile, found) = Self::resolve_exe();
++        let root = std::env::temp_dir().join(format!(
++            "tokenade-bench-{}-{}",
++            std::process::id(),
++            std::time::SystemTime::now()
++                .duration_since(std::time::UNIX_EPOCH)
++                .map(|d| d.as_nanos())
++                .unwrap_or(0)
++        ));
++        let state = root.join("state");
++        let work = root.join("work");
++        std::fs::create_dir_all(&state)?;
++        std::fs::create_dir_all(&work)?;
++        Ok(Bench {
++            exe,
++            profile,
++            state,
++            work,
++            isolated: true,
++            exe_found: found,
++        })
++    }
++
++    /// Un banc qui laisse le CLI lire l'état RÉEL de l'opérateur.
++    ///
++    /// Il n'existe que pour les commandes dont la réponse EST cet état :
++    /// `gain`, `dashboard`, `health`. Les isoler rendrait un registre vide et
++    /// un classement de valeur dérivé de rien.
++    ///
++    /// **Interdit pour une mesure de compaction** : sans magasin de dédup neuf,
++    /// le second bras d'un A/B voit le doublon que le premier vient
++    /// d'enregistrer. [`Bench::run`] le refuse.
++    pub fn reading_real_state() -> std::io::Result<Bench> {
++        let mut b = Bench::new()?;
++        b.isolated = false;
++        Ok(b)
++    }
++
++    /// Ce banc isole-t-il l'état ?
++    pub fn is_isolated(&self) -> bool {
++        self.isolated
++    }
++
++    fn resolve_exe() -> (PathBuf, Profile, bool) {
++        if let Some(p) = std::env::var_os("TOKENADE_BENCH_EXE") {
++            let p = PathBuf::from(p);
++            let profile = if p.to_string_lossy().contains("/release/") {
++                Profile::Release
++            } else {
++                Profile::Debug
++            };
++            let found = p.exists();
++            return (p, profile, found);
++        }
++        let ws = Path::new(env!("CARGO_MANIFEST_DIR"))
++            .parent()
++            .and_then(Path::parent)
++            .map(Path::to_path_buf)
++            .unwrap_or_default();
++        for (dir, profile) in [("release", Profile::Release), ("debug", Profile::Debug)] {
++            let cand = ws.join("target").join(dir).join("tokenade");
++            if cand.exists() {
++                return (cand, profile, true);
++            }
++        }
++        (ws.join("target/release/tokenade"), Profile::Release, false)
++    }
++
++    pub fn profile(&self) -> Profile {
++        self.profile
++    }
++
++    pub fn exe(&self) -> &Path {
++        &self.exe
++    }
++
++    /// Où l'état de CE banc vit. Neuf, donc la dédup n'a rien à se rappeler.
++    pub fn state_dir(&self) -> &Path {
++        &self.state
++    }
++
++    /// Écrit une fixture **avec sa vraie extension** et rend son chemin.
++    ///
++    /// L'extension n'est pas décorative : c'est par elle que le routage choisit
++    /// un compacteur. `stem` sans point, `ext` sans point.
++    pub fn fixture(&self, stem: &str, ext: &str, body: &str) -> std::io::Result<PathBuf> {
++        assert!(
++            !ext.starts_with('.'),
++            "ext sans point : `html`, pas `.html` (reçu {ext:?})"
++        );
++        assert!(
++            !ext.is_empty(),
++            "une fixture SANS extension n'atteint aucun compacteur — c'est le \
++             piège qui a fait rendre « 0 hit » à un fuzz sur une version fautive"
++        );
++        let p = self.work.join(format!("{stem}.{ext}"));
++        std::fs::write(&p, body)?;
++        Ok(p)
++    }
++
++    /// Lance le CLI et capture ses octets. La sortie ne touche jamais un
++    /// terminal, donc aucun hook ne la compacte en chemin.
++    pub fn run(&self, args: &[&str]) -> std::io::Result<Run> {
++        assert!(
++            self.isolated || Self::READS_REAL_STATE.contains(&args.first().copied().unwrap_or("")),
++            "`reading_real_state` sert aux commandes dont la réponse EST cet état \
++             ({:?}), pas à mesurer une compaction sans magasin de dédup neuf",
++            Self::READS_REAL_STATE
++        );
++        if !self.exe_found {
++            return Err(std::io::Error::new(
++                std::io::ErrorKind::NotFound,
++                format!(
++                    "aucun binaire tokenade à mesurer ({}) — `cargo build` d'abord, \
++                     ou pointer TOKENADE_BENCH_EXE",
++                    self.exe.display()
++                ),
++            ));
++        }
++        let mut c = Command::new(&self.exe);
++        c.args(args).current_dir(&self.work);
++        if self.isolated {
++            c.env("TOKENADE_CONFIG_DIR", &self.state)
++                .env("TOKENADE_STASH_DIR", self.state.join("stash"))
++                .env("TOKENADE_DEDUP_DB", self.state.join("dedup.db"));
++        }
++        // Le bypass de licence n'agit qu'en debug ; en release il est inerte et
++        // la porte de quota peut tout laisser passer. `profile()` dit lequel,
++        // pour qu'un passthrough ne soit pas lu comme une compaction.
++        c.env("TOKENADE_LICENSE_DISABLED", "1")
++            // Le hook ne doit pas se réinviter dans une mesure du hook.
++            .env_remove("TOKENADE_HOOK_ACTIVE");
++        // Le crate n'est pas balayé par les gardes de spawn de `cli`/`core`,
++        // mais un banc qui ouvre une console sur Windows reste un banc cassé.
++        tokenade_core::process_util::configure_no_window(&mut c);
++        // « Qui tue ça si le banc est SIGKILLé ? » — le garde du dépôt pose la
++        // question et il a raison : une mesure peut lancer une commande longue,
++        // et `output()` ne rend aucune poignée sur l'enfant. On l'adopte donc
++        // explicitement, comme `wrap` : le groupe n'EXISTE que si un terminal ne
++        // le possède pas déjà, et le faucheur tient la garantie pour le kill
++        // qu'on ne voit jamais passer.
++        c.stdout(std::process::Stdio::piped())
++            .stderr(std::process::Stdio::piped());
++        let t = Instant::now();
++        let child = c.spawn()?;
++        let reaper = if tokenade_core::process_util::terminal_owns_the_group() {
++            None
++        } else {
++            tokenade_core::process_util::guard_group_against_our_death(child.id())
++        };
++        let out = child.wait_with_output()?;
++        if let Some(r) = reaper {
++            r.stand_down();
++        }
++        Ok(Run {
++            stdout: out.stdout,
++            stderr: out.stderr,
++            code: out.status.code(),
++            ms: t.elapsed().as_millis(),
++            profile: self.profile,
++        })
++    }
++}
++
++impl Drop for Bench {
++    fn drop(&mut self) {
++        // Un banc qui laisse son état derrière lui fait mentir le suivant.
++        if let Some(root) = self.state.parent() {
++            let _ = std::fs::remove_dir_all(root);
++        }
++    }
++}
++
++#[cfg(test)]
++mod tests {
++    use super::*;
++
++    #[test]
++    fn a_silence_without_a_canary_is_not_a_clean_bill() {
++        assert_eq!(
++            conclude(true, Vec::new()),
++            Verdict::Clean,
++            "canari tiré et rien trouvé : c'est un vrai négatif"
++        );
++        match conclude(false, Vec::new()) {
++            Verdict::InstrumentNotValidated(why) => {
++                assert!(why.contains("canari"), "{why}");
++            }
++            other => panic!("un silence sans canari doit être refusé, pas rendu propre : {other:?}"),
++        }
++    }
++
++    /// Et une TROUVAILLE sans canari ne vaut pas mieux : la sonde peut avoir
++    /// trouvé son propre bruit.
++    #[test]
++    fn a_finding_without_a_canary_is_refused_too() {
++        assert!(matches!(
++            conclude(false, vec!["quelque chose".into()]),
++            Verdict::InstrumentNotValidated(_)
++        ));
++        assert_eq!(
++            conclude(true, vec!["x".into()]),
++            Verdict::Found(vec!["x".into()])
++        );
++    }
++
++    #[test]
++    fn two_benches_do_not_share_a_dedup_store() {
++        let a = Bench::new().expect("bench a");
++        let b = Bench::new().expect("bench b");
++        assert_ne!(
++            a.state_dir(),
++            b.state_dir(),
++            "deux bancs partageant leur état : le second bras d'un A/B verrait \
++             le doublon que le premier vient d'enregistrer"
++        );
++        assert!(a.state_dir().exists() && b.state_dir().exists());
++    }
++
++    #[test]
++    fn a_fixture_keeps_the_extension_that_routes_it() {
++        let b = Bench::new().expect("bench");
++        let p = b.fixture("probe", "html", "<p>x</p>").expect("write");
++        assert_eq!(p.extension().and_then(|e| e.to_str()), Some("html"));
++        assert_eq!(std::fs::read_to_string(&p).unwrap(), "<p>x</p>");
++    }
++
++    #[test]
++    #[should_panic(expected = "n'atteint aucun compacteur")]
++    fn a_fixture_without_an_extension_is_refused() {
++        let b = Bench::new().expect("bench");
++        let _ = b.fixture("probe", "", "x");
++    }
++
++    /// Un banc doit naître même sans binaire construit, sinon toute la suite du
++    /// workspace tombe sur un clone neuf. L'absence se dit dans `run`.
++    #[test]
++    fn a_bench_is_born_even_with_nothing_built() {
++        let b = Bench::new().expect("la construction ne dépend pas du binaire");
++        assert!(b.state_dir().exists());
++        if !b.exe().exists() {
++            let err = b.run(&["--version"]).expect_err("sans binaire, run doit échouer");
++            assert!(
++                err.to_string().contains("cargo build"),
++                "l'échec doit dire quoi faire : {err}"
++            );
++        }
++    }
++
++    #[test]
++    fn a_debug_timing_is_not_offered_for_comparison() {
++        let mk = |profile| Run {
++            stdout: Vec::new(),
++            stderr: Vec::new(),
++            code: Some(0),
++            ms: 1234,
++            profile,
++        };
++        assert_eq!(mk(Profile::Release).ms_comparable(), Some(1234));
++        assert_eq!(
++            mk(Profile::Debug).ms_comparable(),
++            None,
++            "43x d'écart avec release : une valeur absolue en debug ne veut rien dire"
++        );
++        // Le rapport reste disponible, parce qu'un avant/après dans le MÊME
++        // profil est valide.
++        assert_eq!(mk(Profile::Debug).ms_ratio_only(), 1234);
++    }
++
++    /// L'exception est NOMMÉE, donc elle doit être gardée : un banc non isolé
++    /// qui mesurerait une compaction rendrait un A/B faux sans rien dire.
++    #[test]
++    fn a_non_isolated_bench_refuses_anything_but_a_state_question() {
++        let b = Bench::reading_real_state().expect("bench");
++        assert!(!b.is_isolated());
++        assert!(Bench::new().expect("bench").is_isolated());
++        let panicked = std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
++            let _ = b.run(&["read", "quelque-chose.txt"]);
++        }))
++        .is_err();
++        assert!(
++            panicked,
++            "un banc non isolé doit REFUSER une mesure de compaction : sans \
++             magasin de dédup neuf le second bras voit le doublon du premier"
++        );
++    }
++
++    #[test]
++    fn a_signal_death_is_not_a_survival() {
++        let mk = |code| Run {
++            stdout: Vec::new(),
++            stderr: Vec::new(),
++            code,
++            ms: 0,
++            profile: Profile::Release,
++        };
++        assert!(mk(Some(0)).survived());
++        assert!(mk(Some(1)).survived(), "un échec ORDINAIRE reste une survie");
++        assert!(
++            !mk(None).survived(),
++            "tué par un signal : un test qui accepte ça accepte le kill OOM qu'il \
++             devait empêcher"
++        );
++    }
++}
+diff --git a/docs/_loop-charter.md b/docs/_loop-charter.md
+new file mode 100644
+index 00000000..6492e407
+--- /dev/null
++++ b/docs/_loop-charter.md
+@@ -0,0 +1,139 @@
++# Charte de la boucle d'amélioration continue
++
++La consigne de cron est volontairement courte et pointe ici. **Ce fichier prime
++sur elle.** Il est fait pour être corrigé : quand une itération se casse le nez
++sur quelque chose que la charte ne dit pas, la correction va ICI, pas dans un
++souvenir qui ne survivra pas à la compaction.
++
++## Pourquoi elle existe (mesuré le 2026-09-07)
++
++Sur 27 sections § d'une même session : **64 entrées de patchnote** — donc la
++chasse trouve de vrais défauts publiés. Mais aussi :
++
++| symptôme | compte |
++|---|---|
++| fautes d'**instrument** consignées | **37** |
++| défauts de la classe « un consommateur, pas le frère » | **13** |
++| itérations dont la cause est l'itération **précédente** | 4 |
++| itérations sans patchnote (code non publié) | 5 |
++
++Deux causes racines, pas une :
++
++1. **Je mesurais tokenade à travers tokenade**, avec une sonde réécrite à chaque
++   fois. Le hook compacte ma sortie, le routage dépend de l'extension, le
++   magasin de dédup se souvient de la première exécution, le build debug est
++   43× plus lent que release. Chaque itération réintroduisait un de ces biais.
++2. **On chassait sans consolider.** Le même mécanisme transversal (compter,
++   plafonner, annoncer un pli, résoudre un nom) est réimplémenté à chaque site —
++   48 commandes ont un rendu texte ET un rendu JSON du même fait, chacun
++   décidant dans son coin. L'arbre pousse des feuilles et chaque feuille est un
++   endroit où le même bug peut revenir.
++
++## Les quatre règles
++
++### 1. Une itération = UNE correction ET UNE consolidation
++
++Les deux. La consolidation n'est pas « pour plus tard ».
++
++- Chercher deux implémentations d'un même mécanisme et n'en faire qu'une
++  (fonction paramétrée, ou type). Les **copies exactes** d'abord : on en
++  débogue une et pas l'autre.
++- **Préférer rendre la classe impossible** à corriger l'instance. Le modèle est
++  le §786 : au lieu de corriger le second consommateur, le choix est devenu un
++  TYPE (`Attribution`) qu'un seul constructeur produit — les deux rendus ne
++  peuvent plus recevoir une requête brute, et un troisième non plus.
++- Mesurer la consolidation comme le reste : nombre de sites avant/après, lignes
++  dupliquées supprimées, et **la suite verte prouve l'équivalence**.
++- Si le correctif ET la consolidation sont le même acte, le dire explicitement
++  plutôt que d'inventer un second chantier.
++
++### 2. Toute mesure passe par le banc, jamais par un script jetable
++
++Le banc vit dans le dépôt (`crates/tokenade-probe`, à construire lors de la
++première itération qui en a besoin). **Aucune sonde dans `/tmp`.** Il porte, une
++fois pour toutes, les pièges qui ont coûté 37 fois :
++
++- sortie vers un **FICHIER**, jamais lue depuis le terminal (le hook la compacte
++  avant qu'elle m'atteigne) ;
++- **magasin de dédup neuf** par mesure (sinon le second bras d'un A/B voit un
++  doublon et ment) ;
++- **la vraie extension** par type de document (le routage se fait par extension :
++  des sondes `.dat` n'atteignent aucun compacteur) ;
++- **release vs debug déclaré**, et refus de comparer des temps en debug ;
++- **CANARI obligatoire** : une sonde qui n'a pas d'abord reproduit un défaut
++  connu rend « instrument non validé », **jamais** « rien trouvé » ;
++- **harnais de mutation** : mêmes features que la suite (`srcsweep`), HALT si
++  l'ancre n'est pas unique, et **refus de rendre un verdict si le filtre de test
++  ne sélectionne aucun test** (c'est ce qui a fait rapporter « KILLED » sur une
++  mutation que rien ne couvrait).
++
++> Quand une sonde ment : **corriger le BANC et lui ajouter un test**. Jamais
++> contourner dans l'itération — c'est ce contournement qui a fait 37 fois.
++
++### 3. La priorité vient de l'usage MESURÉ, pas de la trouvabilité
++
++`docs/_value-ranking.md`, dérivé de `tokenade gain --json` (plus de 77 000
++opérations réelles sur cette machine) : volume × taux d'économie × échecs.
++Rafraîchir s'il a plus de 7 jours, sinon le lire et travailler de haut en bas.
++
++Un défaut sur un chemin emprunté 4 162 fois passe avant un défaut élégant sur un
++chemin emprunté une fois. Je ne demande plus de hiérarchie déclarée : elle se
++mesure, et les données sont ici.
++
++### 4. Un commit par itération — et RIEN au-delà
++
++Sans ça, `git blame` ne distingue pas un correctif d'hier du code d'origine, et
++je re-touche à l'aveugle du code récent — ce qui fabrique les corrections
++circulaires. Message : `§<n> <ce qui change>`, avec la mesure avant/après.
++
++**Un commit LOCAL, sur la branche courante, et c'est tout.** La publication
++appartient à l'opérateur et à personne d'autre. La boucle ne fait donc
++**jamais**, sans un ordre explicite :
++
++- `git push` (y compris vers `tokenade-npm`, qui ne sert qu'aux releases) ;
++- un tag, une montée de version dans `Cargo.toml`, un `cargo publish`,
++  un `npm publish`, ni la commande `release` du dépôt ;
++- une PR, ou quoi que ce soit qui sorte de cette machine.
++
++Les entrées de patchnote s'accumulent sous le numéro de version courant et
++**attendent**. Une itération qui pense qu'il faut publier le DIT dans son
++compte rendu ; elle ne publie pas.
++
++## Le déroulé d'une itération
++
++0. Reprendre : `docs/_transcript-mining-state.md`, dernière section.
++1. Lire (ou rafraîchir) `docs/_value-ranking.md`.
++2. Choisir la cible **en haut** du classement.
++3. Mesurer AVANT, par le banc.
++4. Corriger **et** consolider.
++5. Test de régression **tué par mutation**, via le harnais du banc.
++6. Mesurer APRÈS, par le banc, même protocole.
++7. Suite complète :
++   `TOKENADE_LICENSE_DISABLED=1 cargo test --workspace --features tokenade-core/srcsweep -- --test-threads=1`
++8. Patchnote **seulement** si le défaut existait dans une version publiée
++   (vérifier contre le commit de release, pas contre un souvenir).
++9. Consigner : state doc + mémoire + **commit**.
++
++## Interdits
++
++- **Jamais `git checkout`** sur cet arbre : défaire une mutation par `cp *.bak`.
++- Pas de minage de transcripts en boucle courte pour trouver des bugs — les
++  invariants qui en sont sortis vivent comme tests de suite. (Les transcripts et
++  le dashboard servent au **classement de valeur**, mesuré rarement, pas à la
++  chasse.)
++- Pas de patchnote pour ce que l'utilisateur ne constate pas.
++- **Ne jamais bénir un cliquet** (`TOKENADE_RICHNESS_BLESS`) pour verdir un test
++  rouge : le chiffre cesse alors de vouloir dire quelque chose.
++- **Ne jamais publier.** Voir la règle 4 : commit local uniquement, la release
++  est un ordre de l'opérateur.
++
++## Critères d'arrêt
++
++- **Un axe rendant 3 négatifs mesurés d'affilée est CLOS**, consigné comme tel,
++  et non rouvert avant 14 jours.
++- **Une itération sans défaut est un résultat.** Elle part alors entièrement en
++  consolidation et en amélioration du banc. Ne jamais fabriquer une trouvaille
++  pour avoir quelque chose à montrer.
++- Si deux itérations consécutives corrigent du code écrit par les deux
++  itérations précédentes, **arrêter la chasse** et passer la suivante en
++  consolidation pure.
+diff --git a/docs/_transcript-mining-state.md b/docs/_transcript-mining-state.md
+index 4b528eaf..b174bc0e 100644
+--- a/docs/_transcript-mining-state.md
++++ b/docs/_transcript-mining-state.md
+@@ -3865,3 +3865,941 @@ url on purpose, and a guard that forbids that forbids explaining itself.
+ own assertion along with the code. The harness now asserts the production string
+ is still present after mutating — a mutation must exclude the guard, exactly as
+ a source-scanning guard must exclude itself.
++
++## §769 — a bot-wall notice that ate a search of our own code
++
++Opened by finishing §768's inventory (every URL the product shows resolves; the
++update manifest is served and signed, and `downloads.tokenade.net`'s bare-host
++404 is a missing index, not a link anyone is handed). The defect came from
++WATCHING THE TOOL WORK: a `grep -rn` for a vendor name during that inventory
++came back as bot-wall remediation with none of its matches.
++
++### The defect
++
++`stealth::detect_challenge` replaces what it fires on — deliberately, because an
++agent has to know it hit a wall rather than receive the wall as content. It is
++held off source code by `looks_like_source_or_doc`, which recognised a `grep`
++locator only when the path was absolute or opened with `./`.
++
++`grep -rn <pattern> <dir>` from a repository root prints a RELATIVE path.
++
++| | 1.1.9 | after |
++|---|---|---|
++| bytes | 657 → **559** | 657 → **657** |
++| matches delivered | **0 of 7** | 7 of 7 |
++| lines scoring a source signal | **0 of 7** | 7 of 7 |
++
++### What made it invisible
++
++A test named `detects_grep_output_with_absolute_paths` already carried the
++relative form on its FIRST line — and passed on the strength of its second,
++absolute line. One line of the fixture was doing all the work and the other
++proved nothing.
++
++> **A fixture line that cannot decide is not coverage.** The name promised the
++> relative case; only the absolute case was exercised.
++
++The same trap then caught the new test: M4 (drop the markup/space refusal)
++survived because in `<script src="https://a/b.js">:12:x` the FIRST colon is the
++one in `https:`, so the path field is `<script src="https` and the SEPARATOR
++clause refused it. Rewritten as `<a href=b/c>:12:x`, M4 dies. Third recurrence
++of §759's rule: the fixture must land where only the clause under test answers.
++
++6/6 mutations killed. Patchnote (1.1.9 reproduced).
++
++### The family, enumerated before moving on
++
++`source_signals.rs` names three detectors asking this question.
++`logs::looks_like_source_code` **deliberately** excludes `path:line` — wiring it
++in once made a four-shape build log decline — and the GraphQL SDL veto matches
++`crate::` mid-line. Neither shares the gap. All three consumers of the fixed
++predicate (`detect_challenge`, the JS check, `serp`) take the fix at once.
++
++### Instrument note
++
++Every attempt to PRINT the reproduction tripped the detector on my own terminal
++output, banner and all — including the `echo`s around it. Measurements have to
++be computed in-process and reported as numbers, never by displaying the blob.
++Same shape as §761.
++
++### Measured negative, same iteration — readers racing writers on the ledger
++
++Killed once by memory pressure for running alongside the full suite (the
++standing rule: never a heavy probe beside a suite). Re-run alone, bounded, every
++child under `ulimit -v 2 GB`: **974 reads against 4 concurrent writers, 0 non-zero
++exits, 0 malformed JSON** from `statusline` and `gain --json`. Do not reopen.
++
++## §770 — UTF-8 boundary truncation, from two competitors' same-day fixes
++
++Piste 1. Two independent repos shipped the class on 2026-09-06: pitlane-mcp
++`fix: make signature truncation UTF-8 safe` (a `truncate_chars` helper replacing
++`&sig[..90]`) and tokensave's `non-ASCII docs` among five reported bugs. Same
++shape as §762, where two same-day competitor fixes named a real class.
++
++### The sweep
++
++Byte-index slicing and `String::truncate` / `split_at` across production Rust,
++with `#[cfg(test)]` modules excluded by brace-matching (the classifier
++over-includes where the attribute is indented, so every hit was read).
++
++| site | verdict |
++|---|---|
++| `gitlog.rs` subject / author | **already safe** (`char_indices().nth`, `find`) |
++| `ansible.rs` failure lines | **already safe**, comment names Unicode hostnames |
++| `semantic.rs`, `disclose/scoped.rs` | **already safe** (`is_char_boundary` walk-back) |
++| `agent_sqlite_usage.rs` | **already safe**, guards all three offsets |
++| `yaml.rs`, `filter.rs`, `web_fetch.rs` `split_at` | safe: indices come from `find` |
++| `rag.rs`, `cargo/build.rs` | safe: slices of `&[String]` / `Vec<&str>` |
++| **`site_readers.rs` × 2** | **PANICS** |
++| **`agent/tools.rs::clamp`** | **PANICS** |
++
++36 `is_char_boundary` uses in production: this is established discipline here,
++and the sweep's real finding is how few sites were missed.
++
++### The two that were missed
++
++`crates_api` cuts `updated_at` and each version's `created_at` to ten
++characters with `&d[..d.len().min(10)]`. Measured:
++
++> `end byte index 10 is not a char boundary; it is inside 'é' (bytes 9..11)`
++
++`clamp` is the more interesting one, because it MEANT to be safe: the comment
++reads "land on a char boundary" and the boundary walk is right there — but the
++slice that produces the value being walked, `&s[..max.min(s.len())]`, panics
++first. **The guard sat one line below the thing it was guarding.**
++
++### No patchnote, deliberately
++
++Neither is reachable with hostile input in a shipped default build.
++`crates_api` is dispatched by host, so its body comes from crates.io, whose
++timestamps are ASCII ISO-8601; `mod agent` is behind the non-default
++`light-agent` feature, shelved 2026-07 as benched net-negative. Recorded as
++HARDENING. Writing a patchnote for a panic no user can reach would be the
++§744 trap — dressing up a score until it stops meaning anything.
++
++Both routed to the helper that already existed, `caps::truncate_at_char_boundary`
++— see [[feedback_route_to_the_ceiling_that_exists]] — rather than a new one.
++6/6 mutations killed, including "cut to nothing" and an off-by-one, so the arms
++answer for the cut as well as for the boundary.
++
++## §771 — a symlinked directory answered questions about the project
++
++Piste 1, from diffctx `fix: symlink containment, --full parity, tau as Option,
++NaN, exit 124` (2026-09-06). Their case: `git ls-files` reports the LINK, while
++`is_file()` and `metadata()` follow it, so `repo/evil -> /etc/shadow` entered
++the changed-file universe. Asked the same question here.
++
++### The defect
++
++`Index::build` and `Index::rebuild_incremental` both branch on
++`path.is_dir()`, which FOLLOWS a symlink, and descend. git records a symlinked
++directory as mode 120000 and never descends it; tokenade already follows
++`.gitignore`, so its project model was git's everywhere except here.
++
++Cold-path, one arm per fresh directory (the index lives in
++`~/.tokenade/index.db` keyed by path AND version, so deleting `.tokenade`
++clears nothing — three contaminated readings before this was noticed):
++
++| | no link | with one link |
++|---|---|---|
++| 1.1.9 | 24 ms, 97 B | **610 ms, 6 087 B, 1 490 files** |
++| fixed | 128 ms, 97 B | 129 ms, 97 B |
++
++The fixed arm is a debug build, so it is compared only against ITSELF — §759's
++rule. The build-independent number is the output: 6 087 B naming files
++`git ls-files` does not list, against 97 B.
++
++### Both walkers, and the mutations that prove it
++
++Two copies of the same loop, which is exactly how this repo's most frequent
++defect happens — a fix landing on one consumer and missing the twin (≈12×).
++So M2 (drop the guard from `build` only) and M3 (drop it from
++`rebuild_incremental` only) are separate mutations, and both die. 6/6.
++
++The test's own arms: a real subdirectory still walked (kills "skip every
++directory"), and a symlinked FILE still indexed — that costs one file, not a
++tree, and pinning it fixes the scope of the change.
++
++The loop guard STAYS. It is not made redundant by this — see §763, where I
++deleted a clause because one consumer could not reach it and was wrong.
++
++### Also swept, clean
++
++Every other recursive walker: `feature_cli/packing.rs` uses `file_type()`
++(lstat) and is bounded by `MAX_PACK_FILES`; `agent_jsonl_usage.rs` is
++depth-bounded; the `code_intel.rs` and `markdown.rs` walks are inside
++`#[cfg(test)]` source sweeps. `project_scaffold::dir_size_mb` recurses
++unbounded through `is_dir()` but only over the fastembed model cache — noted,
++not fixed, and its doc-comment claiming it "walks one level deep" is wrong.
++
++Symlink LOOPS were probed live before any of this and terminate: `map` 211 ms,
++`query` 32 ms on a tree with `vendor/sub/back -> vendor` and `self_link -> .`.
++
++## §772 — an accent killed a whole listing
++
++Piste 1, from tokensave 22951bcf `fix(docs): match the sidecar suffix on bytes,
++not a char split`: `split_at(len - SUFFIX.len())` panicked on
++`docs/Ativação bbbb.md`, aborting `init`, `sync --force` and `doctor`.
++
++This is §770's class arriving through a shape §770's sweep could NOT see. That
++sweep matched `&x[..N]` and `.truncate(...)`; the failing shape is TAIL
++arithmetic — `&s[s.len() - N..]`, `split_at(s.len() - N)`. Swept separately, 27
++sites, and the triage is one rule:
++
++> **`ends_with` PROVES the boundary.** `token[..token.len() - suf.len()]` after
++> `token.ends_with(suf)` is sound, because a matching suffix cannot start mid
++> character. `semantic.rs`, `web.rs` × 2 and `ls_recursive.rs` are all guarded
++> that way; `disk.rs` matches the last BYTE against ASCII; `markdown.rs`
++> subtracts a `trim_start()` length, which is whitespace.
++
++One site subtracts a CONSTANT instead, and nothing proves that offset:
++
++```rust
++let p_short = if p.len() > 46 { format!("…{}", &p[p.len() - 45..]) } else { p };
++```
++
++Reproduced end to end on 1.1.9 by pointing `TOKENADE_SEMANTIC_DB` at a scratch
++db and inserting one row:
++
++> `start byte index 13 is not a char boundary; it is inside 'é' (bytes 12..14)`
++
++The header prints, then the process dies. Every row is lost and the message
++names a byte offset, not a project.
++
++### The fix, and why it is EXTRACTED
++
++Counting characters, not bytes — which also matches the `{:<46}` column better
++than bytes ever did. Pulled out of `cmd_semantic_status` into
++`shorten_path_for_column`, because a decision made inside a command function is
++one no test can reach (§763, third time).
++
++7 mutations, 6 run and killed (one was a no-op and the harness SKIPPED it rather
++than reporting a false survivor). The arms that carry them: exact character
++count kills both off-by-ones; a 40-character accented path that is 80 BYTES
++kills "measure bytes"; degenerate widths 0 and 1 kill the two underflow guards;
++and an ASCII arm asserts the new code returns byte-for-byte what the old slice
++returned where the old slice was correct.
++
++## §773 — the two walkers measured different bytes
++
++Piste 1, from pitlane-mcp `fix: apply the same exclusion policy to watcher
++updates and initial indexing` (2026-09-06) — this repo's most recurrent class,
++and §771 had just shown tokenade carries two copies of that loop. So the two
++were DIFFED rather than assumed equal.
++
++### What the diff found
++
++Two differences, and only one of them matters:
++
++1. **`synth_ext` — dead.** `build` maps nine extensionless names (`Makefile`,
++   `Dockerfile`, `Rakefile`, `Gemfile`, `Procfile`, `Caddyfile`, `Justfile`,
++   `Vagrantfile`, `Brewfile`) to synthetic extensions and admits them;
++   `rebuild_incremental` has no such table. It costs nothing, because there is
++   **no `LangSpec` and no tree-sitter grammar for any of the nine**, so
++   `extract_file` discards every one. Confirmed by probe: build's `mtimes` held
++   only `a.rs`. Left in place, pinned by the new test, so that giving them a
++   parser has to touch both walkers.
++
++2. **The size cap measured different bytes.** `build` used
++   `DirEntry::metadata`, which on Unix does NOT traverse a symlink, so a link
++   to an oversized file measured as the link — a few bytes — and slipped past
++   the 1 MiB cap. `rebuild_incremental` used `fs::metadata`, which traverses,
++   and applied it.
++
++### The defect, end to end on 1.1.9
++
++```
++fresh build      -> fn huge_symbol — linked.rs:1
++after one edit   -> no symbol matching 'huge_symbol'
++```
++
++One command, one tree, two answers, and a later full rebuild brings it back.
++`build` was the wrong side: its own comment says the cap is there to skip
++"minified bundles, generated artefacts, vendored blobs", and the bytes that get
++read are the target's.
++
++### The invariant, not just the fix
++
++The guard is `both_walkers_select_the_same_files`: build, edit one file,
++rebuild incrementally, assert the selected file sets are EQUAL — plus what that
++set must be, so "select nothing" and "select everything" both fail. 6/6
++mutations, including M4, the MIRROR defect (switch the incremental walker to
++lstat instead), and both `>`/`>=` boundary flips, which the fixture earns by
++carrying a file of exactly `MAX_INDEX_FILE_BYTES`.
++
++## §774 — a telemetry check that cost the square of the page
++
++Piste 3. Found by a 40-input hostile-input fuzz over `web` and `read` (deep
++nesting, unbalanced tags, unterminated attributes and raw-text elements, NUL,
++invalid UTF-8, lone surrogates, huge single lines, ragged CSV, ANSI soup,
++entity floods…). One hit: `read` on 1 MB of `&amp;`.
++
++### Attribution — four hypotheses, three of them wrong
++
++Every stage was TIMED, not read. Three plausible culprits died:
++
++| stage | verdict |
++|---|---|
++| `decode_entities` (90 sequential `String::replace`) | linear, 4/8/16/33 ms |
++| `markdown::outline` | 0 ms |
++| `web::html_to_markdown` | linear, 35/66/135/264 ms |
++| `auto::compact_with_path_hint` (whole) | linear, 38/67/135/275 ms |
++| `shrink_only_post_passes` | 0–1 ms |
++| **`filter::structured_or_generic`** | **80/312/1262/5066 ms** |
++| **`structured_still_speaks_for`** | **83/324/1296/5160 ms** |
++
++The 90-replace loop was the obvious suspect and looked damning. It is linear,
++and the NUMERIC entity — which decodes to the same character — is slower than
++the named one. That asymmetry (`&amp;` 1452 ms vs `&#38;` 127 ms end to end)
++was the real clue: it pointed at work being REDONE, not work being slow.
++
++### The defect
++
++`structured_still_speaks_for` caps the LINES it samples
++(`SPEAKS_FOR_SAMPLE_LINES = 500`) and does not cap the WORDS inside the winning
++line. Entity-heavy HTML is one long line, so `words` held ~512 000 copies of
++`"amp"`, each searched for in a haystack that also grows with the input and
++never matches. Input size × output size.
++
++Its only consumer is `debug_log::log` — the comment above the call site says so
++outright, "Deliberately telemetry and NOT a widened ceiling." 85 seconds of a
++10 MB page bought one optional log line.
++
++### Fix and numbers
++
++`.take(SPEAKS_FOR_MAX_WORDS)` at 64, in the HELPER, so all three production
++callers get it. Same debug binary, same inputs: 2782 ms → 340 ms at 160 KB, and
++600/1138/2193/4391 up to 2.56 MB — 2x a doubling. Output byte-identical.
++
++6/6 mutations, and the arms are two-sided: a cap that is too LARGE fails
++(64 words present then 136 absent — share collapses to a third), and a cap that
++is too SMALL fails (six of ten words kept, the exact minimum share, where the
++first word is one of the missing four). Plus a deadlined arm for the quadratic
++itself, in the §736 style.
++
++### Instrument note
++
++The before/after output comparison first reported DIFFERS. It was the harness:
++`diff <(new) <(old)` runs the new binary FIRST, which registers the content in
++the dedup store, so the second run sees a duplicate and says so. Separate runs
++into files: identical. Fourth instrument trap on this axis.
++
++## §775 — two defects in the rule that spares a test-runner status line
++
++Piste 3, continuing §774's fuzz onto the entry points it had not covered.
++Corpus rebuilt around SCALING shapes (one long line of entities / words / JSON,
++many identical lines, two interleaved shapes, deep indent, ANSI redraw, wide
++CSV, stack frames, diff-like, base64-ish, paths, key=value) and run through
++`read` AND `wrap`, flagging ms-per-MB as well as crashes.
++
++One hit, on both commands: `key=value token=abc123 id=42 ` repeated to 2 MB on
++ONE line. `read` and `wrap` alike, so the cost was in what they SHARE.
++
++### Narrowing (every step timed, none read)
++
++`compact` linear · `structured_or_generic` 0 ms (kind is Unknown) ·
++post-passes linear ⇒ 473 ms of an 11 998 ms command. The rest was
++`disclose::maybe_stash_bytes`, and inside it `redact::redact`, and inside THAT
++— using tokenade's own `TOKENADE_PROFILE=1` rather than more hand probes —
++`rd:keyword`: **329 ms on 507 KB, 4 901 ms on 2.03 MB.**
++
++An instrument check first: `ensure_stashed_bytes` calls `opportunistic_evict`,
++which walks the stash dir, and my loop ADDS a file per iteration — so bigger
++inputs also met a bigger directory. Ran the sizes in REVERSE: same curve. Not
++the instrument.
++
++### Defect 1 — a panic
++
++```rust
++["PASS","FAIL","SKIP","BENCH"].iter()
++    .any(|k| rest.len() >= k.len() && rest[..k.len()].eq_ignore_ascii_case(k))
++```
++
++`rest[..4]` on a `&str` lands inside a multibyte character. Reproduced on 1.1.9
++through BOTH `read` and `wrap`: a 160 KB log with one `--- aéé pass=…` line dies
++with `end byte index 4 is not a char boundary; it is inside 'é'`. Compared as
++BYTES now — which is what ASCII keywords always meant.
++
++Third sighting of the §770 class, and the first one that is REACHABLE by
++ordinary input: a YAML document separator opens with those same dashes.
++
++### Defect 2 — the quadratic
++
++The veto answered "is this match on a status line?" per MATCH, by
++`hay[..at].rfind('\n')` and then `format!` of everything between the line start
++and the match. On one long line that is a full-input scan AND a full-input
++allocation, per match. Now `status_line_ranges` computes them once per text and
++the per-match answer is a binary search — usually against an empty vector.
++
++Debug, same binary: 1014/2156/4812/12230 ms → **937/1840/3629/7223**, ratios
++1.96/1.97/1.99. Exactly linear.
++
++### Mutations: 7/7, after two fixture repairs
++
++M5 (`split` for `split_inclusive`) and M6 (`at > e`) SURVIVED the first pass —
++both fixture gaps. M5 drifts offsets by one PER LINE, so a three-line fixture
++still overlaps; it needs a status line 50 lines in. M6 differs only for a match
++starting exactly at a line boundary; it needs an assignment as the first bytes
++of the line AFTER a status line. And M2 (recompute the ranges per match) needed
++the timing fixture TRIPLED, because one memchr per match still fits under a
++5 s deadline at 1 MB.
++
++## §776 — a fixed byte jump over an assumed-ASCII timestamp
++
++Piste 3. §770, §772 and §775 each found the byte-slice class by enumerating
++CODE SHAPES, and each sweep missed the shape the next one found. So this
++iteration attacked it from the other side: **inject a multibyte character at
++every offset of realistic line shapes and see what dies**, which needs no
++theory about how the code is written.
++
++20 shapes (log, YAML, JSON, key=value, PEM, ssh key, markdown table, git
++commit, diff hunk, python frame, URL, HTML, JS stack, kubectl header…) × 4
++characters (`é`, `界`, `🚀`, NBSP) × every offset = 2 568 variants, padded past
++the stash threshold and run through `read` and `wrap`. Batched, with a bisect
++so a panicking batch names the exact variant.
++
++**Harness validated against 1.1.9 first** — a fuzz that reports nothing is
++worth nothing unless it can find a known bug. It found a NEW one instead:
++
++```
++2026-09-07 12:00:0é0 INFO service=api latency=12ms
++-> logs.rs:597  end byte index 19 is not a char boundary; it is inside 'é'
++```
++
++6 panicking variants on 1.1.9, all in the timestamp. `read` only; `wrap` takes
++a route that does not reach it.
++
++### The defect, and the sibling that was right
++
++```rust
++if i + 19 <= bytes.len() && bytes[i].is_ascii_digit()
++    && bytes[i+4] == b'-' && bytes[i+7] == b'-'
++    && (bytes[i+10] == b'T' || bytes[i+10] == b' ')
++    && bytes[i+13] == b':' && bytes[i+16] == b':'
++{ let start = i; i += 19; … let val = &line[start..i]; }
++```
++
++Five separators and ONE digit checked; the other thirteen digit positions never
++were. `i += 19` is nineteen CHARACTERS only if the window is all ASCII.
++
++The contrast is in the same file: `is_uuid_at` validates **all 36** positions,
++so its `i += 36` is sound by construction. `ghactions::has_iso_timestamp` is
++also safe — it requires byte 19 to be `Z` or `.`, so every later index is a
++boundary. One incomplete guard among three.
++
++Fixed as `is_iso_timestamp_at`, in `is_uuid_at`'s idiom. Fuzz on the fixed
++binary: **0 of 2 568**.
++
++### 7/7, after one fixture repair
++
++M7 (stop checking the separators) survived the first pass: every fixture had
++correct digits AND correct separators, so nothing could tell the two apart.
++Five strings, each wrong in exactly ONE separator position, kill it — the same
++shape as §775's M5/M6 and §759's rule, for the third time this session.
++
++## §777 — two axes swept, both clean, and a harness lesson
++
++Piste 3, same empirical method as §776 with different mutation operators.
++
++### Truncation — NEGATIVE, do not reopen
++
++12 realistic documents (html, json, yaml, pem, ssh key, log, ansi, markdown,
++diff, csv, key=value, uuid) truncated at **every byte offset**, byte-level so a
++cut can land inside a multibyte character, padded past the stash threshold and
++run through `read` and `wrap`. **939 truncations, 0 panics, 0 timeouts** on the
++fixed tree.
++
++> **The harness lied first, and the canary caught it.** A doc carrying §776's
++> known-bad line was included precisely so a silent run could be disbelieved.
++> The first pass reported 0 hits on 1.1.9 — where that line certainly panics —
++> because every probe file was written as `probe.dat`, and **routing is by
++> EXTENSION**: §774 already measured `.html` at 1455 ms against `.txt` at
++> 104 ms for the same bytes. With real extensions the canary fired 34 times.
++> A fuzz that cannot reach the code proves nothing about it.
++
++### Scaling — NEGATIVE across 19 shapes
++
++Each shape built at N and 2N, ratio reported (≈2 linear, ≈4 quadratic): words
++on one line, identical lines, unique lines, two interleaved shapes, timestamps,
++uuids, flat json, json array, yaml, csv, markdown table, html rows, ansi
++redraw, paths, stack frames, diff, base64, secrets — **all 1.83 to 2.12**.
++
++The only two quadratics in the whole sweep were the ones already fixed this
++session, and the probe re-found them independently on 1.1.9: `entities_html`
++3.59 (§774) and `kv_one_line` 3.91 (§775). On the fixed tree the same two
++measure **1.89 and 2.00** — an independent confirmation of both fixes, from a
++probe written after them and not shaped around them.
++
++### And a defect, from piste 1 — the worktree the cache could not see
++
++tokf `feat(rewrite): leave git unrewritten inside linked worktrees` named the
++shape: in a LINKED WORKTREE `.git` is a FILE, not a directory. Asked the same
++question here.
++
++`hooks/replay.rs::state_fingerprint` decides whether a repeated read-only
++command can be answered without re-running it. For a `git ` command it
++fingerprints `<cwd>/.git/HEAD` (branch moves), `<cwd>/.git/index` (staging) and
++the cwd mtime. In a worktree neither path exists, and the helper hashes an
++absent file as a CONSTANT — so the whole git half was fixed and only the
++directory mtime remained. Replay is on by default (`TOKENADE_NO_REPLAY=1`
++disables it), so `git status` could be served stale after a `git add` or a
++branch switch for the length of the freshness window.
++
++Measured on the fixture: `.git` reads `gitdir: …/.git/worktrees/linked`, that
++directory holds `HEAD` (`ref: refs/heads/feat`, a DIFFERENT branch from the
++main checkout) and `index`, and `linked/.git/HEAD` does not exist.
++
++Fixed by `git_dir_of`, best-effort: anything unreadable or unparseable falls
++back to `<cwd>/.git`, so the cache still fails toward re-running.
++
++**6/7, and the seventh is unkillable BY CONSTRUCTION and verified as such.**
++Three of the first four survivors were fixture gaps — the pointer in the
++fixture was ABSOLUTE so the relative branch never ran, and the HEAD/index arms
++rode on the cwd mtime, which a `git add` moves anyway. Rewriting HEAD and the
++index in place (same bytes, new mtime, nothing else touched) isolates them.
++M3 (drop the `is_dir` early return) cannot die: `read_to_string` on a directory
++already returns Err — probed, `is a directory` — so the line is intent, not a
++gate. Recorded in the code as such rather than dressed up, and distinct from
++the §744 case where a survivor meant the SUITE was blind.
++
++### Two of the repo's own guards caught the §777 test, and one working-tree note
++
++The worktree test first shelled out to `git`, and two existing guards refused
++it in turn: `every_spawn_either_hides_its_console_or_is_listed_as_wanting_one`
++(a spawn must call `configure_no_window` or be declared) and
++`every_process_launcher_either_guards_its_work_or_says_why_not` ("who kills
++this when tokenade is SIGKILLed?"). Both were right, and the second pointed at
++a better test: the fingerprint reads exactly three paths, so the worktree
++layout is now built BY HAND — no spawn, hermetic, and it no longer asserts
++nothing on a machine without git, which the shelling version silently did.
++
++Separately, a suite run left the repo's own agent-rules files stripped of their
++scaffold block (9 files, **278 deletions, 0 insertions**). NOT a test bug and
++not a defect: `project_scaffold::sync_gate_state` removes every tokenade prompt
++from a project's rules files while the licence gate is active and restores them
++after, recording what it stripped in `.tokenade/scaffold.retracted`. Restored
++from HEAD — verified safe first, since zero insertions meant no other
++uncommitted work lived in those files. The marker is left as it is: the restore
++path updates an existing block in place rather than appending, so a stale
++marker refreshes rather than duplicates.
++
++## §778 — piste 2 swept, and why the gate was active
++
++Searched for projects sharing tokenade's goal rather than mining the existing
++folder. Everything the search surfaced — rtk, token-saver, tokensave, headroom,
++headroom-desktop, tokf, lean-ctx, token-optimizer — is ALREADY tracked in
++`competitors/`. Piste 2 returns nothing new on this query; the folder is
++comprehensive for the direct-competitor space. A future pass should aim at
++SUB-problems instead (log template mining, HTML extraction quality, secret
++redaction, tokenizer estimation), not at more direct competitors.
++
++**And the search answered §777's open question.** `tokenade search` refused:
++
++> your monthly token-savings quota is exhausted. Compaction is paused on this
++> machine until your quota resets on the 1st.
++
++So the licence gate is genuinely ACTIVE on this machine, which is exactly why
++`sync_gate_state` had retracted the scaffold blocks from the repo's own rules
++files. That was the feature working as designed, and the note in §777 stands
++confirmed rather than merely argued. It also means the measurements in §769-§777
++that used the INSTALLED binary were taken against a gated tool — they were
++timings and panics, which the gate does not alter, but any future measurement
++of SAVINGS on this machine would be worthless until the quota resets.
++
++## §779 — the number pass ran before the formats it hid
++
++Piste 2, aimed at a SUB-problem as §778 concluded it should be: log template
++mining. Probe: 300 lines identical except ONE variable, per variable shape;
++low savings names a shape the walker cannot see.
++
++| shape | before | after |
++|---|---|---|
++| int, ipv4, email, url, path, port, float, quoted, hostname… | ~98% | unchanged |
++| **mac** | **50.3%** | **98.0%** |
++| **uuid (real, fully varying)** | **9.3%** | **97.9%** |
++| hex (bare, 8 digits) | 51.1% | unchanged — OPEN |
++| ipv6 | 52.0% | unchanged — OPEN |
++
++### One root cause, two formats
++
++The number pass claims a token's leading digits and runs BEFORE the
++declared-format checks. So a value opening with a hex LETTER was recognised and
++one opening with a DIGIT was torn up:
++
++```
++00:1a:2b:3c:4d:5e                     -> <N>:<N>a:<N>b:<N>c:<N>d:<N>e
++550e8400-e29b-41d4-a716-446655440000  -> <N>e<N>-e29b-<N>d<N>-a<N>
++aa:bb:cc:dd:ee:ff / aaaaaaaa-bbbb-…   -> matched fine
++```
++
++Both checks moved ahead of it. MAC is a new slot in `is_uuid_at`'s idiom —
++every position checked, which also makes its `i += 17` sound (§776's rule).
++
++### The measurement lied first, and the FIXTURE was why
++
++The probe reported uuid at **98.5%** and hid the worse of the two defects. Its
++uuids varied only in the last group, so all 300 lines shared one CONSISTENTLY
++WRONG template and folded anyway.
++
++> **Measuring that lines GROUP is not measuring that they are slotted right.**
++> A uniformly wrong template groups perfectly. Re-measured with fully random
++> uuids, the same probe reads 9.3%.
++
++### 8/8, after two more fixture repairs
++
++M6 (stop checking the hex positions) survived: the arm was `zz:1a:…`, and `z`
++is not a hex digit, so the branch is never ENTERED and the arm says nothing
++about the positions after the first. `0z:…`, `00:1z:…`, `00:…:5z` kill it.
++And my own seven-group arm caught a real flaw in the first draft of the rule:
++the number pass eats the leading `00` of `00:1a:2b:3c:4d:5e:6f`, and the six
++groups left behind then matched — `<N>:<MAC>`. A leading word boundary fixes it.
++
++Left open, measured and named: bare 8-digit hex (51%) and IPv6 (52%). Both are
++the same interleaving, but IPv6 has many forms and `::` compression, so it
++wants its own iteration rather than a guess.
++
++
++## §780 — a hash that opens with a digit: BUILT, MEASURED, REVERTED
++
++Continuation of §779's two open findings. The rule: a word-bounded run of hex
++≥8 that is not all digits is a hash, not a number — so `0000002a` stops
++templating as `<N>a`. Built, tested, 7/7 mutations killed, patchnote written.
++Synthetic probe: **51.1% → 83.3%** on 300 lines differing only by a hex id.
++
++**Then the richness corpus refused it.**
++
++```
++no_compactor_retains_less_rare_information_than_it_did
++  macos/netstat: 0.8195 → 0.7118 (-0.1077)
++  "compaction now discards rare information it used to keep — token savings
++   will have gone UP on these, which is exactly why this gate exists"
++```
++
++That fixture carries kernel socket addresses — `628550566d220df9` and friends,
++16 hex digits opening with a digit. They are what tells one row from another,
++and the rule ate them. Confirmed by removing the branch alone: the guard passes.
++
++**Reverted in full** — the branch, the `HEX_SLOT_MIN` constant it introduced,
++its two tests, its patchnote entry, and the `invariants.rs` fixture it had
++forced me to rewrite. §779's MAC and uuid work is untouched and still measures
++98.0% and 98.5%; hex returns to its 51.1% baseline.
++
++> **A synthetic probe measured a gain; a real corpus measured the loss that
++> paid for it.** The probe's 300 lines were built to vary in exactly one place,
++> so nothing in them was worth keeping — a fixture where every hash is noise
++> cannot notice a hash that is signal. The corpus can, and the gate exists
++> because savings going UP is the SYMPTOM, not the goal.
++
++The gate offers `TOKENADE_RICHNESS_BLESS=1` for an intended drop. Not used:
++erasing socket addresses from `netstat` was never intended, and blessing a
++number to make a red test green is how the number stops meaning anything (§744).
++
++IPv6 (52%) and bare hex (51%) both stay OPEN, now with a warning attached: the
++obvious rule for hex is measurably worse than no rule at all.
++
++## §781 — 57 fixtures the richness gate was measuring with nothing (CLOSED)
++
++`richness_corpus.rs` picked each fixture's program with `prog_for_stem` →
++`knows_program`, but compaction runs through `filter_command`, which also folds
++via the generic and table passes. **57 of 230 fixtures resolved to no program and
++were `continue`d in silence** — sitting in the corpus, measured by nothing.
++`windows/driverquery_full` folds 28 388 → 2 671 B (richness 0.1454) and was one
++of them.
++
++Fix: fall back to the stem's first token when `prog_for_stem` returns None, plus
++a coverage assertion (`current.len() == fixtures().len()`) and an upper-bound pin
++on the two heaviest folds. Baseline re-blessed 154 → **211 rows, 0 drops**; two
++pre-existing rows moved UP (`macos/host_apple` 0.8587→1.0000,
++`macos/ps_aux_full` 0.5107→0.7826), both from §779's slotting.
++
++**No patchnote**: nothing here is user-observable — the corpus is a test harness.
++
++Mutations 3/4. **M3 (coverage assertion removed) is unkillable alone and that is
++the property**, not a blind suite (§742 category, not §744): with the fallback in
++place every fixture routes, so there is nothing for the assertion to catch. It is
++what kills M1 — verified, `richness_corpus.rs:128`, "57 of 211 fixtures were not
++measured at all". Noted in the code at the assertion.
++
++**The trap worth keeping**: the gate only fails on a DROP, so a routing mistake
++that stops a fixture being compacted raises its richness and passes quietly — the
++corpus gets weaker and says nothing. M4 (`.split('_')` → `.split('#')`) survived
++for exactly that reason until the upper-bound pin was added, and the first pin was
++useless because I picked the two stems WITHOUT an underscore, which the mutation
++cannot touch. **A pin must fall where the mutation actually changes the value.**
++
++## §782 — content wearing our own markers (CLOSED)
++
++Piste 3, the axis named in the prompt: **input carrying OUR OWN markers**. Two
++weight accumulators read a count back out of rendered text — `filter::run_weight`
++(`(×N)`) and `disclose::original_weight` (`(×N)` and `… [N lines elided by
++tokenade] …`) — and neither can tell a marker it wrote from a line of content
++shaped like one. A saved transcript, a CI log of a tokenade run, a pasted banner
++all carry them.
++
++**Measured before/after**
++
++| probe | before | after |
++|---|---|---|
++| 2 000-line log, one `(×900000)` content line, 1 825 folded | footer: `standing for 901824 line(s)` | no claim |
++| 9 000-line file, one `… [900000 lines elided…] …` line | `(elided 8970 lines, standing for 908969 line(s))` | `(elided 8970 lines)` |
++| same with a count near `usize::MAX` | **`attempt to add with overflow`**, output lost (debug; release wrapped silently) | summary delivered |
++
++**Fix — a provenance ceiling.** `filter::note_folded(n)` records the TRUE count
++at every site that collapses lines (`template_fold` ×2, `mcp_compact`, `dmesg`,
++`lsof`, `render_kept`'s gaps, `stacktrace`'s elision); every claim is capped by
++`elided + folded_ceiling()`, and all the sums saturate. A process that folded
++nothing can make no claim, which is exactly what forgery reaches.
++
++**Patchnote: filter side only.** `render_kept`'s footer shipped in 1.1.9
++(confirmed at `4d40f95b:filter.rs:3028,3066`). `disclose::original_weight` did
++NOT — it came in with the 1.1.10 hardening, so that half is a defect introduced
++and fixed inside one unpublished version and gets no entry.
++
++**Mutations 9/9**, after four repairs — three of them instrument or fixture
++faults, not code gaps:
++
++- The harness reported **BUILD-FAIL on all seven arms** because its build check
++  omitted `--features srcsweep`. A verdict every arm shares is a fact about the
++  harness.
++- **M9's filter matched no test**, and `run()` reads "0 passed" as failure, so a
++  mutation nothing covered reported KILLED. Re-run by hand against
++  `e2e_a_two_stage_fold_states_the_original_magnitude`: genuinely killed.
++- **M2 survived** a fixture asserting `!footer.contains("900000")` — the claim is
++  a SUM, so the forged 900000 renders as 901824 and a substring test never
++  matches. *Assert the invariant, not the forged digits.*
++- The real e2e two-stage guard then caught a REAL gap: `render_kept`'s own
++  elision markers carry a true count I had not recorded, so a legitimate
++  second-stage claim was being suppressed. That test is the anti-vacuity control
++  and it earned its keep.
++
++**And the cap was self-feeding at first**: `render_kept` noted its own gaps and
++then read the ceiling AFTER, so the call vouched for itself and a 2 000-line
++input still announced 3 650. The ceiling is snapshotted BEFORE the call now —
++the markers in the input belong to EARLIER passes, and this call's own gaps are
++`elided_total`, already counted separately. Mutation M8 holds it.
++
++## §783 — the hostile-input axis swept clean (5 NEGATIVES, no defect)
++
++Continuation of §782 across the rest of piste 3. **No code change, no patchnote.**
++Recorded so none of it is re-mined.
++
++**1. A content-borne marker does not suppress folding.** Hypothesis: a file whose
++first line carries `expand-ref <12-hex>`, `[tokenade: …]` or `§ref:<hash>§` reads
++as already folded and is delivered whole. MEASURED on a 298 KB log through both
++`read` and `wrap`, four variants: **99% saved in all eight runs**. `already_folded`
++gates booking and nudges, not the fold — the comments at `hookwrap.rs:92-97` say so
++and they are right.
++
++**2. An endless source is already bounded.** `wrap` on `yes` and on `cat
++/dev/urandom`: **RSS flat at 71–73 MB over 24 s**, twelve samples each, no growth.
++`drain_capped_keeping_tail(so, DEFAULT_STDOUT_CAP)` caps it AND returns a
++truncation flag that reaches `truncation_banner` — capped and honest, the §745
++lesson already applied. It never terminates, which is correct: neither does the
++native command.
++
++**3. `agent/tools.rs::fold_pipe`'s `wait_with_output` is not a hole.** It looks
++like the uncapped slurp its sibling `wrap` avoids, but the child is always
++tokenade itself (`web -`, `execute --script -`), which caps its own stdout, and
++the result is clamped to 24 000 chars. The write-then-read shape cannot deadlock
++either: both children read stdin to EOF before emitting.
++
++**4. Malformed declared formats are linear.** 12 shapes × 2 sizes through `read`
++— PEM that never closes, a BEGIN flood, nested BEGINs, a PGP header flood, one
++40× oversized ssh key body, an unknown key type, near-miss uuid/MAC/timestamp,
++forged `(×10^15)` runs, unterminated quotes, unclosed JSON: **every ratio between
++0.59 and 2.04**, nothing above the 2.6 flag.
++
++**5. §782 introduced no false suppression.** Enumerated every production emitter
++whose marker `run_weight` / `original_weight` can read — `template_fold` ×2,
++`mcp_compact`, `dmesg`, `lsof`, `render_kept`'s gaps, `stacktrace`'s elision:
++**7 of 7 record their fold**. A legitimate claim cannot be capped away.
++
++**Instrument faults, both mine, both caught before they became findings:**
++- `grep_count.rs`'s `total_matches += n` reads a u64 out of text and looked like
++  §782's twin. It is **off the live route**: `grep -c` goes
++  `grep_dispatcher → filter::grep_count → grep_count_fold` (a declarative spec).
++  The §755 trap, second time — *a compactor file is not evidence of a route*.
++- A scan for source files no `mod` declares reported **916 orphans including
++  `dmesg.rs`**, which I had edited that hour and which compiled. `build.rs`
++  generates the mod lists into `OUT_DIR`. *A structural scan that contradicts a
++  fact you just established is wrong about the structure.*
++
++## §784 — the ambiguity caveat counted its own display window (CLOSED)
++
++Piste 1: `git fetch` over the 281 tracked repos, **18 moved**. Two questions
++transferred; one paid.
++
++- `caveman c63362d` mentions `ghs_` redaction. Checked ours: **all six GitHub
++  prefixes present** (`ghp_ gho_ ghu_ ghs_ ghr_ github_pat_`, `redact/rules.rs:251-256`).
++  Negative.
++- **`sem d1ed948`** — *"return candidates on stdout for ambiguous names, never
++  empty"*. Ours already never returns empty: a miss answers `no symbol matching
++  'try_compat' — closest indexed: env_compat, COMPAT, try_compact`. But asking
++  their question of our tool found the defect one line over.
++
++**The defect.** `cmd_query` computed the ambiguity caveat as
++`hits.iter().filter(|s| s.name == q).count()` — over `hits`, which `find_in`
++caps at 30. So the caveat could never name more than 30 declarations however
++many existed, and the same answer contradicted itself:
++
++```
++[30 of 972 matches shown — narrow the name to see the rest]
++… [by NAME — 30 declarations share it, the call graph cannot tell them apart]
++```
++
++on a name **927** indexed symbols declare. The caveat is what tells the agent how
++far to trust the callers line, so understating it by 31× is the §708/§782 class
++again: a number true of its own stage, presented as the answer.
++
++**Fix.** `Index::count_exact_declarations(name, scope)` counts over the index,
++scoped exactly as `find_in` searches; `declarations_for` is the seam so the
++mistake is expressible and killable. **30 → 927.** Shipped in 1.1.9
++(`4d40f95b:code_intel.rs:340`), so it carries a patchnote.
++
++**Why the caveat can never be wrongly SUPPRESSED**, checked rather than assumed:
++`match_rank` sorts name-exact above substring, so with ≥2 exact declarations both
++are inside the 30-row window and `exact > 1` holds. The damage was confined to
++the number.
++
++**Mutations 5/5.** M5 (`declarations > 1` → `> 0`) survived my two new tests and
++is killed by two pre-existing guards — my harness filter was too narrow, not the
++suite. Verified by running the whole `code_intel` module against the mutation
++rather than assuming coverage.
++
++## §785 — a query in the wrong case lost half its answer (CLOSED)
++
++Started as a SWEEP of the class §784 made three of (§708, §782, §784): a count
++computed over a capped view, printed as the answer. The sweep came back clean —
++`impact` (`fn (129): … +117 more`), `map` (`[80 of 108 directories shown]`,
++`top files (10 of 1611)`), `render_kind_line` (which documents the raw-vs-distinct
++trap it resolves), the diff/gitlog/json banners (`370 more names elided` on 400
++input files). §784 was the only instance.
++
++**The defect the sweep found instead** came from checking an assumption I had
++made twice from reading rather than running. `Index::match_rank` compares
++`s.name.to_lowercase()`, so `find_in` matches without regard to case. Every step
++after it compares exactly — `count_exact_declarations`, `sole_declaration_file`,
++and `callers_with_total`'s `c.callee_name == name`. So a query in the wrong case
++listed the declarations and then said nothing about callers:
++
++```
++query Run → called by: Caller (main.go:6), Other (main.go:10) [6 declarations share it]
++query run → the same six declarations, and NO callers line
++```
++
++One index, one symbol, two answers — on a command whose help promises "where is
++this defined, and who calls it", and whose `graph_available` branch exists
++precisely to stop silence reading as "nothing calls it". Shipped in 1.1.9
++(`4d40f95b:code_intel.rs:341` passes the raw `q`); patchnote written.
++
++**Fix.** `resolved_spelling` resolves to what the index holds, and only when a
++SINGLE spelling answers — a tree holding both `Run` and `run` keeps them apart,
++because those are different symbols. `attribution_for` then returns the name, the
++count and the sole-declaration file as ONE unit, because the three have to agree:
++a count taken for one spelling beside a file taken for another describes two
++different symbols.
++
++**Mutations 6/6**, after one repair. M5 (pin attribution under the TYPED name)
++survived because the decision lived inline in `cmd_query`, which prints and so
++cannot be unit-tested — the extraction into `attribution_for` is what made the
++mistake expressible, and it earned two more arms (M5, M6). Widening the harness
++filter from four test names to the whole `code_intel::query_modal` module was
++part of the same repair; §784's M5 had already shown that filter was too narrow.
++
++**Control:** `count_exact_declarations` adds a full symbol scan per name. Timed
++on this tree (25 838 symbols): single query 983 ms after vs 970 before, batch of
++eight 1382 vs 1385 — noise.
++
++## §786 — the sibling that kept the typed name (CLOSED)
++
++Direct continuation of §785, taking this codebase's most frequent defect shape
++seriously: *proven on one consumer, not the sibling* (~12 occurrences). §785
++fixed the TEXT path; the sweep asked who else looks a name up. Two production
++sites share the `callers_of_declaration` / `callers_with_total` pair —
++`callers_line` (fixed) and **`callers_json`, which still received the raw `q`**.
++
++```
++query Run  --json → count 6, callers_total 2
++query run  --json → count 6, callers [] , callers_total 0
++```
++
++Worse than the text half: `callers_json`'s own doc says `null`, not `[]`, is for
++"we could not look", so `[]` is the documented way of asserting "nothing calls
++this" — a positive claim, made to a machine, contradicting the text half on the
++same index. Shipped in 1.1.9; patchnote written.
++
++**Fixed as a class, not an instance.** Both renderers now take a single
++`Attribution { name, declarations, decl_file }`, built only by `attribution_for`,
++so neither can be handed a raw query again and a future third consumer cannot
++repeat it. That is the §773 shape — deliver the invariant, not the point fix.
++
++**Mutations 7/7**, after one repair. **M3 (the JSON half ignores the pinned
++declaration) survived** — the text half had `the_callers_line_asks_about_a_declaration`
++with its `zqexecute` fixture and the JSON half had no equivalent, which is the
++same sibling gap in the TESTS as the one in the code. It now runs the same
++fixture with the same assertion, plus an anti-vacuity arm proving the name-keyed
++answer really does carry the phantom.
++
++Also added: `the_json_half_answers_what_the_text_half_answers`, a parity guard
++over one index, and M7 (`[]` instead of `null` on an unreadable graph) which the
++existing `json_callers_are_null_not_empty` guard kills.
++
++## §787 — le banc, et le classement qui m'envoyait sur une cible à 0,2 % (CLOSED)
++
++Première itération sous `docs/_loop-charter.md`. Pas de défaut produit : c'est
++l'itération d'outillage que la charte prévoit, et elle a corrigé un instrument
++avant qu'il ne coûte une itération entière.
++
++**Le banc existait à moitié.** `tokenade-bench` portait 4 binaires (~3 000
++lignes) et **aucun `lib.rs`** — et surtout, tous mesurent la BIBLIOTHÈQUE en
++process (`dispatch_named`). C'est pour ça qu'aucun n'avait jamais rencontré mes
++37 fautes d'instrument : elles sont toutes des propriétés du chemin **CLI de
++bout en bout**. Le manque était donc précis, pas général.
++
++`crates/tokenade-bench/src/lib.rs` est maintenant l'endroit unique où ce chemin
++se mesure, et il paie une fois les six pièges : sortie capturée en octets (aucun
++hook en chemin), état neuf par banc (`TOKENADE_CONFIG_DIR` / `TOKENADE_STASH_DIR`
++/ `TOKENADE_DEDUP_DB`), vraie extension obligatoire, profil déclaré avec
++`ms_comparable()` qui **refuse** un temps debug, `survived()` sur `code.is_some()`
++(un kill par signal n'est pas un succès), et `conclude()` qui **refuse de rendre
++« rien trouvé » sans canari**. 9 gardes.
++
++Deux corrections que l'écriture a imposées, toutes deux consignées dans le banc :
++
++- **L'exception d'isolement est nommée et gardée.** `gain`/`dashboard`/`health`
++  ont pour réponse l'état de l'opérateur ; les isoler rendrait un registre vide.
++  `reading_real_state()` existe pour ça et `run()` **refuse** toute autre
++  commande sur un banc non isolé.
++- **La construction est totale.** Elle ne résout plus le binaire en échouant :
++  sur un clone neuf `target/` est vide et toute la suite du workspace serait
++  tombée. L'absence surgit dans `run()`, avec le message qui dit quoi faire.
++
++**Le classement de valeur était faux, et sa PREMIÈRE utilisation l'a montré.**
++Il triait par octets encore livrés sans les rapporter au total, donc il m'a
++envoyé sur `sysinfo` : 59 307 usages — et 3 879 492 octets d'entrée, soit **65
++octets par appel**, 1,6 Mo de gain restant sur 833 Mo économisés (**0,2 %**).
++Corrigé, l'image s'inverse : **76 % de tout ce qui est encore livré vient de DEUX
++opérations**, `html-to-markdown` (40,9 %) et `auto-compact` (35,0 %), déjà à
++−95 % mais si volumineuses que leur résidu domine. Gagner un point sur la
++première rapporte plus que perfectionner `sysinfo` entièrement.
++
++Et **122 des 216 opérations du registre sont mes propres sondes** (concentrées
++sur un seul jour, moins de 50 appels) — écartées, et nommées dans le fichier.
++
++Le générateur vit désormais dans le dépôt
++(`cargo run -p tokenade-bench --bin value_ranking`), plus dans un script jetable.
++3 tests, dont celui qui fixe la règle : trier sur le taux seul sur-pondère le
++minuscule, sur le nombre d'usages seul sur-pondère le fréquent.
++
++**Prochaine cible, mesurée et non devinée : `html-to-markdown`** (21,5 Mo encore
++livrés, 40,9 % du gisement), puis `auto-compact` (18,5 Mo, 35,0 %).
++
++**Et le garde du dépôt m'a repris, comme au §777.**
++`every_process_launcher_either_guards_its_work_or_says_why_not` balaye plus large
++que `cli/src` et `core/src` — il a trouvé `bench/src/lib.rs` et posé sa question :
++« qui tue ça si tokenade est SIGKILLé ? ». Elle est juste : une mesure peut lancer
++une commande longue, et `Command::output()` ne rend aucune poignée sur l'enfant.
++Le banc **adopte donc le faucheur** (`spawn` + `guard_group_against_our_death` +
++`stand_down`, groupe créé seulement si un terminal ne le possède pas déjà), au
++lieu de s'inscrire dans `EXEMPT`. Deuxième fois que ce garde désigne un vrai
++manque plutôt qu'une formalité.
+diff --git a/docs/_value-ranking.md b/docs/_value-ranking.md
+new file mode 100644
+index 00000000..74b6670a
+--- /dev/null
++++ b/docs/_value-ranking.md
+@@ -0,0 +1,41 @@
++# Classement de valeur — dérivé de l'usage RÉEL
++
++Source : `tokenade gain --json`. **77111 opérations**, 103 jours, du 2026-05-28 au 2026-09-07.
++Régénéré par `cargo run -p tokenade-bench --bin value_ranking`.
++
++> Une hiérarchie de valeur DÉCLARÉE est une opinion ; celle-ci se mesure.
++> Rafraîchir si elle a plus de 7 jours, sinon la lire et travailler de haut en bas.
++
++**Total encore livré aux agents : 52 688 920 octets.** C'est le gisement.
++
++## Où il reste à gagner (et où une régression coûte le plus)
++
++| # | op | usages | encore livré | part du livré | taux |
++|---|---|---|---|---|---|
++| 1 | `html-to-markdown` | 6 524× | 21 533 581 | 40.9% | −95% |
++| 2 | `auto-compact` | 4 162× | 18 451 576 | 35.0% | −93% |
++| 3 | `sysinfo` | 59 307× | 1 608 905 | 3.1% | −59% |
++| 4 | `npm` | 97× | 1 043 945 | 2.0% | −55% |
++| 5 | `generic` | 1 538× | 613 006 | 1.2% | −99% |
++| 6 | `webfetch_compact` | 199× | 491 215 | 0.9% | −88% |
++| 7 | `read_code_strip_lite` | 36× | 350 715 | 0.7% | −43% |
++| 8 | `network` | 1 173× | 232 205 | 0.4% | −94% |
++| 9 | `image-downscale` | 150× | 123 117 | 0.2% | −57% |
++| 10 | `cargo-test` | 192× | 112 466 | 0.2% | −96% |
++| 11 | `disclose:stash` | 117× | 100 448 | 0.2% | −97% |
++| 12 | `skeleton` | 108× | 95 786 | 0.2% | −94% |
++| 13 | `structure_map` | 424× | 94 818 | 0.2% | −56% |
++| 14 | `grep` | 82× | 87 236 | 0.2% | −91% |
++| 15 | `auto:archive` | 33× | 83 617 | 0.2% | −34% |
++
++## Écartées comme sondes (122)
++
++Concentrées sur un seul jour et peu employées : c'est du trafic que j'ai fabriqué en mesurant, pas de l'usage.
++
++`a11y-compact`, `readelf`, `kubectl`, `cloud`, `auto:logs+cap`, `pkgmgr`, `webfetch_feed`, `ls+cap`, `docker`, `cloud+cap`, `auto:serp`, `mcp:read_text_file`, `json-to-markdown`, `auto:disk`, `auto:command-chain`, `dmesg`, `mcp-image:test`, `systemd`, `mcp:directory_tree`, `sysinfo+cap`, `auto:makefile`, `sha256sum`, `webfetch_feed_discovered`, `nvidia-smi`, `gdb`, `execute`, `tree`, `auto:xml`, `auto:dash-table`, `npm+cap`, `mcp:search_nodes`, `mcp:read_graph`, `objdump`, `dpkg-query`, `istioctl`, `argocd`, `jsonproc`, `site-reader`, `set`, `extract-epub`, `web-search-answer`, `ioreg`, `auto:proto`, `code_strip`, `zfs`, `strace`, `db`, `Get-Process`, `dir`, `auto:bibtex`, `echo`, `linter`, `top`, `vmstat`, `systemd-analyze`, `git-status+rw:git-status-porcelain`, `which`, `auto:tcpdump`, `glob_compact`, `strings`, `ansible`, `pkgutil`, `sysctl`, `exec:python`, `auto:netstat`, `whois`, `cargo-build-fallback-generic`, `nm`, `tcpdump`, `tar`, `choco`, `read_doc_dedup`, `system_profiler`, `java`, `mcp-proxy:mcpline`, `auto:openapi`, `exec:bash`, `copilot-posttool`, `extract-odp`, `auto:ansible`, `ffprobe`, `script:bash`, `extract-odt`, `openssl`, `pgrep`, `cargo-run`, `auto:kv-blocks`, `image_dedup`, `systemctl-status`, `extract-xlsx`, `auto:vmstat`, `web-replay`, `read_media_summary`, `auto:lockfile`, `rm`, `session_stats`, `auto:metrics`, `getent`, `auto:journal`, `turn-summary`, `auto:kubectl-describe`, `call_hierarchy`, `auto:curl`, `test-runner`, `auto:minified`, `file`, `cargo-run-fallback-generic`, `ldd`, `auto:strace`, `auto:terraform`, `wrap:auto:pkginstall`, `cargo-install`, `file_diff`, `auto:k8s-manifest`, `auto:sourcemap`, `auto:accesslog`, `accesslog-compact`, `extract-ods`, `auto:jvmbuild`, `text-util`, `auto:stacktrace+cap`, `read_image_dedup`
++
++## Comment s'en servir
++
++- Le tableau dit deux choses à la fois : où une **régression** coûte le plus, et où une **amélioration** rapporte encore.
++- Un taux déjà excellent sur un énorme volume bat un taux médiocre sur un petit : gagner un point sur la première ligne rapporte plus que perfectionner la quatrième.
++- Ne pas trier sur le taux seul (sur-pondère le minuscule) ni sur le nombre d'usages seul (sur-pondère le fréquent) : c'est l'erreur que la première version de ce fichier faisait.

@@ -1,0 +1,16 @@
+---
+source: crates/tokenade-core/tests/snapshot_compactors.rs
+assertion_line: 103
+expression: out
+---
+8 commits, 3 author(s), 0 merge(s)
+
+commits:
+  a1b2c3d00000 [Alice Doe]   fix: handle empty config
+  b2c3d4e00000 [Alice Doe]   chore: bump deps
+  c3d4e5f00000 [Bob Smith]   feat: add /v2 endpoint
+  d4e5f6a00000 [Bob Smith]   test: cover empty-batch path
+  e5f6a7b00000 [Carol Lee]   refactor: extract retry helper
+  f6a7b8c00000 [Carol Lee]   docs: changelog for 0.4
+  a7b8c9d00000 [Alice Doe]   fix: race in cache eviction
+  b8c9d0e00000 [Bob Smith]   perf: skip stat() on hot path

@@ -1,0 +1,58 @@
+ Le volume dans le lecteur C n'a pas de nom.
+ Le num�ro de s�rie du volume est 4E07-707C
+
+ R�pertoire de C:\Users\Virtualbox
+
+05/03/2026  18:06    <DIR>          .
+05/03/2026  18:06    <DIR>          ..
+01/09/2025  13:39    <DIR>          -p
+18/02/2026  17:17    <DIR>          .cache
+10/02/2026  19:17                53 .git-for-windows-updater
+24/03/2025  16:21                10 .node_repl_history
+24/03/2025  16:21                 0 .python_history
+01/09/2025  12:37    <DIR>          .ssh
+10/02/2026  20:16                 0 0
+02/06/2023  22:26    <DIR>          3D Objects
+02/06/2023  22:25    <DIR>          AppData
+02/06/2023  22:25    <JUNCTION>     Application Data [C:\Users\Virtualbox\AppData\Roaming]
+10/02/2026  20:16                 0 Checking
+02/06/2023  22:26    <DIR>          Contacts
+02/06/2023  22:25    <JUNCTION>     Cookies [C:\Users\Virtualbox\AppData\Local\Microsoft\Windows\INetCookies]
+18/02/2026  17:09    <DIR>          Desktop
+24/03/2025  16:16    <DIR>          Documents
+18/02/2026  17:08    <DIR>          Downloads
+02/06/2023  22:26    <DIR>          Favorites
+10/02/2026  20:16                 0 Generated
+10/02/2026  20:16                 0 Langue
+02/06/2023  22:26    <DIR>          Links
+02/06/2023  22:25    <JUNCTION>     Local Settings [C:\Users\Virtualbox\AppData\Local]
+05/03/2026  18:06    <DIR>          demo-app-desktop-app
+02/06/2023  22:25    <JUNCTION>     Menu D�marrer [C:\Users\Virtualbox\AppData\Roaming\Microsoft\Windows\Start Menu]
+02/06/2023  22:25    <JUNCTION>     Mes documents [C:\Users\Virtualbox\Documents]
+02/06/2023  22:25    <JUNCTION>     Mod�les [C:\Users\Virtualbox\AppData\Roaming\Microsoft\Windows\Templates]
+02/06/2023  22:26    <DIR>          Music
+19/11/2025  00:53         2�883�584 NTUSER.DAT
+02/06/2023  22:25           458�752 ntuser.dat.LOG1
+02/06/2023  22:25           393�216 ntuser.dat.LOG2
+10/02/2026  19:15         1�048�576 NTUSER.DAT{53b39e87-18c4-11ea-a811-000d3aa4692b}.TxR.0.regtrans-ms
+19/11/2025  16:29         1�048�576 NTUSER.DAT{53b39e87-18c4-11ea-a811-000d3aa4692b}.TxR.1.regtrans-ms
+19/11/2025  16:29         1�048�576 NTUSER.DAT{53b39e87-18c4-11ea-a811-000d3aa4692b}.TxR.2.regtrans-ms
+10/02/2026  19:15            65�536 NTUSER.DAT{53b39e87-18c4-11ea-a811-000d3aa4692b}.TxR.blf
+02/06/2023  22:26            65�536 NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TM.blf
+02/06/2023  22:25           524�288 NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TMContainer00000000000000000001.regtrans-ms
+02/06/2023  22:25           524�288 NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TMContainer00000000000000000002.regtrans-ms
+02/06/2023  22:25                20 ntuser.ini
+10/02/2026  20:16                 0 null
+02/06/2023  22:29    <DIR>          OneDrive
+02/06/2023  22:29    <DIR>          Pictures
+10/02/2026  20:16                 0 ra2u3jjazjjuetbpxb8lg5t1
+02/06/2023  22:25    <JUNCTION>     Recent [C:\Users\Virtualbox\AppData\Roaming\Microsoft\Windows\Recent]
+02/06/2023  22:26    <DIR>          Saved Games
+02/06/2023  22:28    <DIR>          Searches
+02/06/2023  22:25    <JUNCTION>     SendTo [C:\Users\Virtualbox\AppData\Roaming\Microsoft\Windows\SendTo]
+10/02/2026  20:16                 0 Update
+23/06/2023  08:39    <DIR>          Videos
+02/06/2023  22:25    <JUNCTION>     Voisinage d'impression [C:\Users\Virtualbox\AppData\Roaming\Microsoft\Windows\Printer Shortcuts]
+02/06/2023  22:25    <JUNCTION>     Voisinage r�seau [C:\Users\Virtualbox\AppData\Roaming\Microsoft\Windows\Network Shortcuts]
+              21 fichier(s)        8�061�011 octets
+              30 R�p(s)   5�423�808�512 octets libres

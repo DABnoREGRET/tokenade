@@ -1,0 +1,29 @@
+- Page Snapshot
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - navigation "Main navigation" [ref=e3]:
+      - link "Home" [ref=e4] /url: https://example.com/
+      - link "Docs" [ref=e5] /url: https://example.com/docs
+      - link "Blog" [ref=e6] /url: https://example.com/blog
+      - link "Sign in" [ref=e7] /url: https://example.com/login
+      - link "Sign up" [ref=e8] /url: https://example.com/signup
+    - search [ref=e9]:
+      - textbox "Search" [ref=e10]
+      - button "Submit" [ref=e11]
+  - main [ref=e20]:
+    - heading "How to Use Tokenade" [level=1] [ref=e21]
+    - paragraph [ref=e22]: Tokenade is a universal token optimizer that combines output filtering, symbol indexing, context compression, lazy MCP tool loading, and persistent memory in a single Rust binary.
+    - heading "Installation" [level=2] [ref=e23]
+    - code [ref=e24]: curl -fsSL https://tokenade.com/install.sh | sh
+    - heading "Quick start" [level=2] [ref=e25]
+    - list [ref=e26]:
+      - listitem [ref=e27]: Run `sts proxy git status` to filter command output
+      - listitem [ref=e28]: Run `sts map` for a codebase overview
+      - listitem [ref=e29]: Run `sts query parse_config` to find a symbol without reading files
+    - heading "Why it matters" [level=2] [ref=e30]
+    - paragraph [ref=e31]: Token costs dominate the price of AI coding agents. With realistic baselines, Tokenade hits −70% token reduction at zero quality loss on build-heavy workflows.
+  - contentinfo [ref=e40]:
+    - link "Terms" [ref=e41] /url: https://example.com/terms
+    - link "Privacy" [ref=e42] /url: https://example.com/privacy
+    - link "Status" [ref=e43] /url: https://example.com/status
+    - paragraph [ref=e44]: © 2026 Example Corp.

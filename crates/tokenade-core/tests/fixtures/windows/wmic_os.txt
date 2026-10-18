@@ -1,0 +1,7 @@
+
+
+Caption=Microsoft Windows 10 Professionnel
+Version=10.0.19045
+
+
+

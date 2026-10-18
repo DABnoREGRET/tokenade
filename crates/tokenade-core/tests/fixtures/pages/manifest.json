@@ -1,0 +1,52 @@
+[
+  { "file": "bbc_home.html", "class": "news-front", "lang": "en" },
+  { "file": "guardian_home.html", "class": "news-front", "lang": "en" },
+  { "file": "guardian_sec.html", "class": "news-front", "lang": "en" },
+  { "file": "aljazeera_ar.html", "class": "news-front", "lang": "ar" },
+  { "file": "10000__www_latercera_com.html", "class": "news-front", "lang": "es" },
+  { "file": "1000__www_franceinfo_fr.html", "class": "news-front", "lang": "fr" },
+  { "file": "investopedia_h.html", "class": "news-front", "lang": "en" },
+
+  { "file": "bbc_article.html", "class": "article", "lang": "en" },
+  { "file": "guardian_article.html", "class": "article", "lang": "en" },
+  { "file": "vogue_article.html", "class": "article", "lang": "en" },
+  { "file": "wikipedia_art.html", "class": "article", "lang": "en" },
+  { "file": "wikipedia_math.html", "class": "article", "lang": "en" },
+  { "file": "zhwiki.html", "class": "article", "lang": "zh" },
+  { "file": "sportingnews_art.html", "class": "article", "lang": "en" },
+  { "file": "investopedia_l.html", "class": "article", "lang": "en" },
+
+  { "file": "mdn_doc.html", "class": "docs", "lang": "en" },
+  { "file": "fastapi_leaf.html", "class": "docs", "lang": "en" },
+  { "file": "django_leaf.html", "class": "docs", "lang": "en" },
+  { "file": "k8s_doc.html", "class": "docs", "lang": "en" },
+  { "file": "rust_book.html", "class": "docs", "lang": "en" },
+  { "file": "mdnjp_leaf.html", "class": "docs", "lang": "ja" },
+
+  { "file": "stripe_api.html", "class": "reference", "lang": "en" },
+  { "file": "arxiv_abs.html", "class": "article", "lang": "en" },
+  { "file": "pmc_article.html", "class": "article", "lang": "en" },
+  { "file": "py_glossary.html", "class": "reference", "lang": "en" },
+  { "file": "docsrs.html", "class": "reference", "lang": "en" },
+  { "file": "rubygems_pkg.html", "class": "docs", "lang": "en" },
+  { "file": "go_pkg.html", "class": "reference", "lang": "en" },
+  { "file": "archwiki_page.html", "class": "reference", "lang": "en" },
+  { "file": "10000__natiga_qalubiaedu_org.html", "class": "reference", "lang": "ar" },
+  { "file": "yahoofin_quote.html", "class": "reference", "lang": "en" },
+
+  { "file": "hn_thread.html", "class": "forum", "lang": "en" },
+  { "file": "discourse_leaf.html", "class": "forum", "lang": "en" },
+  { "file": "stackexch_q.html", "class": "forum", "lang": "en" },
+  { "file": "100000__www_dogforum_de.html", "class": "forum", "lang": "de" },
+
+  { "file": "ikea_product.html", "class": "product", "lang": "en" },
+  { "file": "newegg_product.html", "class": "product", "lang": "en" },
+  { "file": "ikea_cat.html", "class": "product", "lang": "en" },
+  { "file": "newegg_cat.html", "class": "product", "lang": "en" },
+  { "file": "slack.com.html", "class": "product", "lang": "en" },
+
+  { "file": "gov_uk_guide.html", "class": "legal", "lang": "en" },
+  { "file": "gov_uk_home.html", "class": "legal", "lang": "en" },
+  { "file": "nhs_home.html", "class": "legal", "lang": "en" },
+  { "file": "nhs_leaf.html", "class": "legal", "lang": "en" }
+]

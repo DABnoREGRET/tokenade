@@ -1,0 +1,203 @@
+
+C:\Windows\System32\drivers\etc\services:10:echo                7/tcp
+C:\Windows\System32\drivers\etc\services:12:discard             9/tcp    sink null
+C:\Windows\System32\drivers\etc\services:14:systat             11/tcp    users                  #Active users
+C:\Windows\System32\drivers\etc\services:16:daytime            13/tcp
+C:\Windows\System32\drivers\etc\services:18:qotd               17/tcp    quote                  #Quote of the day
+C:\Windows\System32\drivers\etc\services:20:chargen            19/tcp    ttytst source          #Character generator
+C:\Windows\System32\drivers\etc\services:22:ftp-data           20/tcp                           #FTP, data
+C:\Windows\System32\drivers\etc\services:23:ftp                21/tcp                           #FTP. control
+C:\Windows\System32\drivers\etc\services:24:ssh                22/tcp                           #SSH Remote Login 
+Protocol
+C:\Windows\System32\drivers\etc\services:25:telnet             23/tcp
+C:\Windows\System32\drivers\etc\services:26:smtp               25/tcp    mail                   #Simple Mail Transfer 
+Protocol
+C:\Windows\System32\drivers\etc\services:27:time               37/tcp    timserver
+C:\Windows\System32\drivers\etc\services:30:nameserver         42/tcp    name                   #Host Name Server
+C:\Windows\System32\drivers\etc\services:32:nicname            43/tcp    whois
+C:\Windows\System32\drivers\etc\services:33:domain             53/tcp                           #Domain Name Server
+C:\Windows\System32\drivers\etc\services:38:gopher             70/tcp
+C:\Windows\System32\drivers\etc\services:39:finger             79/tcp
+C:\Windows\System32\drivers\etc\services:40:http               80/tcp    www www-http           #World Wide Web
+C:\Windows\System32\drivers\etc\services:41:hosts2-ns          81/tcp                           #HOSTS2 Name Server
+C:\Windows\System32\drivers\etc\services:43:kerberos           88/tcp    krb5 kerberos-sec      #Kerberos
+C:\Windows\System32\drivers\etc\services:45:hostname          101/tcp    hostnames              #NIC Host Name Server
+C:\Windows\System32\drivers\etc\services:46:iso-tsap          102/tcp                           #ISO-TSAP Class 0
+C:\Windows\System32\drivers\etc\services:47:rtelnet           107/tcp                           #Remote Telnet Service
+C:\Windows\System32\drivers\etc\services:48:pop2              109/tcp    postoffice             #Post Office Protocol 
+- Version 2
+C:\Windows\System32\drivers\etc\services:49:pop3              110/tcp                           #Post Office Protocol 
+- Version 3
+C:\Windows\System32\drivers\etc\services:50:sunrpc            111/tcp    rpcbind portmap        #SUN Remote Procedure 
+Call
+C:\Windows\System32\drivers\etc\services:52:auth              113/tcp    ident tap              #Identification 
+Protocol
+C:\Windows\System32\drivers\etc\services:53:uucp-path         117/tcp
+C:\Windows\System32\drivers\etc\services:54:sqlserv           118/tcp                           #SQL Services
+C:\Windows\System32\drivers\etc\services:55:nntp              119/tcp    usenet                 #Network News Transfer 
+Protocol
+C:\Windows\System32\drivers\etc\services:57:epmap             135/tcp    loc-srv                #DCE endpoint 
+resolution
+C:\Windows\System32\drivers\etc\services:59:netbios-ns        137/tcp    nbname                 #NETBIOS Name Service
+C:\Windows\System32\drivers\etc\services:62:netbios-ssn       139/tcp    nbsession              #NETBIOS Session 
+Service
+C:\Windows\System32\drivers\etc\services:63:imap              143/tcp    imap4                  #Internet Message 
+Access Protocol
+C:\Windows\System32\drivers\etc\services:64:sql-net           150/tcp
+C:\Windows\System32\drivers\etc\services:65:sqlsrv            156/tcp
+C:\Windows\System32\drivers\etc\services:66:pcmail-srv        158/tcp                           #PCMail Server
+C:\Windows\System32\drivers\etc\services:69:print-srv         170/tcp                           #Network PostScript
+C:\Windows\System32\drivers\etc\services:70:bgp               179/tcp                           #Border Gateway 
+Protocol
+C:\Windows\System32\drivers\etc\services:71:irc               194/tcp                           #Internet Relay Chat 
+Protocol        
+C:\Windows\System32\drivers\etc\services:73:rtsps             322/tcp
+C:\Windows\System32\drivers\etc\services:75:mftp              349/tcp
+C:\Windows\System32\drivers\etc\services:77:ldap              389/tcp                           #Lightweight Directory 
+Access Protocol
+C:\Windows\System32\drivers\etc\services:78:https             443/tcp    MCom                   #HTTP over TLS/SSL
+C:\Windows\System32\drivers\etc\services:80:microsoft-ds      445/tcp
+C:\Windows\System32\drivers\etc\services:82:kpasswd           464/tcp                           # Kerberos (v5)
+C:\Windows\System32\drivers\etc\services:85:crs               507/tcp                           #Content Replication 
+System
+C:\Windows\System32\drivers\etc\services:87:exec              512/tcp                           #Remote Process 
+Execution
+C:\Windows\System32\drivers\etc\services:89:login             513/tcp                           #Remote Login
+C:\Windows\System32\drivers\etc\services:91:cmd               514/tcp    shell
+C:\Windows\System32\drivers\etc\services:93:printer           515/tcp    spooler
+C:\Windows\System32\drivers\etc\services:96:efs               520/tcp                           #Extended File Name 
+Server
+C:\Windows\System32\drivers\etc\services:98:ulp               522/tcp    
+C:\Windows\System32\drivers\etc\services:101:tempo             526/tcp    newdate
+C:\Windows\System32\drivers\etc\services:102:irc-serv          529/tcp
+C:\Windows\System32\drivers\etc\services:104:courier           530/tcp    rpc
+C:\Windows\System32\drivers\etc\services:105:conference        531/tcp    chat
+C:\Windows\System32\drivers\etc\services:106:netnews           532/tcp    readnews
+C:\Windows\System32\drivers\etc\services:108:uucp              540/tcp    uucpd
+C:\Windows\System32\drivers\etc\services:109:klogin            543/tcp                           #Kerberos login
+C:\Windows\System32\drivers\etc\services:110:kshell            544/tcp    krcmd                  #Kerberos remote shell
+C:\Windows\System32\drivers\etc\services:111:dhcpv6-client     546/tcp                           #DHCPv6 Client
+C:\Windows\System32\drivers\etc\services:113:dhcpv6-server     547/tcp                           #DHCPv6 Server
+C:\Windows\System32\drivers\etc\services:115:afpovertcp        548/tcp                           #AFP over TCP
+C:\Windows\System32\drivers\etc\services:116:afpovertcp        548/udp                           #AFP over TCP
+C:\Windows\System32\drivers\etc\services:118:rtsp              554/tcp                           #Real Time Stream 
+Control Protocol
+C:\Windows\System32\drivers\etc\services:120:remotefs          556/tcp    rfs rfs_server
+C:\Windows\System32\drivers\etc\services:123:nntps             563/tcp    snntp                  #NNTP over TLS/SSL
+C:\Windows\System32\drivers\etc\services:125:whoami            565/tcp
+C:\Windows\System32\drivers\etc\services:127:ms-shuttle        568/tcp                           #Microsoft shuttle
+C:\Windows\System32\drivers\etc\services:129:ms-rome           569/tcp                           #Microsoft rome
+C:\Windows\System32\drivers\etc\services:131:http-rpc-epmap    593/tcp                           #HTTP RPC Ep Map
+C:\Windows\System32\drivers\etc\services:133:hmmp-ind          612/tcp                           #HMMP Indication
+C:\Windows\System32\drivers\etc\services:135:hmmp-op           613/tcp                           #HMMP Operation
+C:\Windows\System32\drivers\etc\services:137:ldaps             636/tcp    sldap                  #LDAP over TLS/SSL
+C:\Windows\System32\drivers\etc\services:138:doom              666/tcp                           #Doom Id Software
+C:\Windows\System32\drivers\etc\services:140:msexch-routing    691/tcp                           #MS Exchange Routing
+C:\Windows\System32\drivers\etc\services:142:kerberos-adm      749/tcp                           #Kerberos 
+administration
+C:\Windows\System32\drivers\etc\services:145:mdbs_daemon       800/tcp
+C:\Windows\System32\drivers\etc\services:147:ftps-data         989/tcp                           #FTP data, over 
+TLS/SSL
+C:\Windows\System32\drivers\etc\services:148:ftps              990/tcp                           #FTP control, over 
+TLS/SSL
+C:\Windows\System32\drivers\etc\services:149:telnets           992/tcp                           #Telnet protocol over 
+TLS/SSL
+C:\Windows\System32\drivers\etc\services:150:imaps             993/tcp                           #IMAP4 protocol over 
+TLS/SSL
+C:\Windows\System32\drivers\etc\services:151:ircs              994/tcp                           #IRC protocol over 
+TLS/SSL
+C:\Windows\System32\drivers\etc\services:152:pop3s             995/tcp    spop3                  #pop3 protocol over 
+TLS/SSL (was spop3)
+C:\Windows\System32\drivers\etc\services:154:kpop             1109/tcp                           #Kerberos POP
+C:\Windows\System32\drivers\etc\services:155:nfsd-status      1110/tcp                           #Cluster status info
+C:\Windows\System32\drivers\etc\services:157:nfa              1155/tcp                           #Network File Access
+C:\Windows\System32\drivers\etc\services:159:activesync       1034/tcp                           #ActiveSync 
+Notifications
+C:\Windows\System32\drivers\etc\services:161:opsmgr           1270/tcp                           #Microsoft Operations 
+Manager
+C:\Windows\System32\drivers\etc\services:163:ms-sql-s         1433/tcp                           #Microsoft-SQL-Server 
+C:\Windows\System32\drivers\etc\services:165:ms-sql-m         1434/tcp                           #Microsoft-SQL-Monitor
+C:\Windows\System32\drivers\etc\services:167:ms-sna-server    1477/tcp
+C:\Windows\System32\drivers\etc\services:169:ms-sna-base      1478/tcp
+C:\Windows\System32\drivers\etc\services:171:wins             1512/tcp                           #Microsoft Windows 
+Internet Name Service
+C:\Windows\System32\drivers\etc\services:173:ingreslock       1524/tcp    ingres
+C:\Windows\System32\drivers\etc\services:174:stt              1607/tcp
+C:\Windows\System32\drivers\etc\services:177:pptconference    1711/tcp
+C:\Windows\System32\drivers\etc\services:179:pptp             1723/tcp                           #Point-to-point 
+tunnelling protocol
+C:\Windows\System32\drivers\etc\services:180:msiccp           1731/tcp
+C:\Windows\System32\drivers\etc\services:182:remote-winsock   1745/tcp
+C:\Windows\System32\drivers\etc\services:184:ms-streaming     1755/tcp
+C:\Windows\System32\drivers\etc\services:186:msmq             1801/tcp                           #Microsoft Message 
+Queue
+C:\Windows\System32\drivers\etc\services:190:msnp             1863/tcp
+C:\Windows\System32\drivers\etc\services:192:ssdp             1900/tcp
+C:\Windows\System32\drivers\etc\services:194:close-combat     1944/tcp
+C:\Windows\System32\drivers\etc\services:197:knetd            2053/tcp                           #Kerberos 
+de-multiplexor
+C:\Windows\System32\drivers\etc\services:198:mzap             2106/tcp                           #Multicast-Scope Zone 
+Announcement Protocol
+C:\Windows\System32\drivers\etc\services:200:qwave            2177/tcp                           #QWAVE
+C:\Windows\System32\drivers\etc\services:202:directplay       2234/tcp                           #DirectPlay
+C:\Windows\System32\drivers\etc\services:204:ms-olap3         2382/tcp                           #Microsoft OLAP 3
+C:\Windows\System32\drivers\etc\services:206:ms-olap4         2383/tcp                           #Microsoft OLAP 4
+C:\Windows\System32\drivers\etc\services:208:ms-olap1         2393/tcp                           #Microsoft OLAP 1
+C:\Windows\System32\drivers\etc\services:210:ms-olap2         2394/tcp                           #Microsoft OLAP 2
+C:\Windows\System32\drivers\etc\services:212:ms-theater       2460/tcp
+C:\Windows\System32\drivers\etc\services:214:wlbs             2504/tcp                           #Microsoft Windows 
+Load Balancing Server
+C:\Windows\System32\drivers\etc\services:216:ms-v-worlds      2525/tcp                           #Microsoft V-Worlds 
+C:\Windows\System32\drivers\etc\services:218:sms-rcinfo       2701/tcp                           #SMS RCINFO
+C:\Windows\System32\drivers\etc\services:220:sms-xfer         2702/tcp                           #SMS XFER
+C:\Windows\System32\drivers\etc\services:222:sms-chat         2703/tcp                           #SMS CHAT
+C:\Windows\System32\drivers\etc\services:224:sms-remctrl      2704/tcp                           #SMS REMCTRL
+C:\Windows\System32\drivers\etc\services:226:msolap-ptp2      2725/tcp                           #MSOLAP PTP2
+C:\Windows\System32\drivers\etc\services:228:icslap           2869/tcp
+C:\Windows\System32\drivers\etc\services:230:cifs             3020/tcp
+C:\Windows\System32\drivers\etc\services:232:xbox             3074/tcp                           #Microsoft Xbox game 
+port
+C:\Windows\System32\drivers\etc\services:234:ms-dotnetster    3126/tcp                           #Microsoft .NET ster 
+port
+C:\Windows\System32\drivers\etc\services:236:ms-rule-engine   3132/tcp                           #Microsoft Business 
+Rule Engine Update Service
+C:\Windows\System32\drivers\etc\services:238:msft-gc          3268/tcp                           #Microsoft Global 
+Catalog
+C:\Windows\System32\drivers\etc\services:240:msft-gc-ssl      3269/tcp                           #Microsoft Global 
+Catalog with LDAP/SSL
+C:\Windows\System32\drivers\etc\services:242:ms-cluster-net   3343/tcp                           #Microsoft Cluster Net
+C:\Windows\System32\drivers\etc\services:244:ms-wbt-server    3389/tcp                           #MS WBT Server
+C:\Windows\System32\drivers\etc\services:246:ms-la            3535/tcp                           #Microsoft Class 
+Server
+C:\Windows\System32\drivers\etc\services:248:pnrp-port        3540/tcp                           #PNRP User Port
+C:\Windows\System32\drivers\etc\services:250:teredo           3544/tcp                           #Teredo Port
+C:\Windows\System32\drivers\etc\services:252:p2pgroup         3587/tcp                           #Peer to Peer Grouping
+C:\Windows\System32\drivers\etc\services:255:ws-discovery     3702/tcp                           #WS-Discovery
+C:\Windows\System32\drivers\etc\services:256:dvcprov-port     3776/tcp                           #Device Provisioning 
+Port
+C:\Windows\System32\drivers\etc\services:258:msfw-control     3847/tcp                           #Microsoft Firewall 
+Control
+C:\Windows\System32\drivers\etc\services:259:msdts1           3882/tcp                           #DTS Service Port
+C:\Windows\System32\drivers\etc\services:260:sdp-portmapper   3935/tcp                           #SDP Port Mapper 
+Protocol
+C:\Windows\System32\drivers\etc\services:262:net-device       4350/tcp                           #Net Device
+C:\Windows\System32\drivers\etc\services:264:ipsec-msft       4500/tcp                           #Microsoft IPsec NAT-T
+C:\Windows\System32\drivers\etc\services:266:llmnr            5355/tcp                           #LLMNR 
+C:\Windows\System32\drivers\etc\services:268:wsd              5357/tcp                           #Web Services on 
+devices 
+C:\Windows\System32\drivers\etc\services:269:wsd              5358/tcp                           #Web Services on 
+devices
+C:\Windows\System32\drivers\etc\services:270:rrac             5678/tcp                           #Remote Replication 
+Agent Connection
+C:\Windows\System32\drivers\etc\services:272:dccm             5679/tcp                           #Direct Cable Connect 
+Manager
+C:\Windows\System32\drivers\etc\services:274:ms-licensing     5720/tcp                           #Microsoft Licensing
+C:\Windows\System32\drivers\etc\services:276:directplay8      6073/tcp                           #DirectPlay8
+C:\Windows\System32\drivers\etc\services:278:ms-do            7680/tcp                           #Microsoft Delivery 
+Optimization
+C:\Windows\System32\drivers\etc\services:280:man              9535/tcp                           #Remote Man Server
+C:\Windows\System32\drivers\etc\services:281:rasadv           9753/tcp
+C:\Windows\System32\drivers\etc\services:283:imip-channels   11320/tcp                           #IMIP Channels Port
+C:\Windows\System32\drivers\etc\services:285:directplaysrvr  47624/tcp                           #Direct Play Server
+
+

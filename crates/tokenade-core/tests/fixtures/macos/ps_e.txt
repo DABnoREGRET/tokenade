@@ -1,0 +1,50 @@
+  PID TTY           TIME CMD
+    1 ??         8:42.48 /sbin/launchd
+   70 ??         1:37.79 /usr/libexec/logd
+   71 ??         0:11.90 /usr/libexec/UserEventAgent (System)
+   74 ??         0:00.37 /System/Library/PrivateFrameworks/Uninstall.framework/Resources/uninstalld
+   75 ??         4:39.94 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd
+   76 ??         0:00.21 /System/Library/PrivateFrameworks/MediaRemote.framework/Support/mediaremoted
+   80 ??         0:19.99 /usr/sbin/systemstats --daemon
+   81 ??         0:04.01 /usr/libexec/configd
+   82 ??         0:00.01 endpointsecurityd
+   83 ??         0:18.06 /System/Library/CoreServices/powerd.bundle/powerd
+   87 ??         0:00.03 /usr/libexec/remoted
+   89 ??         0:02.40 /usr/libexec/keybagd -t 15
+   91 ??         0:00.09 /System/Library/PrivateFrameworks/MobileSoftwareUpdate.framework/Support/softwareupdated
+   96 ??         0:53.90 /usr/libexec/warmd
+   98 ??         0:00.04 /System/Library/CoreServices/iconservicesd
+   99 ??         0:01.41 /usr/libexec/kernelmanagerd
+  100 ??         0:23.96 /usr/libexec/diskarbitrationd
+  103 ??         0:03.69 /usr/libexec/coreduetd
+  104 ??         0:01.96 /usr/sbin/syslogd
+  107 ??         0:00.01 /usr/libexec/thermalmonitord
+  108 ??         0:17.04 /System/Library/PrivateFrameworks/CoreDuetContext.framework/Resources/contextstored
+  109 ??        10:39.48 /usr/libexec/opendirectoryd
+  110 ??         3:26.60 /System/Library/PrivateFrameworks/ApplePushService.framework/apsd
+  111 ??         0:21.18 /System/Library/CoreServices/launchservicesd
+  112 ??         0:00.11 /usr/libexec/timed
+  113 ??         0:00.24 /System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/Resources/usbmuxd -launchd
+  114 ??         0:35.17 /usr/sbin/securityd -i
+  115 ??         0:00.01 auditd -l
+  117 ??         0:14.45 /usr/libexec/locationd
+  119 ??         0:00.01 autofsd
+  120 ??         0:00.08 /usr/libexec/displaypolicyd -k 1
+  121 ??         0:29.26 /usr/libexec/dasd
+  122 ??         0:00.17 /System/Library/PrivateFrameworks/Heimdal.framework/Helpers/kdc
+  124 ??         0:00.60 /usr/sbin/distnoted daemon
+  125 ??         0:00.02 /System/Library/PrivateFrameworks/AppleCredentialManager.framework/AppleCredentialManagerDaemon
+  128 ??         0:00.05 /System/Library/CoreServices/logind
+  129 ??         0:00.09 /System/Library/PrivateFrameworks/GenerationalStorage.framework/Versions/A/Support/revisiond
+  130 ??         0:00.01 /usr/sbin/KernelEventAgent
+  132 ??         1:10.74 /usr/sbin/bluetoothd
+  133 ??         1:05.65 /usr/sbin/notifyd
+  135 ??         0:00.12 /usr/libexec/corebrightnessd --launchd
+  136 ??         0:01.56 /usr/libexec/AirPlayXPCHelper
+  137 ??         0:00.05 /System/Library/Frameworks/CoreMediaIO.framework/Versions/A/Resources/com.apple.cmio.registerassistantservice
+  138 ??         0:09.50 /System/Library/PrivateFrameworks/TCC.framework/Resources/tccd system
+  139 ??         0:02.56 /System/Library/CoreServices/coreservicesd
+  140 ??         0:00.23 aslmanager
+  141 ??         1:11.42 /usr/sbin/cfprefsd daemon
+  142 ??         0:05.07 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow console
+  143 ??         0:00.06 /usr/libexec/PowerUIAgent

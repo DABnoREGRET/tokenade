@@ -1,0 +1,55 @@
+[package]
+name = "tk-base"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Tokenade — the BASE layer: the primitives everything else names"
+
+# The first crate extracted from `tokenade-core`. What it contains is defined
+# by a checkable rule, not by taste: **none of its modules names
+# anything outside it**. The test
+# `layers_only_point_downwards` establishes it, and eight primitives parked
+# elsewhere had to be handed back to this layer for it to hold.
+#
+# The heavy dependencies are not here, and that is the point: no tree-sitter,
+# no scraper, no document extractors. Touching a primitive no longer relinks
+# sixteen grammars.
+
+[features]
+# `tokenizer.rs` lives here since the split, and it is the one carrying the
+# `bpe` gate: without this declaration the file's `#[cfg(feature = "bpe")]` is
+# ALWAYS false and the exact counter silently disappears — the compiler only
+# says so through an `unexpected cfg` warning.
+bpe = ["dep:tiktoken-rs"]
+
+[dependencies]
+tiktoken-rs = { workspace = true, optional = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+regex = { workspace = true }
+encoding_rs = { workspace = true }
+chardetng = { workspace = true }
+rusqlite = { workspace = true }
+sqlite-vec = { workspace = true }
+zerocopy = { workspace = true }
+fs2 = { workspace = true }
+ed25519-dalek = { workspace = true }
+hex = { workspace = true }
+base64 = { workspace = true }
+tokio = { workspace = true }
+
+[target.'cfg(unix)'.dependencies]
+libc = "0.2"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = [
+    "Win32_Foundation",
+    "Win32_Globalization",
+    "Win32_System_Threading",
+] }
+
+[dev-dependencies]
+proptest = { workspace = true }
+
+[lints]
+workspace = true

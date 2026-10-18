@@ -1,0 +1,17 @@
+[package]
+name = "tk-fold"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Tokenade — the FOLD layer: the gate, the budget, elision, the capability tables"
+
+[dependencies]
+tk-base = { path = "../tk-base" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+regex = { workspace = true }
+rusqlite = { workspace = true }
+image = { workspace = true }
+
+[lints]
+workspace = true

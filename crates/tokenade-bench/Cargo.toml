@@ -1,0 +1,115 @@
+[package]
+name = "tokenade-bench"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Benchmarking framework for Tokenade and competitor mechanisms"
+
+[lib]
+name = "tokenade_bench"
+path = "src/lib.rs"
+
+[[bin]]
+name = "tokenade-bench"
+path = "src/main.rs"
+
+[dependencies]
+tokenade-core = { path = "../tokenade-core" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+regex = { workspace = true }
+zip = { workspace = true }
+
+[lints]
+workspace = true
+
+[[test]]
+name = "ratchets"
+path = "tests/ratchets/main.rs"
+
+# **An instrument without tests does not carry a test harness.**
+#
+# `cargo test --workspace` builds a test binary for EVERY target,
+# binaries included — including those that do not contain a single `#[test]`.
+# Measured on 2026-09-14: ten of the bench's eighteen instruments are in that case,
+# i.e. **ten links and 95 MB** produced on every test pass to run
+# zero tests. Linking is this repo's memory peak, and it is this step that got
+# four releases in a row killed.
+#
+# `test = false` removes them from the harness, not from compilation: `cargo build`
+# builds them as before. An instrument that GAINS tests removes its line, and
+# `every_testless_bin_says_so` refuses the opposite — a binary that carries
+# tests and hides them.
+[[bin]]
+name = "compactor_review"
+path = "src/bin/compactor_review.rs"
+test = false
+
+[[bin]]
+name = "diag"
+path = "src/bin/diag.rs"
+test = false
+
+[[bin]]
+name = "furniture_census"
+path = "src/bin/furniture_census.rs"
+test = false
+
+[[bin]]
+name = "attribution"
+path = "src/bin/attribution.rs"
+
+[[bin]]
+name = "docs_loss"
+path = "src/bin/docs_loss.rs"
+test = false
+
+[[bin]]
+name = "fold_recovery"
+path = "src/bin/fold_recovery.rs"
+test = false
+
+[[bin]]
+name = "json_headroom"
+path = "src/bin/json_headroom.rs"
+test = false
+
+[[bin]]
+name = "locale_census"
+path = "src/bin/locale_census.rs"
+test = false
+
+[[bin]]
+name = "mutate"
+path = "src/bin/mutate.rs"
+test = false
+
+[[bin]]
+name = "probe"
+path = "src/bin/probe.rs"
+test = false
+
+[[bin]]
+name = "per_command"
+path = "src/bin/per_command.rs"
+test = false
+
+[[bin]]
+name = "read_view_headroom"
+path = "src/bin/read_view_headroom.rs"
+test = false
+
+[[bin]]
+name = "searchout_headroom"
+path = "src/bin/searchout_headroom.rs"
+test = false
+
+[[bin]]
+name = "rag_eval"
+path = "src/bin/rag_eval/main.rs"
+test = false
+
+[[bin]]
+name = "tokenizer_drift"
+path = "src/bin/tokenizer_drift.rs"
+test = false

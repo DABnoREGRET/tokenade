@@ -1,0 +1,40 @@
+{
+    AKLastIDMSEnvironment = 0;
+    AppleAntiAliasingThreshold = 4;
+    AppleLanguages =     (
+        "fr-FR"
+    );
+    AppleLanguagesDidMigrate = "12.0.1";
+    AppleLanguagesSchemaVersion = 2000;
+    AppleLocale = "fr_FR";
+    AppleMiniaturizeOnDoubleClick = 0;
+    NSAutomaticCapitalizationEnabled = 0;
+    NSAutomaticDashSubstitutionEnabled = 1;
+    NSAutomaticPeriodSubstitutionEnabled = 0;
+    NSAutomaticQuoteSubstitutionEnabled = 1;
+    NSAutomaticSpellingCorrectionEnabled = 0;
+    NSAutomaticTextCompletionEnabled = 1;
+    NSLinguisticDataAssetsRequestLastInterval = 86400;
+    NSLinguisticDataAssetsRequestTime = "2026-03-06 12:00:44 +0000";
+    NSLinguisticDataAssetsRequested =     (
+        fr,
+        en
+    );
+    NSLinguisticDataAssetsRequestedByChecker =     (
+        en,
+        fr
+    );
+    NSPreferredWebServices =     {
+        NSWebServicesProviderWebSearch =         {
+            NSDefaultDisplayName = Google;
+            NSProviderIdentifier = "com.google.www";
+        };
+    };
+    NSUserDictionaryReplacementItems =     (
+                {
+            on = 1;
+            replace = jrv;
+            with = "J\\U2019arrive\\U00a0!";
+        }
+    );
+    WebAutomaticSpellingCorrectionEnabled = 0;

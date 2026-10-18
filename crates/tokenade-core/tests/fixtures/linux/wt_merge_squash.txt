@@ -1,0 +1,20 @@
+◎ Squashing 3 commits into a single commit (3 files, +180)...
+◎ Generating squash commit message...
+↳ Using fallback commit message. For LLM setup guide, run wt config --help
+  Squash commits from feat-c
+  
+  Combined commits:
+  - feat c 1
+  - feat c 2
+  - feat c 3
+✓ Squashed @ 6a2d350
+◎ Merging 1 commit to main @ 6a2d350 (no rebase needed)
+  * 6a2d350 Squash commits from feat-c
+   k1.txt | 30 ++++++++++++++++++++++
+   k2.txt | 60 ++++++++++++++++++++++++++++++++++++++++++++
+   k3.txt | 90 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   3 files changed, 180 insertions(+)
+✓ Merged to main (1 commit, 3 files, +180)
+◎ Removing feat-c worktree & branch in background (same commit as main, _)
+▲ Worktree for main @ /home/username/.devworkspace/projects/tokenade//home/user/repo, but cannot change directory — shell integration not installed
+↳ To enable automatic cd, run wt config shell install

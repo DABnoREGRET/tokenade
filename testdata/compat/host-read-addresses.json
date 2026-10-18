@@ -1,0 +1,112 @@
+{
+  "_README": [
+    "The address the HOST reads, per agent — not the one our installer picks.",
+    "§983/§985/§986. For two months Grok carried our hooks in",
+    "~/.grok/user-settings.json, a file it does not read: `grok inspect` showed",
+    "Hooks (0) there and Hooks (6) at the right address. Both instruments that produce a",
+    "compatibility table — the in-process test (compat_matrix.rs) and the published",
+    "bench (matrix-probe.mjs) — decided 'channel installed' by looking at what",
+    "the install had WRITTEN. This file is their shared source, because two",
+    "copies of the same table drift, and this journal already counts several.",
+    "",
+    "paths: [] does NOT mean 'unknown'. It means 'the address is known and nothing live",
+    "is there' — the Qwen case. An agent ABSENT from this file is the unknown, and keeps the",
+    "wide scan on both sides.",
+    "",
+    "Paths are relative to HOME, separated by /. Each entry says where its provenance was",
+    "READ: the host's binary or bundle, or its output.",
+    "",
+    "`confirm` is the command that RE-PROVES the address by asking the host itself,",
+    "when it can answer. That is the form of proof Grok was missing for two",
+    "months: not « we wrote there », but « the host says it reads there »."
+  ],
+  "claude-code": {
+    "paths": [
+      ".claude/settings.json"
+    ],
+    "why": "Claude Code's documented settings file; it is also the one Grok and Codex scan for their Claude compatibility."
+  },
+  "cursor": {
+    "paths": [
+      ".cursor/hooks.json"
+    ],
+    "why": "cursor-agent bundle 2026.08.11, 190.index.js: hookExecutor.executeHookForStep(preToolUse/postToolUse), user source ~/.cursor/hooks.json.",
+    "confirm": "grep -l updated_mcp_tool_output \"$(dirname \"$(realpath \"$(command -v cursor-agent)\")\")\"/*.js"
+  },
+  "codex": {
+    "paths": [
+      ".codex/hooks.json"
+    ],
+    "why": "The codex binary carries `hooks.json` in the same string table as `.codex`, `.claude` and `settings.local.json`."
+  },
+  "droid": {
+    "paths": [
+      ".factory/hooks.json"
+    ],
+    "why": "`persistHooksJson` writes <folderPath>/hooks.json, and `archiveLegacyHooksFile` renames the OLD <folderPath>/hooks/hooks.json to hooks.migrated.json."
+  },
+  "copilot": {
+    "paths": [
+      ".copilot/hooks/tokenade.json"
+    ],
+    "why": "app.js: the user hooks directory is OL(ea(void 0,'config'),'hooks'), scanned for *.json."
+  },
+  "grok": {
+    "paths": [
+      ".grok/hooks/tokenade.json"
+    ],
+    "why": "`grok inspect` on a throwaway home: Hooks (0) from user-settings.json, Hooks (6) from ~/.grok/hooks/*.json (grok 1.0.0, 2026-09-11).",
+    "confirm": "grok inspect   # Hooks section"
+  },
+  "antigravity": {
+    "paths": [
+      ".gemini/config/hooks.json"
+    ],
+    "why": "Probed against the `agy` binary itself — see install_antigravity_cli_hooks."
+  },
+  "aider": {
+    "paths": [
+      ".aider.conf.yml"
+    ],
+    "why": "`aider --help`: '-c CONFIG_FILE … default: search for .aider.conf.yml in git root, cwd or home directory', and `--load LOAD_FILE` is the key we set there."
+  },
+  "opencode": {
+    "paths": [
+      ".config/opencode/plugin/tokenade.ts"
+    ],
+    "why": "XDG plugin directory loaded by opencode — confirmed by the host: `opencode debug config` lists our file under the `plugin` key (2026-09-11).",
+    "confirm": "opencode debug config | grep -A2 '\"plugin\"'"
+  },
+  "pi": {
+    "paths": [
+      ".pi/agent/extensions/tokenade.ts"
+    ],
+    "why": "Its loader spells out its rules: « Direct files: `extensions/*.ts` or `*.js` → load », on `globalExtDir = path.join(getAgentDir(), \"extensions\")`, and `getAgentDir()` returns `homedir()/.pi/agent` (dist/core/extensions/loader.js + dist/config.js, 2026-09-11). Careful: `pi list` answers « No packages installed » even when the file is loaded — it lists the packages REGISTERED in the settings, not what the loader discovers."
+  },
+  "qwen-code": {
+    "paths": [
+      ".qwen/settings.json"
+    ],
+    "why": "`paths: []` here used to mean « live file, dead entries » (§982: our entries carried BeforeTool/AfterTool while the host speaks Claude Code's names). The entries are now written as PreToolUse / SessionStart / UserPromptSubmit — verified 2026-09-12 on a throwaway home — so the address is a channel again. Leaving it empty made qwen's hook INVISIBLE to the bench, which then fell back to the shared contract and published green what no agent channel carried.",
+    "confirm": "tokenade install --only qwen-code  # then read hooks.PreToolUse in ~/.qwen/settings.json"
+  },
+  "kilo-code": {
+    "paths": [
+      ".config/kilo/plugins/tokenade.ts"
+    ],
+    "why": "`kilo debug paths` answers `config <XDG_CONFIG_HOME>/kilo`, and `kilo debug config` lists our file under the `plugin` key after an install into a throwaway home (2026-09-11).",
+    "confirm": "kilo debug config | grep -A2 '\"plugin\"'"
+  },
+  "_REGISTERED_BY_THE_HOST": {
+    "why": "openclaw and cline do not accept an address: we HAND them a directory and their CLI decides where the copy lives (cline writes one more hashed directory on every call). Their proof of delivery is therefore not a path but the host's answer, and it can be re-run.",
+    "openclaw": "openclaw plugins list   # line « Tokenade … enabled … ~/.tokenade/openclaw-plugin/index.js » (verified 2026-09-11)",
+    "cline": "after an install into a throwaway HOME, `<HOME>/.cline/plugins/_installed/local/cline-plugin-*/package/tokenade.ts` exists (verified 2026-09-11)"
+  },
+  "hermes": {
+    "paths": [
+      ".hermes/plugins/tokenade/__init__.py"
+    ],
+    "why": "Proof by execution rather than by reading: the bridge writes `hook-registered` then `hook-fired` next to itself, and both were present and dated that day on this machine (2026-09-11).",
+    "confirm": "ls -la ~/.hermes/plugins/tokenade/hook-fired   # the timestamp says when it last ran"
+  }
+}

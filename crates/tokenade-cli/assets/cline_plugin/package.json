@@ -1,0 +1,11 @@
+{
+  "name": "tokenade-cline",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "tokenade.ts",
+  "cline": {
+    "plugins": [
+      "./tokenade.ts"
+    ]
+  }
+}

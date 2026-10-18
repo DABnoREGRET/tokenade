@@ -1,0 +1,30 @@
+vm.loadavg: { 1.70 1.38 1.25 }
+vm.swapusage: total = 1024.00M  used = 293.75M  free = 730.25M  (encrypted)
+vm.cs_all_vnodes: 0
+vm.cs_debug: 0
+vm.cs_debug_fail_on_unsigned_code: 0
+vm.cs_debug_unsigned_exec_failures: 0
+vm.cs_debug_unsigned_mmap_failures: 0
+vm.cs_enforcement_panic: 0
+vm.cs_force_hard: 0
+vm.cs_force_kill: 0
+vm.cs_library_validation: 0
+vm.cs_process_enforcement: 0
+vm.cs_system_enforcement: 1
+vm.add_wire_count_over_global_limit: 0
+vm.add_wire_count_over_user_limit: 0
+vm.compressor_available: 1
+vm.compressor_bytes_used: 377716820
+vm.compressor_compressed_bytes: 1547914696
+vm.compressor_eval_period_in_msecs: 250
+vm.compressor_input_bytes: 3657584640
+vm.compressor_is_active: 1
+vm.compressor_min_csegs_per_major_compaction: 30
+vm.compressor_mode: 4
+vm.compressor_sample_max_in_msecs: 10000
+vm.compressor_sample_min_in_msecs: 500
+vm.compressor_segment_buffer_size: 262144
+vm.compressor_swapout_target_age: 0
+vm.compressor_swapouts_under_300s: 5
+vm.compressor_swapouts_under_30s: 209
+vm.compressor_swapouts_under_60s: 0

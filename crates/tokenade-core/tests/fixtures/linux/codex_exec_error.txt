@@ -1,0 +1,19 @@
+Reading additional input from stdin...
+OpenAI Codex v0.147.0
+--------
+workdir: /home/user/proj
+model: no-such-model
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a10b4f-cef4-77e0-bc97-6ccec89adb0f
+--------
+user
+hi
+warning: Model metadata for `no-such-model` not found. Defaulting to fallback metadata; this can degrade performance and cause issues.
+hook: SessionStart
+hook: SessionStart Completed
+ERROR: {"type":"error","status":400,"error":{"type":"invalid_request_error","message":"The 'no-such-model' model is not supported when using Codex with a ChatGPT account."}}
+ERROR: {"type":"error","status":400,"error":{"type":"invalid_request_error","message":"The 'no-such-model' model is not supported when using Codex with a ChatGPT account."}}

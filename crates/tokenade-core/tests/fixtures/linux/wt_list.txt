@@ -1,0 +1,5 @@
+  Branch  Status      HEAD±     main↕    main…±    Remote⇅  Path            Commit    Age  Message
+@ main        ^                                             .               1a6b02e   now  feat b
++ feat-c      _                                             ../repo.feat-c  1a6b02e   now  feat b
+
+○ Showing 2 worktrees

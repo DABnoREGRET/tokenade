@@ -1,0 +1,57 @@
+# Cargo build output, at any depth (experiments have their own target dirs).
+**/target/
+**/*.rs.bk
+
+# Benchmark inputs, cloned by benchmarks/repos/clone_bench.sh
+/benchmarks/repos/*/
+/benchmarks/repos/*.log
+
+# tokenade per-project cache / scaffold flag / dedup refs
+.tokenade/
+.fastembed_cache/
+
+# Backups tokenade writes when it scaffolds its block into a project rules file
+*.tokenade-original
+
+# IDE / agent session state
+/.claude/
+/.cursor/
+/.serena/
+.idea/
+.vscode/
+
+# Editor / OS noise
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Credentials / secrets — never commit
+.env
+.env.local
+npm/.npmrc
+
+# Pre-built binaries — distributed via GitHub Releases / npm, not committed
+dist/
+/tokenade
+/tokenade.exe
+
+# Loose screenshots at the repo root
+/*.png
+/*.jpeg
+/*.jpg
+
+# Bench/eval run artifacts (results databases, run logs, journals)
+experiments/**/*.sqlite
+experiments/**/*.run.log
+experiments/**/journal.jsonl
+**/.autoresearch-*
+.venv*/
+
+# Partial compat-bench runs; only the complete <os>.json files are the reference
+testdata/compat/results/*.partial.json
+
+# Test artefacts dropped by the Hermes plugin harness
+__pycache__/
+crates/tokenade-cli/assets/hermes_plugin/hook-fired
+crates/tokenade-cli/assets/hermes_plugin/hook-registered

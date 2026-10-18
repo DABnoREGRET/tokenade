@@ -1,0 +1,21 @@
+Hardware:
+
+    Hardware Overview:
+
+      Model Name: iMac
+      Model Identifier: iMac11,3
+      Processor Name: Unknown
+      Processor Speed: 4,29 GHz
+      Number of Processors: 1
+      Total Number of Cores: 1
+      L2 Cache: 256 KB
+      L3 Cache: 8 MB
+      Memory: 5,79 GB
+      System Firmware Version: VirtualBox
+      OS Loader Version: 540.40.4~45
+      Apple ROM Info: vboxVer_7.2.4vboxRev_170995
+      SMC Version (system): 2.3f35
+      Serial Number (system): VirtualBox-b99e29d8-13ee-46e1-8746-41192ce823fb
+      Hardware UUID: D8299EB9-EE13-E146-8746-41192CE823FB
+      Provisioning UDID: D8299EB9-EE13-E146-8746-41192CE823FB
+

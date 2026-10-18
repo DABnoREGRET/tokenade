@@ -1,0 +1,166 @@
+commit 5f4f9643258dc2a65e684b63f12c8d543c936c67
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Sat May 9 10:20:32 2026 +0800
+
+    chore(deps): bump the actions group across 1 directory with 2 updates (#4640)
+    
+    Bumps the actions group with 2 updates in the / directory: [codecov/codecov-action](https://github.com/codecov/codecov-action) and [aquasecurity/trivy-action](https://github.com/aquasecurity/trivy-action).
+    
+    
+    Updates `codecov/codecov-action` from 5 to 6
+    - [Release notes](https://github.com/codecov/codecov-action/releases)
+    - [Changelog](https://github.com/codecov/codecov-action/blob/main/CHANGELOG.md)
+    - [Commits](https://github.com/codecov/codecov-action/compare/v5...v6)
+    
+    Updates `aquasecurity/trivy-action` from 0.35.0 to 0.36.0
+    - [Release notes](https://github.com/aquasecurity/trivy-action/releases)
+    - [Commits](https://github.com/aquasecurity/trivy-action/compare/0.35.0...v0.36.0)
+    
+    ---
+    updated-dependencies:
+    - dependency-name: codecov/codecov-action
+      dependency-version: '6'
+      dependency-type: direct:production
+      update-type: version-update:semver-major
+      dependency-group: actions
+    - dependency-name: aquasecurity/trivy-action
+      dependency-version: 0.36.0
+      dependency-type: direct:production
+      update-type: version-update:semver-minor
+      dependency-group: actions
+    ...
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+    Co-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+
+ .github/ISSUE_TEMPLATE/bug-report.yaml      |   60 +
+ .github/ISSUE_TEMPLATE/config.yml           |   11 +
+ .github/ISSUE_TEMPLATE/feature-request.yaml |   18 +
+ .github/PULL_REQUEST_TEMPLATE.md            |   10 +
+ .github/dependabot.yml                      |   14 +
+ .github/workflows/codeql.yml                |   49 +
+ .github/workflows/gin.yml                   |   83 +
+ .github/workflows/goreleaser.yml            |   36 +
+ .github/workflows/trivy-scan.yml            |   56 +
+ .gitignore                                  |   11 +
+ .golangci.yml                               |   75 +
+ .goreleaser.yaml                            |   56 +
+ BENCHMARKS.md                               |  291 ++
+ CHANGELOG.md                                |  796 ++++++
+ CODE_OF_CONDUCT.md                          |   46 +
+ CONTRIBUTING.md                             |   41 +
+ LICENSE                                     |   21 +
+ Makefile                                    |  110 +
+ README.md                                   |  227 ++
+ auth.go                                     |  116 +
+ auth_test.go                                |  176 ++
+ benchmarks_test.go                          |  160 ++
+ binding/binding.go                          |  127 +
+ binding/binding_msgpack_test.go             |   59 +
+ binding/binding_nomsgpack.go                |  121 +
+ binding/binding_test.go                     | 1434 ++++++++++
+ binding/bson.go                             |   30 +
+ binding/default_validator.go                |   95 +
+ binding/default_validator_benchmark_test.go |   27 +
+ binding/default_validator_test.go           |   90 +
+ binding/form.go                             |   64 +
+ binding/form_mapping.go                     |  550 ++++
+ binding/form_mapping_benchmark_test.go      |   67 +
+ binding/form_mapping_test.go                | 1146 ++++++++
+ binding/header.go                           |   37 +
+ binding/json.go                             |   56 +
+ binding/json_test.go                        |  216 ++
+ binding/msgpack.go                          |   37 +
+ binding/msgpack_test.go                     |   34 +
+ binding/multipart_form_mapping.go           |   74 +
+ binding/multipart_form_mapping_test.go      |  139 +
+ binding/plain.go                            |   56 +
+ binding/protobuf.go                         |   41 +
+ binding/query.go                            |   21 +
+ binding/toml.go                             |   35 +
+ binding/toml_test.go                        |   22 +
+ binding/uri.go                              |   18 +
+ binding/validate_test.go                    |  253 ++
+ binding/xml.go                              |   34 +
+ binding/xml_test.go                         |   25 +
+ binding/yaml.go                             |   35 +
+ binding/yaml_test.go                        |   21 +
+ codec/json/api.go                           |   57 +
+ codec/json/go_json.go                       |   42 +
+ codec/json/json.go                          |   41 +
+ codec/json/jsoniter.go                      |   44 +
+ codec/json/sonic.go                         |   44 +
+ codecov.yml                                 |   13 +
+ context.go                                  | 1489 +++++++++++
+ context_appengine.go                        |   11 +
+ context_file_test.go                        |   35 +
+ context_test.go                             | 3810 +++++++++++++++++++++++++++
+ debug.go                                    |  114 +
+ debug_test.go                               |  180 ++
+ deprecated.go                               |   23 +
+ deprecated_test.go                          |   33 +
+ doc.go                                      |   22 +
+ docs/doc.md                                 | 2666 +++++++++++++++++++
+ errors.go                                   |  173 ++
+ errors_test.go                              |  140 +
+ examples/README.md                          |    3 +
+ fs.go                                       |   50 +
+ fs_test.go                                  |   72 +
+ gin.go                                      |  832 ++++++
+ ginS/README.md                              |   17 +
+ ginS/gins.go                                |  159 ++
+ ginS/gins_test.go                           |  246 ++
+ gin_integration_test.go                     |  607 +++++
+ gin_test.go                                 | 1158 ++++++++
+ githubapi_test.go                           |  476 ++++
+ go.mod                                      |   45 +
+ go.sum                                      |   96 +
+ internal/bytesconv/bytesconv.go             |   21 +
+ internal/bytesconv/bytesconv_test.go        |  124 +
+ internal/fs/fs.go                           |   21 +
+ internal/fs/fs_test.go                      |   49 +
+ logger.go                                   |  314 +++
+ logger_test.go                              |  488 ++++
+ middleware_test.go                          |  253 ++
+ mode.go                                     |  100 +
+ mode_test.go                                |   62 +
+ path.go                                     |  203 ++
+ path_test.go                                |  192 ++
+ recovery.go                                 |  199 ++
+ recovery_test.go                            |  369 +++
+ render/bson.go                              |   34 +
+ render/data.go                              |   31 +
+ render/html.go                              |  101 +
+ render/json.go                              |  194 ++
+ render/msgpack.go                           |   43 +
+ render/pdf.go                               |   26 +
+ render/protobuf.go                          |   36 +
+ render/reader.go                            |   48 +
+ render/reader_test.go                       |   23 +
+ render/redirect.go                          |   29 +
+ render/render.go                            |   42 +
+ render/render_msgpack_test.go               |   80 +
+ render/render_test.go                       |  807 ++++++
+ render/text.go                              |   41 +
+ render/toml.go                              |   36 +
+ render/xml.go                               |   28 +
+ render/yaml.go                              |   36 +
+ response_writer.go                          |  141 +
+ response_writer_test.go                     |  317 +++
+ routergroup.go                              |  259 ++
+ routergroup_test.go                         |  219 ++
+ routes_test.go                              |  791 ++++++
+ test_helpers.go                             |   57 +
+ testdata/certificate/cert.pem               |   18 +
+ testdata/certificate/key.pem                |   27 +
+ testdata/protoexample/test.pb.go            |  298 +++
+ testdata/protoexample/test.proto            |   12 +
+ testdata/template/hello.tmpl                |    1 +
+ testdata/template/raw.tmpl                  |    1 +
+ testdata/test_file.txt                      |    2 +
+ tree.go                                     |  950 +++++++
+ tree_test.go                                | 1113 ++++++++
+ utils.go                                    |  187 ++
+ utils_test.go                               |  173 ++
+ version.go                                  |    8 +
+ 130 files changed, 28729 insertions(+)

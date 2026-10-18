@@ -1,0 +1,20 @@
+commit 7c318bd1aa4b4affab29761f15a9604323fe2a3b
+Author: Sindre Sorhus <sindresorhus@gmail.com>
+Date:   Thu Sep 11 19:11:41 2025 +0700
+
+    3.0.0
+
+ .editorconfig               |  12 ++
+ .gitattributes              |   1 +
+ .github/security.md         |   3 +
+ .github/workflows/main.yml  |  21 +++
+ .gitignore                  |   2 +
+ .npmrc                      |   1 +
+ index.d.ts                  | 286 ++++++++++++++++++++++++++++++++++++++++
+ index.js                    | 139 ++++++++++++++++++++
+ license                     |   9 ++
+ overridable-replacements.js |   7 +
+ package.json                |  62 +++++++++
+ readme.md                   | 311 ++++++++++++++++++++++++++++++++++++++++++++
+ test.js                     | 257 ++++++++++++++++++++++++++++++++++++
+ 13 files changed, 1111 insertions(+)

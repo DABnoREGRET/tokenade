@@ -1,0 +1,50 @@
+USER               PID  %CPU %MEM      VSZ    RSS   TT  STAT STARTED      TIME COMMAND
+root               109  58.0  0.1 33826764   8196   ??  Rs   22Jan26  10:39.32 /usr/libexec/opendirectoryd
+root             68778   8.7  0.1 34125500   5924   ??  Ss    4:53AM   0:00.04 sshd: macos [priv] 
+root                 1   1.0  0.2 34126792   9792   ??  Ss   22Jan26   8:42.48 /sbin/launchd
+macos            68781   0.8  0.0 34125500   1332   ??  S     4:53AM   0:00.00 sshd: macos@notty 
+root                70   0.7  0.5 33733184  27464   ??  Ss   22Jan26   1:37.79 /usr/libexec/logd
+root               133   0.4  0.0 33607664   1600   ??  Ss   22Jan26   1:05.65 /usr/sbin/notifyd
+root               311   0.1  0.0 33608396   1788   ??  Ss   22Jan26   0:01.88 /System/Library/PrivateFrameworks/AccountPolicy.framework/XPCServices/com.apple.AccountPolicyHelper.xpc/Contents/MacOS/com.apple.AccountPolicyHelper
+root             47286   0.0  0.1 34153536   5124   ??  S    Sun04AM   0:00.06 sudo -S installer -pkg /tmp/validate-Demo-App-0.4.21-x86_64.pkg -target / -verbose
+macos            47284   0.0  0.0 34123568    812   ??  Ss   Sun04AM   0:00.00 zsh -c echo 'REDACTED_PASSWORD' | sudo -S installer -pkg /tmp/validate-Demo-App-0.4.21-x86_64.pkg -target / -verbose 2>&1
+root             47217   0.0  0.2 34167324  11272   ??  S    Sun04AM   0:24.35 installer -pkg /tmp/Demo-App-0.4.21-x86_64.pkg -target / -verbose
+root             47216   0.0  0.1 34153536   5124   ??  S    Sun04AM   0:00.06 sudo -S installer -pkg /tmp/Demo-App-0.4.21-x86_64.pkg -target / -verbose
+macos            47214   0.0  0.0 34123568    812   ??  Ss   Sun04AM   0:00.00 zsh -c echo 'REDACTED_PASSWORD' | sudo -S installer -pkg /tmp/Demo-App-0.4.21-x86_64.pkg -target / -verbose 2>&1
+root             47122   0.0  0.2 34167324  11356   ??  S    Sun04AM   0:24.74 installer -pkg /tmp/diag-Demo-App-0.4.21-x86_64.pkg -target / -verbose
+root             47121   0.0  0.1 34153536   5124   ??  S    Sun04AM   0:00.06 sudo -S installer -pkg /tmp/diag-Demo-App-0.4.21-x86_64.pkg -target / -verbose
+macos            47119   0.0  0.0 34123568    812   ??  Ss   Sun04AM   0:00.00 zsh -c echo 'REDACTED_PASSWORD' | sudo -S installer -pkg /tmp/diag-Demo-App-0.4.21-x86_64.pkg -target / -verbose 2>&1
+root             47044   0.0  0.2 34167324  11340   ??  S    Sun04AM   0:24.51 installer -pkg /tmp/validate-Demo-App-0.4.21-x86_64.pkg -target / -verbose
+root             47043   0.0  0.1 34153536   5124   ??  S    Sun04AM   0:00.06 sudo -S installer -pkg /tmp/validate-Demo-App-0.4.21-x86_64.pkg -target / -verbose
+macos            47041   0.0  0.0 34123568    812   ??  Ss   Sun04AM   0:00.01 zsh -c echo 'REDACTED_PASSWORD' | sudo -S installer -pkg /tmp/validate-Demo-App-0.4.21-x86_64.pkg -target / -verbose 2>&1
+root             46976   0.0  0.2 34167324  11340   ??  S    Sun04AM   0:24.72 installer -pkg /tmp/Demo-App-0.4.21-x86_64.pkg -target / -verbose
+root             46975   0.0  0.1 34153536   5124   ??  S    Sun04AM   0:00.06 sudo -S installer -pkg /tmp/Demo-App-0.4.21-x86_64.pkg -target / -verbose
+macos            46973   0.0  0.0 34123568    812   ??  Ss   Sun04AM   0:00.01 zsh -c echo 'REDACTED_PASSWORD' | sudo -S installer -pkg /tmp/Demo-App-0.4.21-x86_64.pkg -target / -verbose 2>&1
+root             46948   0.0  0.2 34167324  11352   ??  S    Sun04AM   0:24.51 installer -pkg /tmp/diag-Demo-App-0.4.21-x86_64.pkg -target / -verbose
+root             46947   0.0  0.1 34153536   5124   ??  S    Sun04AM   0:00.06 sudo -S installer -pkg /tmp/diag-Demo-App-0.4.21-x86_64.pkg -target / -verbose
+macos            46945   0.0  0.0 34123568    812   ??  Ss   Sun04AM   0:00.00 zsh -c echo 'REDACTED_PASSWORD' | sudo -S installer -pkg /tmp/diag-Demo-App-0.4.21-x86_64.pkg -target / -verbose 2>&1
+root             46870   0.0  0.2 34167324  11296   ??  S    Sun04AM   0:24.75 installer -pkg /tmp/validate-Demo-App-0.4.21-x86_64.pkg -target / -verbose
+root             46869   0.0  0.1 34153536   5124   ??  S    Sun04AM   0:00.05 sudo -S installer -pkg /tmp/validate-Demo-App-0.4.21-x86_64.pkg -target / -verbose
+macos            46867   0.0  0.0 34123568    812   ??  Ss   Sun04AM   0:00.00 zsh -c echo 'REDACTED_PASSWORD' | sudo -S installer -pkg /tmp/validate-Demo-App-0.4.21-x86_64.pkg -target / -verbose 2>&1
+root             46801   0.0  0.2 34167324  11336   ??  S    Sun04AM   0:24.89 installer -pkg /tmp/Demo-App-0.4.21-x86_64.pkg -target / -verbose
+root             46800   0.0  0.1 34153536   5120   ??  S    Sun04AM   0:00.06 sudo -S installer -pkg /tmp/Demo-App-0.4.21-x86_64.pkg -target / -verbose
+macos            46798   0.0  0.0 34123568    812   ??  Ss   Sun04AM   0:00.00 zsh -c echo 'REDACTED_PASSWORD' | sudo -S installer -pkg /tmp/Demo-App-0.4.21-x86_64.pkg -target / -verbose 2>&1
+root             46773   0.0  0.2 34167324  11360   ??  S    Sun04AM   0:24.85 installer -pkg /tmp/diag-Demo-App-0.4.21-x86_64.pkg -target / -verbose
+root             46772   0.0  0.1 34153536   5124   ??  S    Sun04AM   0:00.06 sudo -S installer -pkg /tmp/diag-Demo-App-0.4.21-x86_64.pkg -target / -verbose
+macos            46770   0.0  0.0 34123568    812   ??  Ss   Sun04AM   0:00.01 zsh -c echo 'REDACTED_PASSWORD' | sudo -S installer -pkg /tmp/diag-Demo-App-0.4.21-x86_64.pkg -target / -verbose 2>&1
+root             46696   0.0  0.2 34167324  11276   ??  S    Sun04AM   0:24.69 installer -pkg /tmp/validate-Demo-App-0.4.21-x86_64.pkg -target / -verbose
+root             46695   0.0  0.1 34153536   5124   ??  S    Sun04AM   0:00.06 sudo -S installer -pkg /tmp/validate-Demo-App-0.4.21-x86_64.pkg -target / -verbose
+macos            46693   0.0  0.0 34292428    816   ??  Ss   Sun04AM   0:00.00 zsh -c echo 'REDACTED_PASSWORD' | sudo -S installer -pkg /tmp/validate-Demo-App-0.4.21-x86_64.pkg -target / -verbose 2>&1
+root             46627   0.0  0.2 34167324  11336   ??  S    Sun03AM   0:25.09 installer -pkg /tmp/Demo-App-0.4.21-x86_64.pkg -target / -verbose
+root             46626   0.0  0.1 34153536   5120   ??  S    Sun03AM   0:00.06 sudo -S installer -pkg /tmp/Demo-App-0.4.21-x86_64.pkg -target / -verbose
+macos            46624   0.0  0.0 34123568    812   ??  Ss   Sun03AM   0:00.01 zsh -c echo 'REDACTED_PASSWORD' | sudo -S installer -pkg /tmp/Demo-App-0.4.21-x86_64.pkg -target / -verbose 2>&1
+root             15872   0.0  0.1 33638232   3192   ??  Ss    6Feb26   0:03.94 /usr/libexec/sandboxd
+_locationd       15871   0.0  0.1 33610724   3636   ??  S     6Feb26   0:00.06 /usr/libexec/secd
+macos            15182   0.0  0.1 33638864   7772   ??  S     4Feb26   0:04.69 /usr/libexec/mdmclient agent
+root             65259   0.0  0.1 33647280   7008   ??  Ss    3Feb26   0:14.36 /usr/libexec/mdmclient daemon
+macos            38864   0.0  0.1 33608444   5324   ??  S    26Jan26   0:18.70 /System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.framework/Versions/A/Support/mdworker -s mdworker-sizing -c MDSSizingWorker -m com.apple.mdworker.sizing
+_spotlight       38555   0.0  0.1 33608428   4408   ??  S    26Jan26   0:00.45 /System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.framework/Versions/A/Support/mdworker -s mdworker-sizing -c MDSSizingWorker -m com.apple.mdworker.sizing
+root             38550   0.0  4.9 34302656 299232   ??  Ss   26Jan26  27:29.98 /System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+root             38549   0.0  0.0 33607916   1272   ??  Ss   26Jan26   0:00.01 /System/Library/Frameworks/NetFS.framework/Versions/A/XPCServices/PlugInLibraryService.xpc/Contents/MacOS/PlugInLibraryService
+root             38548   0.0  0.6 33690016  34008   ??  Ss   26Jan26  15:41.24 /System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.framework/Support/mds
+macos            36075   0.0  0.0 34124832   1260 s000  S+   26Jan26   0:00.18 -zsh

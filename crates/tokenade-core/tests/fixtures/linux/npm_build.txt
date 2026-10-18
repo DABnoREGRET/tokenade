@@ -1,0 +1,436 @@
+
+> @auto-website/tokenadenet@0.1.0 prebuild /srv/app
+> tsx node_modules/@auto-website/engine/apps/web/scripts/seed-content-defaults.ts && tsx node_modules/@auto-website/engine/apps/web/scripts/merge-i18n.ts && PUBLICATION_MANIFEST_OUT=node_modules/@auto-website/engine/apps/web/lib/generated/publication-manifest.json tsx node_modules/@auto-website/engine/apps/web/scripts/generate-publication-manifest.ts && content-collections build --config ./content-collections.ts
+
+[seed-content-defaults] engine defaults not found at /srv/app/node_modules/.pnpm/@auto-website+engine@file+..+auto-website-engine_@babel+core@7.29.7_@babel+template@7.29.7_@c_kktxtv4w2vnxxi22fhejjbukv4/node_modules/@auto-website/engine/apps/web/content-defaults — skipping.
+[merge-i18n] de: 2 engine root keys + 0 consumer override keys → /srv/app/.merged-i18n/de.json
+[merge-i18n] en: 42 engine root keys + 2 consumer override keys → /srv/app/.merged-i18n/en.json
+[merge-i18n] es: 2 engine root keys + 0 consumer override keys → /srv/app/.merged-i18n/es.json
+[merge-i18n] fr: 42 engine root keys + 2 consumer override keys → /srv/app/.merged-i18n/fr.json
+[merge-i18n] it: 2 engine root keys + 0 consumer override keys → /srv/app/.merged-i18n/it.json
+[merge-i18n] nl: 2 engine root keys + 0 consumer override keys → /srv/app/.merged-i18n/nl.json
+[merge-i18n] pl: 2 engine root keys + 0 consumer override keys → /srv/app/.merged-i18n/pl.json
+[merge-i18n] pt: 2 engine root keys + 0 consumer override keys → /srv/app/.merged-i18n/pt.json
+[merge-i18n] merged 8 locale file(s).
+[manifest] wrote 93 entries (7.8 KB) → /srv/app/node_modules/@auto-website/engine/apps/web/lib/generated/publication-manifest.json
+[CC DEPRECATED]: The configuration property "collections" is deprecated.
+Please use "content" instead.
+For more information, see:
+https://content-collections.dev/docs/deprecations/config-collections-property
+build started ...
+... finished build of 8 collections and 190 documents in 485ms
+
+> @auto-website/tokenadenet@0.1.0 build /srv/app
+> next build
+
+[@sentry/nextjs] DEPRECATION WARNING: disableLogger is deprecated and will be removed in a future version. Use webpack.treeshake.removeDebugLogging instead.
+   ▲ Next.js 15.1.6
+   - Environments: .env.local
+   - Experiments (use with caution):
+     · externalDir
+     · clientTraceMetadata
+
+   Creating an optimized production build ...
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/[seg1]/[seg2]/[seg3]/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/[seg1]/[seg2]/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/[seg1]/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/about/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/articles/[slug]/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/articles/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/authors/[slug]/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/case-studies/[slug]/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/case-studies/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/comparisons/[...slug]/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/comparisons/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/comparisons/reviews/[slug]/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/glossary/[slug]/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/glossary/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/lead-magnet/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/quizzes/[slug]/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/quizzes/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/stats/[slug]/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/stats/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/admin/landing-experiments/evaluate/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/admin/landing-experiments/evaluate/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/admin/landing-experiments/generate/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/admin/landing-experiments/generate/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/admin/landing-experiments/status/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/admin/landing-experiments/status/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/auto-emailing/signup/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/auto-emailing/signup/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/cron/landing-experiments/evaluate/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/cron/landing-experiments/evaluate/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/cron/landing-experiments/cycle/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/cron/landing-experiments/cycle/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/cron/landing-experiments/generate/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/cron/landing-experiments/generate/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/cron/refresh-link-status/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `maxDuration` field in "/api/cron/refresh-link-status/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/cron/refresh-link-status/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/directory-leads/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/directory-leads/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/free-tools/fetch-headings/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/free-tools/fetch-headings/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/indexnow-key/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/indexnow-key/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/indexnow/ping/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/indexnow/ping/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/landing-experiments/section-assembly/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/landing-experiments/section-assembly/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/landing-experiments/assignment/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/landing-experiments/assignment/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/resend-webhook/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/resend-webhook/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/track/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/track/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/pref/[token]/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/pref/[token]/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/indexnow-key.txt/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/indexnow-key.txt/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/unsubscribe/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/unsubscribe/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/t/u/[token]/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/t/u/[token]/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/t/c/[token]/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/t/c/[token]/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/t/o/[token]/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/t/o/[token]/route", it may be re-exported from another file. The default config will be used instead.
+<w> [webpack.cache.PackFileCacheStrategy] Serializing big strings (131kiB) impacts deserialization performance (consider using Buffer instead and decode when needed)
+<w> [webpack.cache.PackFileCacheStrategy] Serializing big strings (139kiB) impacts deserialization performance (consider using Buffer instead and decode when needed)
+ ⚠ Compiled with warnings
+
+./node_modules/.pnpm/@auto-website+engine@file+..+auto-website-engine_@babel+core@7.29.7_@babel+template@7.29.7_@c_kktxtv4w2vnxxi22fhejjbukv4/node_modules/@auto-website/engine/apps/web/lib/repository/repos.ts
+Attempted import error: 'getLiveStats' is not exported from '@site/repository' (imported as 'siteRepository').
+
+Import trace for requested module:
+./node_modules/.pnpm/@auto-website+engine@file+..+auto-website-engine_@babel+core@7.29.7_@babel+template@7.29.7_@c_kktxtv4w2vnxxi22fhejjbukv4/node_modules/@auto-website/engine/apps/web/lib/repository/repos.ts
+./node_modules/.pnpm/@auto-website+engine@file+..+auto-website-engine_@babel+core@7.29.7_@babel+template@7.29.7_@c_kktxtv4w2vnxxi22fhejjbukv4/node_modules/@auto-website/engine/apps/web/lib/repository/index.ts
+./node_modules/.pnpm/@auto-website+engine@file+..+auto-website-engine_@babel+core@7.29.7_@babel+template@7.29.7_@c_kktxtv4w2vnxxi22fhejjbukv4/node_modules/@auto-website/engine/apps/web/app/api/repositories/route.ts
+./app/api/repositories/route.ts
+
+./node_modules/.pnpm/hono@4.12.23/node_modules/hono/dist/utils/color.js
+Critical dependency: the request of a dependency is an expression
+
+Import trace for requested module:
+./node_modules/.pnpm/hono@4.12.23/node_modules/hono/dist/utils/color.js
+./node_modules/.pnpm/hono@4.12.23/node_modules/hono/dist/middleware/logger/index.js
+./node_modules/.pnpm/@auto-website+engine@file+..+auto-website-engine_@babel+core@7.29.7_@babel+template@7.29.7_@c_kktxtv4w2vnxxi22fhejjbukv4/node_modules/@auto-website/engine/packages/api/src/middleware/logger.ts
+./node_modules/.pnpm/@auto-website+engine@file+..+auto-website-engine_@babel+core@7.29.7_@babel+template@7.29.7_@c_kktxtv4w2vnxxi22fhejjbukv4/node_modules/@auto-website/engine/packages/api/src/app.ts
+./node_modules/.pnpm/@auto-website+engine@file+..+auto-website-engine_@babel+core@7.29.7_@babel+template@7.29.7_@c_kktxtv4w2vnxxi22fhejjbukv4/node_modules/@auto-website/engine/packages/api/index.ts
+./node_modules/.pnpm/@auto-website+engine@file+..+auto-website-engine_@babel+core@7.29.7_@babel+template@7.29.7_@c_kktxtv4w2vnxxi22fhejjbukv4/node_modules/@auto-website/engine/apps/web/app/api/[[...rest]]/route.ts
+./app/api/[[...rest]]/route.ts
+
+./node_modules/.pnpm/@auto-website+engine@file+..+auto-website-engine_@babel+core@7.29.7_@babel+template@7.29.7_@c_kktxtv4w2vnxxi22fhejjbukv4/node_modules/@auto-website/engine/packages/i18n/lib/messages.ts
+A Node.js API is used (process.cwd at line: 164) which is not supported in the Edge Runtime.
+Learn more: https://nextjs.org/docs/api-reference/edge-runtime
+
+Import trace for requested module:
+./node_modules/.pnpm/@auto-website+engine@file+..+auto-website-engine_@babel+core@7.29.7_@babel+template@7.29.7_@c_kktxtv4w2vnxxi22fhejjbukv4/node_modules/@auto-website/engine/packages/i18n/lib/messages.ts
+./node_modules/.pnpm/@auto-website+engine@file+..+auto-website-engine_@babel+core@7.29.7_@babel+template@7.29.7_@c_kktxtv4w2vnxxi22fhejjbukv4/node_modules/@auto-website/engine/packages/i18n/index.ts
+../auto-website-engine/apps/web/modules/i18n/request.ts
+./node_modules/.pnpm/next-intl@4.5.6_next@15.1.6_@babel+core@7.29.7_@opentelemetry+api@1.9.1_react-dom@19.2.0_reac_ax76y7lo6ubqeo3w5fqvsk7qdu/node_modules/next-intl/dist/esm/production/server/react-server/getConfig.js
+./node_modules/.pnpm/next-intl@4.5.6_next@15.1.6_@babel+core@7.29.7_@opentelemetry+api@1.9.1_react-dom@19.2.0_reac_ax76y7lo6ubqeo3w5fqvsk7qdu/node_modules/next-intl/dist/esm/production/navigation/react-server/getServerLocale.js
+./node_modules/.pnpm/next-intl@4.5.6_next@15.1.6_@babel+core@7.29.7_@opentelemetry+api@1.9.1_react-dom@19.2.0_reac_ax76y7lo6ubqeo3w5fqvsk7qdu/node_modules/next-intl/dist/esm/production/navigation/react-server/createNavigation.js
+./node_modules/.pnpm/next-intl@4.5.6_next@15.1.6_@babel+core@7.29.7_@opentelemetry+api@1.9.1_react-dom@19.2.0_reac_ax76y7lo6ubqeo3w5fqvsk7qdu/node_modules/next-intl/dist/esm/production/navigation.react-server.js
+./node_modules/.pnpm/@auto-website+engine@file+..+auto-website-engine_@babel+core@7.29.7_@babel+template@7.29.7_@c_kktxtv4w2vnxxi22fhejjbukv4/node_modules/@auto-website/engine/apps/web/modules/i18n/routing.ts
+./node_modules/.pnpm/@auto-website+engine@file+..+auto-website-engine_@babel+core@7.29.7_@babel+template@7.29.7_@c_kktxtv4w2vnxxi22fhejjbukv4/node_modules/@auto-website/engine/apps/web/middleware.ts
+
+   Skipping validation of types
+   Linting ...
+   Collecting page data ...
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/[seg1]/[seg2]/[seg3]/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/[seg1]/[seg2]/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/[seg1]/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/about/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/articles/[slug]/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/articles/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/authors/[slug]/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/case-studies/[slug]/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/case-studies/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/comparisons/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/comparisons/[...slug]/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/comparisons/reviews/[slug]/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/glossary/[slug]/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/glossary/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/lead-magnet/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/quizzes/[slug]/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/quizzes/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/stats/[slug]/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `revalidate` field in "/(marketing)/[locale]/stats/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/admin/landing-experiments/evaluate/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/admin/landing-experiments/evaluate/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/admin/landing-experiments/generate/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/admin/landing-experiments/generate/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/admin/landing-experiments/status/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/admin/landing-experiments/status/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/auto-emailing/signup/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/auto-emailing/signup/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/cron/landing-experiments/cycle/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/cron/landing-experiments/cycle/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/cron/landing-experiments/evaluate/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/cron/landing-experiments/evaluate/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/cron/landing-experiments/generate/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/cron/landing-experiments/generate/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/cron/refresh-link-status/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `maxDuration` field in "/api/cron/refresh-link-status/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/cron/refresh-link-status/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/directory-leads/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/directory-leads/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/free-tools/fetch-headings/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/free-tools/fetch-headings/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/indexnow-key/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/indexnow-key/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/indexnow/ping/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/indexnow/ping/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/landing-experiments/assignment/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/landing-experiments/assignment/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/landing-experiments/section-assembly/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/landing-experiments/section-assembly/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/resend-webhook/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/resend-webhook/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/api/track/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/api/track/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/indexnow-key.txt/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/indexnow-key.txt/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/pref/[token]/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/pref/[token]/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/t/c/[token]/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/t/c/[token]/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/t/o/[token]/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/t/o/[token]/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/t/u/[token]/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/t/u/[token]/route", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `dynamic` field in "/unsubscribe/page", it may be re-exported from another file. The default config will be used instead.
+ ⚠ Next.js can't recognize the exported `runtime` field in "/unsubscribe/page", it may be re-exported from another file. The default config will be used instead.
+⚠️ PYTHON_BACKEND_SECRET is not set. Backend authentication will fail.
+   Generating static pages (0/323) ...
+   Generating static pages (80/323) 
+   Generating static pages (161/323) 
+   Generating static pages (242/323) 
+ ✓ Generating static pages (323/323)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                                  Size     First Load JS
+┌ ○ /_not-found                                              576 B           182 kB
+├ ○ /.well-known/ai.txt                                      576 B           182 kB
+├ ƒ /.well-known/security.txt                                577 B           182 kB
+├ ● /[locale]                                                60.1 kB         274 kB
+├   ├ /en
+├   └ /fr
+├ ƒ /[locale]/[...rest]                                      577 B           182 kB
+├ ● /[locale]/[seg1]                                         347 B           266 kB
+├ ● /[locale]/[seg1]/[seg2]                                  347 B           266 kB
+├ ● /[locale]/[seg1]/[seg2]/[seg3]                           8.17 kB         213 kB
+├ ● /[locale]/about                                          4.61 kB         204 kB
+├   ├ /en/about
+├   └ /fr/about
+├ ● /[locale]/articles                                       326 B           205 kB
+├   ├ /en/articles
+├   └ /fr/articles
+├ ● /[locale]/articles/[slug]                                356 B           289 kB
+├   ├ /fr/articles/agentic-coding-best-practices
+├   ├ /en/articles/agentic-coding-best-practices
+├   ├ /fr/articles/agentic-coding
+├   └ [+107 more paths]
+├ ● /[locale]/authors/[slug]                                 348 B           264 kB
+├   ├ /en/authors/site-author
+├   └ /fr/authors/site-author
+├ ● /[locale]/case-studies                                   327 B           205 kB
+├   ├ /en/case-studies
+├   └ /fr/case-studies
+├ ● /[locale]/case-studies/[slug]                            354 B           289 kB
+├   ├ /fr/case-studies/claude-bill-overnight-loop-indie-dev
+├   ├ /en/case-studies/claude-bill-overnight-loop-indie-dev
+├   ├ /fr/case-studies/claude-code-overnight-loop-bill
+├   └ [+17 more paths]
+├ ● /[locale]/comparisons                                    326 B           205 kB
+├   ├ /en/comparisons
+├   └ /fr/comparisons
+├ ● /[locale]/comparisons/[...slug]                          4.75 kB         266 kB
+├   ├ /en/comparisons/tokenade-vs-rtk
+├   ├ /en/comparisons/tokenade-vs-claude-context
+├   ├ /en/comparisons/tokenade-vs-token-optimizer
+├   └ [+43 more paths]
+├ ● /[locale]/comparisons/reviews                            327 B           205 kB
+├   ├ /en/comparisons/reviews
+├   └ /fr/comparisons/reviews
+├ ● /[locale]/comparisons/reviews/[slug]                     355 B           289 kB
+├ ƒ /[locale]/contact                                        12.7 kB         264 kB
+├ ƒ /[locale]/example-landing                                5.63 kB         206 kB
+├ ● /[locale]/faq                                            4.61 kB         204 kB
+├   ├ /en/faq
+├   └ /fr/faq
+├ ● /[locale]/faq/[topic]                                    4.68 kB         221 kB
+├   ├ /en/faq/getting-started
+├   └ /fr/faq/getting-started
+├ ● /[locale]/free-tools                                     4.61 kB         204 kB
+├   ├ /en/free-tools
+├   └ /fr/free-tools
+├ ● /[locale]/free-tools/llm-token-cost-calculator           2.06 kB         207 kB
+├   ├ /en/free-tools/llm-token-cost-calculator
+├   └ /fr/free-tools/llm-token-cost-calculator
+├ ● /[locale]/free-tools/reading-time-calculator             6.21 kB         206 kB
+├   ├ /en/free-tools/reading-time-calculator
+├   └ /fr/free-tools/reading-time-calculator
+├ ● /[locale]/free-tools/token-counter                       2.01 kB         207 kB
+├   ├ /en/free-tools/token-counter
+├   └ /fr/free-tools/token-counter
+├ ● /[locale]/glossary                                       326 B           205 kB
+├   ├ /en/glossary
+├   └ /fr/glossary
+├ ● /[locale]/glossary/[slug]                                4.65 kB         287 kB
+├   ├ /fr/glossary/agent-loop
+├   ├ /en/glossary/agent-loop
+├   ├ /fr/glossary/bpe
+├   └ [+35 more paths]
+├ ● /[locale]/lead-magnet                                    326 B           205 kB
+├   ├ /en/lead-magnet
+├   └ /fr/lead-magnet
+├ ƒ /[locale]/legal/[...path]                                5.22 kB         281 kB
+├ ƒ /[locale]/posters                                        5.91 kB         206 kB
+├ ƒ /[locale]/pricing                                        575 B           182 kB
+├ ● /[locale]/quizzes                                        327 B           205 kB
+├   ├ /en/quizzes
+├   └ /fr/quizzes
+├ ● /[locale]/quizzes/[slug]                                 6.14 kB         206 kB
+├   ├ /en/quizzes/example-quiz
+├   └ /fr/quizzes/example-quiz
+├ ƒ /[locale]/resources                                      326 B           205 kB
+├ ● /[locale]/stats                                          327 B           205 kB
+├   ├ /en/stats
+├   └ /fr/stats
+├ ● /[locale]/stats/[slug]                                   354 B           289 kB
+├   ├ /fr/stats/agentic-coding-cost-benchmarks
+├   ├ /en/stats/agentic-coding-cost-benchmarks
+├   ├ /fr/stats/ai-coding-agent-token-costs
+├   └ [+15 more paths]
+├ ƒ /[locale]/stats/[slug]/opengraph-image-r1ll32            0 B                0 B
+├ ● /[locale]/v/[variantId]                                  4.16 kB         218 kB
+├   ├ /en/v/control
+├   ├ /fr/v/control
+├   ├ /en/v/cost-roi
+├   └ [+3 more paths]
+├ ƒ /activate                                                1.81 kB         205 kB
+├ ƒ /admin                                                   109 kB          309 kB
+├ ƒ /admin/admins                                            2.01 kB         183 kB
+├ ƒ /admin/affiliates                                        5.49 kB         187 kB
+├ ƒ /admin/commands                                          2.88 kB         184 kB
+├ ƒ /admin/emails                                            3.7 kB          185 kB
+├ ƒ /admin/growth                                            6.19 kB         188 kB
+├ ƒ /admin/login                                             1.31 kB         193 kB
+├ ƒ /admin/messages                                          573 B           182 kB
+├ ƒ /admin/reports                                           574 B           182 kB
+├ ƒ /admin/reviews                                           2.51 kB         184 kB
+├ ƒ /admin/tokenade                                          5.68 kB         187 kB
+├ ƒ /admin/tokenade/nudges                                   575 B           182 kB
+├ ƒ /admin/tokenade/thrash                                   577 B           182 kB
+├ ƒ /admin/tokenade/unreadable-sites                         575 B           182 kB
+├ ƒ /api/[[...rest]]                                         577 B           182 kB
+├ ƒ /api/admin/admins                                        573 B           182 kB
+├ ƒ /api/admin/landing-experiments/evaluate                  4.61 kB         204 kB
+├ ƒ /api/admin/landing-experiments/generate                  576 B           182 kB
+├ ƒ /api/admin/landing-experiments/status                    574 B           182 kB
+├ ƒ /api/admin/tokenade/[action]                             574 B           182 kB
+├ ƒ /api/admin/tokenade/anon-detail                          577 B           182 kB
+├ ƒ /api/admin/tokenade/report-download                      578 B           182 kB
+├ ƒ /api/admin/tokenade/user-detail                          577 B           182 kB
+├ ƒ /api/auto-emailing/signup                                576 B           182 kB
+├ ƒ /api/cron/cleanup-reports                                575 B           182 kB
+├ ƒ /api/cron/landing-experiments/cycle                      4.61 kB         204 kB
+├ ƒ /api/cron/landing-experiments/evaluate                   4.61 kB         204 kB
+├ ƒ /api/cron/landing-experiments/generate                   575 B           182 kB
+├ ƒ /api/cron/refresh-link-status                            576 B           182 kB
+├ ƒ /api/cron/refresh-prices                                 575 B           182 kB
+├ ƒ /api/cron/rollup-usage                                   575 B           182 kB
+├ ƒ /api/cron/weekly-emails                                  577 B           182 kB
+├ ƒ /api/directory-leads                                     575 B           182 kB
+├ ƒ /api/free-tools/fetch-headings                           577 B           182 kB
+├ ƒ /api/google-callback                                     577 B           182 kB
+├ ƒ /api/indexnow-key                                        575 B           182 kB
+├ ƒ /api/indexnow/ping                                       574 B           182 kB
+├ ƒ /api/landing-experiments/assignment                      577 B           182 kB
+├ ƒ /api/landing-experiments/section-assembly                577 B           182 kB
+├ ƒ /api/posters                                             576 B           182 kB
+├ ƒ /api/posters/img/[slug]                                  578 B           182 kB
+├ ƒ /api/posters/reuse                                       573 B           182 kB
+├ ƒ /api/posters/reuse/outreach                              578 B           182 kB
+├ ƒ /api/posters/reuse/pending                               576 B           182 kB
+├ ƒ /api/repositories                                        348 B           264 kB
+├ ƒ /api/resend-webhook                                      576 B           182 kB
+├ ƒ /api/review                                              576 B           182 kB
+├ ƒ /api/review/photo                                        575 B           182 kB
+├ ƒ /api/review/photo/[file]                                 577 B           182 kB
+├ ƒ /api/tokenade/account                                    576 B           182 kB
+├ ƒ /api/tokenade/activate                                   578 B           182 kB
+├ ƒ /api/tokenade/admin/affiliates                           575 B           182 kB
+├ ƒ /api/tokenade/admin/affiliates/payout                    577 B           182 kB
+├ ƒ /api/tokenade/admin/affiliates/unsuspect                 575 B           182 kB
+├ ƒ /api/tokenade/admin/broadcast                            574 B           182 kB
+├ ƒ /api/tokenade/admin/emails                               576 B           182 kB
+├ ƒ /api/tokenade/admin/emails/test                          575 B           182 kB
+├ ƒ /api/tokenade/admin/growth                               576 B           182 kB
+├ ƒ /api/tokenade/admin/reviews                              578 B           182 kB
+├ ƒ /api/tokenade/admin/suppress                             577 B           182 kB
+├ ƒ /api/tokenade/affiliate                                  574 B           182 kB
+├ ƒ /api/tokenade/anon/convert                               577 B           182 kB
+├ ƒ /api/tokenade/anon/quota                                 577 B           182 kB
+├ ƒ /api/tokenade/anon/usage                                 574 B           182 kB
+├ ƒ /api/tokenade/checkout                                   577 B           182 kB
+├ ƒ /api/tokenade/device/authorize                           575 B           182 kB
+├ ƒ /api/tokenade/device/poll                                574 B           182 kB
+├ ƒ /api/tokenade/device/start                               577 B           182 kB
+├ ƒ /api/tokenade/g                                          576 B           182 kB
+├ ƒ /api/tokenade/invite                                     577 B           182 kB
+├ ƒ /api/tokenade/license                                    576 B           182 kB
+├ ƒ /api/tokenade/machines/[machineId]                       575 B           182 kB
+├ ƒ /api/tokenade/metrics/cta                                573 B           182 kB
+├ ƒ /api/tokenade/portal                                     577 B           182 kB
+├ ƒ /api/tokenade/profile                                    574 B           182 kB
+├ ƒ /api/tokenade/public-page                                578 B           182 kB
+├ ƒ /api/tokenade/ref/[code]                                 576 B           182 kB
+├ ƒ /api/tokenade/referral/claim                             575 B           182 kB
+├ ƒ /api/tokenade/report                                     575 B           182 kB
+├ ƒ /api/tokenade/resend-webhook                             577 B           182 kB
+├ ƒ /api/tokenade/savings-card                               575 B           182 kB
+├ ƒ /api/tokenade/stripe-webhook                             576 B           182 kB
+├ ƒ /api/tokenade/usage                                      575 B           182 kB
+├ ƒ /api/track                                               576 B           182 kB
+├ ƒ /cdn-cgi/l/email-protection                              576 B           182 kB
+├ ƒ /dashboard                                               13.5 kB         216 kB
+├ ƒ /email/unsubscribe                                       574 B           182 kB
+├ ƒ /embed/stats/[slug]                                      578 B           182 kB
+├ ƒ /github                                                  577 B           182 kB
+├ ○ /icon.png                                                0 B                0 B
+├ ƒ /image-proxy/[...path]                                   577 B           182 kB
+├ ƒ /indexnow-key.txt                                        577 B           182 kB
+├ ƒ /invite/unsubscribe                                      576 B           182 kB
+├ ○ /llms.txt                                                578 B           182 kB
+├ ƒ /login                                                   14.9 kB         304 kB
+├ ƒ /pref/[token]                                            576 B           182 kB
+├ ƒ /pricing                                                 1.22 kB         185 kB
+├ ƒ /review                                                  3.71 kB         185 kB
+├ ○ /robots.txt                                              0 B                0 B
+├ ○ /rss.xml                                                 576 B           182 kB
+├ ƒ /savings/[slug]                                          1.06 kB         183 kB
+├ ƒ /savings/[slug]/opengraph-image                          0 B                0 B
+├ ƒ /signup                                                  4.29 kB         231 kB
+├ ○ /sitemap.xml                                             0 B                0 B
+├ ○ /stats/rss.xml                                           578 B           182 kB
+├ ƒ /t/c/[token]                                             577 B           182 kB
+├ ƒ /t/o/[token]                                             577 B           182 kB
+├ ƒ /t/u/[token]                                             575 B           182 kB
+├ ƒ /unsubscribe                                             575 B           182 kB
+└ ○ /welcome                                                 575 B           182 kB
++ First Load JS shared by all                                181 kB
+  ├ chunks/8042-40eccf97bb0d551b.js                          124 kB
+  ├ chunks/84c7733a-f65953a2a58574a9.js                      53.1 kB
+  └ other shared chunks (total)                              4.1 kB
+
+
+ƒ Middleware                                                 142 kB
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+

@@ -1,0 +1,10 @@
+USER=macos
+LOGNAME=macos
+HOME=/Users/macos
+PATH=/Users/macos/.cargo/bin:/usr/bin:/bin:/usr/sbin:/sbin
+SHELL=/bin/zsh
+SSH_CLIENT=10.0.2.2 59130 22
+SSH_CONNECTION=10.0.2.2 59130 10.0.2.15 22
+TMPDIR=/var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/
+SHLVL=1
+PWD=/Users/macos

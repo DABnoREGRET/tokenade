@@ -1,0 +1,1166 @@
+[
+ {
+  "file": "en.odt",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "odt",
+  "needles": [
+   "NEEDLE-EN-A1",
+   "throughput",
+   "Region",
+   "Ingest",
+   "Errors",
+   "Retries",
+   "NEEDLE N01",
+   "ingest",
+   "257",
+   "3",
+   "EMEA",
+   "batch",
+   "42",
+   "7"
+  ]
+ },
+ {
+  "file": "en.pdf",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "pdf",
+  "needles": [
+   "NEEDLE-EN-A1",
+   "throughput",
+   "Region",
+   "Ingest",
+   "Errors",
+   "Retries",
+   "NEEDLE N01",
+   "ingest",
+   "257",
+   "3",
+   "EMEA",
+   "batch",
+   "42",
+   "7"
+  ]
+ },
+ {
+  "file": "en.ods",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "ods",
+  "needles": [
+   "Region",
+   "Ingest",
+   "Errors",
+   "Retries",
+   "NEEDLE N01",
+   "ingest",
+   "257",
+   "3",
+   "EMEA",
+   "batch",
+   "42",
+   "7"
+  ]
+ },
+ {
+  "file": "en.xlsx",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "xlsx",
+  "needles": [
+   "Region",
+   "Ingest",
+   "Errors",
+   "Retries",
+   "NEEDLE N01",
+   "ingest",
+   "257",
+   "3",
+   "EMEA",
+   "batch",
+   "42",
+   "7"
+  ]
+ },
+ {
+  "file": "en.csv",
+  "lang": "en",
+  "producer": "raw",
+  "format": "csv",
+  "needles": [
+   "Region",
+   "Ingest",
+   "Errors",
+   "Retries",
+   "NEEDLE N01",
+   "ingest",
+   "257",
+   "3",
+   "EMEA",
+   "batch",
+   "42",
+   "7"
+  ]
+ },
+ {
+  "file": "en-msorder.docx",
+  "lang": "en",
+  "producer": "msorder",
+  "format": "docx",
+  "needles": [
+   "NEEDLE-EN-A1",
+   "throughput",
+   "Region",
+   "Ingest",
+   "Errors",
+   "Retries",
+   "NEEDLE N01",
+   "ingest",
+   "257",
+   "3",
+   "EMEA",
+   "batch",
+   "42",
+   "7"
+  ]
+ },
+ {
+  "file": "fr.odt",
+  "lang": "fr",
+  "producer": "libreoffice",
+  "format": "odt",
+  "needles": [
+   "NEEDLE-FR-A1",
+   "débit élevé",
+   "Région",
+   "Ingestion",
+   "Erreurs",
+   "Reprises",
+   "NEEDLE N02",
+   "flux",
+   "1024",
+   "8",
+   "APAC",
+   "lot",
+   "9",
+   "2"
+  ]
+ },
+ {
+  "file": "fr.pdf",
+  "lang": "fr",
+  "producer": "libreoffice",
+  "format": "pdf",
+  "needles": [
+   "NEEDLE-FR-A1",
+   "débit élevé",
+   "Région",
+   "Ingestion",
+   "Erreurs",
+   "Reprises",
+   "NEEDLE N02",
+   "flux",
+   "1024",
+   "8",
+   "APAC",
+   "lot",
+   "9",
+   "2"
+  ]
+ },
+ {
+  "file": "fr.ods",
+  "lang": "fr",
+  "producer": "libreoffice",
+  "format": "ods",
+  "needles": [
+   "Région",
+   "Ingestion",
+   "Erreurs",
+   "Reprises",
+   "NEEDLE N02",
+   "flux",
+   "1024",
+   "8",
+   "APAC",
+   "lot",
+   "9",
+   "2"
+  ]
+ },
+ {
+  "file": "fr.xlsx",
+  "lang": "fr",
+  "producer": "libreoffice",
+  "format": "xlsx",
+  "needles": [
+   "Région",
+   "Ingestion",
+   "Erreurs",
+   "Reprises",
+   "NEEDLE N02",
+   "flux",
+   "1024",
+   "8",
+   "APAC",
+   "lot",
+   "9",
+   "2"
+  ]
+ },
+ {
+  "file": "fr.csv",
+  "lang": "fr",
+  "producer": "raw",
+  "format": "csv",
+  "needles": [
+   "Région",
+   "Ingestion",
+   "Erreurs",
+   "Reprises",
+   "NEEDLE N02",
+   "flux",
+   "1024",
+   "8",
+   "APAC",
+   "lot",
+   "9",
+   "2"
+  ]
+ },
+ {
+  "file": "fr-msorder.docx",
+  "lang": "fr",
+  "producer": "msorder",
+  "format": "docx",
+  "needles": [
+   "NEEDLE-FR-A1",
+   "débit élevé",
+   "Région",
+   "Ingestion",
+   "Erreurs",
+   "Reprises",
+   "NEEDLE N02",
+   "flux",
+   "1024",
+   "8",
+   "APAC",
+   "lot",
+   "9",
+   "2"
+  ]
+ },
+ {
+  "file": "ja.odt",
+  "lang": "ja",
+  "producer": "libreoffice",
+  "format": "odt",
+  "needles": [
+   "NEEDLE-JA-A1",
+   "スループット",
+   "地域",
+   "取り込み",
+   "エラー",
+   "再試行",
+   "NEEDLE N03",
+   "ストリーム",
+   "512",
+   "4",
+   "日本",
+   "バッチ",
+   "16",
+   "1"
+  ]
+ },
+ {
+  "file": "ja.pdf",
+  "lang": "ja",
+  "producer": "libreoffice",
+  "format": "pdf",
+  "needles": [
+   "NEEDLE-JA-A1",
+   "スループット",
+   "地域",
+   "取り込み",
+   "エラー",
+   "再試行",
+   "NEEDLE N03",
+   "ストリーム",
+   "512",
+   "4",
+   "日本",
+   "バッチ",
+   "16",
+   "1"
+  ]
+ },
+ {
+  "file": "ja.ods",
+  "lang": "ja",
+  "producer": "libreoffice",
+  "format": "ods",
+  "needles": [
+   "地域",
+   "取り込み",
+   "エラー",
+   "再試行",
+   "NEEDLE N03",
+   "ストリーム",
+   "512",
+   "4",
+   "日本",
+   "バッチ",
+   "16",
+   "1"
+  ]
+ },
+ {
+  "file": "ja.xlsx",
+  "lang": "ja",
+  "producer": "libreoffice",
+  "format": "xlsx",
+  "needles": [
+   "地域",
+   "取り込み",
+   "エラー",
+   "再試行",
+   "NEEDLE N03",
+   "ストリーム",
+   "512",
+   "4",
+   "日本",
+   "バッチ",
+   "16",
+   "1"
+  ]
+ },
+ {
+  "file": "ja.csv",
+  "lang": "ja",
+  "producer": "raw",
+  "format": "csv",
+  "needles": [
+   "地域",
+   "取り込み",
+   "エラー",
+   "再試行",
+   "NEEDLE N03",
+   "ストリーム",
+   "512",
+   "4",
+   "日本",
+   "バッチ",
+   "16",
+   "1"
+  ]
+ },
+ {
+  "file": "ja-msorder.docx",
+  "lang": "ja",
+  "producer": "msorder",
+  "format": "docx",
+  "needles": [
+   "NEEDLE-JA-A1",
+   "スループット",
+   "地域",
+   "取り込み",
+   "エラー",
+   "再試行",
+   "NEEDLE N03",
+   "ストリーム",
+   "512",
+   "4",
+   "日本",
+   "バッチ",
+   "16",
+   "1"
+  ]
+ },
+ {
+  "file": "ar.odt",
+  "lang": "ar",
+  "producer": "libreoffice",
+  "format": "odt",
+  "needles": [
+   "NEEDLE-AR-A1",
+   "الإنتاجية",
+   "المنطقة",
+   "الاستيعاب",
+   "الأخطاء",
+   "المحاولات",
+   "NEEDLE N04",
+   "دفعة",
+   "128",
+   "5",
+   "مصر",
+   "تدفق",
+   "64",
+   "2"
+  ]
+ },
+ {
+  "file": "ar.pdf",
+  "lang": "ar",
+  "producer": "libreoffice",
+  "format": "pdf",
+  "needles": [
+   "NEEDLE-AR-A1",
+   "الإنتاجية",
+   "المنطقة",
+   "الاستيعاب",
+   "الأخطاء",
+   "المحاولات",
+   "NEEDLE N04",
+   "دفعة",
+   "128",
+   "5",
+   "مصر",
+   "تدفق",
+   "64",
+   "2"
+  ]
+ },
+ {
+  "file": "ar.ods",
+  "lang": "ar",
+  "producer": "libreoffice",
+  "format": "ods",
+  "needles": [
+   "المنطقة",
+   "الاستيعاب",
+   "الأخطاء",
+   "المحاولات",
+   "NEEDLE N04",
+   "دفعة",
+   "128",
+   "5",
+   "مصر",
+   "تدفق",
+   "64",
+   "2"
+  ]
+ },
+ {
+  "file": "ar.xlsx",
+  "lang": "ar",
+  "producer": "libreoffice",
+  "format": "xlsx",
+  "needles": [
+   "المنطقة",
+   "الاستيعاب",
+   "الأخطاء",
+   "المحاولات",
+   "NEEDLE N04",
+   "دفعة",
+   "128",
+   "5",
+   "مصر",
+   "تدفق",
+   "64",
+   "2"
+  ]
+ },
+ {
+  "file": "ar.csv",
+  "lang": "ar",
+  "producer": "raw",
+  "format": "csv",
+  "needles": [
+   "المنطقة",
+   "الاستيعاب",
+   "الأخطاء",
+   "المحاولات",
+   "NEEDLE N04",
+   "دفعة",
+   "128",
+   "5",
+   "مصر",
+   "تدفق",
+   "64",
+   "2"
+  ]
+ },
+ {
+  "file": "ar-msorder.docx",
+  "lang": "ar",
+  "producer": "msorder",
+  "format": "docx",
+  "needles": [
+   "NEEDLE-AR-A1",
+   "الإنتاجية",
+   "المنطقة",
+   "الاستيعاب",
+   "الأخطاء",
+   "المحاولات",
+   "NEEDLE N04",
+   "دفعة",
+   "128",
+   "5",
+   "مصر",
+   "تدفق",
+   "64",
+   "2"
+  ]
+ },
+ {
+  "file": "sjis.csv",
+  "lang": "sjis",
+  "producer": "encoding",
+  "format": "csv",
+  "needles": [
+   "NEEDLE-SJIS",
+   "地域",
+   "ストリーム"
+  ]
+ },
+ {
+  "file": "gbk.csv",
+  "lang": "gbk",
+  "producer": "encoding",
+  "format": "csv",
+  "needles": [
+   "NEEDLE-GBK",
+   "区域",
+   "错误"
+  ]
+ },
+ {
+  "file": "latin1.csv",
+  "lang": "latin1",
+  "producer": "encoding",
+  "format": "csv",
+  "needles": [
+   "NEEDLE-L1",
+   "Région",
+   "élevé"
+  ]
+ },
+ {
+  "file": "utf16.csv",
+  "lang": "utf16",
+  "producer": "encoding",
+  "format": "csv",
+  "needles": [
+   "NEEDLE-U16",
+   "stream"
+  ]
+ },
+ {
+  "file": "notes.odt",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "odt",
+  "needles": [
+   "NEEDLE-NOTE-TITLE",
+   "NEEDLE-NOTE-BODY",
+   "NEEDLE-NOTE-FOOT",
+   "NEEDLE-NOTE-END",
+   "NEEDLE-IMG-ALT"
+  ]
+ },
+ {
+  "file": "notes.docx",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "docx",
+  "needles": [
+   "NEEDLE-NOTE-TITLE",
+   "NEEDLE-NOTE-BODY",
+   "NEEDLE-NOTE-FOOT",
+   "NEEDLE-NOTE-END",
+   "NEEDLE-IMG-ALT"
+  ]
+ },
+ {
+  "file": "notes.rtf",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "rtf",
+  "needles": [
+   "NEEDLE-NOTE-TITLE",
+   "NEEDLE-NOTE-BODY",
+   "NEEDLE-NOTE-FOOT",
+   "NEEDLE-NOTE-END",
+   "NEEDLE-IMG-ALT"
+  ]
+ },
+ {
+  "file": "revisions.odt",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "odt",
+  "needles": [
+   "NEEDLE-REV-TITRE",
+   "NEEDLE-REV-TENUE"
+  ],
+  "absent": [
+   "NEEDLE-REV-SUPPRIMEE",
+   "REVISEUR-NOMME"
+  ]
+ },
+ {
+  "file": "revisions.docx",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "docx",
+  "needles": [
+   "NEEDLE-REV-TITRE",
+   "NEEDLE-REV-TENUE"
+  ],
+  "absent": [
+   "NEEDLE-REV-SUPPRIMEE",
+   "REVISEUR-NOMME"
+  ]
+ },
+ {
+  "file": "hidden.fods",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "fods",
+  "needles": [
+   "NEEDLE-SHEET-VENTES",
+   "NEEDLE-HID-VISIBLE"
+  ],
+  "absent": [
+   "NEEDLE-HID-MASQUEE",
+   "NEEDLE-SHEET-BROUILLON"
+  ]
+ },
+ {
+  "file": "hidden.ods",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "ods",
+  "needles": [
+   "NEEDLE-SHEET-VENTES",
+   "NEEDLE-HID-VISIBLE"
+  ],
+  "absent": [
+   "NEEDLE-HID-MASQUEE",
+   "NEEDLE-SHEET-BROUILLON"
+  ]
+ },
+ {
+  "file": "hidden.xls",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "xls",
+  "needles": [
+   "NEEDLE-SHEET-VENTES",
+   "NEEDLE-HID-VISIBLE"
+  ],
+  "absent": [
+   "NEEDLE-HID-MASQUEE",
+   "NEEDLE-SHEET-BROUILLON"
+  ]
+ },
+ {
+  "file": "slides.fodp",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "fodp",
+  "needles": [
+   "NEEDLE-PAGE-VUE",
+   "NEEDLE-SLIDE-VISIBLE"
+  ],
+  "absent": [
+   "NEEDLE-PAGE-CACHEE",
+   "NEEDLE-SLIDE-MASQUEE"
+  ]
+ },
+ {
+  "file": "slides.odp",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "odp",
+  "needles": [
+   "NEEDLE-PAGE-VUE",
+   "NEEDLE-SLIDE-VISIBLE"
+  ],
+  "absent": [
+   "NEEDLE-PAGE-CACHEE",
+   "NEEDLE-SLIDE-MASQUEE"
+  ]
+ },
+ {
+  "file": "dates.ods",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "ods",
+  "needles": [
+   "NEEDLE-DATE-ENTETE",
+   "2026-03-14",
+   "15%"
+  ],
+  "absent": [
+   "46095"
+  ]
+ },
+ {
+  "file": "dates.xlsx",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "xlsx",
+  "needles": [
+   "NEEDLE-DATE-ENTETE",
+   "2026-03-14",
+   "15%"
+  ],
+  "absent": [
+   "46095"
+  ]
+ },
+ {
+  "file": "dates.xls",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "xls",
+  "needles": [
+   "NEEDLE-DATE-ENTETE",
+   "2026-03-14"
+  ],
+  "absent": [
+   "46095"
+  ]
+ },
+ {
+  "file": "lists.fodt",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "fodt",
+  "needles": [
+   "NEEDLE-LIST-TITRE",
+   "1. NEEDLE-LIST-UN",
+   "3. NEEDLE-LIST-TROIS",
+   "- NEEDLE-LIST-PUCE"
+  ]
+ },
+ {
+  "file": "lists.odt",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "odt",
+  "needles": [
+   "NEEDLE-LIST-TITRE",
+   "1. NEEDLE-LIST-UN",
+   "3. NEEDLE-LIST-TROIS",
+   "- NEEDLE-LIST-PUCE"
+  ]
+ },
+ {
+  "file": "lists.docx",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "docx",
+  "needles": [
+   "NEEDLE-LIST-TITRE",
+   "1. NEEDLE-LIST-UN",
+   "3. NEEDLE-LIST-TROIS",
+   "- NEEDLE-LIST-PUCE"
+  ]
+ },
+ {
+  "file": "links.fodt",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "fodt",
+  "needles": [
+   "NEEDLE-LINK-TITRE",
+   "[le guide](https://exemple.test/NEEDLE-LINK-CIBLE)",
+   "NEEDLE-LINK-MAIL@exemple.test"
+  ],
+  "absent": [
+   "#NEEDLE-LINK-ANCRE"
+  ]
+ },
+ {
+  "file": "links.odt",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "odt",
+  "needles": [
+   "NEEDLE-LINK-TITRE",
+   "[le guide](https://exemple.test/NEEDLE-LINK-CIBLE)",
+   "NEEDLE-LINK-MAIL@exemple.test"
+  ],
+  "absent": [
+   "#NEEDLE-LINK-ANCRE"
+  ]
+ },
+ {
+  "file": "links.docx",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "docx",
+  "needles": [
+   "NEEDLE-LINK-TITRE",
+   "[le guide](https://exemple.test/NEEDLE-LINK-CIBLE)",
+   "NEEDLE-LINK-MAIL@exemple.test"
+  ],
+  "absent": [
+   "#NEEDLE-LINK-ANCRE"
+  ]
+ },
+ {
+  "file": "draw.fodg",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "fodg",
+  "needles": [
+   "## Page 1 (NEEDLE-DRAW-UNE)",
+   "NEEDLE-DRAW-TEXTE-UN",
+   "## Page 2 (NEEDLE-DRAW-DEUX)",
+   "NEEDLE-DRAW-TEXTE-DEUX"
+  ]
+ },
+ {
+  "file": "draw.odg",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "odg",
+  "needles": [
+   "## Page 1 (NEEDLE-DRAW-UNE)",
+   "NEEDLE-DRAW-TEXTE-UN",
+   "## Page 2 (NEEDLE-DRAW-DEUX)",
+   "NEEDLE-DRAW-TEXTE-DEUX"
+  ]
+ },
+ {
+  "file": "deck.pptx",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "pptx",
+  "needles": [
+   "Slide 1 NEEDLE-DECK-TROIS",
+   "Slide 2 NEEDLE-DECK-UN",
+   "Slide 3 NEEDLE-DECK-DEUX"
+  ],
+  "absent": [
+   "ppt/slides/slide"
+  ]
+ },
+ {
+  "file": "textbox.fodt",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "fodt",
+  "needles": [
+   "NEEDLE-TB-BODY",
+   "NEEDLE-TB-INSIDE",
+   "NEEDLE-TB-TAIL"
+  ],
+  "absent": [
+   "centertop"
+  ]
+ },
+ {
+  "file": "textbox.odt",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "odt",
+  "needles": [
+   "NEEDLE-TB-BODY",
+   "NEEDLE-TB-INSIDE",
+   "NEEDLE-TB-TAIL"
+  ],
+  "absent": [
+   "centertop"
+  ]
+ },
+ {
+  "file": "textbox.docx",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "docx",
+  "needles": [
+   "NEEDLE-TB-BODY",
+   "NEEDLE-TB-INSIDE",
+   "NEEDLE-TB-TAIL"
+  ],
+  "absent": [
+   "centertop"
+  ]
+ },
+ {
+  "file": "figure.fodt",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "fodt",
+  "needles": [
+   "NEEDLE-FIG-BODY",
+   "NEEDLE-FIG-TITLE",
+   "NEEDLE-FIG-DESC the figure caption says this.",
+   "NEEDLE-FIG-TAIL"
+  ],
+  "absent": [
+   "iVBORw0KGgo"
+  ]
+ },
+ {
+  "file": "figure.odt",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "odt",
+  "needles": [
+   "NEEDLE-FIG-BODY",
+   "NEEDLE-FIG-TITLE",
+   "NEEDLE-FIG-DESC the figure caption says this.",
+   "NEEDLE-FIG-TAIL"
+  ],
+  "absent": [
+   "iVBORw0KGgo"
+  ]
+ },
+ {
+  "file": "figure.docx",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "docx",
+  "needles": [
+   "NEEDLE-FIG-BODY",
+   "NEEDLE-FIG-TITLE",
+   "NEEDLE-FIG-DESC the figure caption says this.",
+   "NEEDLE-FIG-TAIL"
+  ],
+  "absent": [
+   "iVBORw0KGgo"
+  ]
+ },
+ {
+  "file": "toc.fodt",
+  "lang": "fr",
+  "producer": "libreoffice",
+  "format": "fodt",
+  "needles": [
+   "NEEDLE-TOC-TITRE-UN",
+   "NEEDLE-TOC-TITRE-DEUX",
+   "NEEDLE-TOC-CORPS-A",
+   "NEEDLE-TOC-CORPS-B"
+  ],
+  "absent": [
+   "NEEDLE-TOC-TITRE-UN 1",
+   "NEEDLE-TOC-TITRE-DEUX 2",
+   "Table of Contents"
+  ]
+ },
+ {
+  "file": "toc.odt",
+  "lang": "fr",
+  "producer": "libreoffice",
+  "format": "odt",
+  "needles": [
+   "NEEDLE-TOC-TITRE-UN",
+   "NEEDLE-TOC-TITRE-DEUX",
+   "NEEDLE-TOC-CORPS-A",
+   "NEEDLE-TOC-CORPS-B"
+  ],
+  "absent": [
+   "NEEDLE-TOC-TITRE-UN 1",
+   "NEEDLE-TOC-TITRE-DEUX 2",
+   "Table of Contents"
+  ]
+ },
+ {
+  "file": "toc.docx",
+  "lang": "fr",
+  "producer": "libreoffice",
+  "format": "docx",
+  "needles": [
+   "NEEDLE-TOC-TITRE-UN",
+   "NEEDLE-TOC-TITRE-DEUX",
+   "NEEDLE-TOC-CORPS-A",
+   "NEEDLE-TOC-CORPS-B"
+  ],
+  "absent": [
+   "NEEDLE-TOC-TITRE-UN 1",
+   "NEEDLE-TOC-TITRE-DEUX 2",
+   "Table of Contents"
+  ]
+ },
+ {
+  "file": "epub-nav.epub",
+  "lang": "fr",
+  "producer": "main",
+  "format": "epub",
+  "needles": [
+   "NEEDLE-EPUB-TITRE-A",
+   "NEEDLE-EPUB-TITRE-B",
+   "NEEDLE-EPUB-CORPS-A",
+   "NEEDLE-EPUB-CORPS-B"
+  ],
+  "absent": [
+   "Table des matieres"
+  ]
+ },
+ {
+  "file": "epub-toc.epub",
+  "lang": "fr",
+  "producer": "main",
+  "format": "epub",
+  "needles": [
+   "NEEDLE-EPUB-TITRE-A",
+   "NEEDLE-EPUB-TITRE-B",
+   "NEEDLE-EPUB-CORPS-A",
+   "NEEDLE-EPUB-CORPS-B"
+  ],
+  "absent": [
+   "Table des matieres"
+  ]
+ },
+ {
+  "file": "epub-plain.epub",
+  "lang": "fr",
+  "producer": "main",
+  "format": "epub",
+  "needles": [
+   "NEEDLE-EPUB-TITRE-A",
+   "NEEDLE-EPUB-TITRE-B",
+   "NEEDLE-EPUB-CORPS-A",
+   "NEEDLE-EPUB-CORPS-B"
+  ],
+  "absent": []
+ },
+ {
+  "file": "annot.fods",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "fods",
+  "needles": [
+   "NEEDLE-ANN-FEUILLE",
+   "NEEDLE-ANN-CELLULE",
+   "42"
+  ],
+  "absent": [
+   "RELECTEUR-NOMME",
+   "ANNOTATION-DE-RELECTURE"
+  ]
+ },
+ {
+  "file": "annot.ods",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "ods",
+  "needles": [
+   "NEEDLE-ANN-FEUILLE",
+   "NEEDLE-ANN-CELLULE",
+   "42"
+  ],
+  "absent": [
+   "RELECTEUR-NOMME",
+   "ANNOTATION-DE-RELECTURE"
+  ]
+ },
+ {
+  "file": "annot.xlsx",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "xlsx",
+  "needles": [
+   "NEEDLE-ANN-FEUILLE",
+   "NEEDLE-ANN-CELLULE",
+   "42"
+  ],
+  "absent": [
+   "RELECTEUR-NOMME",
+   "ANNOTATION-DE-RELECTURE"
+  ]
+ },
+ {
+  "file": "annotext.fodt",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "fodt",
+  "needles": [
+   "NEEDLE-ANN-PHRASE"
+  ],
+  "absent": [
+   "RELECTEUR-NOMME",
+   "ANNOTATION-DE-RELECTURE"
+  ]
+ },
+ {
+  "file": "annotext.odt",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "odt",
+  "needles": [
+   "NEEDLE-ANN-PHRASE"
+  ],
+  "absent": [
+   "RELECTEUR-NOMME",
+   "ANNOTATION-DE-RELECTURE"
+  ]
+ },
+ {
+  "file": "annotext.docx",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "docx",
+  "needles": [
+   "NEEDLE-ANN-PHRASE"
+  ],
+  "absent": [
+   "RELECTEUR-NOMME",
+   "ANNOTATION-DE-RELECTURE"
+  ]
+ },
+ {
+  "file": "merge.fods",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "fods",
+  "needles": [
+   "NEEDLE-MRG-FEUILLE",
+   "NEEDLE-MRG-TITRE",
+   "NEEDLE-MRG-APRES",
+   "NEEDLE-MRG-A2",
+   "NEEDLE-MRG-C2"
+  ]
+ },
+ {
+  "file": "merge.ods",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "ods",
+  "needles": [
+   "NEEDLE-MRG-FEUILLE",
+   "NEEDLE-MRG-TITRE",
+   "NEEDLE-MRG-APRES",
+   "NEEDLE-MRG-A2",
+   "NEEDLE-MRG-C2"
+  ]
+ },
+ {
+  "file": "merge.xlsx",
+  "lang": "en",
+  "producer": "libreoffice",
+  "format": "xlsx",
+  "needles": [
+   "NEEDLE-MRG-FEUILLE",
+   "NEEDLE-MRG-TITRE",
+   "NEEDLE-MRG-APRES",
+   "NEEDLE-MRG-A2",
+   "NEEDLE-MRG-C2"
+  ]
+ },
+ {
+  "file": "book.fb2",
+  "lang": "en",
+  "producer": "hand",
+  "format": "fb2",
+  "needles": [
+   "Ada Lovelace",
+   "Analytical Engine",
+   "Chapter One",
+   "Beginnings",
+   "Ode to Gears",
+   "brass wheel",
+   "Mill",
+   "1000",
+   "Jacquard",
+   "1804",
+   "Bernoulli"
+  ]
+ }
+]

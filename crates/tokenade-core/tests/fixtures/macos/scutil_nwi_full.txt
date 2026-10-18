@@ -1,0 +1,17 @@
+Network information
+
+IPv4 network interface information
+     en0 : flags      : 0x7 (IPv4,IPv6,DNS)
+           address    : 10.0.2.15
+           reach      : 0x00000002 (Reachable)
+
+   REACH : flags 0x00000002 (Reachable)
+
+IPv6 network interface information
+     en0 : flags      : 0x7 (IPv4,IPv6,DNS)
+           address    : fd17:625c:f037:2:10bc:8a0e:fdd9:e0c
+           reach      : 0x00000002 (Reachable)
+
+   REACH : flags 0x00000002 (Reachable)
+
+Network interfaces: en0

@@ -1,0 +1,6 @@
+{
+  "_pourquoi": "Ce que l'extraction ne doit PAS servir. Le fichier d'à côté (docs-audit.json) ne sait dire qu'une PERTE — un marqueur injecté qu'il faut retrouver — et le §882 range la FABRICATION au-dessus. Fichier séparé pour ne pas changer la forme que trois harnais Python lisent déjà.",
+  "_source": "pdf_oxide 0.3.77, mesurée puis refusée le 2026-09-11 (§1000) : elle ressert les numéros de page que la 0.3.74 écarte, SOUDÉS au dernier mot du paragraphe. Le compte d'aiguilles ne bougeait pas ; seule la lecture ligne à ligne l'a vu.",
+  "pdf_mid": ["As 646", "Figures 4, 5 and 6): 648"],
+  "pdf_large": ["Allez au cas #1 5", "in.yj 15"]
+}

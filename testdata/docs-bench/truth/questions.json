@@ -1,0 +1,42 @@
+{
+  "pdf_small": {
+    "token": "ZK-4417",
+    "question": "the incident escalation code for a severity-1 fault"
+  },
+  "pdf_mid": {
+    "token": "ZK-8823",
+    "question": "the dataset revision identifier used in the experiment"
+  },
+  "pdf_large": {
+    "token": "ZK-1902",
+    "question": "the service bulletin reference for the pump fault"
+  },
+  "docx": {
+    "token": "ZK-5560",
+    "question": "le code de rep\u00e9rage de la puissance nominale du module"
+  },
+  "odt": {
+    "token": "ZK-3095",
+    "question": "the penalty clause reference"
+  },
+  "epub": {
+    "token": "ZK-6218",
+    "question": "the field code given in the appendix"
+  },
+  "pptx": {
+    "token": "ZK-2764",
+    "question": "the pilot site identifier"
+  },
+  "odp": {
+    "token": "ZK-9187",
+    "question": "the workshop enrolment code"
+  },
+  "xlsx": {
+    "token": "ZK-7341",
+    "question": "the Q3 reconciliation token"
+  },
+  "ods": {
+    "token": "ZK-5033",
+    "question": "the supplier code for the spare pump"
+  }
+}

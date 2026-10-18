@@ -1,0 +1,1 @@
+machdep.cpu.brand_string: Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz

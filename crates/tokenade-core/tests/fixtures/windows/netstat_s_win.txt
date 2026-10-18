@@ -1,0 +1,116 @@
+
+Statistiques IPv4
+
+  Paquets Re�us                              = 10033293
+  Erreurs d'en-t�te re�ues                   = 0
+  Erreurs d'adresse re�ues                   = 0
+  Datagrammes transf�r�s                     = 0
+  Protocoles inconnus re�us                  = 0
+  Paquets re�us rejet�s                      = 4207
+  Paquets re�us d�livr�s                     = 10035775
+  Requ�tes en sortie                         = 5719352
+  Routages rejet�s                           = 0
+  Paquets en sortie rejet�s                  = 90
+  Paquet en sortie non rout�s                = 0
+  R�assemblage requis                        = 0
+  R�assemblage r�ussi                        = 0
+  D�faillances de r�assemblage               = 0
+  Fragmentations de datagrammes r�ussies     = 0
+  Fragmentations de datagrammes d�faillantes = 0
+  Fragments Cr��s                            = 0
+
+Statistiques IPv6
+
+  Paquets Re�us                              = 650877
+  Erreurs d'en-t�te re�ues                   = 0
+  Erreurs d'adresse re�ues                   = 0
+  Datagrammes transf�r�s                     = 0
+  Protocoles inconnus re�us                  = 0
+  Paquets re�us rejet�s                      = 1105
+  Paquets re�us d�livr�s                     = 651941
+  Requ�tes en sortie                         = 162563
+  Routages rejet�s                           = 0
+  Paquets en sortie rejet�s                  = 0
+  Paquet en sortie non rout�s                = 0
+  R�assemblage requis                        = 0
+  R�assemblage r�ussi                        = 0
+  D�faillances de r�assemblage               = 0
+  Fragmentations de datagrammes r�ussies     = 0
+  Fragmentations de datagrammes d�faillantes = 0
+  Fragments Cr��s                            = 0
+
+Statistiques ICMPv4
+
+                                 Re�us       �mis
+  Messages                       734         1478      
+  Erreurs                        0           0         
+  Destination inaccessible       10          1466      
+  Temps d�pass�                  712         0         
+  Probl�mes de param�tres        0           0         
+  La source s'�teint             0           0         
+  Redirections                   0           0         
+  R�ponses �chos                 6           6         
+  Echos                          6           6         
+  Dates                          0           0         
+  R�ponses du dateur             0           0         
+  Masques d'adresses             0           0         
+  R�ponses du masque d'adresses  0           0         
+  Sollicitations des routeurs    0           0         
+  Annonces des routeurs          0           0         
+
+Statistiques ICMPv6
+
+                            Re�us       �mis
+  Messages                       1674        529       
+  Erreurs                        0           0         
+  Destination inaccessible       0           201       
+  Paquet trop grand              0           0         
+  Temps d�pass�                  646         0         
+  Probl�mes de param�tres        0           0         
+  Echos                          0           0         
+  R�ponses �chos                 0           0         
+  Requ�tes MLD                   0           0         
+  Rapports MLD                   0           0         
+  MLD appliqu�s                  0           0         
+  Sollicitations des routeurs    0           21        
+  Annonces des routeurs          962         0         
+  Sollicitations du voisin       1           191       
+  Annonces du voisin             65          116       
+  Redirections                   0           0         
+  Renum�rotation du routeur      0           0         
+
+Statistiques TCP pour IPv4
+
+  Ouvertures actives                         = 8585
+  Ouvertures passives                        = 1328
+  Tentatives de connexion non r�ussies       = 96
+  Connexions r�initialis�es                  = 2397
+  Connexions en cours                        = 5
+  Segments re�us                             = 10138207
+  Segments envoy�s                           = 5827061
+  Segments retransmis                        = 229
+
+Statistiques TCP pour IPv6
+
+  Ouvertures actives                         = 2628
+  Ouvertures passives                        = 49
+  Tentatives de connexion non r�ussies       = 145
+  Connexions r�initialis�es                  = 90
+  Connexions en cours                        = 0
+  Segments re�us                             = 429966
+  Segments envoy�s                           = 83131
+  Segments retransmis                        = 179
+
+Statistiques UDP pour IPv4
+
+  Datagrammes re�us     = 197668
+  Aucun port            = 1558
+  Erreurs re�ues        = 1968
+  Datagrammes envoy�s   = 150767
+
+Statistiques UDP pour IPv6
+
+  Datagrammes re�us     = 221417
+  Aucun port            = 457
+  Erreurs re�ues        = 0
+  Datagrammes envoy�s   = 68559

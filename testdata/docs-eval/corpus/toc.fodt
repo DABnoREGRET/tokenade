@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<office:document
+ xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
+ xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"
+ office:version="1.3"
+ office:mimetype="application/vnd.oasis.opendocument.text">
+ <office:body><office:text>
+  <text:table-of-content text:name="Table des matieres1">
+   <text:table-of-content-source text:outline-level="10"/>
+   <text:index-body>
+    <text:index-title><text:p>Table des matieres</text:p></text:index-title>
+    <text:p>NEEDLE-TOC-TITRE-UN	1</text:p>
+    <text:p>NEEDLE-TOC-TITRE-DEUX	2</text:p>
+   </text:index-body>
+  </text:table-of-content>
+  <text:h text:outline-level="1">NEEDLE-TOC-TITRE-UN</text:h>
+  <text:p>Corps du premier NEEDLE-TOC-CORPS-A.</text:p>
+  <text:h text:outline-level="1">NEEDLE-TOC-TITRE-DEUX</text:h>
+  <text:p>Corps du second NEEDLE-TOC-CORPS-B.</text:p>
+ </office:text></office:body>
+</office:document>

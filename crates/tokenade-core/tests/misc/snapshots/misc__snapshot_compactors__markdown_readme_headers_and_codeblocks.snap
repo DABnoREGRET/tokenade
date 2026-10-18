@@ -1,0 +1,58 @@
+---
+source: crates/tokenade-core/tests/snapshot_compactors.rs
+assertion_line: 253
+expression: out
+---
+# myproject
+
+A library for parsing and emitting Foo records.
+
+## Installation
+
+```sh
+cargo add myproject
+```
+
+## Quick start
+
+The simplest way to read a Foo file:
+
+```rs
+use myproject::Foo;
+
+fn main() {
+    let foo = Foo::from_path("input.foo").unwrap();
+    println!("{}", foo.summary());
+}
+```
+
+This works for all Foo records that comply with the v2 spec. For older v1
+records, you need the `legacy` feature flag enabled. Records that span
+multiple files are also supported — see the multi-part guide below.
+
+## Multi-part records
+
+Multi-part records are split across N files with the `.part-N.foo` suffix.
+The reader stitches them back together automatically:
+
+```rs
+let foo = Foo::from_path("input.part-1.foo").unwrap();
+assert_eq!(foo.part_count(), 3);
+```
+
+## Configuration
+
+| Key | Default | Description |
+| --- | ------- | ----------- |
+| `max_records` | 10_000 | Maximum records per file |
+| `strict_mode` | true | Reject non-spec records |
+| `encoding` | utf-8 | Input file encoding |
+
+### Advanced tuning
+
+For high-throughput pipelines, increase `max_records` and disable
+`strict_mode`. See the performance guide for the tradeoffs involved.
+
+## License
+
+MIT

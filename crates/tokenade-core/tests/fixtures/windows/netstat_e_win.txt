@@ -1,0 +1,10 @@
+Statistiques de l'interface
+
+                                    Re�us            �mis
+
+Octets                         1740110136        11481340
+Paquets monodiffusion             1238348          119380
+Paquets non monodiffusion             316             108
+Rejets                                  0               0
+Erreurs                                 0               0
+Protocoles inconnus                     0

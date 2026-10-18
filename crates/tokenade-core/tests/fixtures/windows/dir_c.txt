@@ -1,0 +1,16 @@
+ Le volume dans le lecteur C n'a pas de nom.
+ Le num�ro de s�rie du volume est 4E07-707C
+
+ R�pertoire de C:\
+
+21/02/2025  12:50           111�696 appverifUI.dll
+17/04/2025  12:57    <DIR>          inetpub
+01/04/2025  22:00    <DIR>          Microsoft Shared
+07/12/2019  11:14    <DIR>          PerfLogs
+18/02/2026  17:09    <DIR>          Program Files
+02/04/2025  12:19    <DIR>          Program Files (x86)
+02/06/2023  22:45    <DIR>          Users
+21/02/2025  12:50            67�296 vfcompat.dll
+24/10/2025  03:18    <DIR>          Windows
+               2 fichier(s)          178�992 octets
+               7 R�p(s)   5�423�894�528 octets libres

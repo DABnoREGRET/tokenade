@@ -1,0 +1,400 @@
+crates/tokenade-core/src/cmd/linux/last.rs:35:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/last.rs:60:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_kms_encrypt.rs:22:    #[test] fn compact_does_not_panic() {
+crates/tokenade-core/src/cmd/linux/az_network_nsg_create.rs:19:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/az_monitor_activity_log_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/groupmod.rs:14:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/groupmod.rs:18:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/ls_table.rs:172:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/ls_table.rs:175:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_ecs_list_tasks.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/az_cosmosdb_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/fuser.rs:27:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/fuser.rs:31:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_cloudwatch_put_metric_alarm.rs:20:    #[test] fn compact_does_not_panic_on_empty_json() { let _ = compact("{}"); }
+crates/tokenade-core/src/cmd/linux/aws_cloudwatch_put_metric_alarm.rs:21:    #[test] fn compact_does_not_panic_on_plain() { let _ = compact("ok\n"); }
+crates/tokenade-core/src/cmd/linux/az_network_lb_create.rs:19:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/free_g.rs:15:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/free_g.rs:19:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/getfacl.rs:124:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/getfacl.rs:136:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/ls_basic.rs:51:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/ls_basic.rs:55:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/dpkg_list.rs:31:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/dpkg_list.rs:71:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_dynamodb_delete_item.rs:20:    #[test] fn compact_does_not_panic_on_empty_json() { let _ = compact("{}"); }
+crates/tokenade-core/src/cmd/linux/aws_dynamodb_delete_item.rs:21:    #[test] fn compact_does_not_panic_on_plain() { let _ = compact("ok\n"); }
+crates/tokenade-core/src/cmd/linux/az_vm_run_command.rs:19:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/ss.rs:29:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/ss.rs:87:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/nmap.rs:31:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/nmap.rs:53:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_dynamodb_put_item.rs:20:    #[test] fn compact_does_not_panic_on_empty_json() { let _ = compact("{}"); }
+crates/tokenade-core/src/cmd/linux/aws_dynamodb_put_item.rs:21:    #[test] fn compact_does_not_panic_on_plain() { let _ = compact("ok\n"); }
+crates/tokenade-core/src/cmd/linux/traceroute.rs:33:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/traceroute.rs:57:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/az_role_assignment_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/az_keyvault_secret_show.rs:19:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/aws_dynamodb_scan.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_cf_list_stacks.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/whoami.rs:12:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/whoami.rs:16:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/whoami.rs:25:    #[test] fn compact_returns_trimmed() { assert_eq!(compact("root\n"), "root"); }
+crates/tokenade-core/src/cmd/linux/aws_cf_describe_stack_resources.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/tar.rs:14:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/tar.rs:18:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_cognito_list_user_pools.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/az_keyvault_secret_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/aws_dynamodb_query.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/make.rs:14:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/make.rs:18:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/at.rs:34:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/at.rs:52:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/grep.rs:33:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/grep.rs:109:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_ec2_revoke_security_group_ingress.rs:20:    #[test] fn compact_does_not_panic_on_empty_json() { let _ = compact("{}"); }
+crates/tokenade-core/src/cmd/linux/aws_ec2_revoke_security_group_ingress.rs:21:    #[test] fn compact_does_not_panic_on_plain() { let _ = compact("ok\n"); }
+crates/tokenade-core/src/cmd/linux/aws_autoscaling_describe_auto_scaling_groups.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/ruby_runtime.rs:14:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/ruby_runtime.rs:18:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_elbv2_describe_load_balancers.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/depmod.rs:14:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/depmod.rs:18:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_iam_delete_user.rs:20:    #[test] fn compact_does_not_panic_on_empty_json() { let _ = compact("{}"); }
+crates/tokenade-core/src/cmd/linux/aws_iam_delete_user.rs:21:    #[test] fn compact_does_not_panic_on_plain() { let _ = compact("ok\n"); }
+crates/tokenade-core/src/cmd/linux/az_webapp_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/arp.rs:33:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/arp.rs:50:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/az_storage_account_show.rs:19:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/apropos.rs:49:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/apropos.rs:53:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_s3api_list_objects.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_logs_describe_log_streams.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/az_cosmosdb_database_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/az_acr_create.rs:19:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/lsusb.rs:21:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/lsusb.rs:26:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/pacman.rs:56:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/pacman.rs:105:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/az_monitor_log_analytics_workspace_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/aws_lambda_invoke.rs:22:    #[test] fn compact_does_not_panic() {
+crates/tokenade-core/src/cmd/linux/kubectl_kustomize.rs:14:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/kubectl_kustomize.rs:18:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_cf_delete_stack.rs:20:    #[test] fn compact_does_not_panic_on_empty_json() { let _ = compact("{}"); }
+crates/tokenade-core/src/cmd/linux/aws_cf_delete_stack.rs:21:    #[test] fn compact_does_not_panic_on_plain() { let _ = compact("ok\n"); }
+crates/tokenade-core/src/cmd/linux/gzip.rs:14:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/gzip.rs:18:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_route53_list_hosted_zones.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_ec2_describe_volumes.rs:26:    #[test] fn compact_does_not_panic_on_short() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/zip.rs:14:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/zip.rs:18:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/az_functionapp_create.rs:19:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/aws_s3api_get_bucket_versioning.rs:22:    #[test] fn compact_does_not_panic() {
+crates/tokenade-core/src/cmd/linux/aws_ec2_describe_network_interfaces.rs:26:    #[test] fn compact_does_not_panic_on_short() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/ping.rs:67:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/ping.rs:123:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_cognito_list_users.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/az_storage_blob_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/az_storage_account_keys_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/az_network_nsg_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/docker/build.rs:94:pub fn compact(output: &str) -> String {
+crates/tokenade-core/src/cmd/linux/docker/logs.rs:8:pub fn compact(output: &str) -> String {
+crates/tokenade-core/src/cmd/linux/docker/ps.rs:7:pub fn compact(output: &str) -> String {
+crates/tokenade-core/src/cmd/linux/docker/inspect.rs:6:pub fn compact(output: &str) -> String {
+crates/tokenade-core/src/cmd/linux/aws_iam_list_attached_user_policies.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_cloudwatch_list_metrics.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/pip.rs:71:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/pip.rs:75:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/mount.rs:36:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/mount.rs:86:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/ls_reverse.rs:23:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/ls_reverse.rs:27:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_iam_list_groups.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_iam_create_role.rs:22:    #[test] fn compact_does_not_panic() {
+crates/tokenade-core/src/cmd/linux/aws_autoscaling_set_desired_capacity.rs:20:    #[test] fn compact_does_not_panic_on_empty_json() { let _ = compact("{}"); }
+crates/tokenade-core/src/cmd/linux/aws_autoscaling_set_desired_capacity.rs:21:    #[test] fn compact_does_not_panic_on_plain() { let _ = compact("ok\n"); }
+crates/tokenade-core/src/cmd/linux/aws_eks_update_kubeconfig.rs:20:    #[test] fn compact_does_not_panic_on_empty_json() { let _ = compact("{}"); }
+crates/tokenade-core/src/cmd/linux/aws_eks_update_kubeconfig.rs:21:    #[test] fn compact_does_not_panic_on_plain() { let _ = compact("ok\n"); }
+crates/tokenade-core/src/cmd/linux/az_aks_show.rs:19:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/aws_ssm_describe_parameters.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/iptables.rs:32:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/iptables.rs:80:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_ec2_describe_security_groups.rs:26:    #[test] fn compact_does_not_panic_on_short() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/az_aks_nodepool_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/aws_s3api_put_object.rs:22:    #[test] fn compact_does_not_panic() {
+crates/tokenade-core/src/cmd/linux/iperf3.rs:14:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/iperf3.rs:18:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/insmod.rs:14:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/insmod.rs:18:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_iam_delete_role.rs:20:    #[test] fn compact_does_not_panic_on_empty_json() { let _ = compact("{}"); }
+crates/tokenade-core/src/cmd/linux/aws_iam_delete_role.rs:21:    #[test] fn compact_does_not_panic_on_plain() { let _ = compact("ok\n"); }
+crates/tokenade-core/src/cmd/linux/free_h.rs:15:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/free_h.rs:19:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_ec2_describe_route_tables.rs:26:    #[test] fn compact_does_not_panic_on_short() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/az_keyvault_create.rs:19:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/aws_s3_presign.rs:12:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/aws_s3_presign.rs:16:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_s3_presign.rs:28:    #[test] fn compact_returns_url_unchanged() {
+crates/tokenade-core/src/cmd/linux/az_network_vnet_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/aws_lambda_list_aliases.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/iperf.rs:14:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/iperf.rs:18:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/az_group_show.rs:19:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/ldd.rs:31:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/ldd.rs:45:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_s3_sync.rs:11:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/aws_s3_sync.rs:15:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_s3_sync.rs:23:    #[test] fn compact_returns_unchanged() {
+crates/tokenade-core/src/cmd/linux/aws_dynamodb_update_item.rs:20:    #[test] fn compact_does_not_panic_on_empty_json() { let _ = compact("{}"); }
+crates/tokenade-core/src/cmd/linux/aws_dynamodb_update_item.rs:21:    #[test] fn compact_does_not_panic_on_plain() { let _ = compact("ok\n"); }
+crates/tokenade-core/src/cmd/linux/netstat.rs:163:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/netstat.rs:226:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_s3_rb.rs:11:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/aws_s3_rb.rs:15:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_s3_rb.rs:23:    #[test] fn compact_returns_unchanged() {
+crates/tokenade-core/src/cmd/linux/env.rs:38:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/env.rs:80:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_iam_create_user.rs:22:    #[test] fn compact_does_not_panic() {
+crates/tokenade-core/src/cmd/linux/aws_kms_decrypt.rs:22:    #[test] fn compact_does_not_panic() {
+crates/tokenade-core/src/cmd/linux/aws_ec2_describe_key_pairs.rs:26:    #[test] fn compact_does_not_panic_on_short() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_logs_delete_log_group.rs:20:    #[test] fn compact_does_not_panic_on_empty_json() { let _ = compact("{}"); }
+crates/tokenade-core/src/cmd/linux/aws_logs_delete_log_group.rs:21:    #[test] fn compact_does_not_panic_on_plain() { let _ = compact("ok\n"); }
+crates/tokenade-core/src/cmd/linux/dmesg.rs:38:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/dmesg.rs:79:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_apigateway_get_rest_apis.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_s3_cp.rs:11:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/aws_s3_cp.rs:15:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_s3_cp.rs:23:    #[test] fn compact_returns_unchanged() {
+crates/tokenade-core/src/cmd/linux/xz.rs:14:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/xz.rs:18:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/az_network_vnet_subnet_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/aws_sqs_create_queue.rs:22:    #[test] fn compact_does_not_panic() {
+crates/tokenade-core/src/cmd/linux/aws_iam_list_users.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_secretsmanager_list.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_ec2_describe_subnets.rs:26:    #[test] fn compact_does_not_panic_on_short() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/iostat.rs:29:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/iostat.rs:33:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/lsblk.rs:54:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/lsblk.rs:71:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/az_sql_server_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/az_keyvault_secret_set.rs:19:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/az_sql_db_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/aws_kms_list_keys.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_ec2_reboot_instances.rs:20:    #[test] fn compact_does_not_panic_on_empty_json() { let _ = compact("{}"); }
+crates/tokenade-core/src/cmd/linux/aws_ec2_reboot_instances.rs:21:    #[test] fn compact_does_not_panic_on_plain() { let _ = compact("ok\n"); }
+crates/tokenade-core/src/cmd/linux/npm_audit.rs:32:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/npm_audit.rs:110:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/fsck.rs:33:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/fsck.rs:51:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/route.rs:27:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/route.rs:31:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_lambda_list.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/ps_table.rs:155:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/ps_table.rs:158:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/sbt.rs:14:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/sbt.rs:18:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/mpv.rs:14:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/mpv.rs:18:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/az_storage_account_create.rs:19:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/aws_eks_list_nodegroups.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/az_aks_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/aws_s3api_list_buckets.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_ec2_authorize_security_group_ingress.rs:20:    #[test] fn compact_does_not_panic_on_empty_json() { let _ = compact("{}"); }
+crates/tokenade-core/src/cmd/linux/aws_ec2_authorize_security_group_ingress.rs:21:    #[test] fn compact_does_not_panic_on_plain() { let _ = compact("ok\n"); }
+crates/tokenade-core/src/cmd/linux/aws_iam_list_roles.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_ec2_describe_snapshots.rs:26:    #[test] fn compact_does_not_panic_on_short() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/crontab.rs:63:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/crontab.rs:100:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_cloudformation_list.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/bzip2.rs:14:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/bzip2.rs:18:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/dpkg_listfiles.rs:61:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/dpkg_listfiles.rs:109:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/ansible.rs:14:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/ansible.rs:18:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/ssh.rs:20:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/ssh.rs:24:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/az_storage_container_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/aws_logs_describe_log_groups.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/rg.rs:18:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/rg.rs:22:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/free_t.rs:16:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/free_t.rs:20:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/cargo/build.rs:17:pub fn compact_quiet(output: &str) -> String {
+crates/tokenade-core/src/cmd/linux/cargo/build.rs:23:pub fn compact(output: &str) -> String {
+crates/tokenade-core/src/cmd/linux/cargo/update.rs:5:pub fn compact(output: &str) -> String {
+crates/tokenade-core/src/cmd/linux/cargo/fmt.rs:5:pub fn compact(output: &str) -> String {
+crates/tokenade-core/src/cmd/linux/cargo/tree.rs:5:pub fn compact(output: &str) -> String {
+crates/tokenade-core/src/cmd/linux/cargo/search.rs:5:pub fn compact(output: &str) -> String {
+crates/tokenade-core/src/cmd/linux/cargo/run.rs:9:pub fn compact(output: &str) -> String {
+crates/tokenade-core/src/cmd/linux/cargo/install.rs:6:pub fn compact(output: &str) -> String {
+crates/tokenade-core/src/cmd/linux/cargo/bench.rs:6:pub fn compact(output: &str) -> String {
+crates/tokenade-core/src/cmd/linux/az_network_nsg_rule_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/linkerd.rs:20:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/linkerd.rs:24:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/az_vm_show.rs:19:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/strings.rs:20:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/strings.rs:45:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/curl.rs:14:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/curl.rs:18:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_sns_create_topic.rs:22:    #[test] fn compact_does_not_panic() {
+crates/tokenade-core/src/cmd/linux/aws_rds_describe_db_snapshots.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_s3_mv.rs:11:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/aws_s3_mv.rs:15:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_s3_mv.rs:23:    #[test] fn compact_returns_unchanged() {
+crates/tokenade-core/src/cmd/linux/az_network_public_ip_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/az_network_lb_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/aws_ec2_describe_addresses.rs:26:    #[test] fn compact_does_not_panic_on_short() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_elbv2_describe_target_health.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/az_vm_resize.rs:19:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/aws_sqs_delete_message.rs:20:    #[test] fn compact_does_not_panic_on_empty_json() { let _ = compact("{}"); }
+crates/tokenade-core/src/cmd/linux/aws_sqs_delete_message.rs:21:    #[test] fn compact_does_not_panic_on_plain() { let _ = compact("ok\n"); }
+crates/tokenade-core/src/cmd/linux/az_storage_account_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/npm.rs:42:fn compact_inner(text: &str) -> Option<String> {
+crates/tokenade-core/src/cmd/linux/npm.rs:121:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/npm.rs:132:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/npm_install.rs:14:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/npm_install.rs:18:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_ecs_list_clusters.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_ecs_list_services.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/sysctl.rs:18:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/sysctl.rs:22:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/az_aks_create.rs:19:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/az_login.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/aws_lambda_delete_function.rs:20:    #[test] fn compact_does_not_panic_on_empty_json() { let _ = compact("{}"); }
+crates/tokenade-core/src/cmd/linux/aws_lambda_delete_function.rs:21:    #[test] fn compact_does_not_panic_on_plain() { let _ = compact("ok\n"); }
+crates/tokenade-core/src/cmd/linux/aws_elb_describe_load_balancers.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_secretsmanager_put_secret_value.rs:22:    #[test] fn compact_does_not_panic() {
+crates/tokenade-core/src/cmd/linux/az_aks_scale.rs:19:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/uv.rs:15:fn compact_inner(text: &str) -> Option<String> {
+crates/tokenade-core/src/cmd/linux/uv.rs:62:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/uv.rs:66:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/who.rs:33:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/who.rs:51:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/sudo.rs:25:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/sudo.rs:31:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_sns_list_topics.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/free_m.rs:15:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/free_m.rs:19:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_ssm_get_parameters.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/az_vm_create.rs:19:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/aws_ec2_describe.rs:26:    #[test] fn compact_does_not_panic_on_short() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_iam_list_attached_role_policies.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_route53_list_resource_record_sets.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_cf_describe_stacks.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/systemctl.rs:48:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/systemctl.rs:56:fn compact_list_units(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/systemctl.rs:88:fn compact_status(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/systemctl.rs:145:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_logs_filter_log_events.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/npm_run_script.rs:79:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/npm_run_script.rs:87:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_sqs_list_queues.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_iam_list_policies.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_elbv2_describe_target_groups.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_rds_describe_db_clusters.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/az_network_vnet_create.rs:19:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/mvn.rs:14:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/mvn.rs:18:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_ssm_start_session.rs:20:    #[test] fn compact_does_not_panic_on_empty_json() { let _ = compact("{}"); }
+crates/tokenade-core/src/cmd/linux/aws_ssm_start_session.rs:21:    #[test] fn compact_does_not_panic_on_plain() { let _ = compact("ok\n"); }
+crates/tokenade-core/src/cmd/linux/openssl_cli.rs:17:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/openssl_cli.rs:27:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/az_webapp_create.rs:19:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/lscpu.rs:34:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/lscpu.rs:38:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/df_table.rs:104:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/df_table.rs:108:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/grep_count.rs:76:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/grep_count.rs:125:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/az_network_public_ip_create.rs:19:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/dracut.rs:14:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/dracut.rs:18:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_cloudtrail_lookup_events.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/kubectl/get_name.rs:8:pub fn compact(output: &str) -> String {
+crates/tokenade-core/src/cmd/linux/python_runtime.rs:14:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/python_runtime.rs:18:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_ec2_describe_images.rs:26:    #[test] fn compact_does_not_panic_on_short() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/az_group_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/aws_s3_mb.rs:11:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/aws_s3_mb.rs:15:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_s3_mb.rs:23:    #[test] fn compact_returns_unchanged() {
+crates/tokenade-core/src/cmd/linux/aws_lambda_list_versions.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/az_acr_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/kmod.rs:14:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/kmod.rs:18:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_iam_list_access_keys.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_sns_list_subscriptions.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/hashcat.rs:14:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/hashcat.rs:18:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_dynamodb_list_tables.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_json.rs:16:pub fn compact_if_json(text: &str) -> Option<String> {
+crates/tokenade-core/src/cmd/linux/aws_json.rs:27:pub fn compact_response(text: &str) -> Option<String> {
+crates/tokenade-core/src/cmd/linux/aws_json.rs:62:    #[test] fn compact_response_returns_none_for_non_json() {
+crates/tokenade-core/src/cmd/linux/aws_json.rs:66:    #[test] fn compact_response_folds_large_list() {
+crates/tokenade-core/src/cmd/linux/aws_json.rs:74:    #[test] fn compact_response_preserves_name_field() {
+crates/tokenade-core/src/cmd/linux/az_network_vnet_subnet_create.rs:19:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/git/net.rs:6:pub fn compact(output: &str) -> String {
+crates/tokenade-core/src/cmd/linux/git/net.rs:41:pub fn compact_clone(output: &str) -> String {
+crates/tokenade-core/src/cmd/linux/git/branch.rs:18:pub fn compact(output: &str) -> String {
+crates/tokenade-core/src/cmd/linux/git/show.rs:5:pub fn compact(output: &str) -> String {
+crates/tokenade-core/src/cmd/linux/git/blame.rs:6:pub fn compact(output: &str) -> String {
+crates/tokenade-core/src/cmd/linux/git/tag.rs:6:pub fn compact(output: &str) -> String {
+crates/tokenade-core/src/cmd/linux/git/stash.rs:19:pub fn compact(output: &str) -> String {
+crates/tokenade-core/src/cmd/linux/git/reflog.rs:6:pub fn compact(output: &str) -> String {
+crates/tokenade-core/src/cmd/linux/git/rebase_like.rs:6:pub fn compact(output: &str) -> String {
+crates/tokenade-core/src/cmd/linux/git/config.rs:6:pub fn compact(output: &str) -> String {
+crates/tokenade-core/src/cmd/linux/lsof.rs:47:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/lsof.rs:105:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_ec2_describe_nat_gateways.rs:26:    #[test] fn compact_does_not_panic_on_short() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_cf_describe_stack_events.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_secretsmanager_delete_secret.rs:22:    #[test] fn compact_does_not_panic() {
+crates/tokenade-core/src/cmd/linux/az_group_create.rs:19:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/pytest.rs:96:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/pytest.rs:106:pub fn compact_no_tracebacks(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/pytest.rs:117:fn compact_inner(text: &str, drop_tracebacks: bool) -> String {
+crates/tokenade-core/src/cmd/linux/pytest.rs:219:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_ec2_describe_vpcs.rs:26:    #[test] fn compact_does_not_panic_on_short() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/rmmod.rs:14:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/rmmod.rs:18:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/az_storage_container_create.rs:19:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/unittest.rs:76:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/unittest.rs:162:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/ssh_cmd.rs:14:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/ssh_cmd.rs:18:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/az_account_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/uname.rs:19:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/uname.rs:23:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/lsmod.rs:16:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/lsmod.rs:20:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/ip.rs:133:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/ip.rs:335:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/uv_install.rs:15:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/uv_install.rs:19:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_rds_describe_db_instances.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/aws_iam_attach_role_policy.rs:20:    #[test] fn compact_does_not_panic_on_empty_json() { let _ = compact("{}"); }
+crates/tokenade-core/src/cmd/linux/aws_iam_attach_role_policy.rs:21:    #[test] fn compact_does_not_panic_on_plain() { let _ = compact("ok\n"); }
+crates/tokenade-core/src/cmd/linux/locate.rs:17:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/locate.rs:21:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/az_acr_repository_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/file.rs:22:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/file.rs:26:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_autoscaling_update_auto_scaling_group.rs:20:    #[test] fn compact_does_not_panic_on_empty_json() { let _ = compact("{}"); }
+crates/tokenade-core/src/cmd/linux/aws_autoscaling_update_auto_scaling_group.rs:21:    #[test] fn compact_does_not_panic_on_plain() { let _ = compact("ok\n"); }
+crates/tokenade-core/src/cmd/linux/az_account_show.rs:19:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/az_vm_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/az_functionapp_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/du_size.rs:129:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/du_size.rs:132:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_lambda_invoke_function.rs:22:    #[test] fn compact_does_not_panic() {
+crates/tokenade-core/src/cmd/linux/systemd.rs:20:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/systemd.rs:24:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_cf_execute_change_set.rs:20:    #[test] fn compact_does_not_panic_on_empty_json() { let _ = compact("{}"); }
+crates/tokenade-core/src/cmd/linux/aws_cf_execute_change_set.rs:21:    #[test] fn compact_does_not_panic_on_plain() { let _ = compact("ok\n"); }
+crates/tokenade-core/src/cmd/linux/ls_recursive.rs:102:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/ls_recursive.rs:143:pub fn compact_with_savings(text: &str) -> (String, crate::Savings) {
+crates/tokenade-core/src/cmd/linux/aws_cloudtrail_describe_trails.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/next_route_table.rs:175:pub fn compact(text: &str) -> String {
+crates/tokenade-core/src/cmd/linux/az_role_definition_list.rs:20:    #[test] fn compact_returns_string() {
+crates/tokenade-core/src/cmd/linux/aws_apigatewayv2_get_apis.rs:26:    #[test] fn compact_does_not_panic() { let _ = compact(&make_resp(3)); }
+crates/tokenade-core/src/cmd/linux/free.rs:43:pub fn compact(text: &str) -> String {

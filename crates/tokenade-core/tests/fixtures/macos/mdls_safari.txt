@@ -1,0 +1,30 @@
+_kMDItemDisplayNameWithExtensions      = "Safari.app"
+kMDItemAlternateNames                  = (
+    "Safari.app"
+)
+kMDItemAppStoreCategory                = "Productivité"
+kMDItemAppStoreCategoryType            = "public.app-category.productivity"
+kMDItemAppStoreIsAppleSigned           = 1
+kMDItemCFBundleIdentifier              = "com.apple.Safari"
+kMDItemContentCreationDate             = 2021-10-18 03:30:38 +0000
+kMDItemContentCreationDate_Ranking     = 2021-10-18 00:00:00 +0000
+kMDItemContentModificationDate         = 2021-10-18 03:30:38 +0000
+kMDItemContentModificationDate_Ranking = 2021-10-18 00:00:00 +0000
+kMDItemContentType                     = "com.apple.application-bundle"
+kMDItemContentTypeTree                 = (
+    "com.apple.application-bundle",
+    "com.apple.application",
+    "public.executable",
+    "com.apple.localizable-name-bundle",
+    "com.apple.bundle",
+    "public.directory",
+    "public.item",
+    "com.apple.package"
+)
+kMDItemDateAdded                       = 2025-04-29 18:39:05 +0000
+kMDItemDateAdded_Ranking               = 2025-04-29 00:00:00 +0000
+kMDItemDisplayName                     = "Safari"
+kMDItemDocumentIdentifier              = 0
+kMDItemExecutableArchitectures         = (
+    arm64,
+    "x86_64"

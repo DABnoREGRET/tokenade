@@ -1,0 +1,5 @@
+
+> chalk@5.6.2 test
+> xo && c8 ava && tsd
+
+sh: ligne 1: xo: commande introuvable

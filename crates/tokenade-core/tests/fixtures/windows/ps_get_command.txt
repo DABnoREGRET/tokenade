@@ -1,0 +1,25 @@
+
+CommandType     Name                                               Version    Source                                   
+-----------     ----                                               -------    ------                                   
+Alias           Add-AppPackage                                     2.0.1.0    Appx                                     
+Alias           Add-AppPackageVolume                               2.0.1.0    Appx                                     
+Alias           Add-AppProvisionedPackage                          3.0        Dism                                     
+Alias           Add-ProvisionedAppPackage                          3.0        Dism                                     
+Alias           Add-ProvisionedAppxPackage                         3.0        Dism                                     
+Alias           Add-ProvisioningPackage                            3.0        Provisioning                             
+Alias           Add-TrustedProvisioningCertificate                 3.0        Provisioning                             
+Alias           Apply-WindowsUnattend                              3.0        Dism                                     
+Alias           Disable-PhysicalDiskIndication                     2.0.0.0    Storage                                  
+Alias           Disable-StorageDiagnosticLog                       2.0.0.0    Storage                                  
+Alias           Dismount-AppPackageVolume                          2.0.1.0    Appx                                     
+Alias           Enable-PhysicalDiskIndication                      2.0.0.0    Storage                                  
+Alias           Enable-StorageDiagnosticLog                        2.0.0.0    Storage                                  
+Alias           Flush-Volume                                       2.0.0.0    Storage                                  
+Alias           Get-AppPackage                                     2.0.1.0    Appx                                     
+Alias           Get-AppPackageDefaultVolume                        2.0.1.0    Appx                                     
+Alias           Get-AppPackageLastError                            2.0.1.0    Appx                                     
+Alias           Get-AppPackageLog                                  2.0.1.0    Appx                                     
+Alias           Get-AppPackageManifest                             2.0.1.0    Appx                                     
+Alias           Get-AppPackageVolume                               2.0.1.0    Appx                                     
+
+

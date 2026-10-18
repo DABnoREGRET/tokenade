@@ -1,0 +1,4317 @@
+{
+  "os": "macos",
+  "osTag": "M",
+  "platform": "Darwin 21.1.0 x64",
+  "node": "v22.14.0",
+  "binary": "/tmp/tokenade-compat/tokenade",
+  "binaryVersion": "tokenade 1.1.12",
+  "seed": 48034,
+  "includeApi": false,
+  "networkUrl": "https://en.wikipedia.org/wiki/Rust_(programming_language)",
+  "supervise": false,
+  "ranAt": "2026-09-12T14:12:29.470Z",
+  "features": [
+    {
+      "id": "cmd",
+      "label": "Command compaction",
+      "commercial": true
+    },
+    {
+      "id": "web",
+      "label": "Web search",
+      "commercial": true
+    },
+    {
+      "id": "mcp",
+      "label": "MCP optimization",
+      "commercial": true
+    },
+    {
+      "id": "codesearch",
+      "label": "Code search",
+      "commercial": true
+    },
+    {
+      "id": "sobriety",
+      "label": "Lean output",
+      "commercial": true
+    },
+    {
+      "id": "context",
+      "label": "Context optimization",
+      "commercial": true
+    },
+    {
+      "id": "readdedup",
+      "label": "Re-read dedup",
+      "commercial": true
+    },
+    {
+      "id": "docs",
+      "label": "Documents & media",
+      "commercial": true
+    },
+    {
+      "id": "privacy",
+      "label": "Privacy",
+      "commercial": true
+    },
+    {
+      "id": "redact",
+      "label": "Secret redaction",
+      "commercial": true
+    },
+    {
+      "id": "gain",
+      "label": "Savings measurement",
+      "commercial": false
+    },
+    {
+      "id": "subagents",
+      "label": "Subagent parity",
+      "commercial": false
+    },
+    {
+      "id": "recovery",
+      "label": "Folded-bytes recovery",
+      "commercial": false
+    },
+    {
+      "id": "diagnostics",
+      "label": "Install diagnostics",
+      "commercial": false
+    },
+    {
+      "id": "scoping",
+      "label": "Install scope",
+      "commercial": false
+    },
+    {
+      "id": "reversible",
+      "label": "Reversible install",
+      "commercial": false
+    },
+    {
+      "id": "proxyinstall",
+      "label": "Proxy install",
+      "commercial": false
+    },
+    {
+      "id": "proxykill",
+      "label": "Proxy survives a kill",
+      "commercial": false
+    },
+    {
+      "id": "proxyboot",
+      "label": "Proxy survives a reboot",
+      "commercial": false
+    },
+    {
+      "id": "sysprompt",
+      "label": "System prompt install",
+      "commercial": false
+    },
+    {
+      "id": "statusline",
+      "label": "Visible savings counter",
+      "commercial": false
+    },
+    {
+      "id": "binaccess",
+      "label": "tokenade binary access",
+      "commercial": false
+    }
+  ],
+  "agents": [
+    {
+      "agent": "claude-code",
+      "label": "Claude Code CLI",
+      "onSite": true,
+      "desktop": false,
+      "noLocalExecution": false,
+      "detected": true,
+      "blocked": null,
+      "channels": {
+        "hook": {
+          "file": ".claude/settings.json",
+          "events": [
+            "PostToolUse",
+            "PreCompact",
+            "PreToolUse",
+            "SessionStart",
+            "SubagentStop",
+            "UserPromptSubmit"
+          ]
+        },
+        "plugin": null,
+        "filesTouched": 18
+      },
+      "features": {
+        "cmd": {
+          "verdict": "ok-bin",
+          "ratio": 0.016480422088508168,
+          "evidence": "PreToolUse rewrote the command; running both: 33737 → 556 bytes",
+          "ms": 451
+        },
+        "web": {
+          "verdict": "ok-bin",
+          "ratio": 0.008199381429593628,
+          "evidence": "PreToolUse WebFetch fetched and folded https://en.wikipedia.org/wiki/Rust_(programming_language) itself: 1023004 → 8388 bytes (prompt anchored; an unanchored prompt is passed to the native fetcher on purpose)",
+          "ms": 9909
+        },
+        "mcp": {
+          "verdict": "ok-mcp",
+          "evidence": "wrapped ../project/.mcp.json; proxy folded tool result 137128 → 956 bytes",
+          "ms": 13196
+        },
+        "codesearch": {
+          "verdict": "ok-bin",
+          "evidence": "`query` located the symbol; install wrote the rules into CLAUDE.md, AGENTS.md, CLAUDE.md, GEMINI.md",
+          "ms": 235
+        },
+        "sobriety": {
+          "verdict": "ok-bin",
+          "evidence": "UserPromptSubmit hook injects the style preamble",
+          "ms": 101
+        },
+        "context": {
+          "verdict": "ok-bin",
+          "evidence": "lifecycle hooks installed (PreCompact, SessionStart, SubagentStop); `measure` reports the startup cost",
+          "ms": 21
+        },
+        "readdedup": {
+          "verdict": "ok-bin",
+          "evidence": "the repeat is answered with a pointer, not the content again (2583 → 1286 bytes delivered, staged and redirected content included)",
+          "ms": 550
+        },
+        "docs": {
+          "verdict": "ok-bin",
+          "evidence": "PDF text extracted, PNG decoded, DOCX extracted, and a DOCX Read is routed through the hook",
+          "ms": 348
+        },
+        "privacy": {
+          "verdict": "ok-bin",
+          "evidence": "identical fold with every proxy pointed at 127.0.0.1:1 (556 bytes both runs)",
+          "ms": 320
+        },
+        "redact": {
+          "verdict": "ok-bin",
+          "evidence": "read -: neither planted credential survives the fold",
+          "ms": 1067
+        },
+        "gain": {
+          "verdict": "ok-bin",
+          "evidence": "ledger credits 145078 tokens saved for this run's HOME",
+          "ms": 18
+        },
+        "subagents": {
+          "verdict": "ok-bin",
+          "evidence": "a subagent's tool result folds exactly like its parent's (33738 → 556 bytes via hook:PreToolUse, parent 556), the `Task` prompt is prefixed with tokenade's instructions (+977 chars via hook:PreToolUse), and the ledger credits 172584 tokens",
+          "ms": 709
+        },
+        "recovery": {
+          "verdict": "ok-bin",
+          "evidence": "expand-ref a1123b2ab5e0 returned the 33740 original bytes",
+          "ms": 277
+        },
+        "diagnostics": {
+          "verdict": "ok-bin",
+          "evidence": "healthcheck names this agent and the state of its channel",
+          "ms": 32
+        },
+        "scoping": {
+          "verdict": "ko-bin",
+          "evidence": "install --only claude-code also wrote 2 file(s) belonging to another agent or to the user: .gemini/projects.json, .gemini/projects.json.6a844491-54d2-4554-ad35-d8caca0f681c.tmp",
+          "ms": 1
+        },
+        "reversible": {
+          "verdict": "ok-bin",
+          "evidence": "uninstall restored every seeded config byte-for-byte",
+          "ms": 1792
+        },
+        "proxyinstall": {
+          "verdict": "ok-proxy",
+          "evidence": "wrote the base URL into .claude/settings.json, and `uninstall` put it back byte-for-byte",
+          "ms": 114
+        },
+        "proxykill": {
+          "verdict": "n/a",
+          "evidence": "not measured: the real kill-and-respawn needs the service enabled on this machine, which the product prints rather than runs (pass --supervise to let the bench do it and undo it)",
+          "ms": 0
+        },
+        "proxyboot": {
+          "verdict": "partial-proxy",
+          "evidence": "unit written at Library/LaunchAgents/com.tokenade.llm-proxy.plist declaring KeepAlive; enabling it needs `--enable`, which this pass did not run (run with --supervise)",
+          "ms": 40
+        },
+        "sysprompt": {
+          "verdict": "ok-bin",
+          "evidence": ".claude/CLAUDE.md (10 command(s) named), AGENTS.md (7 command(s) named), CLAUDE.md (5 command(s) named), GEMINI.md (7 command(s) named)",
+          "ms": 132
+        },
+        "statusline": {
+          "verdict": "ok-bin",
+          "evidence": ".claude/settings.json → the host's own invocation (shell, stdin JSON, 10000 ms) printed 226 chars: Opus · project ⚡ 109.0k tokens saved this session (=$0.54) | 213.6k saved all-time (=$0.39) | 💸 Refer a frien",
+          "ms": 96
+        },
+        "binaccess": {
+          "verdict": "ok-bin",
+          "evidence": "the channel invokes an ABSOLUTE path (/tmp/tokenade-compat/tokenade), which survives a PATH the agent does not control",
+          "ms": 0
+        }
+      },
+      "agentVersion": null,
+      "installExit": 0,
+      "installSaid": "detected agent(s): claude-code\nfix-up: no incompatible token tools to resolve.\n  ✓ Claude Code PostToolUse hook → /var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-claude-code-YUEI7u/home/.claude/settings.json\n  ✓ auto-compact threshold → 700000 tokens (70% of context window; change it with `tokenade install --autocompact-pct N`, remove it with `--no-autocompact`)\n  ✓ Claude Code Read-delivery hook (PostToolUse Read) → /var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-claude-code-YUEI7u/home/.claude/settings.json\n  ✓ Claude Code auto-index hook (Edit/Write/MultiEdit) → /var/folders/sv/73",
+      "wiredThrough": null,
+      "channelNote": null,
+      "rewroteBinaryPath": 1,
+      "rank4": {
+        "cmd": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 311198 → 7128 bytes (0.023)"
+        },
+        "web": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 144413 → 53034 bytes (0.367)"
+        },
+        "mcp": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 237177 → 116080 bytes (0.489)"
+        },
+        "codesearch": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 233254 → 5342 bytes (0.023)"
+        },
+        "docs": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 134316 → 3477 bytes (0.026)"
+        },
+        "redact": {
+          "verdict": "ok-proxy",
+          "evidence": "the planted credential never reaches the provider, on every tool result the proxy relays and with no hook to approve"
+        },
+        "subagents": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 307198 → 7047 bytes (0.023)"
+        },
+        "context": {
+          "verdict": "ok-proxy",
+          "evidence": "the whole outgoing history shrinks: 358451 → 62642 bytes over a 4-tool history (0.175)"
+        },
+        "sobriety": {
+          "verdict": "ok-proxy",
+          "evidence": "the style preamble is prepended to the outgoing system prompt, and a preamble a rank-1 hook already placed is NOT duplicated (1 copy both ways)"
+        },
+        "readdedup": {
+          "verdict": "ok-proxy",
+          "evidence": "a repeated identical result costs 3133 bytes instead of 89465 on the wire"
+        }
+      }
+    },
+    {
+      "agent": "opencode",
+      "label": "OpenCode",
+      "onSite": true,
+      "desktop": false,
+      "noLocalExecution": false,
+      "detected": true,
+      "blocked": null,
+      "channels": {
+        "hook": null,
+        "plugin": {
+          "file": ".config/opencode/plugin/tokenade.ts"
+        },
+        "filesTouched": 14
+      },
+      "features": {
+        "cmd": {
+          "verdict": "ok-bin",
+          "ratio": 0.01603580638468151,
+          "evidence": "plugin: 33737 → 541 bytes [via bridge contract (`read - --cmd`)]",
+          "ms": 117
+        },
+        "web": {
+          "verdict": "ok-bin",
+          "evidence": "plugin: web result 38361 → 12173 bytes [via bridge contract (`read - --cmd`)]",
+          "ms": 229
+        },
+        "mcp": {
+          "verdict": "ok-bin",
+          "evidence": "plugin: an MCP tool result is folded inside the agent (33740 → 541 bytes); its servers are deliberately NOT wrapped as well — one authority per payload [via bridge contract (`read - --cmd`)]",
+          "ms": 183
+        },
+        "codesearch": {
+          "verdict": "ok-bin",
+          "evidence": "`query` located the symbol; install wrote the rules into AGENTS.md, CLAUDE.md, GEMINI.md",
+          "ms": 209
+        },
+        "sobriety": {
+          "verdict": "ok-bin",
+          "evidence": "no prompt-time hook here, but the preamble is IN the rules file this agent reads every session (AGENTS.md, GEMINI.md) — a pinned style only: `auto` classifies per prompt and a static file cannot",
+          "ms": 367
+        },
+        "context": {
+          "verdict": "partial-bin",
+          "evidence": "`measure` works; nothing trims the context on its own — both bridge seams were driven and declined: this bridge registers neither a message builder nor `before_agent_start` / no hook of this bridge receives the outgoing request",
+          "ms": 375,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "the whole outgoing history shrinks: 358451 → 62639 bytes over a 4-tool history (0.175)"
+          }
+        },
+        "readdedup": {
+          "verdict": "ok-bin",
+          "evidence": "the bridge path folds a repeat to a pointer (1526 → 150 bytes)",
+          "ms": 233
+        },
+        "docs": {
+          "verdict": "ok-bin",
+          "evidence": "PDF text extracted, PNG decoded, and a DOCX read comes back as text through this agent's bridge [via bridge contract (`read <path>`)]",
+          "ms": 248
+        },
+        "privacy": {
+          "verdict": "ok-bin",
+          "evidence": "identical fold with every proxy pointed at 127.0.0.1:1 (556 bytes both runs)",
+          "ms": 327
+        },
+        "redact": {
+          "verdict": "ok-bin",
+          "evidence": "plugin: neither planted credential survives the fold [via bridge contract (`read - --cmd`)]",
+          "ms": 90
+        },
+        "gain": {
+          "verdict": "ok-bin",
+          "evidence": "ledger credits 87316 tokens saved for this run's HOME",
+          "ms": 15
+        },
+        "subagents": {
+          "verdict": "ok-bin",
+          "evidence": "a subagent's tool result folds exactly like its parent's (33738 → 541 bytes via plugin, parent 541), the `task` prompt is prefixed with tokenade's instructions (+977 chars via plugin:tool.execute.before), and the ledger credits 101069 tokens [via bridge file]",
+          "ms": 401
+        },
+        "recovery": {
+          "verdict": "ok-bin",
+          "evidence": "expand-ref a1123b2ab5e0 returned the 33740 original bytes",
+          "ms": 264
+        },
+        "diagnostics": {
+          "verdict": "ok-bin",
+          "evidence": "healthcheck names this agent and the state of its channel",
+          "ms": 41
+        },
+        "scoping": {
+          "verdict": "ko-bin",
+          "evidence": "install --only opencode also wrote 2 file(s) belonging to another agent or to the user: .gemini/projects.json, .gemini/projects.json.c11a7b54-54eb-4ce8-824f-b0329b0c1ed4.tmp",
+          "ms": 0
+        },
+        "reversible": {
+          "verdict": "ok-bin",
+          "evidence": "uninstall restored every seeded config byte-for-byte",
+          "ms": 1729
+        },
+        "proxyinstall": {
+          "verdict": "ok-proxy",
+          "evidence": "wrote the base URL into .config/opencode/opencode.json, and `uninstall` put it back (same config, keys reordered by the JSON round trip)",
+          "ms": 100
+        },
+        "proxykill": {
+          "verdict": "n/a",
+          "evidence": "not measured: the real kill-and-respawn needs the service enabled on this machine, which the product prints rather than runs (pass --supervise to let the bench do it and undo it)",
+          "ms": 0
+        },
+        "proxyboot": {
+          "verdict": "partial-proxy",
+          "evidence": "unit written at Library/LaunchAgents/com.tokenade.llm-proxy.plist declaring KeepAlive; enabling it needs `--enable`, which this pass did not run (run with --supervise)",
+          "ms": 30
+        },
+        "sysprompt": {
+          "verdict": "ok-bin",
+          "evidence": "AGENTS.md (7 command(s) named), CLAUDE.md (5 command(s) named), GEMINI.md (7 command(s) named)",
+          "ms": 123
+        },
+        "statusline": {
+          "verdict": "ko-bin",
+          "evidence": "no status-line surface to attach to: no statusLine key in the shipped Go binary or the plugin SDK; its only surface, `client.tui.showToast`, keeps a SINGLE slot that overwrites whatever is showing — including opencode's own error toasts — and the HTTP API does not expose it to check first [via bridge file]",
+          "ms": 71
+        },
+        "binaccess": {
+          "verdict": "ok-bin",
+          "evidence": "the channel invokes an ABSOLUTE path (/tmp/tokenade-compat/tokenade), which survives a PATH the agent does not control",
+          "ms": 0
+        }
+      },
+      "agentVersion": null,
+      "installExit": 0,
+      "installSaid": "detected agent(s): opencode\nfix-up: no incompatible token tools to resolve.\n  ✓ opencode — installed tool-result compaction plugin (~/.config/opencode/plugin/tokenade.ts)\n  note: --with-hook names the Claude Code hook specifically, so it does nothing here; opencode is wired through its own hooks.\n✓ scaffolded 3 rules file(s) in /private/var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-opencode-LuCyg9/project: CLAUDE.md, AGENTS.md, ~/.config/git/ignore (+.tokenade/, +*.tokenade-original)\n\n✓ installed for 1 agent(s). You're set.\n\n",
+      "wiredThrough": null,
+      "channelNote": null,
+      "rewroteBinaryPath": 0,
+      "rank4": {
+        "cmd": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 311198 → 7128 bytes (0.023)"
+        },
+        "web": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 144413 → 53034 bytes (0.367)"
+        },
+        "mcp": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 237177 → 116080 bytes (0.489)"
+        },
+        "codesearch": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 233254 → 5342 bytes (0.023)"
+        },
+        "docs": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 134316 → 3474 bytes (0.026)"
+        },
+        "redact": {
+          "verdict": "ok-proxy",
+          "evidence": "the planted credential never reaches the provider, on every tool result the proxy relays and with no hook to approve"
+        },
+        "subagents": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 307198 → 7047 bytes (0.023)"
+        },
+        "context": {
+          "verdict": "ok-proxy",
+          "evidence": "the whole outgoing history shrinks: 358451 → 62639 bytes over a 4-tool history (0.175)"
+        },
+        "sobriety": {
+          "verdict": "ok-proxy",
+          "evidence": "the style preamble is prepended to the outgoing system prompt, and a preamble a rank-1 hook already placed is NOT duplicated (1 copy both ways)"
+        },
+        "readdedup": {
+          "verdict": "ok-proxy",
+          "evidence": "a repeated identical result costs 3130 bytes instead of 89465 on the wire"
+        }
+      }
+    },
+    {
+      "agent": "kilo-code",
+      "label": "Kilo Code",
+      "onSite": true,
+      "desktop": false,
+      "noLocalExecution": false,
+      "detected": true,
+      "blocked": null,
+      "channels": {
+        "hook": null,
+        "plugin": {
+          "file": ".config/kilo/plugins/tokenade.ts"
+        },
+        "filesTouched": 14
+      },
+      "features": {
+        "cmd": {
+          "verdict": "ok-bin",
+          "ratio": 0.01603580638468151,
+          "evidence": "plugin: 33737 → 541 bytes [via bridge contract (`read - --cmd`)]",
+          "ms": 116
+        },
+        "web": {
+          "verdict": "ok-bin",
+          "evidence": "plugin: web result 38361 → 12173 bytes [via bridge contract (`read - --cmd`)]",
+          "ms": 237
+        },
+        "mcp": {
+          "verdict": "ok-bin",
+          "evidence": "plugin: an MCP tool result is folded inside the agent (33740 → 541 bytes); its servers are deliberately NOT wrapped as well — one authority per payload [via bridge contract (`read - --cmd`)]",
+          "ms": 161
+        },
+        "codesearch": {
+          "verdict": "ok-bin",
+          "evidence": "`query` located the symbol; install wrote the rules into AGENTS.md, CLAUDE.md, GEMINI.md",
+          "ms": 201
+        },
+        "sobriety": {
+          "verdict": "ok-bin",
+          "evidence": "no prompt-time hook here, but the preamble is IN the rules file this agent reads every session (AGENTS.md, GEMINI.md) — a pinned style only: `auto` classifies per prompt and a static file cannot",
+          "ms": 358
+        },
+        "context": {
+          "verdict": "partial-bin",
+          "evidence": "`measure` works; nothing trims the context on its own — both bridge seams were driven and declined: this bridge registers neither a message builder nor `before_agent_start` / no hook of this bridge receives the outgoing request",
+          "ms": 366,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "the whole outgoing history shrinks: 358451 → 62640 bytes over a 4-tool history (0.175)"
+          }
+        },
+        "readdedup": {
+          "verdict": "ok-bin",
+          "evidence": "the bridge path folds a repeat to a pointer (1527 → 150 bytes)",
+          "ms": 231
+        },
+        "docs": {
+          "verdict": "ok-bin",
+          "evidence": "PDF text extracted, PNG decoded, and a DOCX read comes back as text through this agent's bridge [via bridge contract (`read <path>`)]",
+          "ms": 245
+        },
+        "privacy": {
+          "verdict": "ok-bin",
+          "evidence": "identical fold with every proxy pointed at 127.0.0.1:1 (556 bytes both runs)",
+          "ms": 326
+        },
+        "redact": {
+          "verdict": "ok-bin",
+          "evidence": "plugin: neither planted credential survives the fold [via bridge contract (`read - --cmd`)]",
+          "ms": 92
+        },
+        "gain": {
+          "verdict": "ok-bin",
+          "evidence": "ledger credits 101072 tokens saved for this run's HOME",
+          "ms": 16
+        },
+        "subagents": {
+          "verdict": "ok-bin",
+          "evidence": "a subagent's tool result folds exactly like its parent's (33738 → 541 bytes via plugin, parent 541), the `task` prompt is prefixed with tokenade's instructions (+977 chars via plugin:tool.execute.before), and the ledger credits 114825 tokens [via bridge file]",
+          "ms": 386
+        },
+        "recovery": {
+          "verdict": "ok-bin",
+          "evidence": "expand-ref a1123b2ab5e0 returned the 33740 original bytes",
+          "ms": 264
+        },
+        "diagnostics": {
+          "verdict": "ok-bin",
+          "evidence": "healthcheck names this agent and the state of its channel",
+          "ms": 52
+        },
+        "scoping": {
+          "verdict": "ko-bin",
+          "evidence": "install --only kilo-code also wrote 2 file(s) belonging to another agent or to the user: .gemini/projects.json, .gemini/projects.json.c038ff03-2db3-4e17-9dca-9a3846d9f828.tmp",
+          "ms": 0
+        },
+        "reversible": {
+          "verdict": "ok-bin",
+          "evidence": "uninstall restored every seeded config byte-for-byte",
+          "ms": 1727
+        },
+        "proxyinstall": {
+          "verdict": "ok-proxy",
+          "evidence": "wrote the base URL into .config/kilo/kilo.json, and `uninstall` put it back (same config, keys reordered by the JSON round trip)",
+          "ms": 90
+        },
+        "proxykill": {
+          "verdict": "n/a",
+          "evidence": "not measured: the real kill-and-respawn needs the service enabled on this machine, which the product prints rather than runs (pass --supervise to let the bench do it and undo it)",
+          "ms": 0
+        },
+        "proxyboot": {
+          "verdict": "partial-proxy",
+          "evidence": "unit written at Library/LaunchAgents/com.tokenade.llm-proxy.plist declaring KeepAlive; enabling it needs `--enable`, which this pass did not run (run with --supervise)",
+          "ms": 36
+        },
+        "sysprompt": {
+          "verdict": "ok-bin",
+          "evidence": "AGENTS.md (7 command(s) named), CLAUDE.md (5 command(s) named), GEMINI.md (7 command(s) named)",
+          "ms": 118
+        },
+        "statusline": {
+          "verdict": "ko-bin",
+          "evidence": "no status-line surface to attach to: no statusLine key in the shipped Go binary or the plugin SDK; its only surface, `client.tui.showToast`, keeps a SINGLE slot that overwrites whatever is showing — including opencode's own error toasts — and the HTTP API does not expose it to check first [via bridge file]",
+          "ms": 65
+        },
+        "binaccess": {
+          "verdict": "ok-bin",
+          "evidence": "the channel invokes an ABSOLUTE path (/tmp/tokenade-compat/tokenade), which survives a PATH the agent does not control",
+          "ms": 0
+        }
+      },
+      "agentVersion": null,
+      "installExit": 0,
+      "installSaid": "detected agent(s): kilo-code\nfix-up: no incompatible token tools to resolve.\n  ✓ kilo — installed tool-result compaction plugin (~/.config/kilo/plugins/tokenade.ts)\n  note: --with-hook names the Claude Code hook specifically, so it does nothing here; kilo-code is wired through its own hooks.\n✓ scaffolded 3 rules file(s) in /private/var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-kilo-code-hJuTnA/project: CLAUDE.md, AGENTS.md, ~/.config/git/ignore (+.tokenade/, +*.tokenade-original)\n\n✓ installed for 1 agent(s). You're set.\n\n",
+      "wiredThrough": null,
+      "channelNote": null,
+      "rewroteBinaryPath": 0,
+      "rank4": {
+        "cmd": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 311198 → 7128 bytes (0.023)"
+        },
+        "web": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 144413 → 53034 bytes (0.367)"
+        },
+        "mcp": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 237177 → 116080 bytes (0.489)"
+        },
+        "codesearch": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 233254 → 5342 bytes (0.023)"
+        },
+        "docs": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 134316 → 3475 bytes (0.026)"
+        },
+        "redact": {
+          "verdict": "ok-proxy",
+          "evidence": "the planted credential never reaches the provider, on every tool result the proxy relays and with no hook to approve"
+        },
+        "subagents": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 307198 → 7047 bytes (0.023)"
+        },
+        "context": {
+          "verdict": "ok-proxy",
+          "evidence": "the whole outgoing history shrinks: 358451 → 62640 bytes over a 4-tool history (0.175)"
+        },
+        "sobriety": {
+          "verdict": "ok-proxy",
+          "evidence": "the style preamble is prepended to the outgoing system prompt, and a preamble a rank-1 hook already placed is NOT duplicated (1 copy both ways)"
+        },
+        "readdedup": {
+          "verdict": "ok-proxy",
+          "evidence": "a repeated identical result costs 3131 bytes instead of 89465 on the wire"
+        }
+      }
+    },
+    {
+      "agent": "copilot",
+      "label": "Copilot CLI",
+      "onSite": true,
+      "desktop": false,
+      "noLocalExecution": false,
+      "detected": true,
+      "blocked": null,
+      "channels": {
+        "hook": {
+          "file": ".copilot/hooks/tokenade.json",
+          "events": [
+            "PreCompact",
+            "PreToolUse",
+            "SessionStart",
+            "UserPromptSubmit",
+            "postToolUse",
+            "subagentStart"
+          ]
+        },
+        "plugin": null,
+        "filesTouched": 15
+      },
+      "features": {
+        "cmd": {
+          "verdict": "ok-bin",
+          "ratio": 0.016480422088508168,
+          "evidence": "PreToolUse rewrote the command; running both: 33737 → 556 bytes",
+          "ms": 347
+        },
+        "web": {
+          "verdict": "ok-bin",
+          "ratio": 0.008195471376456006,
+          "evidence": "PreToolUse WebFetch fetched and folded https://en.wikipedia.org/wiki/Rust_(programming_language) itself: 1023004 → 8384 bytes (prompt anchored; an unanchored prompt is passed to the native fetcher on purpose)",
+          "ms": 9089
+        },
+        "mcp": {
+          "verdict": "ok-mcp",
+          "evidence": "wrapped .copilot/mcp-config.json; proxy folded tool result 137128 → 956 bytes",
+          "ms": 12893
+        },
+        "codesearch": {
+          "verdict": "ok-bin",
+          "evidence": "`query` located the symbol; install wrote the rules into AGENTS.md, CLAUDE.md, GEMINI.md",
+          "ms": 172
+        },
+        "sobriety": {
+          "verdict": "ok-bin",
+          "evidence": "UserPromptSubmit hook injects the style preamble",
+          "ms": 91
+        },
+        "context": {
+          "verdict": "ok-bin",
+          "evidence": "lifecycle hooks installed (PreCompact, SessionStart); `measure` reports the startup cost",
+          "ms": 16
+        },
+        "readdedup": {
+          "verdict": "ok-bin",
+          "evidence": "the repeat is answered with a pointer, not the content again (2538 → 1216 bytes delivered, staged and redirected content included)",
+          "ms": 353
+        },
+        "docs": {
+          "verdict": "ok-bin",
+          "evidence": "PDF text extracted, PNG decoded, DOCX extracted, and a DOCX Read is routed through the hook",
+          "ms": 385
+        },
+        "privacy": {
+          "verdict": "ok-bin",
+          "evidence": "identical fold with every proxy pointed at 127.0.0.1:1 (556 bytes both runs)",
+          "ms": 316
+        },
+        "redact": {
+          "verdict": "ok-bin",
+          "evidence": "read -: neither planted credential survives the fold",
+          "ms": 595
+        },
+        "gain": {
+          "verdict": "ok-bin",
+          "evidence": "ledger credits 149263 tokens saved for this run's HOME",
+          "ms": 17
+        },
+        "subagents": {
+          "verdict": "ok-bin",
+          "evidence": "a subagent's tool result folds exactly like its parent's (33738 → 556 bytes via hook:PreToolUse, parent 556), the `Task` prompt is prefixed with tokenade's instructions (+977 chars via hook:PreToolUse), and the ledger credits 176769 tokens",
+          "ms": 650
+        },
+        "recovery": {
+          "verdict": "ok-bin",
+          "evidence": "expand-ref a1123b2ab5e0 returned the 33740 original bytes",
+          "ms": 273
+        },
+        "diagnostics": {
+          "verdict": "ok-bin",
+          "evidence": "healthcheck names this agent and the state of its channel",
+          "ms": 45
+        },
+        "scoping": {
+          "verdict": "ko-bin",
+          "evidence": "install --only copilot also wrote 2 file(s) belonging to another agent or to the user: .gemini/projects.json, .gemini/projects.json.89b7f516-5ee5-4d93-b33d-ccf3d1524b42.tmp",
+          "ms": 0
+        },
+        "reversible": {
+          "verdict": "ok-bin",
+          "evidence": "uninstall restored every seeded config byte-for-byte",
+          "ms": 1777
+        },
+        "proxyinstall": {
+          "verdict": "ok-proxy",
+          "evidence": "wrote the base URL into .copilot/settings.json, and `uninstall` put it back byte-for-byte",
+          "ms": 224
+        },
+        "proxykill": {
+          "verdict": "n/a",
+          "evidence": "not measured: the real kill-and-respawn needs the service enabled on this machine, which the product prints rather than runs (pass --supervise to let the bench do it and undo it)",
+          "ms": 0
+        },
+        "proxyboot": {
+          "verdict": "partial-proxy",
+          "evidence": "unit written at Library/LaunchAgents/com.tokenade.llm-proxy.plist declaring KeepAlive; enabling it needs `--enable`, which this pass did not run (run with --supervise)",
+          "ms": 35
+        },
+        "sysprompt": {
+          "verdict": "ok-bin",
+          "evidence": "AGENTS.md (7 command(s) named), CLAUDE.md (5 command(s) named), GEMINI.md (7 command(s) named)",
+          "ms": 118
+        },
+        "statusline": {
+          "verdict": "ok-bin",
+          "evidence": ".copilot/settings.json → the host's own invocation (shell, stdin JSON, 10000 ms) printed 226 chars: Opus · project ⚡ 109.3k tokens saved this session (=$0.55) | 217.8k saved all-time (=$0.40) | 💸 Refer a frien",
+          "ms": 97
+        },
+        "binaccess": {
+          "verdict": "ok-bin",
+          "evidence": "the channel invokes an ABSOLUTE path (/tmp/tokenade-compat/tokenade), which survives a PATH the agent does not control",
+          "ms": 0
+        }
+      },
+      "agentVersion": "GitHub Copilot CLI 1.0.80.",
+      "installExit": 0,
+      "installSaid": "detected agent(s): copilot\nfix-up: no incompatible token tools to resolve.\n  note: --with-hook names the Claude Code hook specifically, so it does nothing here; copilot is wired through its own hooks.\n  ✓ Copilot CLI hooks (Pre/PostToolUse/SessionStart/…) → /var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-copilot-BZF8YV/home/.copilot/hooks/tokenade.json\n  ✓ savings ticker wired into /var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-copilot-BZF8YV/home/.copilot/settings.json (Copilot CLI)\n✓ scaffolded 3 rules file(s) in /private/var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-copilot",
+      "wiredThrough": null,
+      "channelNote": null,
+      "rewroteBinaryPath": 1,
+      "rank4": {
+        "cmd": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 311198 → 7128 bytes (0.023)"
+        },
+        "web": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 144413 → 53034 bytes (0.367)"
+        },
+        "mcp": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 237177 → 116080 bytes (0.489)"
+        },
+        "codesearch": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 233254 → 5342 bytes (0.023)"
+        },
+        "docs": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 134316 → 3473 bytes (0.026)"
+        },
+        "redact": {
+          "verdict": "ok-proxy",
+          "evidence": "the planted credential never reaches the provider, on every tool result the proxy relays and with no hook to approve"
+        },
+        "subagents": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 307198 → 7047 bytes (0.023)"
+        },
+        "context": {
+          "verdict": "ok-proxy",
+          "evidence": "the whole outgoing history shrinks: 358451 → 62638 bytes over a 4-tool history (0.175)"
+        },
+        "sobriety": {
+          "verdict": "ok-proxy",
+          "evidence": "the style preamble is prepended to the outgoing system prompt, and a preamble a rank-1 hook already placed is NOT duplicated (1 copy both ways)"
+        },
+        "readdedup": {
+          "verdict": "ok-proxy",
+          "evidence": "a repeated identical result costs 3129 bytes instead of 89465 on the wire"
+        }
+      }
+    },
+    {
+      "agent": "hermes",
+      "label": "Hermes",
+      "onSite": true,
+      "desktop": false,
+      "noLocalExecution": false,
+      "detected": true,
+      "blocked": null,
+      "channels": {
+        "hook": null,
+        "plugin": {
+          "file": ".hermes/plugins/tokenade/__init__.py"
+        },
+        "filesTouched": 17
+      },
+      "features": {
+        "cmd": {
+          "verdict": "ok-bin",
+          "ratio": 0.01603580638468151,
+          "evidence": "plugin: 33737 → 541 bytes [via bridge contract (`read - --cmd`)]",
+          "ms": 116
+        },
+        "web": {
+          "verdict": "ok-bin",
+          "evidence": "plugin: web result 38361 → 12173 bytes [via bridge contract (`read - --cmd`)]",
+          "ms": 240
+        },
+        "mcp": {
+          "verdict": "ok-bin",
+          "evidence": "plugin: an MCP tool result is folded inside the agent (33740 → 541 bytes); its servers are deliberately NOT wrapped as well — one authority per payload [via bridge contract (`read - --cmd`)]",
+          "ms": 160
+        },
+        "codesearch": {
+          "verdict": "ok-bin",
+          "evidence": "`query` located the symbol; install wrote the rules into AGENTS.md, CLAUDE.md, GEMINI.md",
+          "ms": 231
+        },
+        "sobriety": {
+          "verdict": "ok-bin",
+          "evidence": "no prompt-time hook here, but the preamble is IN the rules file this agent reads every session (AGENTS.md, GEMINI.md) — a pinned style only: `auto` classifies per prompt and a static file cannot",
+          "ms": 382
+        },
+        "context": {
+          "verdict": "partial-bin",
+          "evidence": "`measure` works; nothing trims the context on its own — both bridge seams were driven and declined: this python bridge registers no hook that sees the conversation (it registers pre_tool_call, transform_tool_result) / this python bridge registers no hook that sees the outgoing request (it registers pre_tool_call, transform_tool_result)",
+          "ms": 136,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "the whole outgoing history shrinks: 358451 → 62637 bytes over a 4-tool history (0.175)"
+          }
+        },
+        "readdedup": {
+          "verdict": "ok-bin",
+          "evidence": "the bridge path folds a repeat to a pointer (1524 → 150 bytes)",
+          "ms": 233
+        },
+        "docs": {
+          "verdict": "ok-bin",
+          "evidence": "PDF text extracted, PNG decoded, and a DOCX read comes back as text through this agent's bridge [via bridge contract (`read <path>`)]",
+          "ms": 250
+        },
+        "privacy": {
+          "verdict": "ok-bin",
+          "evidence": "identical fold with every proxy pointed at 127.0.0.1:1 (556 bytes both runs)",
+          "ms": 332
+        },
+        "redact": {
+          "verdict": "ok-bin",
+          "evidence": "plugin: neither planted credential survives the fold [via bridge contract (`read - --cmd`)]",
+          "ms": 92
+        },
+        "gain": {
+          "verdict": "ok-bin",
+          "evidence": "ledger credits 87322 tokens saved for this run's HOME",
+          "ms": 16
+        },
+        "subagents": {
+          "verdict": "ok-bin",
+          "evidence": "a subagent's tool result folds exactly like its parent's (33738 → 541 bytes via plugin, parent 541), the `task` prompt is prefixed with tokenade's instructions (+977 chars via plugin:pre_tool_call), and the ledger credits 101075 tokens [via bridge file]",
+          "ms": 302
+        },
+        "recovery": {
+          "verdict": "ok-bin",
+          "evidence": "expand-ref a1123b2ab5e0 returned the 33740 original bytes",
+          "ms": 269
+        },
+        "diagnostics": {
+          "verdict": "ok-bin",
+          "evidence": "healthcheck names this agent and the state of its channel",
+          "ms": 41
+        },
+        "scoping": {
+          "verdict": "ko-bin",
+          "evidence": "install --only hermes also wrote 2 file(s) belonging to another agent or to the user: .gemini/projects.json, .gemini/projects.json.f6670734-daf2-4c3d-96e1-4ed2f0f0adb9.tmp",
+          "ms": 0
+        },
+        "reversible": {
+          "verdict": "ok-bin",
+          "evidence": "uninstall restored every seeded config byte-for-byte",
+          "ms": 1796
+        },
+        "proxyinstall": {
+          "verdict": "ok-proxy",
+          "evidence": "wrote the base URL into .hermes/config.yaml, and `uninstall` put it back byte-for-byte",
+          "ms": 95
+        },
+        "proxykill": {
+          "verdict": "n/a",
+          "evidence": "not measured: the real kill-and-respawn needs the service enabled on this machine, which the product prints rather than runs (pass --supervise to let the bench do it and undo it)",
+          "ms": 0
+        },
+        "proxyboot": {
+          "verdict": "partial-proxy",
+          "evidence": "unit written at Library/LaunchAgents/com.tokenade.llm-proxy.plist declaring KeepAlive; enabling it needs `--enable`, which this pass did not run (run with --supervise)",
+          "ms": 37
+        },
+        "sysprompt": {
+          "verdict": "ok-bin",
+          "evidence": "AGENTS.md (7 command(s) named), CLAUDE.md (5 command(s) named), GEMINI.md (7 command(s) named)",
+          "ms": 147
+        },
+        "statusline": {
+          "verdict": "ko-bin",
+          "evidence": "no status-line surface to attach to: the only `setStatus` is Slack's `assistant.threads.setStatus` typing indicator",
+          "ms": 67
+        },
+        "binaccess": {
+          "verdict": "ok-bin",
+          "evidence": "the channel invokes an ABSOLUTE path (/tmp/tokenade-compat/tokenade), which survives a PATH the agent does not control",
+          "ms": 0
+        }
+      },
+      "agentVersion": null,
+      "installExit": 0,
+      "installSaid": "detected agent(s): hermes\nfix-up: no incompatible token tools to resolve.\n  ✓ hermes — terminal output compacted via the universal shell proxy; usage + savings read from ~/.hermes/state.db\n  ✓ hermes — installed read_file/MCP compaction plugin (~/.hermes/plugins/tokenade) + enabled in config.yaml\n  note: --with-hook names the Claude Code hook specifically, so it does nothing here; hermes is wired through its own hooks.\n✓ scaffolded 4 rules file(s) in /private/var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-hermes-LEWrC3/project: CLAUDE.md, AGENTS.md, .hermes_rules.md, ~/.config/git/ignore ",
+      "wiredThrough": null,
+      "channelNote": null,
+      "rewroteBinaryPath": 0,
+      "rank4": {
+        "cmd": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 311198 → 7128 bytes (0.023)"
+        },
+        "web": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 144413 → 53034 bytes (0.367)"
+        },
+        "mcp": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 237177 → 116080 bytes (0.489)"
+        },
+        "codesearch": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 233254 → 5342 bytes (0.023)"
+        },
+        "docs": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 134316 → 3472 bytes (0.026)"
+        },
+        "redact": {
+          "verdict": "ok-proxy",
+          "evidence": "the planted credential never reaches the provider, on every tool result the proxy relays and with no hook to approve"
+        },
+        "subagents": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 307198 → 7047 bytes (0.023)"
+        },
+        "context": {
+          "verdict": "ok-proxy",
+          "evidence": "the whole outgoing history shrinks: 358451 → 62637 bytes over a 4-tool history (0.175)"
+        },
+        "sobriety": {
+          "verdict": "ok-proxy",
+          "evidence": "the style preamble is prepended to the outgoing system prompt, and a preamble a rank-1 hook already placed is NOT duplicated (1 copy both ways)"
+        },
+        "readdedup": {
+          "verdict": "ok-proxy",
+          "evidence": "a repeated identical result costs 3128 bytes instead of 89465 on the wire"
+        }
+      }
+    },
+    {
+      "agent": "cline",
+      "label": "Cline",
+      "onSite": true,
+      "desktop": false,
+      "noLocalExecution": false,
+      "detected": true,
+      "blocked": null,
+      "channels": {
+        "hook": null,
+        "plugin": {
+          "file": ".tokenade/cline-plugin/tokenade.ts"
+        },
+        "filesTouched": 15
+      },
+      "features": {
+        "cmd": {
+          "verdict": "ok-bin",
+          "ratio": 0.01603580638468151,
+          "evidence": "plugin: 33737 → 541 bytes [via bridge contract (`read - --cmd`)]",
+          "ms": 119
+        },
+        "web": {
+          "verdict": "ok-bin",
+          "evidence": "plugin: web result 38361 → 12173 bytes [via bridge contract (`read - --cmd`)]",
+          "ms": 242
+        },
+        "mcp": {
+          "verdict": "ok-bin",
+          "evidence": "plugin: an MCP tool result is folded inside the agent (33740 → 541 bytes); its servers are deliberately NOT wrapped as well — one authority per payload [via bridge contract (`read - --cmd`)]",
+          "ms": 181
+        },
+        "codesearch": {
+          "verdict": "ok-bin",
+          "evidence": "`query` located the symbol; install wrote the rules into .clinerules, AGENTS.md, CLAUDE.md, GEMINI.md",
+          "ms": 420
+        },
+        "sobriety": {
+          "verdict": "ok-bin",
+          "evidence": "the style preamble reaches the model through this agent's bridge [via bridge message builder]",
+          "ms": 205
+        },
+        "context": {
+          "verdict": "ok-bin",
+          "evidence": "this agent's bridge reshapes the whole conversation each turn: 108289 → 1020 bytes of history [via bridge message builder]",
+          "ms": 313
+        },
+        "readdedup": {
+          "verdict": "ok-bin",
+          "evidence": "the bridge path folds a repeat to a pointer (1523 → 150 bytes)",
+          "ms": 239
+        },
+        "docs": {
+          "verdict": "ok-bin",
+          "evidence": "PDF text extracted, PNG decoded, and a DOCX read comes back as text through this agent's bridge [via bridge contract (`read <path>`)]",
+          "ms": 255
+        },
+        "privacy": {
+          "verdict": "ok-bin",
+          "evidence": "identical fold with every proxy pointed at 127.0.0.1:1 (556 bytes both runs)",
+          "ms": 326
+        },
+        "redact": {
+          "verdict": "ok-bin",
+          "evidence": "plugin: neither planted credential survives the fold [via bridge contract (`read - --cmd`)]",
+          "ms": 95
+        },
+        "gain": {
+          "verdict": "ok-bin",
+          "evidence": "ledger credits 133469 tokens saved for this run's HOME",
+          "ms": 17
+        },
+        "subagents": {
+          "verdict": "ok-bin",
+          "evidence": "a subagent's tool result folds exactly like its parent's (33738 → 541 bytes via plugin, parent 541), the `task` prompt is prefixed with tokenade's instructions (+234 chars via plugin:message builder), and the ledger credits 147222 tokens [via bridge file]",
+          "ms": 381
+        },
+        "recovery": {
+          "verdict": "ok-bin",
+          "evidence": "expand-ref a1123b2ab5e0 returned the 33740 original bytes",
+          "ms": 267
+        },
+        "diagnostics": {
+          "verdict": "ok-bin",
+          "evidence": "healthcheck names this agent and the state of its channel",
+          "ms": 43
+        },
+        "scoping": {
+          "verdict": "ko-bin",
+          "evidence": "install --only cline also wrote 2 file(s) belonging to another agent or to the user: .gemini/projects.json, .gemini/projects.json.d259a6ff-6aec-407e-9e45-0727a70eb957.tmp",
+          "ms": 0
+        },
+        "reversible": {
+          "verdict": "ok-bin",
+          "evidence": "uninstall restored every seeded config byte-for-byte",
+          "ms": 1999
+        },
+        "proxyinstall": {
+          "verdict": "ok-proxy",
+          "evidence": "wrote the base URL into .cline/settings/providers.json, and `uninstall` put it back byte-for-byte",
+          "ms": 92
+        },
+        "proxykill": {
+          "verdict": "n/a",
+          "evidence": "not measured: the real kill-and-respawn needs the service enabled on this machine, which the product prints rather than runs (pass --supervise to let the bench do it and undo it)",
+          "ms": 0
+        },
+        "proxyboot": {
+          "verdict": "partial-proxy",
+          "evidence": "unit written at Library/LaunchAgents/com.tokenade.llm-proxy.plist declaring KeepAlive; enabling it needs `--enable`, which this pass did not run (run with --supervise)",
+          "ms": 37
+        },
+        "sysprompt": {
+          "verdict": "ok-bin",
+          "evidence": ".clinerules (7 command(s) named), AGENTS.md (7 command(s) named), CLAUDE.md (5 command(s) named), GEMINI.md (7 command(s) named)",
+          "ms": 282
+        },
+        "statusline": {
+          "verdict": "ko-bin",
+          "evidence": "no status-line surface to attach to: `statusBarItem`/`showToast` here are VS Code host APIs; the `@cline/core` AgentPlugin surface the bridge is written against exposes none of them",
+          "ms": 69
+        },
+        "binaccess": {
+          "verdict": "ok-bin",
+          "evidence": "the channel invokes an ABSOLUTE path (/tmp/tokenade-compat/tokenade), which survives a PATH the agent does not control",
+          "ms": 0
+        }
+      },
+      "agentVersion": null,
+      "installExit": 0,
+      "installSaid": "detected agent(s): cline\nfix-up: no incompatible token tools to resolve.\n  ◐ cline — plugin files written, but cline did not register them: NOT active, tool results are not compacted for it\n  note: --with-hook names the Claude Code hook specifically, so it does nothing here; cline is wired through its own hooks.\n✓ scaffolded 3 rules file(s) in /private/var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-cline-94wcTh/project: CLAUDE.md, AGENTS.md, ~/.config/git/ignore (+.tokenade/, +*.tokenade-original)\n\n✓ installed for 1 agent(s). You're set.\n\n",
+      "wiredThrough": null,
+      "channelNote": null,
+      "rewroteBinaryPath": 0,
+      "rank4": {
+        "cmd": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 311198 → 7128 bytes (0.023)"
+        },
+        "web": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 144413 → 53034 bytes (0.367)"
+        },
+        "mcp": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 237177 → 116080 bytes (0.489)"
+        },
+        "codesearch": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 233254 → 5342 bytes (0.023)"
+        },
+        "docs": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 134316 → 3471 bytes (0.026)"
+        },
+        "redact": {
+          "verdict": "ok-proxy",
+          "evidence": "the planted credential never reaches the provider, on every tool result the proxy relays and with no hook to approve"
+        },
+        "subagents": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 307198 → 7047 bytes (0.023)"
+        },
+        "context": {
+          "verdict": "ok-proxy",
+          "evidence": "the whole outgoing history shrinks: 358451 → 62636 bytes over a 4-tool history (0.175)"
+        },
+        "sobriety": {
+          "verdict": "ok-proxy",
+          "evidence": "the style preamble is prepended to the outgoing system prompt, and a preamble a rank-1 hook already placed is NOT duplicated (1 copy both ways)"
+        },
+        "readdedup": {
+          "verdict": "ok-proxy",
+          "evidence": "a repeated identical result costs 3127 bytes instead of 89465 on the wire"
+        }
+      }
+    },
+    {
+      "agent": "gemini-cli",
+      "label": "Gemini CLI",
+      "onSite": true,
+      "desktop": false,
+      "noLocalExecution": false,
+      "detected": true,
+      "blocked": null,
+      "channels": {
+        "hook": {
+          "file": ".gemini/settings.json",
+          "events": [
+            "AfterTool",
+            "BeforeTool",
+            "SessionStart"
+          ]
+        },
+        "plugin": null,
+        "filesTouched": 12
+      },
+      "features": {
+        "cmd": {
+          "verdict": "ok-bin",
+          "ratio": 0.2107774846607582,
+          "evidence": "hook:AfterTool: 33737 → 7111 bytes",
+          "ms": 192
+        },
+        "web": {
+          "verdict": "ok-bin",
+          "ratio": 2.0527778972516237e-05,
+          "evidence": "PreToolUse WebFetch fetched and folded https://en.wikipedia.org/wiki/Rust_(programming_language) itself: 1023004 → 21 bytes (prompt anchored; an unanchored prompt is passed to the native fetcher on purpose)",
+          "ms": 2600
+        },
+        "mcp": {
+          "verdict": "ok-mcp",
+          "evidence": "wrapped .gemini/settings.json; proxy folded tool result 137128 → 956 bytes",
+          "ms": 12917
+        },
+        "codesearch": {
+          "verdict": "ok-bin",
+          "evidence": "`query` located the symbol; install wrote the rules into AGENTS.md, CLAUDE.md, GEMINI.md",
+          "ms": 177
+        },
+        "sobriety": {
+          "verdict": "ok-bin",
+          "evidence": "SessionStart hook injects the style preamble",
+          "ms": 59
+        },
+        "context": {
+          "verdict": "ok-bin",
+          "evidence": "lifecycle hooks installed (SessionStart); `measure` reports the startup cost",
+          "ms": 16
+        },
+        "readdedup": {
+          "verdict": "ok-bin",
+          "evidence": "the repeat is answered with a pointer, not the content again (1779 → 370 bytes delivered, staged and redirected content included)",
+          "ms": 203
+        },
+        "docs": {
+          "verdict": "ok-bin",
+          "evidence": "PDF text extracted, PNG decoded, DOCX extracted, and a DOCX Read is routed through the hook",
+          "ms": 222
+        },
+        "privacy": {
+          "verdict": "ok-bin",
+          "evidence": "identical fold with every proxy pointed at 127.0.0.1:1 (556 bytes both runs)",
+          "ms": 338
+        },
+        "redact": {
+          "verdict": "ok-bin",
+          "evidence": "hook:AfterTool: neither planted credential survives the fold",
+          "ms": 115
+        },
+        "gain": {
+          "verdict": "ok-bin",
+          "evidence": "ledger credits 177091 tokens saved for this run's HOME",
+          "ms": 16
+        },
+        "subagents": {
+          "verdict": "ok-bin",
+          "evidence": "a subagent's tool result folds exactly like its parent's (33738 → 7124 bytes via hook:AfterTool, parent 7124), the `Task` prompt is prefixed with tokenade's instructions (+977 chars via hook:BeforeTool), and the ledger credits 188013 tokens",
+          "ms": 347
+        },
+        "recovery": {
+          "verdict": "ok-bin",
+          "evidence": "expand-ref a1123b2ab5e0 returned the 33740 original bytes",
+          "ms": 273
+        },
+        "diagnostics": {
+          "verdict": "ok-bin",
+          "evidence": "healthcheck names this agent and the state of its channel",
+          "ms": 43
+        },
+        "scoping": {
+          "verdict": "ok-bin",
+          "evidence": "install --only gemini-cli touched only this agent's own surfaces",
+          "ms": 0
+        },
+        "reversible": {
+          "verdict": "ok-bin",
+          "evidence": "uninstall restored every seeded config byte-for-byte",
+          "ms": 1794
+        },
+        "proxyinstall": {
+          "verdict": "ok-proxy",
+          "evidence": "wrote the base URL into .gemini/.env, and `uninstall` put it back byte-for-byte",
+          "ms": 93
+        },
+        "proxykill": {
+          "verdict": "n/a",
+          "evidence": "not measured: the real kill-and-respawn needs the service enabled on this machine, which the product prints rather than runs (pass --supervise to let the bench do it and undo it)",
+          "ms": 0
+        },
+        "proxyboot": {
+          "verdict": "partial-proxy",
+          "evidence": "unit written at Library/LaunchAgents/com.tokenade.llm-proxy.plist declaring KeepAlive; enabling it needs `--enable`, which this pass did not run (run with --supervise)",
+          "ms": 39
+        },
+        "sysprompt": {
+          "verdict": "ok-bin",
+          "evidence": "AGENTS.md (7 command(s) named), CLAUDE.md (5 command(s) named), GEMINI.md (7 command(s) named)",
+          "ms": 119
+        },
+        "statusline": {
+          "verdict": "ko-bin",
+          "evidence": "no status-line surface to attach to: the shipped bundle's only `statusline` strings are vim `setlocal statusline=` in its external-editor helper",
+          "ms": 66
+        },
+        "binaccess": {
+          "verdict": "ok-bin",
+          "evidence": "the channel invokes an ABSOLUTE path (/tmp/tokenade-compat/tokenade), which survives a PATH the agent does not control",
+          "ms": 0
+        }
+      },
+      "agentVersion": "0.55.1",
+      "installExit": 0,
+      "installSaid": "detected agent(s): gemini-cli\nfix-up: no incompatible token tools to resolve.\n  note: --with-hook names the Claude Code hook specifically, so it does nothing here; gemini-cli is wired through its own hooks.\n  ✓ Gemini CLI BeforeTool hook → /var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-gemini-cli-L1AmAh/home/.gemini/settings.json\n✓ scaffolded 4 rules file(s) in /private/var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-gemini-cli-L1AmAh/project: CLAUDE.md, AGENTS.md, GEMINI.md, ~/.config/git/ignore (+.tokenade/, +*.tokenade-original)\n\n✓ installed for 1 agent(s). You're set.\n\n",
+      "wiredThrough": null,
+      "channelNote": null,
+      "rewroteBinaryPath": 1,
+      "rank4": {
+        "cmd": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 306911 → 133564 bytes (0.435)"
+        },
+        "web": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 135721 → 50089 bytes (0.369)"
+        },
+        "mcp": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 233423 → 112576 bytes (0.482)"
+        },
+        "codesearch": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 229971 → 4656 bytes (0.020)"
+        },
+        "docs": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 132232 → 2909 bytes (0.022)"
+        },
+        "redact": {
+          "verdict": "ok-proxy",
+          "evidence": "the planted credential never reaches the provider, on every tool result the proxy relays and with no hook to approve"
+        },
+        "subagents": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 302911 → 134565 bytes (0.444)"
+        },
+        "context": {
+          "verdict": "ok-proxy",
+          "evidence": "the whole outgoing history shrinks: 352649 → 124753 bytes over a 4-tool history (0.354)"
+        },
+        "readdedup": {
+          "verdict": "ok-proxy",
+          "evidence": "a repeated identical result costs 2912 bytes instead of 88083 on the wire"
+        }
+      }
+    },
+    {
+      "agent": "t3-code",
+      "label": "T3 Code",
+      "onSite": true,
+      "desktop": false,
+      "noLocalExecution": false,
+      "detected": true,
+      "blocked": null,
+      "channels": {
+        "hook": {
+          "file": ".claude/settings.json",
+          "events": [
+            "PostToolUse",
+            "PreCompact",
+            "PreToolUse",
+            "SessionStart",
+            "SubagentStop",
+            "UserPromptSubmit"
+          ]
+        },
+        "plugin": null,
+        "filesTouched": 19
+      },
+      "features": {
+        "cmd": {
+          "verdict": "ok-bin",
+          "ratio": 0.016480422088508168,
+          "evidence": "PreToolUse rewrote the command; running both: 33737 → 556 bytes",
+          "ms": 397
+        },
+        "web": {
+          "verdict": "ok-bin",
+          "ratio": 0.008195471376456006,
+          "evidence": "PreToolUse WebFetch fetched and folded https://en.wikipedia.org/wiki/Rust_(programming_language) itself: 1023004 → 8384 bytes (prompt anchored; an unanchored prompt is passed to the native fetcher on purpose)",
+          "ms": 9272
+        },
+        "mcp": {
+          "verdict": "ok-mcp",
+          "evidence": "wrapped ../project/.mcp.json; proxy folded tool result 137128 → 956 bytes — that is claude-code's file, which this agent loads; it has no MCP surface of its own",
+          "ms": 12854
+        },
+        "codesearch": {
+          "verdict": "ok-bin",
+          "evidence": "`query` located the symbol; install wrote the rules into CLAUDE.md, AGENTS.md, CLAUDE.md, GEMINI.md",
+          "ms": 182
+        },
+        "sobriety": {
+          "verdict": "ok-bin",
+          "evidence": "UserPromptSubmit hook injects the style preamble",
+          "ms": 87
+        },
+        "context": {
+          "verdict": "ok-bin",
+          "evidence": "lifecycle hooks installed (PreCompact, SessionStart, SubagentStop); `measure` reports the startup cost",
+          "ms": 17
+        },
+        "readdedup": {
+          "verdict": "ok-bin",
+          "evidence": "the repeat is answered with a pointer, not the content again (2559 → 1270 bytes delivered, staged and redirected content included)",
+          "ms": 499
+        },
+        "docs": {
+          "verdict": "ok-bin",
+          "evidence": "PDF text extracted, PNG decoded, DOCX extracted, and a DOCX Read is routed through the hook",
+          "ms": 303
+        },
+        "privacy": {
+          "verdict": "ok-bin",
+          "evidence": "identical fold with every proxy pointed at 127.0.0.1:1 (556 bytes both runs)",
+          "ms": 312
+        },
+        "redact": {
+          "verdict": "ok-bin",
+          "evidence": "read -: neither planted credential survives the fold",
+          "ms": 1067
+        },
+        "gain": {
+          "verdict": "ok-bin",
+          "evidence": "ledger credits 145078 tokens saved for this run's HOME",
+          "ms": 17
+        },
+        "subagents": {
+          "verdict": "ok-bin",
+          "evidence": "a subagent's tool result folds exactly like its parent's (33738 → 556 bytes via hook:PreToolUse, parent 556), the `Task` prompt is prefixed with tokenade's instructions (+977 chars via hook:PreToolUse), and the ledger credits 172584 tokens",
+          "ms": 724
+        },
+        "recovery": {
+          "verdict": "ok-bin",
+          "evidence": "expand-ref a1123b2ab5e0 returned the 33740 original bytes",
+          "ms": 264
+        },
+        "diagnostics": {
+          "verdict": "ok-bin",
+          "evidence": "healthcheck names this agent and the state of its channel",
+          "ms": 32
+        },
+        "scoping": {
+          "verdict": "ko-bin",
+          "evidence": "install --only t3-code also wrote 2 file(s) belonging to another agent or to the user: .gemini/projects.json, .gemini/projects.json.1ffe1e75-23de-4696-98cc-280e4e617b07.tmp",
+          "ms": 0
+        },
+        "reversible": {
+          "verdict": "ok-bin",
+          "evidence": "uninstall restored every seeded config byte-for-byte",
+          "ms": 1836
+        },
+        "proxyinstall": {
+          "verdict": "ok-proxy",
+          "evidence": "nothing to write here, and nothing missing: claude-code's install is what redirects it (base URL landed in .claude/settings.json, and `uninstall` put it back). A second file would put two proxies in front of one process",
+          "ms": 111
+        },
+        "proxykill": {
+          "verdict": "n/a",
+          "evidence": "not measured: the real kill-and-respawn needs the service enabled on this machine, which the product prints rather than runs (pass --supervise to let the bench do it and undo it)",
+          "ms": 0
+        },
+        "proxyboot": {
+          "verdict": "partial-proxy",
+          "evidence": "unit written at Library/LaunchAgents/com.tokenade.llm-proxy.plist declaring KeepAlive; enabling it needs `--enable`, which this pass did not run (run with --supervise)",
+          "ms": 33
+        },
+        "sysprompt": {
+          "verdict": "ok-bin",
+          "evidence": ".claude/CLAUDE.md (10 command(s) named), AGENTS.md (7 command(s) named), CLAUDE.md (5 command(s) named), GEMINI.md (7 command(s) named)",
+          "ms": 123
+        },
+        "statusline": {
+          "verdict": "ko-bin",
+          "evidence": "no status-line surface to attach to: an Electron desktop app wrapping `codex`; no CLI status line to attach to",
+          "ms": 64
+        },
+        "binaccess": {
+          "verdict": "ok-bin",
+          "evidence": "the channel invokes an ABSOLUTE path (/tmp/tokenade-compat/tokenade), which survives a PATH the agent does not control",
+          "ms": 0
+        }
+      },
+      "agentVersion": null,
+      "installExit": 0,
+      "installSaid": "detected agent(s): t3-code, claude-code\nfix-up: no incompatible token tools to resolve.\n  ✓ Claude Code PostToolUse hook → /var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-t3-code-XXLhsZ/home/.claude/settings.json\n  ✓ auto-compact threshold → 700000 tokens (70% of context window; change it with `tokenade install --autocompact-pct N`, remove it with `--no-autocompact`)\n  ✓ Claude Code Read-delivery hook (PostToolUse Read) → /var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-t3-code-XXLhsZ/home/.claude/settings.json\n  ✓ Claude Code auto-index hook (Edit/Write/MultiEdit) → /var/folders/sv/7",
+      "wiredThrough": "claude-code",
+      "channelNote": null,
+      "rewroteBinaryPath": 1,
+      "rank4": {
+        "unavailable": "the proxy that serves this agent is claude-code's, and its gains are already counted on claude-code's row — counting them here would count one payload twice"
+      }
+    },
+    {
+      "agent": "openclaw",
+      "label": "OpenClaw",
+      "onSite": true,
+      "desktop": false,
+      "noLocalExecution": false,
+      "detected": true,
+      "blocked": null,
+      "channels": {
+        "hook": null,
+        "plugin": null,
+        "filesTouched": 16
+      },
+      "features": {
+        "cmd": {
+          "verdict": "partial-bin",
+          "ratio": 0.016480422088508168,
+          "evidence": "no in-agent channel; only what the agent wraps itself (`tokenade wrap`, as the installed project rules ask): 33737 → 556 bytes — OpenClaw plugin written to /var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-openclaw-x4Mp5R/home/.tokenade/openclaw-plugin — openclaw REFUSED to register it: WARNING: Plugin \"tokenade\" contains dangerous code patterns: Shell command execution detected (child_process) (/var/folders/sv/73lyvjnj3ls",
+          "ms": 277,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "folded in the outgoing history: 311198 → 7128 bytes (0.023)"
+          }
+        },
+        "web": {
+          "verdict": "partial-bin",
+          "evidence": "no automatic web-result channel; `tokenade web` folds 38361 → 658 bytes when called by hand",
+          "ms": 121,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "folded in the outgoing history: 144413 → 53034 bytes (0.367)"
+          }
+        },
+        "mcp": {
+          "verdict": "ok-mcp",
+          "evidence": "wrapped .gemini/settings.json; proxy folded tool result 137128 → 956 bytes",
+          "ms": 12772
+        },
+        "codesearch": {
+          "verdict": "ok-bin",
+          "evidence": "`query` located the symbol; install wrote the rules into AGENTS.md, CLAUDE.md, GEMINI.md",
+          "ms": 3619
+        },
+        "sobriety": {
+          "verdict": "ok-bin",
+          "evidence": "no prompt-time hook here, but the preamble is IN the rules file this agent reads every session (AGENTS.md, GEMINI.md) — a pinned style only: `auto` classifies per prompt and a static file cannot",
+          "ms": 6971
+        },
+        "context": {
+          "verdict": "partial-bin",
+          "evidence": "`measure` works; nothing trims the context on its own — this agent has neither a lifecycle hook nor a bridge to ask",
+          "ms": 18,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "the whole outgoing history shrinks: 358451 → 62639 bytes over a 4-tool history (0.175)"
+          }
+        },
+        "readdedup": {
+          "verdict": "ok-bin",
+          "evidence": "the bridge path folds a repeat to a pointer (1526 → 150 bytes)",
+          "ms": 233
+        },
+        "docs": {
+          "verdict": "partial-bin",
+          "evidence": "`tokenade read` extracts PDF/DOCX text and decodes PNG, but this agent's Read is not intercepted",
+          "ms": 170,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "folded in the outgoing history: 134316 → 3474 bytes (0.026)"
+          }
+        },
+        "privacy": {
+          "verdict": "ok-bin",
+          "evidence": "identical fold with every proxy pointed at 127.0.0.1:1 (556 bytes both runs)",
+          "ms": 308
+        },
+        "redact": {
+          "verdict": "ok-bin",
+          "evidence": "read -: neither planted credential survives the fold",
+          "ms": 87
+        },
+        "gain": {
+          "verdict": "ok-bin",
+          "evidence": "ledger credits 141404 tokens saved for this run's HOME",
+          "ms": 16
+        },
+        "subagents": {
+          "verdict": "ok-bin",
+          "evidence": "this agent's MCP config is wrapped: an MCP tool result folds 137128 → 956 bytes, and the wrapper sits in the server's launch, so it cannot tell a subagent's call from its parent's — and the same wrapper puts tokenade's instructions in the `initialize` response (2695 chars in `result.instructions`, the server's own text kept), which every session of this agent reads, subagents included",
+          "ms": 26259
+        },
+        "recovery": {
+          "verdict": "ok-bin",
+          "evidence": "expand-ref a1123b2ab5e0 returned the 33740 original bytes",
+          "ms": 257
+        },
+        "diagnostics": {
+          "verdict": "ok-bin",
+          "evidence": "healthcheck names this agent and the state of its channel",
+          "ms": 41
+        },
+        "scoping": {
+          "verdict": "ko-bin",
+          "evidence": "install --only openclaw also wrote 2 file(s) belonging to another agent or to the user: .gemini/projects.json, .gemini/projects.json.d4dfd1c0-0252-460c-8a19-2eb7b0bc45f6.tmp",
+          "ms": 0
+        },
+        "reversible": {
+          "verdict": "ok-bin",
+          "evidence": "uninstall restored every seeded config byte-for-byte",
+          "ms": 7767
+        },
+        "proxyinstall": {
+          "verdict": "ok-proxy",
+          "evidence": "wrote the base URL into .openclaw/openclaw.json, and `uninstall` put it back byte-for-byte",
+          "ms": 96
+        },
+        "proxykill": {
+          "verdict": "n/a",
+          "evidence": "not measured: the real kill-and-respawn needs the service enabled on this machine, which the product prints rather than runs (pass --supervise to let the bench do it and undo it)",
+          "ms": 0
+        },
+        "proxyboot": {
+          "verdict": "partial-proxy",
+          "evidence": "unit written at Library/LaunchAgents/com.tokenade.llm-proxy.plist declaring KeepAlive; enabling it needs `--enable`, which this pass did not run (run with --supervise)",
+          "ms": 31
+        },
+        "sysprompt": {
+          "verdict": "ok-bin",
+          "evidence": "AGENTS.md (7 command(s) named), CLAUDE.md (5 command(s) named), GEMINI.md (7 command(s) named)",
+          "ms": 3426
+        },
+        "statusline": {
+          "verdict": "ko-bin",
+          "evidence": "no status-line surface to attach to: no statusLine config key, and the plugin API `buildPluginApi` hands a plugin registerTool/registerHook/registerCli/logger and no notify, toast or status of any kind",
+          "ms": 84
+        },
+        "binaccess": {
+          "verdict": "ok-bin",
+          "evidence": "the channel invokes an ABSOLUTE path (/tmp/tokenade-compat/tokenade), which survives a PATH the agent does not control — the wrapped MCP entry in .gemini/settings.json)",
+          "ms": 75
+        }
+      },
+      "agentVersion": "OpenClaw 2026.5.7 (eeef486)",
+      "installExit": 0,
+      "installSaid": "detected agent(s): openclaw\nfix-up: no incompatible token tools to resolve.\n  ◐ openclaw — plugin files written, but openclaw did not register them: NOT active, tool results are not compacted for it\n  note: --with-hook names the Claude Code hook specifically, so it does nothing here; openclaw is wired through its own hooks.\n✓ scaffolded 3 rules file(s) in /private/var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-openclaw-x4Mp5R/project: CLAUDE.md, AGENTS.md, ~/.config/git/ignore (+.tokenade/, +*.tokenade-original)\n\n✓ installed for 1 agent(s). You're set.\n\n",
+      "wiredThrough": null,
+      "channelNote": "OpenClaw plugin written to /var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-openclaw-x4Mp5R/home/.tokenade/openclaw-plugin — openclaw REFUSED to register it: WARNING: Plugin \"tokenade\" contains dangerous code patterns: Shell command execution detected (child_process) (/var/folders/sv/73lyvjnj3ls",
+      "rewroteBinaryPath": 2,
+      "rank4": {
+        "cmd": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 311198 → 7128 bytes (0.023)"
+        },
+        "web": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 144413 → 53034 bytes (0.367)"
+        },
+        "mcp": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 237177 → 116080 bytes (0.489)"
+        },
+        "codesearch": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 233254 → 5342 bytes (0.023)"
+        },
+        "docs": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 134316 → 3474 bytes (0.026)"
+        },
+        "redact": {
+          "verdict": "ok-proxy",
+          "evidence": "the planted credential never reaches the provider, on every tool result the proxy relays and with no hook to approve"
+        },
+        "subagents": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 307198 → 7047 bytes (0.023)"
+        },
+        "context": {
+          "verdict": "ok-proxy",
+          "evidence": "the whole outgoing history shrinks: 358451 → 62639 bytes over a 4-tool history (0.175)"
+        },
+        "sobriety": {
+          "verdict": "ok-proxy",
+          "evidence": "the style preamble is prepended to the outgoing system prompt, and a preamble a rank-1 hook already placed is NOT duplicated (1 copy both ways)"
+        },
+        "readdedup": {
+          "verdict": "ok-proxy",
+          "evidence": "a repeated identical result costs 3130 bytes instead of 89465 on the wire"
+        }
+      }
+    },
+    {
+      "agent": "pi",
+      "label": "Pi",
+      "onSite": true,
+      "desktop": false,
+      "noLocalExecution": false,
+      "detected": true,
+      "blocked": null,
+      "channels": {
+        "hook": null,
+        "plugin": {
+          "file": ".pi/agent/extensions/tokenade.ts"
+        },
+        "filesTouched": 14
+      },
+      "features": {
+        "cmd": {
+          "verdict": "ok-bin",
+          "ratio": 0.01603580638468151,
+          "evidence": "plugin: 33737 → 541 bytes [via bridge contract (`read - --cmd`)]",
+          "ms": 114
+        },
+        "web": {
+          "verdict": "ok-bin",
+          "evidence": "plugin: web result 38361 → 12173 bytes [via bridge contract (`read - --cmd`)]",
+          "ms": 244
+        },
+        "mcp": {
+          "verdict": "ok-mcp",
+          "evidence": "wrapped .gemini/settings.json; proxy folded tool result 137128 → 956 bytes",
+          "ms": 13092
+        },
+        "codesearch": {
+          "verdict": "ok-bin",
+          "evidence": "`query` located the symbol; install wrote the rules into AGENTS.md, CLAUDE.md, GEMINI.md",
+          "ms": 192
+        },
+        "sobriety": {
+          "verdict": "ok-bin",
+          "evidence": "no prompt-time hook here, but the preamble is IN the rules file this agent reads every session (AGENTS.md, GEMINI.md) — a pinned style only: `auto` classifies per prompt and a static file cannot",
+          "ms": 381
+        },
+        "context": {
+          "verdict": "ok-bin",
+          "evidence": "this agent's bridge folds the whole outgoing request at `before_provider_request`: 34429 → 7484 bytes of payload [via bridge file]",
+          "ms": 448
+        },
+        "readdedup": {
+          "verdict": "ok-bin",
+          "evidence": "the bridge path folds a repeat to a pointer (1520 → 150 bytes)",
+          "ms": 241
+        },
+        "docs": {
+          "verdict": "ok-bin",
+          "evidence": "PDF text extracted, PNG decoded, and a DOCX read comes back as text through this agent's bridge [via bridge contract (`read <path>`)]",
+          "ms": 242
+        },
+        "privacy": {
+          "verdict": "ok-bin",
+          "evidence": "identical fold with every proxy pointed at 127.0.0.1:1 (556 bytes both runs)",
+          "ms": 330
+        },
+        "redact": {
+          "verdict": "ok-bin",
+          "evidence": "plugin: neither planted credential survives the fold [via bridge contract (`read - --cmd`)]",
+          "ms": 91
+        },
+        "gain": {
+          "verdict": "ok-bin",
+          "evidence": "ledger credits 135016 tokens saved for this run's HOME",
+          "ms": 17
+        },
+        "subagents": {
+          "verdict": "ok-bin",
+          "evidence": "a subagent's tool result folds exactly like its parent's (33738 → 541 bytes via plugin, parent 541), the `task` prompt is prefixed with tokenade's instructions (+977 chars via plugin:tool_call), and the ledger credits 148769 tokens [via bridge file]",
+          "ms": 411
+        },
+        "recovery": {
+          "verdict": "ok-bin",
+          "evidence": "expand-ref a1123b2ab5e0 returned the 33740 original bytes",
+          "ms": 273
+        },
+        "diagnostics": {
+          "verdict": "ok-bin",
+          "evidence": "healthcheck names this agent and the state of its channel",
+          "ms": 42
+        },
+        "scoping": {
+          "verdict": "ko-bin",
+          "evidence": "install --only pi also wrote 2 file(s) belonging to another agent or to the user: .gemini/projects.json, .gemini/projects.json.135c7158-3c4c-49ba-9ace-8aea15010ce7.tmp",
+          "ms": 0
+        },
+        "reversible": {
+          "verdict": "ok-bin",
+          "evidence": "uninstall restored every seeded config byte-for-byte",
+          "ms": 1759
+        },
+        "proxyinstall": {
+          "verdict": "ok-proxy",
+          "evidence": "wrote the base URL into .pi/agent/models-store.json, and `uninstall` put it back byte-for-byte",
+          "ms": 98
+        },
+        "proxykill": {
+          "verdict": "n/a",
+          "evidence": "not measured: the real kill-and-respawn needs the service enabled on this machine, which the product prints rather than runs (pass --supervise to let the bench do it and undo it)",
+          "ms": 0
+        },
+        "proxyboot": {
+          "verdict": "partial-proxy",
+          "evidence": "unit written at Library/LaunchAgents/com.tokenade.llm-proxy.plist declaring KeepAlive; enabling it needs `--enable`, which this pass did not run (run with --supervise)",
+          "ms": 35
+        },
+        "sysprompt": {
+          "verdict": "ok-bin",
+          "evidence": "AGENTS.md (7 command(s) named), CLAUDE.md (5 command(s) named), GEMINI.md (7 command(s) named)",
+          "ms": 122
+        },
+        "statusline": {
+          "verdict": "ko-bin",
+          "evidence": "driving the installed bridge produced no readable answer (exit 1): node:internal/modules/esm/get_format:219 throw new ERR_UNKNOWN_FILE_EXTENSION(ext, filepath); ^ TypeError [ERR_UNKNOWN_FILE_EXTENSION]: Unknown file extension \"",
+          "ms": 126
+        },
+        "binaccess": {
+          "verdict": "ok-bin",
+          "evidence": "the channel invokes an ABSOLUTE path (/tmp/tokenade-compat/tokenade), which survives a PATH the agent does not control",
+          "ms": 1
+        }
+      },
+      "agentVersion": "0.74.2",
+      "installExit": 0,
+      "installSaid": "detected agent(s): pi\nfix-up: no incompatible token tools to resolve.\n  ✓ pi — installed tool-result compaction extension (~/.pi/agent/extensions/tokenade.ts)\n  note: --with-hook names the Claude Code hook specifically, so it does nothing here; pi is wired through its own hooks.\n✓ scaffolded 3 rules file(s) in /private/var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-pi-4Cni0x/project: CLAUDE.md, AGENTS.md, ~/.config/git/ignore (+.tokenade/, +*.tokenade-original)\n\n✓ installed for 1 agent(s). You're set.\n\n",
+      "wiredThrough": null,
+      "channelNote": null,
+      "rewroteBinaryPath": 0,
+      "rank4": {
+        "cmd": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 311198 → 7128 bytes (0.023)"
+        },
+        "web": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 144413 → 53034 bytes (0.367)"
+        },
+        "mcp": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 237177 → 116080 bytes (0.489)"
+        },
+        "codesearch": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 233254 → 5342 bytes (0.023)"
+        },
+        "docs": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 134316 → 3468 bytes (0.026)"
+        },
+        "redact": {
+          "verdict": "ok-proxy",
+          "evidence": "the planted credential never reaches the provider, on every tool result the proxy relays and with no hook to approve"
+        },
+        "subagents": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 307198 → 7047 bytes (0.023)"
+        },
+        "context": {
+          "verdict": "ok-proxy",
+          "evidence": "the whole outgoing history shrinks: 358451 → 62633 bytes over a 4-tool history (0.175)"
+        },
+        "sobriety": {
+          "verdict": "ok-proxy",
+          "evidence": "the style preamble is prepended to the outgoing system prompt, and a preamble a rank-1 hook already placed is NOT duplicated (1 copy both ways)"
+        },
+        "readdedup": {
+          "verdict": "ok-proxy",
+          "evidence": "a repeated identical result costs 3124 bytes instead of 89465 on the wire"
+        }
+      }
+    },
+    {
+      "agent": "qwen-code",
+      "label": "Qwen Code",
+      "onSite": true,
+      "desktop": false,
+      "noLocalExecution": false,
+      "detected": true,
+      "blocked": null,
+      "channels": {
+        "hook": {
+          "file": ".qwen/settings.json",
+          "events": [
+            "PreToolUse",
+            "SessionStart",
+            "UserPromptSubmit"
+          ]
+        },
+        "plugin": null,
+        "filesTouched": 17
+      },
+      "features": {
+        "cmd": {
+          "verdict": "ok-bin",
+          "ratio": 0.016480422088508168,
+          "evidence": "PreToolUse rewrote the command; running both: 33737 → 556 bytes",
+          "ms": 321
+        },
+        "web": {
+          "verdict": "ok-bin",
+          "ratio": 2.0527778972516237e-05,
+          "evidence": "PreToolUse WebFetch fetched and folded https://en.wikipedia.org/wiki/Rust_(programming_language) itself: 1023004 → 21 bytes (prompt anchored; an unanchored prompt is passed to the native fetcher on purpose)",
+          "ms": 2561
+        },
+        "mcp": {
+          "verdict": "ok-mcp",
+          "evidence": "wrapped .qwen/settings.json; proxy folded tool result 137128 → 956 bytes",
+          "ms": 12899
+        },
+        "codesearch": {
+          "verdict": "ok-bin",
+          "evidence": "`query` located the symbol; install wrote the rules into AGENTS.md, CLAUDE.md, GEMINI.md, QWEN.md",
+          "ms": 204
+        },
+        "sobriety": {
+          "verdict": "ok-bin",
+          "evidence": "UserPromptSubmit hook injects the style preamble",
+          "ms": 58
+        },
+        "context": {
+          "verdict": "ok-bin",
+          "evidence": "lifecycle hooks installed (SessionStart); `measure` reports the startup cost",
+          "ms": 15
+        },
+        "readdedup": {
+          "verdict": "ok-bin",
+          "evidence": "the repeat is answered with a pointer, not the content again (1856 → 449 bytes delivered, staged and redirected content included)",
+          "ms": 164
+        },
+        "docs": {
+          "verdict": "ok-bin",
+          "evidence": "PDF text extracted, PNG decoded, DOCX extracted, and a DOCX Read is routed through the hook",
+          "ms": 221
+        },
+        "privacy": {
+          "verdict": "ok-bin",
+          "evidence": "identical fold with every proxy pointed at 127.0.0.1:1 (556 bytes both runs)",
+          "ms": 312
+        },
+        "redact": {
+          "verdict": "ok-bin",
+          "evidence": "read -: neither planted credential survives the fold",
+          "ms": 85
+        },
+        "gain": {
+          "verdict": "ok-bin",
+          "evidence": "ledger credits 182612 tokens saved for this run's HOME",
+          "ms": 14
+        },
+        "subagents": {
+          "verdict": "ok-bin",
+          "evidence": "a subagent's tool result folds exactly like its parent's (33738 → 556 bytes via hook:PreToolUse, parent 556), the `Task` prompt is prefixed with tokenade's instructions (+977 chars via hook:PreToolUse), and the ledger credits 196365 tokens",
+          "ms": 549
+        },
+        "recovery": {
+          "verdict": "ok-bin",
+          "evidence": "expand-ref a1123b2ab5e0 returned the 33740 original bytes",
+          "ms": 272
+        },
+        "diagnostics": {
+          "verdict": "ok-bin",
+          "evidence": "healthcheck names this agent and the state of its channel",
+          "ms": 42
+        },
+        "scoping": {
+          "verdict": "ko-bin",
+          "evidence": "install --only qwen-code also wrote 3 file(s) belonging to another agent or to the user: .gemini/projects.json, .gemini/projects.json.34e7b572-5c25-4d18-aa4b-c8f5dec8e727.tmp, Library/LaunchAgents/com.tokenade.llm-proxy.plist",
+          "ms": 0
+        },
+        "reversible": {
+          "verdict": "ok-bin",
+          "evidence": "uninstall restored every seeded config byte-for-byte",
+          "ms": 2145
+        },
+        "proxyinstall": {
+          "verdict": "ok-proxy",
+          "evidence": "wrote the base URL into .qwen/settings.json, and `uninstall` put it back byte-for-byte",
+          "ms": 96
+        },
+        "proxykill": {
+          "verdict": "n/a",
+          "evidence": "not measured: the real kill-and-respawn needs the service enabled on this machine, which the product prints rather than runs (pass --supervise to let the bench do it and undo it)",
+          "ms": 0
+        },
+        "proxyboot": {
+          "verdict": "partial-proxy",
+          "evidence": "unit written at Library/LaunchAgents/com.tokenade.llm-proxy.plist declaring KeepAlive; enabling it needs `--enable`, which this pass did not run (run with --supervise)",
+          "ms": 31
+        },
+        "sysprompt": {
+          "verdict": "ok-bin",
+          "evidence": "AGENTS.md (7 command(s) named), CLAUDE.md (5 command(s) named), GEMINI.md (7 command(s) named), QWEN.md (7 command(s) named)",
+          "ms": 136
+        },
+        "statusline": {
+          "verdict": "ok-bin",
+          "evidence": ".qwen/settings.json → the host's own invocation (shell, stdin JSON, 10000 ms) printed 225 chars: Opus · project ⚡ 13.8k tokens saved this session (=$0.07) | 283.1k saved all-time (=$0.44) | 💸 Refer a friend",
+          "ms": 87
+        },
+        "binaccess": {
+          "verdict": "ok-bin",
+          "evidence": "the channel invokes an ABSOLUTE path (/tmp/tokenade-compat/tokenade), which survives a PATH the agent does not control",
+          "ms": 0
+        }
+      },
+      "agentVersion": "0.21.13",
+      "installExit": 0,
+      "installSaid": "detected agent(s): qwen-code\nfix-up: no incompatible token tools to resolve.\n  note: --with-hook names the Claude Code hook specifically, so it does nothing here; qwen-code is wired through its own hooks.\n  ✓ Qwen Code BeforeTool hook → /var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-qwen-code-gvNRAi/home/.qwen/settings.json\n✓ scaffolded 4 rules file(s) in /private/var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-qwen-code-gvNRAi/project: CLAUDE.md, AGENTS.md, QWEN.md, ~/.config/git/ignore (+.tokenade/, +*.tokenade-original)\n\nLocal LLM proxy — installing where it adds something these a",
+      "wiredThrough": null,
+      "channelNote": null,
+      "rewroteBinaryPath": 1,
+      "rank4": {
+        "cmd": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 311198 → 7128 bytes (0.023)"
+        },
+        "web": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 144413 → 53034 bytes (0.367)"
+        },
+        "mcp": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 237177 → 116080 bytes (0.489)"
+        },
+        "codesearch": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 233254 → 5342 bytes (0.023)"
+        },
+        "docs": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 134316 → 3475 bytes (0.026)"
+        },
+        "redact": {
+          "verdict": "ok-proxy",
+          "evidence": "the planted credential never reaches the provider, on every tool result the proxy relays and with no hook to approve"
+        },
+        "subagents": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 307198 → 7047 bytes (0.023)"
+        },
+        "context": {
+          "verdict": "ok-proxy",
+          "evidence": "the whole outgoing history shrinks: 358451 → 62640 bytes over a 4-tool history (0.175)"
+        },
+        "sobriety": {
+          "verdict": "ok-proxy",
+          "evidence": "the style preamble is prepended to the outgoing system prompt, and a preamble a rank-1 hook already placed is NOT duplicated (1 copy both ways)"
+        },
+        "readdedup": {
+          "verdict": "ok-proxy",
+          "evidence": "a repeated identical result costs 3131 bytes instead of 89465 on the wire"
+        }
+      }
+    },
+    {
+      "agent": "codex",
+      "label": "Codex CLI",
+      "onSite": true,
+      "desktop": false,
+      "noLocalExecution": false,
+      "detected": true,
+      "blocked": null,
+      "channels": {
+        "hook": {
+          "file": ".codex/hooks.json",
+          "events": [
+            "PostToolUse",
+            "PreCompact",
+            "PreToolUse",
+            "SessionStart",
+            "SubagentStart",
+            "UserPromptSubmit"
+          ]
+        },
+        "plugin": null,
+        "filesTouched": 16
+      },
+      "features": {
+        "cmd": {
+          "verdict": "ok-bin",
+          "ratio": 0.016480422088508168,
+          "evidence": "PreToolUse rewrote the command; running both: 33737 → 556 bytes",
+          "ms": 377
+        },
+        "web": {
+          "verdict": "ok-bin",
+          "ratio": 0.008193516349887195,
+          "evidence": "PreToolUse WebFetch fetched and folded https://en.wikipedia.org/wiki/Rust_(programming_language) itself: 1023004 → 8382 bytes (prompt anchored; an unanchored prompt is passed to the native fetcher on purpose)",
+          "ms": 9172
+        },
+        "mcp": {
+          "verdict": "ok-mcp",
+          "evidence": "wrapped .codex/config.toml; proxy folded tool result 137128 → 956 bytes",
+          "ms": 12914
+        },
+        "codesearch": {
+          "verdict": "ok-bin",
+          "evidence": "`query` located the symbol; install wrote the rules into AGENTS.md, CLAUDE.md, GEMINI.md",
+          "ms": 182
+        },
+        "sobriety": {
+          "verdict": "ok-bin",
+          "evidence": "UserPromptSubmit hook injects the style preamble",
+          "ms": 104
+        },
+        "context": {
+          "verdict": "ok-bin",
+          "evidence": "lifecycle hooks installed (PreCompact, SessionStart); `measure` reports the startup cost",
+          "ms": 15
+        },
+        "readdedup": {
+          "verdict": "ok-bin",
+          "evidence": "the repeat is answered with a pointer, not the content again (2528 → 1210 bytes delivered, staged and redirected content included)",
+          "ms": 391
+        },
+        "docs": {
+          "verdict": "ok-bin",
+          "evidence": "PDF text extracted, PNG decoded, DOCX extracted, and a DOCX Read is routed through the hook",
+          "ms": 382
+        },
+        "privacy": {
+          "verdict": "ok-bin",
+          "evidence": "identical fold with every proxy pointed at 127.0.0.1:1 (556 bytes both runs)",
+          "ms": 303
+        },
+        "redact": {
+          "verdict": "ok-bin",
+          "evidence": "read -: neither planted credential survives the fold",
+          "ms": 980
+        },
+        "gain": {
+          "verdict": "ok-bin",
+          "evidence": "ledger credits 145432 tokens saved for this run's HOME",
+          "ms": 14
+        },
+        "subagents": {
+          "verdict": "ok-bin",
+          "evidence": "a subagent's tool result folds exactly like its parent's (33738 → 556 bytes via hook:PreToolUse, parent 556), the `Task` prompt is prefixed with tokenade's instructions (+977 chars via hook:PreToolUse), and the ledger credits 172938 tokens",
+          "ms": 693
+        },
+        "recovery": {
+          "verdict": "ok-bin",
+          "evidence": "expand-ref a1123b2ab5e0 returned the 33740 original bytes",
+          "ms": 267
+        },
+        "diagnostics": {
+          "verdict": "ok-bin",
+          "evidence": "healthcheck names this agent and the state of its channel",
+          "ms": 42
+        },
+        "scoping": {
+          "verdict": "ko-bin",
+          "evidence": "install --only codex also wrote 2 file(s) belonging to another agent or to the user: .gemini/projects.json, .gemini/projects.json.a1fd12a1-717b-4684-9956-a9144ceeae9f.tmp",
+          "ms": 0
+        },
+        "reversible": {
+          "verdict": "ok-bin",
+          "evidence": "uninstall restored every seeded config byte-for-byte",
+          "ms": 1774
+        },
+        "proxyinstall": {
+          "verdict": "ok-proxy",
+          "evidence": "wrote the base URL into .codex/config.toml, and `uninstall` put it back byte-for-byte",
+          "ms": 98
+        },
+        "proxykill": {
+          "verdict": "n/a",
+          "evidence": "not measured: the real kill-and-respawn needs the service enabled on this machine, which the product prints rather than runs (pass --supervise to let the bench do it and undo it)",
+          "ms": 0
+        },
+        "proxyboot": {
+          "verdict": "partial-proxy",
+          "evidence": "unit written at Library/LaunchAgents/com.tokenade.llm-proxy.plist declaring KeepAlive; enabling it needs `--enable`, which this pass did not run (run with --supervise)",
+          "ms": 33
+        },
+        "sysprompt": {
+          "verdict": "ok-bin",
+          "evidence": "AGENTS.md (7 command(s) named), CLAUDE.md (5 command(s) named), GEMINI.md (7 command(s) named)",
+          "ms": 124
+        },
+        "statusline": {
+          "verdict": "ko-bin",
+          "evidence": "no status-line surface to attach to: no statusLine/status_line key anywhere in the shipped code",
+          "ms": 68
+        },
+        "binaccess": {
+          "verdict": "ok-bin",
+          "evidence": "the channel invokes an ABSOLUTE path (/tmp/tokenade-compat/tokenade), which survives a PATH the agent does not control",
+          "ms": 0
+        }
+      },
+      "agentVersion": "codex-cli 0.147.0",
+      "installExit": 0,
+      "installSaid": "detected agent(s): codex\nfix-up: no incompatible token tools to resolve.\n  note: --with-hook names the Claude Code hook specifically, so it does nothing here; codex is wired through its own hooks.\n  ✓ Codex passive hooks (Pre/PostToolUse/SessionStart/…) → /var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-codex-tdmgce/home/.codex/hooks.json\n  ✓ trusted 6 Codex hook(s) (compaction active — no /hooks step needed)\n✓ scaffolded 3 rules file(s) in /private/var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-codex-tdmgce/project: CLAUDE.md, AGENTS.md, ~/.config/git/ignore (+.tokenade/, +*.tokenade",
+      "wiredThrough": null,
+      "channelNote": null,
+      "rewroteBinaryPath": 1,
+      "rank4": {
+        "cmd": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 311198 → 7128 bytes (0.023)"
+        },
+        "web": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 144413 → 53034 bytes (0.367)"
+        },
+        "mcp": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 237177 → 116080 bytes (0.489)"
+        },
+        "codesearch": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 233254 → 5342 bytes (0.023)"
+        },
+        "docs": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 134316 → 3471 bytes (0.026)"
+        },
+        "redact": {
+          "verdict": "ok-proxy",
+          "evidence": "the planted credential never reaches the provider, on every tool result the proxy relays and with no hook to approve"
+        },
+        "subagents": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 307198 → 7047 bytes (0.023)"
+        },
+        "context": {
+          "verdict": "ok-proxy",
+          "evidence": "the whole outgoing history shrinks: 358451 → 62636 bytes over a 4-tool history (0.175)"
+        },
+        "sobriety": {
+          "verdict": "ok-proxy",
+          "evidence": "the style preamble is prepended to the outgoing system prompt, and a preamble a rank-1 hook already placed is NOT duplicated (1 copy both ways)"
+        },
+        "readdedup": {
+          "verdict": "ok-proxy",
+          "evidence": "a repeated identical result costs 3127 bytes instead of 89465 on the wire"
+        }
+      }
+    },
+    {
+      "agent": "cursor",
+      "label": "Cursor",
+      "onSite": true,
+      "desktop": false,
+      "noLocalExecution": false,
+      "detected": true,
+      "blocked": null,
+      "channels": {
+        "hook": {
+          "file": ".cursor/hooks.json",
+          "events": [
+            "postToolUse",
+            "preToolUse"
+          ]
+        },
+        "plugin": null,
+        "filesTouched": 15
+      },
+      "features": {
+        "cmd": {
+          "verdict": "ok-bin",
+          "ratio": 0.016480422088508168,
+          "evidence": "PreToolUse rewrote the command; running both: 33737 → 556 bytes",
+          "ms": 390
+        },
+        "web": {
+          "verdict": "ok-bin",
+          "ratio": 0.0081944938631716,
+          "evidence": "PreToolUse WebFetch fetched and folded https://en.wikipedia.org/wiki/Rust_(programming_language) itself: 1023004 → 8383 bytes (prompt anchored; an unanchored prompt is passed to the native fetcher on purpose)",
+          "ms": 9254
+        },
+        "mcp": {
+          "verdict": "ok-mcp",
+          "evidence": "wrapped ../project/.cursor/mcp.json; proxy folded tool result 137128 → 956 bytes",
+          "ms": 12916
+        },
+        "codesearch": {
+          "verdict": "ok-bin",
+          "evidence": "`query` located the symbol; install wrote the rules into AGENTS.md, CLAUDE.md, GEMINI.md",
+          "ms": 178
+        },
+        "sobriety": {
+          "verdict": "ok-bin",
+          "evidence": "no prompt-time hook here, but the preamble is IN the rules file this agent reads every session (AGENTS.md, GEMINI.md) — a pinned style only: `auto` classifies per prompt and a static file cannot",
+          "ms": 203
+        },
+        "context": {
+          "verdict": "partial-bin",
+          "evidence": "`measure` works; nothing trims the context on its own — this agent has neither a lifecycle hook nor a bridge to ask",
+          "ms": 16,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "the whole outgoing history shrinks: 352649 → 124749 bytes over a 4-tool history (0.354)"
+          }
+        },
+        "readdedup": {
+          "verdict": "ok-bin",
+          "evidence": "the repeat is answered with a pointer, not the content again (1728 → 327 bytes delivered, staged and redirected content included)",
+          "ms": 316
+        },
+        "docs": {
+          "verdict": "ok-bin",
+          "evidence": "PDF text extracted, PNG decoded, DOCX extracted, and a DOCX Read is routed through the hook",
+          "ms": 253
+        },
+        "privacy": {
+          "verdict": "ok-bin",
+          "evidence": "identical fold with every proxy pointed at 127.0.0.1:1 (556 bytes both runs)",
+          "ms": 319
+        },
+        "redact": {
+          "verdict": "ok-bin",
+          "evidence": "read -: neither planted credential survives the fold",
+          "ms": 119
+        },
+        "gain": {
+          "verdict": "ok-bin",
+          "evidence": "ledger credits 200058 tokens saved for this run's HOME",
+          "ms": 16
+        },
+        "subagents": {
+          "verdict": "ok-bin",
+          "evidence": "a subagent's tool result folds exactly like its parent's (33738 → 556 bytes via hook:preToolUse, parent 556), the `Task` prompt is prefixed with tokenade's instructions (+977 chars via hook:preToolUse), and the ledger credits 227564 tokens",
+          "ms": 563
+        },
+        "recovery": {
+          "verdict": "ok-bin",
+          "evidence": "expand-ref a1123b2ab5e0 returned the 33740 original bytes",
+          "ms": 275
+        },
+        "diagnostics": {
+          "verdict": "ok-bin",
+          "evidence": "healthcheck names this agent and the state of its channel",
+          "ms": 42
+        },
+        "scoping": {
+          "verdict": "ko-bin",
+          "evidence": "install --only cursor also wrote 2 file(s) belonging to another agent or to the user: .gemini/projects.json, .gemini/projects.json.4c306e39-3f20-4335-8e0d-7b3aacd78362.tmp",
+          "ms": 0
+        },
+        "reversible": {
+          "verdict": "ok-bin",
+          "evidence": "uninstall restored every seeded config byte-for-byte",
+          "ms": 1745
+        },
+        "proxyinstall": {
+          "verdict": "ok-proxy",
+          "evidence": "wrote the base URL into .zshrc, and `uninstall` put it back byte-for-byte",
+          "ms": 94
+        },
+        "proxykill": {
+          "verdict": "n/a",
+          "evidence": "not measured: the real kill-and-respawn needs the service enabled on this machine, which the product prints rather than runs (pass --supervise to let the bench do it and undo it)",
+          "ms": 0
+        },
+        "proxyboot": {
+          "verdict": "partial-proxy",
+          "evidence": "unit written at Library/LaunchAgents/com.tokenade.llm-proxy.plist declaring KeepAlive; enabling it needs `--enable`, which this pass did not run (run with --supervise)",
+          "ms": 36
+        },
+        "sysprompt": {
+          "verdict": "ok-bin",
+          "evidence": "AGENTS.md (7 command(s) named), CLAUDE.md (5 command(s) named), GEMINI.md (7 command(s) named)",
+          "ms": 128
+        },
+        "statusline": {
+          "verdict": "ok-bin",
+          "evidence": ".cursor/cli-config.json → the host's own invocation (argv, shell:false, stdin JSON, 2000 ms) printed 226 chars: Opus · project ⚡ 182.2k tokens saved this session (=$0.91) | 286.8k saved all-time (=$0.46) | 💸 Refer a frien",
+          "ms": 89
+        },
+        "binaccess": {
+          "verdict": "ok-bin",
+          "evidence": "the channel invokes an ABSOLUTE path (/tmp/tokenade-compat/tokenade), which survives a PATH the agent does not control",
+          "ms": 0
+        }
+      },
+      "agentVersion": null,
+      "installExit": 0,
+      "installSaid": "detected agent(s): cursor\nfix-up: no incompatible token tools to resolve.\n  ✓ cursor — installed preToolUse shell-rewrite + postToolUse MCP-folding hooks (~/.cursor/hooks.json)\n  note: --with-hook names the Claude Code hook specifically, so it does nothing here; cursor is wired through its own hooks.\n  ✓ savings ticker wired into /var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-cursor-RFIia8/home/.cursor/cli-config.json (Cursor CLI)\n✓ scaffolded 4 rules file(s) in /private/var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-cursor-RFIia8/project: CLAUDE.md, AGENTS.md, .cursorrules, ~/.conf",
+      "wiredThrough": null,
+      "channelNote": null,
+      "rewroteBinaryPath": 2,
+      "rank4": {
+        "cmd": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 306911 → 133564 bytes (0.435)"
+        },
+        "web": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 135721 → 50089 bytes (0.369)"
+        },
+        "mcp": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 233423 → 112576 bytes (0.482)"
+        },
+        "codesearch": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 229971 → 4656 bytes (0.020)"
+        },
+        "docs": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 132232 → 2905 bytes (0.022)"
+        },
+        "redact": {
+          "verdict": "ok-proxy",
+          "evidence": "the planted credential never reaches the provider, on every tool result the proxy relays and with no hook to approve"
+        },
+        "subagents": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 302911 → 134565 bytes (0.444)"
+        },
+        "context": {
+          "verdict": "ok-proxy",
+          "evidence": "the whole outgoing history shrinks: 352649 → 124749 bytes over a 4-tool history (0.354)"
+        },
+        "readdedup": {
+          "verdict": "ok-proxy",
+          "evidence": "a repeated identical result costs 2908 bytes instead of 88083 on the wire"
+        }
+      }
+    },
+    {
+      "agent": "grok",
+      "label": "Grok",
+      "onSite": true,
+      "desktop": false,
+      "noLocalExecution": false,
+      "detected": true,
+      "blocked": null,
+      "channels": {
+        "hook": {
+          "file": ".grok/hooks/tokenade.json",
+          "events": [
+            "PreCompact",
+            "SessionStart"
+          ]
+        },
+        "plugin": null,
+        "filesTouched": 14
+      },
+      "features": {
+        "cmd": {
+          "verdict": "partial-bin",
+          "ratio": 0.016480422088508168,
+          "evidence": "no in-agent channel; only what the agent wraps itself (`tokenade wrap`, as the installed project rules ask): 33737 → 556 bytes",
+          "ms": 277,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "folded in the outgoing history: 311198 → 7128 bytes (0.023)"
+          }
+        },
+        "web": {
+          "verdict": "partial-bin",
+          "evidence": "no automatic web-result channel; `tokenade web` folds 38361 → 654 bytes when called by hand",
+          "ms": 124,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "folded in the outgoing history: 144413 → 53034 bytes (0.367)"
+          }
+        },
+        "mcp": {
+          "verdict": "ok-mcp",
+          "evidence": "wrapped .grok/config.toml; proxy folded tool result 137128 → 956 bytes",
+          "ms": 12903
+        },
+        "codesearch": {
+          "verdict": "ok-bin",
+          "evidence": "`query` located the symbol; install wrote the rules into AGENTS.md, CLAUDE.md, GEMINI.md",
+          "ms": 196
+        },
+        "sobriety": {
+          "verdict": "partial-bin",
+          "evidence": "SessionStart hook installed but printed no style preamble (0 bytes)",
+          "ms": 217,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "the style preamble is prepended to the outgoing system prompt, and a preamble a rank-1 hook already placed is NOT duplicated (1 copy both ways)"
+          }
+        },
+        "context": {
+          "verdict": "ok-bin",
+          "evidence": "lifecycle hooks installed (PreCompact, SessionStart); `measure` reports the startup cost",
+          "ms": 15
+        },
+        "readdedup": {
+          "verdict": "ok-bin",
+          "evidence": "the bridge path folds a repeat to a pointer (1522 → 150 bytes)",
+          "ms": 241
+        },
+        "docs": {
+          "verdict": "partial-bin",
+          "evidence": "`tokenade read` extracts PDF/DOCX text and decodes PNG, but this agent's Read is not intercepted",
+          "ms": 160,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "folded in the outgoing history: 134316 → 3470 bytes (0.026)"
+          }
+        },
+        "privacy": {
+          "verdict": "ok-bin",
+          "evidence": "identical fold with every proxy pointed at 127.0.0.1:1 (556 bytes both runs)",
+          "ms": 315
+        },
+        "redact": {
+          "verdict": "ok-bin",
+          "evidence": "read -: neither planted credential survives the fold",
+          "ms": 83
+        },
+        "gain": {
+          "verdict": "ok-bin",
+          "evidence": "ledger credits 123199 tokens saved for this run's HOME",
+          "ms": 16
+        },
+        "subagents": {
+          "verdict": "ok-bin",
+          "evidence": "this agent's MCP config is wrapped: an MCP tool result folds 137128 → 956 bytes, and the wrapper sits in the server's launch, so it cannot tell a subagent's call from its parent's — and the same wrapper puts tokenade's instructions in the `initialize` response (2695 chars in `result.instructions`, the server's own text kept), which every session of this agent reads, subagents included",
+          "ms": 25794
+        },
+        "recovery": {
+          "verdict": "ok-bin",
+          "evidence": "expand-ref a1123b2ab5e0 returned the 33740 original bytes",
+          "ms": 258
+        },
+        "diagnostics": {
+          "verdict": "ok-bin",
+          "evidence": "healthcheck names this agent and the state of its channel",
+          "ms": 41
+        },
+        "scoping": {
+          "verdict": "ko-bin",
+          "evidence": "install --only grok also wrote 2 file(s) belonging to another agent or to the user: .gemini/projects.json, .gemini/projects.json.dd025af0-923a-4151-9d02-1209fc8a2408.tmp",
+          "ms": 0
+        },
+        "reversible": {
+          "verdict": "ok-bin",
+          "evidence": "uninstall restored every seeded config byte-for-byte",
+          "ms": 1827
+        },
+        "proxyinstall": {
+          "verdict": "ok-proxy",
+          "evidence": "wrote the base URL into .grok/config.toml, and `uninstall` put it back byte-for-byte",
+          "ms": 99
+        },
+        "proxykill": {
+          "verdict": "n/a",
+          "evidence": "not measured: the real kill-and-respawn needs the service enabled on this machine, which the product prints rather than runs (pass --supervise to let the bench do it and undo it)",
+          "ms": 0
+        },
+        "proxyboot": {
+          "verdict": "partial-proxy",
+          "evidence": "unit written at Library/LaunchAgents/com.tokenade.llm-proxy.plist declaring KeepAlive; enabling it needs `--enable`, which this pass did not run (run with --supervise)",
+          "ms": 31
+        },
+        "sysprompt": {
+          "verdict": "ok-bin",
+          "evidence": "AGENTS.md (7 command(s) named), CLAUDE.md (5 command(s) named), GEMINI.md (7 command(s) named)",
+          "ms": 151
+        },
+        "statusline": {
+          "verdict": "ko-bin",
+          "evidence": "no status-line surface to attach to: the only `status_line` string is an HTTP status line in its proxy module",
+          "ms": 67
+        },
+        "binaccess": {
+          "verdict": "ok-bin",
+          "evidence": "the channel invokes an ABSOLUTE path (/tmp/tokenade-compat/tokenade), which survives a PATH the agent does not control",
+          "ms": 0
+        }
+      },
+      "agentVersion": null,
+      "installExit": 0,
+      "installSaid": "detected agent(s): grok\nfix-up: no incompatible token tools to resolve.\n  note: --with-hook names the Claude Code hook specifically, so it does nothing here; grok is wired through its own hooks.\n  ✓ Grok hooks (SessionStart + PreCompact — grok honours no substitution) → /var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-grok-EviYCQ/home/.grok/hooks/tokenade.json\n✓ scaffolded 4 rules file(s) in /private/var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-grok-EviYCQ/project: CLAUDE.md, AGENTS.md, .grokrules, ~/.config/git/ignore (+.tokenade/, +*.tokenade-original)\n\nLocal LLM proxy — installin",
+      "wiredThrough": null,
+      "channelNote": null,
+      "rewroteBinaryPath": 1,
+      "rank4": {
+        "cmd": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 311198 → 7128 bytes (0.023)"
+        },
+        "web": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 144413 → 53034 bytes (0.367)"
+        },
+        "mcp": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 237177 → 116080 bytes (0.489)"
+        },
+        "codesearch": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 233254 → 5342 bytes (0.023)"
+        },
+        "docs": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 134316 → 3470 bytes (0.026)"
+        },
+        "redact": {
+          "verdict": "ok-proxy",
+          "evidence": "the planted credential never reaches the provider, on every tool result the proxy relays and with no hook to approve"
+        },
+        "subagents": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 307198 → 7047 bytes (0.023)"
+        },
+        "context": {
+          "verdict": "ok-proxy",
+          "evidence": "the whole outgoing history shrinks: 358451 → 62635 bytes over a 4-tool history (0.175)"
+        },
+        "sobriety": {
+          "verdict": "ok-proxy",
+          "evidence": "the style preamble is prepended to the outgoing system prompt, and a preamble a rank-1 hook already placed is NOT duplicated (1 copy both ways)"
+        },
+        "readdedup": {
+          "verdict": "ok-proxy",
+          "evidence": "a repeated identical result costs 3126 bytes instead of 89465 on the wire"
+        }
+      }
+    },
+    {
+      "agent": "droid",
+      "label": "Droid",
+      "onSite": true,
+      "desktop": false,
+      "noLocalExecution": false,
+      "detected": true,
+      "blocked": null,
+      "channels": {
+        "hook": {
+          "file": ".factory/hooks.json",
+          "events": [
+            "PostToolUse",
+            "PreCompact",
+            "PreToolUse",
+            "SessionStart",
+            "UserPromptSubmit"
+          ]
+        },
+        "plugin": null,
+        "filesTouched": 14
+      },
+      "features": {
+        "cmd": {
+          "verdict": "ok-bin",
+          "ratio": 0.016480422088508168,
+          "evidence": "PreToolUse rewrote the command; running both: 33737 → 556 bytes",
+          "ms": 378
+        },
+        "web": {
+          "verdict": "ok-bin",
+          "ratio": 0.008193516349887195,
+          "evidence": "PreToolUse WebFetch fetched and folded https://en.wikipedia.org/wiki/Rust_(programming_language) itself: 1023004 → 8382 bytes (prompt anchored; an unanchored prompt is passed to the native fetcher on purpose)",
+          "ms": 9249
+        },
+        "mcp": {
+          "verdict": "ok-mcp",
+          "evidence": "wrapped .factory/mcp.json; proxy folded tool result 137128 → 956 bytes",
+          "ms": 12952
+        },
+        "codesearch": {
+          "verdict": "ok-bin",
+          "evidence": "`query` located the symbol; install wrote the rules into AGENTS.md, CLAUDE.md, GEMINI.md",
+          "ms": 178
+        },
+        "sobriety": {
+          "verdict": "ok-bin",
+          "evidence": "UserPromptSubmit hook injects the style preamble",
+          "ms": 104
+        },
+        "context": {
+          "verdict": "ok-bin",
+          "evidence": "lifecycle hooks installed (PreCompact, SessionStart); `measure` reports the startup cost",
+          "ms": 14
+        },
+        "readdedup": {
+          "verdict": "ok-bin",
+          "evidence": "the repeat is answered with a pointer, not the content again (2528 → 1210 bytes delivered, staged and redirected content included)",
+          "ms": 400
+        },
+        "docs": {
+          "verdict": "ok-bin",
+          "evidence": "PDF text extracted, PNG decoded, DOCX extracted, and a DOCX Read is routed through the hook",
+          "ms": 389
+        },
+        "privacy": {
+          "verdict": "ok-bin",
+          "evidence": "identical fold with every proxy pointed at 127.0.0.1:1 (556 bytes both runs)",
+          "ms": 297
+        },
+        "redact": {
+          "verdict": "ok-bin",
+          "evidence": "read -: neither planted credential survives the fold",
+          "ms": 977
+        },
+        "gain": {
+          "verdict": "ok-bin",
+          "evidence": "ledger credits 145423 tokens saved for this run's HOME",
+          "ms": 14
+        },
+        "subagents": {
+          "verdict": "ok-bin",
+          "evidence": "a subagent's tool result folds exactly like its parent's (33738 → 556 bytes via hook:PreToolUse, parent 556), the `Task` prompt is prefixed with tokenade's instructions (+977 chars via hook:PreToolUse), and the ledger credits 172929 tokens",
+          "ms": 739
+        },
+        "recovery": {
+          "verdict": "ok-bin",
+          "evidence": "expand-ref a1123b2ab5e0 returned the 33740 original bytes",
+          "ms": 261
+        },
+        "diagnostics": {
+          "verdict": "ok-bin",
+          "evidence": "healthcheck names this agent and the state of its channel",
+          "ms": 41
+        },
+        "scoping": {
+          "verdict": "ko-bin",
+          "evidence": "install --only droid also wrote 2 file(s) belonging to another agent or to the user: .gemini/projects.json, .gemini/projects.json.a1632cda-3a4f-422f-92e4-c7e9fb8e7b93.tmp",
+          "ms": 0
+        },
+        "reversible": {
+          "verdict": "ok-bin",
+          "evidence": "uninstall restored every seeded config byte-for-byte",
+          "ms": 1725
+        },
+        "proxyinstall": {
+          "verdict": "ok-proxy",
+          "evidence": "wrote the base URL into .factory/config.json, and `uninstall` put it back byte-for-byte",
+          "ms": 90
+        },
+        "proxykill": {
+          "verdict": "n/a",
+          "evidence": "not measured: the real kill-and-respawn needs the service enabled on this machine, which the product prints rather than runs (pass --supervise to let the bench do it and undo it)",
+          "ms": 0
+        },
+        "proxyboot": {
+          "verdict": "partial-proxy",
+          "evidence": "unit written at Library/LaunchAgents/com.tokenade.llm-proxy.plist declaring KeepAlive; enabling it needs `--enable`, which this pass did not run (run with --supervise)",
+          "ms": 38
+        },
+        "sysprompt": {
+          "verdict": "ok-bin",
+          "evidence": "AGENTS.md (7 command(s) named), CLAUDE.md (5 command(s) named), GEMINI.md (7 command(s) named)",
+          "ms": 123
+        },
+        "statusline": {
+          "verdict": "ko-bin",
+          "evidence": "no status-line surface to attach to: no statusLine/status_line key anywhere in the shipped code",
+          "ms": 64
+        },
+        "binaccess": {
+          "verdict": "ok-bin",
+          "evidence": "the channel invokes an ABSOLUTE path (/tmp/tokenade-compat/tokenade), which survives a PATH the agent does not control",
+          "ms": 0
+        }
+      },
+      "agentVersion": null,
+      "installExit": 0,
+      "installSaid": "detected agent(s): droid\nfix-up: no incompatible token tools to resolve.\n  note: --with-hook names the Claude Code hook specifically, so it does nothing here; droid is wired through its own hooks.\n  ✓ Droid hooks (Pre/PostToolUse on Execute, SessionStart/…) → /var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-droid-IejMDp/home/.factory/hooks.json\n✓ scaffolded 3 rules file(s) in /private/var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-droid-IejMDp/project: CLAUDE.md, AGENTS.md, ~/.config/git/ignore (+.tokenade/, +*.tokenade-original)\n\n✓ installed for 1 agent(s). You're set.\n\n",
+      "wiredThrough": null,
+      "channelNote": null,
+      "rewroteBinaryPath": 1,
+      "rank4": {
+        "cmd": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 311198 → 7128 bytes (0.023)"
+        },
+        "web": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 144413 → 53034 bytes (0.367)"
+        },
+        "mcp": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 237177 → 116080 bytes (0.489)"
+        },
+        "codesearch": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 233254 → 5342 bytes (0.023)"
+        },
+        "docs": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 134316 → 3471 bytes (0.026)"
+        },
+        "redact": {
+          "verdict": "ok-proxy",
+          "evidence": "the planted credential never reaches the provider, on every tool result the proxy relays and with no hook to approve"
+        },
+        "subagents": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 307198 → 7047 bytes (0.023)"
+        },
+        "context": {
+          "verdict": "ok-proxy",
+          "evidence": "the whole outgoing history shrinks: 358451 → 62636 bytes over a 4-tool history (0.175)"
+        },
+        "sobriety": {
+          "verdict": "ok-proxy",
+          "evidence": "the style preamble is prepended to the outgoing system prompt, and a preamble a rank-1 hook already placed is NOT duplicated (1 copy both ways)"
+        },
+        "readdedup": {
+          "verdict": "ok-proxy",
+          "evidence": "a repeated identical result costs 3127 bytes instead of 89465 on the wire"
+        }
+      }
+    },
+    {
+      "agent": "aider",
+      "label": "Aider",
+      "onSite": true,
+      "desktop": false,
+      "noLocalExecution": false,
+      "detected": true,
+      "blocked": null,
+      "channels": {
+        "hook": null,
+        "plugin": null,
+        "filesTouched": 19
+      },
+      "features": {
+        "cmd": {
+          "verdict": "partial-bin",
+          "ratio": 0.016480422088508168,
+          "evidence": "no in-agent channel; only what the agent wraps itself (`tokenade wrap`, as the installed project rules ask): 33737 → 556 bytes",
+          "ms": 258,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "folded in the outgoing history: 311198 → 7128 bytes (0.023)"
+          }
+        },
+        "web": {
+          "verdict": "partial-bin",
+          "evidence": "no automatic web-result channel; `tokenade web` folds 38361 → 655 bytes when called by hand",
+          "ms": 106,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "folded in the outgoing history: 144413 → 53034 bytes (0.367)"
+          }
+        },
+        "mcp": {
+          "verdict": "ok-mcp",
+          "evidence": "wrapped .gemini/settings.json; proxy folded tool result 137128 → 956 bytes",
+          "ms": 12931
+        },
+        "codesearch": {
+          "verdict": "ok-bin",
+          "evidence": "`query` located the symbol; install wrote the rules into AGENTS.md, CLAUDE.md, GEMINI.md",
+          "ms": 167
+        },
+        "sobriety": {
+          "verdict": "ok-bin",
+          "evidence": "no prompt-time hook here, but the preamble is IN the rules file this agent reads every session (AGENTS.md, GEMINI.md) — a pinned style only: `auto` classifies per prompt and a static file cannot",
+          "ms": 197
+        },
+        "context": {
+          "verdict": "partial-bin",
+          "evidence": "`measure` works; nothing trims the context on its own — this agent has neither a lifecycle hook nor a bridge to ask",
+          "ms": 16,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "the whole outgoing history shrinks: 358451 → 62636 bytes over a 4-tool history (0.175)"
+          }
+        },
+        "readdedup": {
+          "verdict": "ok-bin",
+          "evidence": "the bridge path folds a repeat to a pointer (1523 → 150 bytes)",
+          "ms": 220
+        },
+        "docs": {
+          "verdict": "partial-bin",
+          "evidence": "`tokenade read` extracts PDF/DOCX text and decodes PNG, but this agent's Read is not intercepted",
+          "ms": 178,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "folded in the outgoing history: 134316 → 3471 bytes (0.026)"
+          }
+        },
+        "privacy": {
+          "verdict": "ok-bin",
+          "evidence": "identical fold with every proxy pointed at 127.0.0.1:1 (556 bytes both runs)",
+          "ms": 300
+        },
+        "redact": {
+          "verdict": "ok-bin",
+          "evidence": "read -: neither planted credential survives the fold",
+          "ms": 84
+        },
+        "gain": {
+          "verdict": "ok-bin",
+          "evidence": "ledger credits 109448 tokens saved for this run's HOME",
+          "ms": 14
+        },
+        "subagents": {
+          "verdict": "ok-bin",
+          "evidence": "this agent's MCP config is wrapped: an MCP tool result folds 137128 → 956 bytes, and the wrapper sits in the server's launch, so it cannot tell a subagent's call from its parent's — and the same wrapper puts tokenade's instructions in the `initialize` response (2695 chars in `result.instructions`, the server's own text kept), which every session of this agent reads, subagents included",
+          "ms": 25658
+        },
+        "recovery": {
+          "verdict": "ok-bin",
+          "evidence": "expand-ref a1123b2ab5e0 returned the 33740 original bytes",
+          "ms": 258
+        },
+        "diagnostics": {
+          "verdict": "ok-bin",
+          "evidence": "healthcheck names this agent and the state of its channel",
+          "ms": 40
+        },
+        "scoping": {
+          "verdict": "ko-bin",
+          "evidence": "install --only aider also wrote 3 file(s) belonging to another agent or to the user: .gemini/projects.json.885b53ca-8108-4ae0-a765-f6c974d484aa.tmp, .gemini/projects.json.eb5a484a-419e-43c7-ae09-621caba56001.tmp, Library/LaunchAgents/com.tokenade.llm-proxy.plist",
+          "ms": 0
+        },
+        "reversible": {
+          "verdict": "ok-bin",
+          "evidence": "uninstall restored every seeded config byte-for-byte",
+          "ms": 2079
+        },
+        "proxyinstall": {
+          "verdict": "ok-proxy",
+          "evidence": "wrote the base URL into .aider.conf.yml, and `uninstall` put it back byte-for-byte",
+          "ms": 90
+        },
+        "proxykill": {
+          "verdict": "n/a",
+          "evidence": "not measured: the real kill-and-respawn needs the service enabled on this machine, which the product prints rather than runs (pass --supervise to let the bench do it and undo it)",
+          "ms": 0
+        },
+        "proxyboot": {
+          "verdict": "partial-proxy",
+          "evidence": "unit written at Library/LaunchAgents/com.tokenade.llm-proxy.plist declaring KeepAlive; enabling it needs `--enable`, which this pass did not run (run with --supervise)",
+          "ms": 33
+        },
+        "sysprompt": {
+          "verdict": "ok-bin",
+          "evidence": "AGENTS.md (7 command(s) named), CLAUDE.md (5 command(s) named), GEMINI.md (7 command(s) named)",
+          "ms": 117
+        },
+        "statusline": {
+          "verdict": "ko-bin",
+          "evidence": ".tokenade/aider-startup.txt exists but names no statusline command, so nothing shows the savings",
+          "ms": 72
+        },
+        "binaccess": {
+          "verdict": "ok-bin",
+          "evidence": "the channel invokes an ABSOLUTE path (/tmp/tokenade-compat/tokenade), which survives a PATH the agent does not control — the wrapped MCP entry in .gemini/settings.json)",
+          "ms": 77
+        }
+      },
+      "agentVersion": null,
+      "installExit": 0,
+      "installSaid": "detected agent(s): aider\nfix-up: no incompatible token tools to resolve.\n  ◐ aider — no hook; `/run` output is compacted by the universal shell proxy, `tokenade wrap <cmd>` compacts one command by hand, and the startup command below runs the repo map through tokenade on every session\n  ✓ aider — startup command → `tokenade map` (~/.aider.conf.yml `load:`)\n  note: --with-hook names the Claude Code hook specifically, so it does nothing here; aider is wired through its own hooks.\n✓ scaffolded 3 rules file(s) in /private/var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-aider-yVczQA/project: CLA",
+      "wiredThrough": null,
+      "channelNote": null,
+      "rewroteBinaryPath": 0,
+      "rank4": {
+        "cmd": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 311198 → 7128 bytes (0.023)"
+        },
+        "web": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 144413 → 53034 bytes (0.367)"
+        },
+        "mcp": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 237177 → 116080 bytes (0.489)"
+        },
+        "codesearch": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 233254 → 5342 bytes (0.023)"
+        },
+        "docs": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 134316 → 3471 bytes (0.026)"
+        },
+        "redact": {
+          "verdict": "ok-proxy",
+          "evidence": "the planted credential never reaches the provider, on every tool result the proxy relays and with no hook to approve"
+        },
+        "subagents": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 307198 → 7047 bytes (0.023)"
+        },
+        "context": {
+          "verdict": "ok-proxy",
+          "evidence": "the whole outgoing history shrinks: 358451 → 62636 bytes over a 4-tool history (0.175)"
+        },
+        "sobriety": {
+          "verdict": "ok-proxy",
+          "evidence": "the style preamble is prepended to the outgoing system prompt, and a preamble a rank-1 hook already placed is NOT duplicated (1 copy both ways)"
+        },
+        "readdedup": {
+          "verdict": "ok-proxy",
+          "evidence": "a repeated identical result costs 3127 bytes instead of 89465 on the wire"
+        }
+      }
+    },
+    {
+      "agent": "antigravity",
+      "label": "Antigravity",
+      "onSite": true,
+      "desktop": false,
+      "noLocalExecution": false,
+      "detected": true,
+      "blocked": null,
+      "channels": {
+        "hook": {
+          "file": ".gemini/config/hooks.json",
+          "events": [
+            "PreToolUse"
+          ]
+        },
+        "plugin": null,
+        "filesTouched": 13
+      },
+      "features": {
+        "cmd": {
+          "verdict": "ok-bin",
+          "ratio": 0.016480422088508168,
+          "evidence": "PreToolUse rewrote the command; running both: 33737 → 556 bytes",
+          "ms": 322
+        },
+        "web": {
+          "verdict": "ok-bin",
+          "ratio": 0.008199381429593628,
+          "evidence": "PreToolUse WebFetch fetched and folded https://en.wikipedia.org/wiki/Rust_(programming_language) itself: 1023004 → 8388 bytes (prompt anchored; an unanchored prompt is passed to the native fetcher on purpose)",
+          "ms": 9036
+        },
+        "mcp": {
+          "verdict": "ok-mcp",
+          "evidence": "wrapped .gemini/settings.json; proxy folded tool result 137128 → 956 bytes",
+          "ms": 12739
+        },
+        "codesearch": {
+          "verdict": "ok-bin",
+          "evidence": "`query` located the symbol; install wrote the rules into AGENTS.md, CLAUDE.md, GEMINI.md",
+          "ms": 180
+        },
+        "sobriety": {
+          "verdict": "ok-bin",
+          "evidence": "no prompt-time hook here, but the preamble is IN the rules file this agent reads every session (AGENTS.md, GEMINI.md) — a pinned style only: `auto` classifies per prompt and a static file cannot",
+          "ms": 202
+        },
+        "context": {
+          "verdict": "partial-bin",
+          "evidence": "`measure` works; nothing trims the context on its own — this agent has neither a lifecycle hook nor a bridge to ask",
+          "ms": 16
+        },
+        "readdedup": {
+          "verdict": "ok-bin",
+          "evidence": "the repeat is answered with a pointer, not the content again (2558 → 1228 bytes delivered, staged and redirected content included)",
+          "ms": 294
+        },
+        "docs": {
+          "verdict": "ok-bin",
+          "evidence": "PDF text extracted, PNG decoded, DOCX extracted, and a DOCX Read is routed through the hook",
+          "ms": 369
+        },
+        "privacy": {
+          "verdict": "ok-bin",
+          "evidence": "identical fold with every proxy pointed at 127.0.0.1:1 (556 bytes both runs)",
+          "ms": 318
+        },
+        "redact": {
+          "verdict": "ok-bin",
+          "evidence": "read -: neither planted credential survives the fold",
+          "ms": 87
+        },
+        "gain": {
+          "verdict": "ok-bin",
+          "evidence": "ledger credits 145402 tokens saved for this run's HOME",
+          "ms": 15
+        },
+        "subagents": {
+          "verdict": "ok-bin",
+          "evidence": "a subagent's tool result folds exactly like its parent's (33738 → 556 bytes via hook:PreToolUse, parent 556), the `Task` prompt is prefixed with tokenade's instructions (+977 chars via hook:PreToolUse), and the ledger credits 172908 tokens",
+          "ms": 671
+        },
+        "recovery": {
+          "verdict": "ok-bin",
+          "evidence": "expand-ref a1123b2ab5e0 returned the 33740 original bytes",
+          "ms": 281
+        },
+        "diagnostics": {
+          "verdict": "ok-bin",
+          "evidence": "healthcheck names this agent and the state of its channel",
+          "ms": 43
+        },
+        "scoping": {
+          "verdict": "ok-bin",
+          "evidence": "install --only antigravity touched only this agent's own surfaces",
+          "ms": 0
+        },
+        "reversible": {
+          "verdict": "ok-bin",
+          "evidence": "uninstall restored every seeded config byte-for-byte",
+          "ms": 1784
+        },
+        "proxyinstall": {
+          "verdict": "ko-proxy",
+          "evidence": "no way in — the two endpoint flags are passed as literals at the only `language_server` spawn in resources/app.asar",
+          "ms": 22
+        },
+        "proxykill": {
+          "verdict": "n/a",
+          "evidence": "not measured: the real kill-and-respawn needs the service enabled on this machine, which the product prints rather than runs (pass --supervise to let the bench do it and undo it)",
+          "ms": 0
+        },
+        "proxyboot": {
+          "verdict": "partial-proxy",
+          "evidence": "unit written at Library/LaunchAgents/com.tokenade.llm-proxy.plist declaring KeepAlive; enabling it needs `--enable`, which this pass did not run (run with --supervise)",
+          "ms": 35
+        },
+        "sysprompt": {
+          "verdict": "ok-bin",
+          "evidence": "AGENTS.md (7 command(s) named), CLAUDE.md (5 command(s) named), GEMINI.md (7 command(s) named)",
+          "ms": 116
+        },
+        "statusline": {
+          "verdict": "ko-bin",
+          "evidence": "no statusLine command in this agent's config and no bridge API that can set one — not measured against a shipped bundle, so this cell says only that tokenade wires nothing here",
+          "ms": 69
+        },
+        "binaccess": {
+          "verdict": "ok-bin",
+          "evidence": "the channel invokes an ABSOLUTE path (/tmp/tokenade-compat/tokenade), which survives a PATH the agent does not control",
+          "ms": 0
+        }
+      },
+      "agentVersion": null,
+      "installExit": 0,
+      "installSaid": "detected agent(s): antigravity\nfix-up: no incompatible token tools to resolve.\n  note: --with-hook names the Claude Code hook specifically, so it does nothing here; antigravity is wired through its own hooks.\n  ✓ Antigravity CLI PreToolUse command rewrite (~/.gemini/config/hooks.json) → /var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-antigravity-cq8vLM/home/.gemini/config/hooks.json\n✓ scaffolded 4 rules file(s) in /private/var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-antigravity-cq8vLM/project: CLAUDE.md, AGENTS.md, GEMINI.md, ~/.config/git/ignore (+.tokenade/, +*.tokenade-original",
+      "wiredThrough": null,
+      "channelNote": null,
+      "rewroteBinaryPath": 1,
+      "rank4": {
+        "unavailable": "the proxy cannot be put in this agent's path — the two endpoint flags are passed as literals at the only `language_server` spawn in resources/app.asar"
+      }
+    },
+    {
+      "agent": "devin-desktop",
+      "label": "Devin Desktop",
+      "onSite": true,
+      "desktop": true,
+      "noLocalExecution": false,
+      "detected": false,
+      "blocked": "desktop product: no CLI install surface on this machine",
+      "channels": {
+        "hook": null,
+        "plugin": null,
+        "filesTouched": 0
+      },
+      "features": {
+        "cmd": {
+          "verdict": "partial-bin",
+          "ratio": 0.016480422088508168,
+          "evidence": "no in-agent channel; only what the agent wraps itself (`tokenade wrap`, as the installed project rules ask): 33737 → 556 bytes",
+          "ms": 273,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "folded in the outgoing history: 306911 → 133564 bytes (0.435)"
+          }
+        },
+        "web": {
+          "verdict": "partial-bin",
+          "evidence": "no automatic web-result channel; `tokenade web` folds 38361 → 663 bytes when called by hand",
+          "ms": 114,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "folded in the outgoing history: 135721 → 50089 bytes (0.369)"
+          }
+        },
+        "mcp": {
+          "verdict": "ok-mcp",
+          "evidence": "wrapped .codeium/windsurf/mcp_config.json; proxy folded tool result 137128 → 956 bytes",
+          "ms": 12915
+        },
+        "codesearch": {
+          "verdict": "ok-bin",
+          "evidence": "`query` located the symbol; install wrote the rules into .windsurfrules, AGENTS.md, CLAUDE.md",
+          "ms": 1826
+        },
+        "sobriety": {
+          "verdict": "ok-bin",
+          "evidence": "no prompt-time hook here, but the preamble is IN the rules file this agent reads every session (.windsurfrules, AGENTS.md, GEMINI.md) — a pinned style only: `auto` classifies per prompt and a static file cannot",
+          "ms": 258
+        },
+        "context": {
+          "verdict": "partial-bin",
+          "evidence": "`measure` works; nothing trims the context on its own — this agent has neither a lifecycle hook nor a bridge to ask",
+          "ms": 15,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "the whole outgoing history shrinks: 352649 → 124756 bytes over a 4-tool history (0.354)"
+          }
+        },
+        "readdedup": {
+          "verdict": "ok-bin",
+          "evidence": "the bridge path folds a repeat to a pointer (1531 → 150 bytes)",
+          "ms": 232
+        },
+        "docs": {
+          "verdict": "partial-bin",
+          "evidence": "`tokenade read` extracts PDF/DOCX text and decodes PNG, but this agent's Read is not intercepted",
+          "ms": 169,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "folded in the outgoing history: 132232 → 2912 bytes (0.022)"
+          }
+        },
+        "privacy": {
+          "verdict": "ok-bin",
+          "evidence": "identical fold with every proxy pointed at 127.0.0.1:1 (556 bytes both runs)",
+          "ms": 308
+        },
+        "redact": {
+          "verdict": "ok-bin",
+          "evidence": "read -: neither planted credential survives the fold",
+          "ms": 92
+        },
+        "gain": {
+          "verdict": "ok-bin",
+          "evidence": "ledger credits 109443 tokens saved for this run's HOME",
+          "ms": 16
+        },
+        "subagents": {
+          "verdict": "ok-bin",
+          "evidence": "this agent's MCP config is wrapped: an MCP tool result folds 137128 → 956 bytes, and the wrapper sits in the server's launch, so it cannot tell a subagent's call from its parent's — and the same wrapper puts tokenade's instructions in the `initialize` response (2695 chars in `result.instructions`, the server's own text kept), which every session of this agent reads, subagents included",
+          "ms": 26218
+        },
+        "recovery": {
+          "verdict": "ok-bin",
+          "evidence": "expand-ref a1123b2ab5e0 returned the 33740 original bytes",
+          "ms": 270
+        },
+        "diagnostics": {
+          "verdict": "ok-bin",
+          "evidence": "healthcheck names this agent and the state of its channel",
+          "ms": 43
+        },
+        "scoping": {
+          "verdict": "ok-bin",
+          "evidence": "install --only devin-desktop touched only this agent's own surfaces",
+          "ms": 0
+        },
+        "reversible": {
+          "verdict": "ok-bin",
+          "evidence": "uninstall restored every seeded config byte-for-byte",
+          "ms": 73
+        },
+        "proxyinstall": {
+          "verdict": "ok-proxy",
+          "evidence": "wrote the base URL into Library/Application Support/Devin/User/settings.json, and `uninstall` put it back byte-for-byte",
+          "ms": 103
+        },
+        "proxykill": {
+          "verdict": "n/a",
+          "evidence": "not measured: the real kill-and-respawn needs the service enabled on this machine, which the product prints rather than runs (pass --supervise to let the bench do it and undo it)",
+          "ms": 0
+        },
+        "proxyboot": {
+          "verdict": "partial-proxy",
+          "evidence": "unit written at Library/LaunchAgents/com.tokenade.llm-proxy.plist declaring KeepAlive; enabling it needs `--enable`, which this pass did not run (run with --supervise)",
+          "ms": 33
+        },
+        "sysprompt": {
+          "verdict": "ok-bin",
+          "evidence": ".windsurfrules (7 command(s) named), AGENTS.md (7 command(s) named), CLAUDE.md (5 command(s) named), GEMINI.md (7 command(s) named)",
+          "ms": 147
+        },
+        "statusline": {
+          "verdict": "ko-bin",
+          "evidence": "no statusLine command in this agent's config and no bridge API that can set one — not measured against a shipped bundle, so this cell says only that tokenade wires nothing here",
+          "ms": 86
+        },
+        "binaccess": {
+          "verdict": "ok-bin",
+          "evidence": "the channel invokes an ABSOLUTE path (/tmp/tokenade-compat/tokenade), which survives a PATH the agent does not control — the wrapped MCP entry in .codeium/windsurf/mcp_config.json)",
+          "ms": 87
+        }
+      },
+      "rewroteBinaryPath": 0,
+      "rank4": {
+        "cmd": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 306911 → 133564 bytes (0.435)"
+        },
+        "web": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 135721 → 50089 bytes (0.369)"
+        },
+        "mcp": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 233423 → 112576 bytes (0.482)"
+        },
+        "codesearch": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 229971 → 4656 bytes (0.020)"
+        },
+        "docs": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 132232 → 2912 bytes (0.022)"
+        },
+        "redact": {
+          "verdict": "ok-proxy",
+          "evidence": "the planted credential never reaches the provider, on every tool result the proxy relays and with no hook to approve"
+        },
+        "subagents": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 302911 → 134565 bytes (0.444)"
+        },
+        "context": {
+          "verdict": "ok-proxy",
+          "evidence": "the whole outgoing history shrinks: 352649 → 124756 bytes over a 4-tool history (0.354)"
+        },
+        "readdedup": {
+          "verdict": "ok-proxy",
+          "evidence": "a repeated identical result costs 2915 bytes instead of 88083 on the wire"
+        }
+      }
+    },
+    {
+      "agent": "claude-desktop",
+      "label": "Claude Desktop",
+      "onSite": true,
+      "desktop": true,
+      "noLocalExecution": true,
+      "detected": false,
+      "blocked": "desktop product: no CLI install surface on this machine",
+      "channels": {
+        "hook": null,
+        "plugin": null,
+        "filesTouched": 0
+      },
+      "features": {
+        "cmd": {
+          "verdict": "ko-bin",
+          "evidence": "this product runs no command through the user's shell, so nothing tokenade can wrap ever runs",
+          "ms": 0
+        },
+        "web": {
+          "verdict": "ko-bin",
+          "evidence": "`tokenade web` folds 38361 → 664 bytes on this machine, but nothing inside this product can call it",
+          "ms": 111
+        },
+        "mcp": {
+          "verdict": "ok-mcp",
+          "evidence": "wrapped Library/Application Support/Claude/claude_desktop_config.json; proxy folded tool result 137128 → 956 bytes",
+          "ms": 12871
+        },
+        "codesearch": {
+          "verdict": "ko-bin",
+          "evidence": "`query` works on this machine, but this product runs nothing locally and got no rules file",
+          "ms": 101
+        },
+        "sobriety": {
+          "verdict": "ko-bin",
+          "evidence": "no prompt-time hook, and no way to invoke the binary from inside this product",
+          "ms": 13
+        },
+        "context": {
+          "verdict": "ko-bin",
+          "evidence": "`measure` works on this machine; this product has no lifecycle hook and no way to call it",
+          "ms": 14
+        },
+        "readdedup": {
+          "verdict": "ok-bin",
+          "evidence": "the bridge path folds a repeat to a pointer (1532 → 150 bytes)",
+          "ms": 236
+        },
+        "docs": {
+          "verdict": "ko-bin",
+          "evidence": "extraction works on this machine, but this product's file reads never reach the binary",
+          "ms": 163
+        },
+        "privacy": {
+          "verdict": "ok-bin",
+          "evidence": "identical fold with every proxy pointed at 127.0.0.1:1 (556 bytes both runs) — a property of the binary, measured on this machine rather than through the product",
+          "ms": 317
+        },
+        "redact": {
+          "verdict": "ok-bin",
+          "evidence": "read -: neither planted credential survives the fold",
+          "ms": 86
+        },
+        "gain": {
+          "verdict": "ok-bin",
+          "evidence": "ledger credits 95692 tokens saved for this run's HOME",
+          "ms": 16
+        },
+        "subagents": {
+          "verdict": "ok-bin",
+          "evidence": "this agent's MCP config is wrapped: an MCP tool result folds 137128 → 956 bytes, and the wrapper sits in the server's launch, so it cannot tell a subagent's call from its parent's — and the same wrapper puts tokenade's instructions in the `initialize` response (2695 chars in `result.instructions`, the server's own text kept), which every session of this agent reads, subagents included",
+          "ms": 26277
+        },
+        "recovery": {
+          "verdict": "ok-bin",
+          "evidence": "expand-ref a1123b2ab5e0 returned the 33740 original bytes",
+          "ms": 253
+        },
+        "diagnostics": {
+          "verdict": "ok-bin",
+          "evidence": "healthcheck names this agent and the state of its channel",
+          "ms": 38
+        },
+        "scoping": {
+          "verdict": "ok-bin",
+          "evidence": "install --only claude-desktop touched only this agent's own surfaces",
+          "ms": 0
+        },
+        "reversible": {
+          "verdict": "ok-bin",
+          "evidence": "uninstall restored every seeded config byte-for-byte",
+          "ms": 76
+        },
+        "proxyinstall": {
+          "verdict": "ko-proxy",
+          "evidence": "`llm-proxy install` answers `unknown agent` — rank 4 has no row for it",
+          "ms": 20
+        },
+        "proxykill": {
+          "verdict": "n/a",
+          "evidence": "not measured: the real kill-and-respawn needs the service enabled on this machine, which the product prints rather than runs (pass --supervise to let the bench do it and undo it)",
+          "ms": 0
+        },
+        "proxyboot": {
+          "verdict": "partial-proxy",
+          "evidence": "unit written at Library/LaunchAgents/com.tokenade.llm-proxy.plist declaring KeepAlive; enabling it needs `--enable`, which this pass did not run (run with --supervise)",
+          "ms": 36
+        },
+        "sysprompt": {
+          "verdict": "ko-bin",
+          "evidence": "this product runs no command through any shell, so an instruction file would name commands it cannot run — the channel is absent by construction, not deferred",
+          "ms": 44
+        },
+        "statusline": {
+          "verdict": "ko-bin",
+          "evidence": "no statusLine command in this agent's config and no bridge API that can set one — not measured against a shipped bundle, so this cell says only that tokenade wires nothing here",
+          "ms": 85
+        },
+        "binaccess": {
+          "verdict": "ok-bin",
+          "evidence": "the channel invokes an ABSOLUTE path (/tmp/tokenade-compat/tokenade), which survives a PATH the agent does not control — the wrapped MCP entry in Library/Application Support/Claude/claude_desktop_config.json)",
+          "ms": 141
+        }
+      },
+      "rewroteBinaryPath": 0,
+      "rank4": {
+        "unavailable": "rank 4 has no row for this agent (unknown)"
+      }
+    },
+    {
+      "agent": "claude-cowork",
+      "label": "Claude Cowork",
+      "onSite": true,
+      "desktop": true,
+      "noLocalExecution": true,
+      "detected": false,
+      "blocked": "desktop product: no CLI install surface on this machine",
+      "channels": {
+        "hook": null,
+        "plugin": null,
+        "filesTouched": 0
+      },
+      "features": {
+        "cmd": {
+          "verdict": "ko-bin",
+          "evidence": "this product runs no command through the user's shell, so nothing tokenade can wrap ever runs",
+          "ms": 0
+        },
+        "web": {
+          "verdict": "ko-bin",
+          "evidence": "`tokenade web` folds 38361 → 663 bytes on this machine, but nothing inside this product can call it",
+          "ms": 109
+        },
+        "mcp": {
+          "verdict": "partial-mcp",
+          "evidence": "proxy folds (137128 → 956); this agent exposes no MCP config at all — Anthropic's own doc says local MCP servers (`claude_desktop_config.json`) aren't available in Cowork; its connectors are remote and brokered from Anthropic's cloud, so no local launch exists to wrap",
+          "ms": 13006
+        },
+        "codesearch": {
+          "verdict": "ko-bin",
+          "evidence": "`query` works on this machine, but this product runs nothing locally and got no rules file",
+          "ms": 99
+        },
+        "sobriety": {
+          "verdict": "ko-bin",
+          "evidence": "no prompt-time hook, and no way to invoke the binary from inside this product",
+          "ms": 13
+        },
+        "context": {
+          "verdict": "ko-bin",
+          "evidence": "`measure` works on this machine; this product has no lifecycle hook and no way to call it",
+          "ms": 14
+        },
+        "readdedup": {
+          "verdict": "ok-bin",
+          "evidence": "the bridge path folds a repeat to a pointer (1531 → 150 bytes)",
+          "ms": 223
+        },
+        "docs": {
+          "verdict": "ko-bin",
+          "evidence": "extraction works on this machine, but this product's file reads never reach the binary",
+          "ms": 160
+        },
+        "privacy": {
+          "verdict": "ok-bin",
+          "evidence": "identical fold with every proxy pointed at 127.0.0.1:1 (556 bytes both runs) — a property of the binary, measured on this machine rather than through the product",
+          "ms": 307
+        },
+        "redact": {
+          "verdict": "ok-bin",
+          "evidence": "read -: neither planted credential survives the fold",
+          "ms": 82
+        },
+        "gain": {
+          "verdict": "ok-bin",
+          "evidence": "ledger credits 109438 tokens saved for this run's HOME",
+          "ms": 16
+        },
+        "subagents": {
+          "verdict": "ko-bin",
+          "evidence": "this product runs no command through any shell, and no MCP config of its own was wrapped, so nothing here spawns a local subagent or launches the binary for one",
+          "ms": 13
+        },
+        "recovery": {
+          "verdict": "ok-bin",
+          "evidence": "expand-ref a1123b2ab5e0 returned the 33740 original bytes",
+          "ms": 260
+        },
+        "diagnostics": {
+          "verdict": "ok-bin",
+          "evidence": "healthcheck names this agent and the state of its channel",
+          "ms": 41
+        },
+        "scoping": {
+          "verdict": "ok-bin",
+          "evidence": "install --only claude-cowork touched only this agent's own surfaces",
+          "ms": 0
+        },
+        "reversible": {
+          "verdict": "ok-bin",
+          "evidence": "uninstall restored every seeded config byte-for-byte",
+          "ms": 69
+        },
+        "proxyinstall": {
+          "verdict": "ko-proxy",
+          "evidence": "`llm-proxy install` answers `unknown agent` — rank 4 has no row for it",
+          "ms": 19
+        },
+        "proxykill": {
+          "verdict": "n/a",
+          "evidence": "not measured: the real kill-and-respawn needs the service enabled on this machine, which the product prints rather than runs (pass --supervise to let the bench do it and undo it)",
+          "ms": 0
+        },
+        "proxyboot": {
+          "verdict": "partial-proxy",
+          "evidence": "unit written at Library/LaunchAgents/com.tokenade.llm-proxy.plist declaring KeepAlive; enabling it needs `--enable`, which this pass did not run (run with --supervise)",
+          "ms": 38
+        },
+        "sysprompt": {
+          "verdict": "ko-bin",
+          "evidence": "this product runs no command through any shell, so an instruction file would name commands it cannot run — the channel is absent by construction, not deferred",
+          "ms": 42
+        },
+        "statusline": {
+          "verdict": "ko-bin",
+          "evidence": "no statusLine command in this agent's config and no bridge API that can set one — not measured against a shipped bundle, so this cell says only that tokenade wires nothing here",
+          "ms": 89
+        },
+        "binaccess": {
+          "verdict": "ko-bin",
+          "evidence": "this product runs no command through any shell, and no MCP config of its own was wrapped, so nothing here ever launches the binary",
+          "ms": 14
+        }
+      },
+      "rewroteBinaryPath": 0,
+      "rank4": {
+        "unavailable": "rank 4 has no row for this agent (unknown)"
+      }
+    },
+    {
+      "agent": "copilot-vscode",
+      "label": "Copilot (VS Code)",
+      "onSite": true,
+      "desktop": true,
+      "noLocalExecution": false,
+      "detected": false,
+      "blocked": "desktop product: no CLI install surface on this machine",
+      "channels": {
+        "hook": null,
+        "plugin": null,
+        "filesTouched": 0
+      },
+      "features": {
+        "cmd": {
+          "verdict": "partial-bin",
+          "ratio": 0.016480422088508168,
+          "evidence": "no in-agent channel; only what the agent wraps itself (`tokenade wrap`, as the installed project rules ask): 33737 → 556 bytes",
+          "ms": 276,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "folded in the outgoing history: 311198 → 7128 bytes (0.023)"
+          }
+        },
+        "web": {
+          "verdict": "partial-bin",
+          "evidence": "no automatic web-result channel; `tokenade web` folds 38361 → 664 bytes when called by hand",
+          "ms": 107,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "folded in the outgoing history: 144413 → 53034 bytes (0.367)"
+          }
+        },
+        "mcp": {
+          "verdict": "ok-mcp",
+          "evidence": "wrapped Library/Application Support/Code/User/mcp.json; proxy folded tool result 137128 → 956 bytes",
+          "ms": 13973
+        },
+        "codesearch": {
+          "verdict": "ok-bin",
+          "evidence": "`query` located the symbol; install wrote the rules into AGENTS.md, CLAUDE.md",
+          "ms": 1764
+        },
+        "sobriety": {
+          "verdict": "ok-bin",
+          "evidence": "no prompt-time hook here, but the preamble is IN the rules file this agent reads every session (AGENTS.md, GEMINI.md) — a pinned style only: `auto` classifies per prompt and a static file cannot",
+          "ms": 204
+        },
+        "context": {
+          "verdict": "partial-bin",
+          "evidence": "`measure` works; nothing trims the context on its own — this agent has neither a lifecycle hook nor a bridge to ask",
+          "ms": 14,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "the whole outgoing history shrinks: 358451 → 62645 bytes over a 4-tool history (0.175)"
+          }
+        },
+        "readdedup": {
+          "verdict": "ok-bin",
+          "evidence": "the bridge path folds a repeat to a pointer (1532 → 150 bytes)",
+          "ms": 223
+        },
+        "docs": {
+          "verdict": "partial-bin",
+          "evidence": "`tokenade read` extracts PDF/DOCX text and decodes PNG, but this agent's Read is not intercepted",
+          "ms": 162,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "folded in the outgoing history: 134316 → 3480 bytes (0.026)"
+          }
+        },
+        "privacy": {
+          "verdict": "ok-bin",
+          "evidence": "identical fold with every proxy pointed at 127.0.0.1:1 (556 bytes both runs)",
+          "ms": 361
+        },
+        "redact": {
+          "verdict": "ok-bin",
+          "evidence": "read -: neither planted credential survives the fold",
+          "ms": 85
+        },
+        "gain": {
+          "verdict": "ok-bin",
+          "evidence": "ledger credits 141395 tokens saved for this run's HOME",
+          "ms": 15
+        },
+        "subagents": {
+          "verdict": "ok-bin",
+          "evidence": "this agent's MCP config is wrapped: an MCP tool result folds 137128 → 956 bytes, and the wrapper sits in the server's launch, so it cannot tell a subagent's call from its parent's — and the same wrapper puts tokenade's instructions in the `initialize` response (2695 chars in `result.instructions`, the server's own text kept), which every session of this agent reads, subagents included",
+          "ms": 25966
+        },
+        "recovery": {
+          "verdict": "ok-bin",
+          "evidence": "expand-ref a1123b2ab5e0 returned the 33740 original bytes",
+          "ms": 264
+        },
+        "diagnostics": {
+          "verdict": "ok-bin",
+          "evidence": "healthcheck names this agent and the state of its channel",
+          "ms": 37
+        },
+        "scoping": {
+          "verdict": "ok-bin",
+          "evidence": "install --only copilot-vscode touched only this agent's own surfaces",
+          "ms": 0
+        },
+        "reversible": {
+          "verdict": "ok-bin",
+          "evidence": "uninstall restored every seeded config byte-for-byte",
+          "ms": 75
+        },
+        "proxyinstall": {
+          "verdict": "ok-proxy",
+          "evidence": "wrote the base URL into Library/Application Support/Code/User/settings.json, and `uninstall` put it back byte-for-byte",
+          "ms": 94
+        },
+        "proxykill": {
+          "verdict": "n/a",
+          "evidence": "not measured: the real kill-and-respawn needs the service enabled on this machine, which the product prints rather than runs (pass --supervise to let the bench do it and undo it)",
+          "ms": 0
+        },
+        "proxyboot": {
+          "verdict": "partial-proxy",
+          "evidence": "unit written at Library/LaunchAgents/com.tokenade.llm-proxy.plist declaring KeepAlive; enabling it needs `--enable`, which this pass did not run (run with --supervise)",
+          "ms": 33
+        },
+        "sysprompt": {
+          "verdict": "ok-bin",
+          "evidence": "AGENTS.md (7 command(s) named), CLAUDE.md (5 command(s) named), GEMINI.md (7 command(s) named)",
+          "ms": 123
+        },
+        "statusline": {
+          "verdict": "ko-bin",
+          "evidence": "no statusLine command in this agent's config and no bridge API that can set one — not measured against a shipped bundle, so this cell says only that tokenade wires nothing here",
+          "ms": 69
+        },
+        "binaccess": {
+          "verdict": "ok-bin",
+          "evidence": "the channel invokes an ABSOLUTE path (/tmp/tokenade-compat/tokenade), which survives a PATH the agent does not control — the wrapped MCP entry in Library/Application Support/Code/User/mcp.json)",
+          "ms": 70
+        }
+      },
+      "rewroteBinaryPath": 0,
+      "rank4": {
+        "cmd": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 311198 → 7128 bytes (0.023)"
+        },
+        "web": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 144413 → 53034 bytes (0.367)"
+        },
+        "mcp": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 237177 → 116080 bytes (0.489)"
+        },
+        "codesearch": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 233254 → 5342 bytes (0.023)"
+        },
+        "docs": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 134316 → 3480 bytes (0.026)"
+        },
+        "redact": {
+          "verdict": "ok-proxy",
+          "evidence": "the planted credential never reaches the provider, on every tool result the proxy relays and with no hook to approve"
+        },
+        "subagents": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 307198 → 7047 bytes (0.023)"
+        },
+        "context": {
+          "verdict": "ok-proxy",
+          "evidence": "the whole outgoing history shrinks: 358451 → 62645 bytes over a 4-tool history (0.175)"
+        },
+        "sobriety": {
+          "verdict": "ok-proxy",
+          "evidence": "the style preamble is prepended to the outgoing system prompt, and a preamble a rank-1 hook already placed is NOT duplicated (1 copy both ways)"
+        },
+        "readdedup": {
+          "verdict": "ok-proxy",
+          "evidence": "a repeated identical result costs 3136 bytes instead of 89465 on the wire"
+        }
+      }
+    },
+    {
+      "agent": "codex-app",
+      "label": "Codex (app)",
+      "onSite": true,
+      "desktop": true,
+      "noLocalExecution": true,
+      "detected": false,
+      "blocked": "desktop product: no CLI install surface on this machine",
+      "channels": {
+        "hook": null,
+        "plugin": null,
+        "filesTouched": 0
+      },
+      "features": {
+        "cmd": {
+          "verdict": "ko-bin",
+          "evidence": "this product runs no command through the user's shell, so nothing tokenade can wrap ever runs",
+          "ms": 0
+        },
+        "web": {
+          "verdict": "ko-bin",
+          "evidence": "`tokenade web` folds 38361 → 659 bytes on this machine, but nothing inside this product can call it",
+          "ms": 112
+        },
+        "mcp": {
+          "verdict": "ok-mcp",
+          "evidence": "wrapped .codex/config.toml; proxy folded tool result 137128 → 956 bytes — that is codex's file, which this agent loads; it has no MCP surface of its own",
+          "ms": 13020
+        },
+        "codesearch": {
+          "verdict": "ko-bin",
+          "evidence": "`query` works on this machine, but this product runs nothing locally and got no rules file",
+          "ms": 103
+        },
+        "sobriety": {
+          "verdict": "ko-bin",
+          "evidence": "no prompt-time hook, and no way to invoke the binary from inside this product",
+          "ms": 14
+        },
+        "context": {
+          "verdict": "ko-bin",
+          "evidence": "`measure` works on this machine; this product has no lifecycle hook and no way to call it",
+          "ms": 13
+        },
+        "readdedup": {
+          "verdict": "ok-bin",
+          "evidence": "the bridge path folds a repeat to a pointer (1527 → 150 bytes)",
+          "ms": 227
+        },
+        "docs": {
+          "verdict": "ko-bin",
+          "evidence": "extraction works on this machine, but this product's file reads never reach the binary",
+          "ms": 162
+        },
+        "privacy": {
+          "verdict": "ok-bin",
+          "evidence": "identical fold with every proxy pointed at 127.0.0.1:1 (556 bytes both runs) — a property of the binary, measured on this machine rather than through the product",
+          "ms": 314
+        },
+        "redact": {
+          "verdict": "ok-bin",
+          "evidence": "read -: neither planted credential survives the fold",
+          "ms": 89
+        },
+        "gain": {
+          "verdict": "ok-bin",
+          "evidence": "ledger credits 95686 tokens saved for this run's HOME",
+          "ms": 15
+        },
+        "subagents": {
+          "verdict": "ok-bin",
+          "evidence": "this agent's MCP config is wrapped: an MCP tool result folds 137128 → 956 bytes, and the wrapper sits in the server's launch, so it cannot tell a subagent's call from its parent's — and the same wrapper puts tokenade's instructions in the `initialize` response (2695 chars in `result.instructions`, the server's own text kept), which every session of this agent reads, subagents included",
+          "ms": 26450
+        },
+        "recovery": {
+          "verdict": "ok-bin",
+          "evidence": "expand-ref a1123b2ab5e0 returned the 33740 original bytes",
+          "ms": 336
+        },
+        "diagnostics": {
+          "verdict": "ok-bin",
+          "evidence": "healthcheck names this agent and the state of its channel",
+          "ms": 41
+        },
+        "scoping": {
+          "verdict": "ok-bin",
+          "evidence": "install --only codex-app touched only this agent's own surfaces",
+          "ms": 0
+        },
+        "reversible": {
+          "verdict": "ok-bin",
+          "evidence": "uninstall restored every seeded config byte-for-byte",
+          "ms": 74
+        },
+        "proxyinstall": {
+          "verdict": "ko-proxy",
+          "evidence": "`llm-proxy install` answers `unknown agent` — rank 4 has no row for it",
+          "ms": 19
+        },
+        "proxykill": {
+          "verdict": "n/a",
+          "evidence": "not measured: the real kill-and-respawn needs the service enabled on this machine, which the product prints rather than runs (pass --supervise to let the bench do it and undo it)",
+          "ms": 0
+        },
+        "proxyboot": {
+          "verdict": "partial-proxy",
+          "evidence": "unit written at Library/LaunchAgents/com.tokenade.llm-proxy.plist declaring KeepAlive; enabling it needs `--enable`, which this pass did not run (run with --supervise)",
+          "ms": 36
+        },
+        "sysprompt": {
+          "verdict": "ko-bin",
+          "evidence": "this product runs no command through any shell, so an instruction file would name commands it cannot run — the channel is absent by construction, not deferred",
+          "ms": 49
+        },
+        "statusline": {
+          "verdict": "ko-bin",
+          "evidence": "no statusLine command in this agent's config and no bridge API that can set one — not measured against a shipped bundle, so this cell says only that tokenade wires nothing here",
+          "ms": 92
+        },
+        "binaccess": {
+          "verdict": "ok-bin",
+          "evidence": "the channel invokes an ABSOLUTE path (/tmp/tokenade-compat/tokenade), which survives a PATH the agent does not control — the wrapped MCP entry in .codex/config.toml)",
+          "ms": 169
+        }
+      },
+      "rewroteBinaryPath": 0,
+      "rank4": {
+        "unavailable": "rank 4 has no row for this agent (unknown)"
+      }
+    },
+    {
+      "agent": "windsurf",
+      "label": "Windsurf",
+      "onSite": false,
+      "desktop": false,
+      "noLocalExecution": false,
+      "detected": true,
+      "blocked": null,
+      "channels": {
+        "hook": null,
+        "plugin": null,
+        "filesTouched": 13
+      },
+      "features": {
+        "cmd": {
+          "verdict": "partial-bin",
+          "ratio": 0.016480422088508168,
+          "evidence": "no in-agent channel; only what the agent wraps itself (`tokenade wrap`, as the installed project rules ask): 33737 → 556 bytes",
+          "ms": 291,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "folded in the outgoing history: 306911 → 133564 bytes (0.435)"
+          }
+        },
+        "web": {
+          "verdict": "partial-bin",
+          "evidence": "no automatic web-result channel; `tokenade web` folds 38361 → 658 bytes when called by hand",
+          "ms": 110,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "folded in the outgoing history: 135721 → 50089 bytes (0.369)"
+          }
+        },
+        "mcp": {
+          "verdict": "ok-mcp",
+          "evidence": "wrapped .codeium/windsurf/mcp_config.json; proxy folded tool result 137128 → 956 bytes",
+          "ms": 13935
+        },
+        "codesearch": {
+          "verdict": "ok-bin",
+          "evidence": "`query` located the symbol; install wrote the rules into .windsurfrules, AGENTS.md, CLAUDE.md, GEMINI.md",
+          "ms": 193
+        },
+        "sobriety": {
+          "verdict": "ok-bin",
+          "evidence": "no prompt-time hook here, but the preamble is IN the rules file this agent reads every session (.windsurfrules, AGENTS.md, GEMINI.md) — a pinned style only: `auto` classifies per prompt and a static file cannot",
+          "ms": 259
+        },
+        "context": {
+          "verdict": "partial-bin",
+          "evidence": "`measure` works; nothing trims the context on its own — this agent has neither a lifecycle hook nor a bridge to ask",
+          "ms": 15,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "the whole outgoing history shrinks: 352649 → 124751 bytes over a 4-tool history (0.354)"
+          }
+        },
+        "readdedup": {
+          "verdict": "ok-bin",
+          "evidence": "the bridge path folds a repeat to a pointer (1526 → 150 bytes)",
+          "ms": 226
+        },
+        "docs": {
+          "verdict": "partial-bin",
+          "evidence": "`tokenade read` extracts PDF/DOCX text and decodes PNG, but this agent's Read is not intercepted",
+          "ms": 180,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "folded in the outgoing history: 132232 → 2907 bytes (0.022)"
+          }
+        },
+        "privacy": {
+          "verdict": "ok-bin",
+          "evidence": "identical fold with every proxy pointed at 127.0.0.1:1 (556 bytes both runs)",
+          "ms": 319
+        },
+        "redact": {
+          "verdict": "ok-bin",
+          "evidence": "read -: neither planted credential survives the fold",
+          "ms": 83
+        },
+        "gain": {
+          "verdict": "ok-bin",
+          "evidence": "ledger credits 109443 tokens saved for this run's HOME",
+          "ms": 15
+        },
+        "subagents": {
+          "verdict": "ok-bin",
+          "evidence": "this agent's MCP config is wrapped: an MCP tool result folds 137128 → 956 bytes, and the wrapper sits in the server's launch, so it cannot tell a subagent's call from its parent's — and the same wrapper puts tokenade's instructions in the `initialize` response (2695 chars in `result.instructions`, the server's own text kept), which every session of this agent reads, subagents included",
+          "ms": 26787
+        },
+        "recovery": {
+          "verdict": "ok-bin",
+          "evidence": "expand-ref a1123b2ab5e0 returned the 33740 original bytes",
+          "ms": 294
+        },
+        "diagnostics": {
+          "verdict": "ok-bin",
+          "evidence": "healthcheck names this agent and the state of its channel",
+          "ms": 39
+        },
+        "scoping": {
+          "verdict": "ko-bin",
+          "evidence": "install --only windsurf also wrote 2 file(s) belonging to another agent or to the user: .gemini/projects.json, .gemini/projects.json.d7a6b45a-807b-4f53-b716-7a3fe7d3d5a3.tmp",
+          "ms": 1
+        },
+        "reversible": {
+          "verdict": "ok-bin",
+          "evidence": "uninstall restored every seeded config byte-for-byte",
+          "ms": 1798
+        },
+        "proxyinstall": {
+          "verdict": "ok-proxy",
+          "evidence": "wrote the base URL into Library/Application Support/Devin/User/settings.json, and `uninstall` put it back byte-for-byte",
+          "ms": 149
+        },
+        "proxykill": {
+          "verdict": "n/a",
+          "evidence": "not measured: the real kill-and-respawn needs the service enabled on this machine, which the product prints rather than runs (pass --supervise to let the bench do it and undo it)",
+          "ms": 0
+        },
+        "proxyboot": {
+          "verdict": "partial-proxy",
+          "evidence": "unit written at Library/LaunchAgents/com.tokenade.llm-proxy.plist declaring KeepAlive; enabling it needs `--enable`, which this pass did not run (run with --supervise)",
+          "ms": 36
+        },
+        "sysprompt": {
+          "verdict": "ok-bin",
+          "evidence": ".windsurfrules (7 command(s) named), AGENTS.md (7 command(s) named), CLAUDE.md (5 command(s) named), GEMINI.md (7 command(s) named)",
+          "ms": 160
+        },
+        "statusline": {
+          "verdict": "ko-bin",
+          "evidence": "no statusLine command in this agent's config and no bridge API that can set one — not measured against a shipped bundle, so this cell says only that tokenade wires nothing here",
+          "ms": 71
+        },
+        "binaccess": {
+          "verdict": "ok-bin",
+          "evidence": "the channel invokes an ABSOLUTE path (/tmp/tokenade-compat/tokenade), which survives a PATH the agent does not control — the wrapped MCP entry in .codeium/windsurf/mcp_config.json)",
+          "ms": 89
+        }
+      },
+      "agentVersion": null,
+      "installExit": 0,
+      "installSaid": "detected agent(s): windsurf\nfix-up: no incompatible token tools to resolve.\n  note: --with-hook names the Claude Code hook specifically, so it does nothing here; windsurf is wired through its own hooks.\n✓ scaffolded 4 rules file(s) in /private/var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-windsurf-Tt8lju/project: CLAUDE.md, AGENTS.md, .windsurfrules, ~/.config/git/ignore (+.tokenade/, +*.tokenade-original)\n\n✓ installed for 1 agent(s). You're set.\n\n",
+      "wiredThrough": null,
+      "channelNote": null,
+      "rewroteBinaryPath": 0,
+      "rank4": {
+        "cmd": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 306911 → 133564 bytes (0.435)"
+        },
+        "web": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 135721 → 50089 bytes (0.369)"
+        },
+        "mcp": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 233423 → 112576 bytes (0.482)"
+        },
+        "codesearch": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 229971 → 4656 bytes (0.020)"
+        },
+        "docs": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 132232 → 2907 bytes (0.022)"
+        },
+        "redact": {
+          "verdict": "ok-proxy",
+          "evidence": "the planted credential never reaches the provider, on every tool result the proxy relays and with no hook to approve"
+        },
+        "subagents": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 302911 → 134565 bytes (0.444)"
+        },
+        "context": {
+          "verdict": "ok-proxy",
+          "evidence": "the whole outgoing history shrinks: 352649 → 124751 bytes over a 4-tool history (0.354)"
+        },
+        "readdedup": {
+          "verdict": "ok-proxy",
+          "evidence": "a repeated identical result costs 2910 bytes instead of 88083 on the wire"
+        }
+      }
+    },
+    {
+      "agent": "reasonix",
+      "label": "Reasonix",
+      "onSite": false,
+      "desktop": false,
+      "noLocalExecution": false,
+      "detected": true,
+      "blocked": null,
+      "channels": {
+        "hook": {
+          "file": ".reasonix/settings.json",
+          "events": [
+            "PreCompact",
+            "SessionStart",
+            "UserPromptSubmit"
+          ]
+        },
+        "plugin": null,
+        "filesTouched": 14
+      },
+      "features": {
+        "cmd": {
+          "verdict": "partial-bin",
+          "ratio": 0.016480422088508168,
+          "evidence": "no in-agent channel; only what the agent wraps itself (`tokenade wrap`, as the installed project rules ask): 33737 → 556 bytes",
+          "ms": 269,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "folded in the outgoing history: 311198 → 7128 bytes (0.023)"
+          }
+        },
+        "web": {
+          "verdict": "partial-bin",
+          "evidence": "no automatic web-result channel; `tokenade web` folds 38361 → 658 bytes when called by hand",
+          "ms": 111,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "folded in the outgoing history: 144413 → 53034 bytes (0.367)"
+          }
+        },
+        "mcp": {
+          "verdict": "ok-mcp",
+          "evidence": "wrapped .reasonix/config.toml; proxy folded tool result 137128 → 956 bytes",
+          "ms": 13168
+        },
+        "codesearch": {
+          "verdict": "ok-bin",
+          "evidence": "`query` located the symbol; install wrote the rules into AGENTS.md, CLAUDE.md, GEMINI.md",
+          "ms": 212
+        },
+        "sobriety": {
+          "verdict": "ok-bin",
+          "evidence": "UserPromptSubmit hook injects the style preamble",
+          "ms": 84
+        },
+        "context": {
+          "verdict": "ok-bin",
+          "evidence": "lifecycle hooks installed (PreCompact, SessionStart); `measure` reports the startup cost",
+          "ms": 13
+        },
+        "readdedup": {
+          "verdict": "ok-bin",
+          "evidence": "the bridge path folds a repeat to a pointer (1526 → 150 bytes)",
+          "ms": 222
+        },
+        "docs": {
+          "verdict": "partial-bin",
+          "evidence": "`tokenade read` extracts PDF/DOCX text and decodes PNG, but this agent's Read is not intercepted",
+          "ms": 159,
+          "proxy": {
+            "verdict": "ok-proxy",
+            "evidence": "folded in the outgoing history: 134316 → 3474 bytes (0.026)"
+          }
+        },
+        "privacy": {
+          "verdict": "ok-bin",
+          "evidence": "identical fold with every proxy pointed at 127.0.0.1:1 (556 bytes both runs)",
+          "ms": 313
+        },
+        "redact": {
+          "verdict": "ok-bin",
+          "evidence": "read -: neither planted credential survives the fold",
+          "ms": 90
+        },
+        "gain": {
+          "verdict": "ok-bin",
+          "evidence": "ledger credits 109443 tokens saved for this run's HOME",
+          "ms": 14
+        },
+        "subagents": {
+          "verdict": "ok-bin",
+          "evidence": "this agent's MCP config is wrapped: an MCP tool result folds 137128 → 956 bytes, and the wrapper sits in the server's launch, so it cannot tell a subagent's call from its parent's — and the same wrapper puts tokenade's instructions in the `initialize` response (2695 chars in `result.instructions`, the server's own text kept), which every session of this agent reads, subagents included",
+          "ms": 26509
+        },
+        "recovery": {
+          "verdict": "ok-bin",
+          "evidence": "expand-ref a1123b2ab5e0 returned the 33740 original bytes",
+          "ms": 262
+        },
+        "diagnostics": {
+          "verdict": "ok-bin",
+          "evidence": "healthcheck names this agent and the state of its channel",
+          "ms": 39
+        },
+        "scoping": {
+          "verdict": "ko-bin",
+          "evidence": "install --only reasonix also wrote 2 file(s) belonging to another agent or to the user: .gemini/projects.json, .gemini/projects.json.332211c5-e197-4aa6-907f-6f53c5ba9c23.tmp",
+          "ms": 0
+        },
+        "reversible": {
+          "verdict": "ok-bin",
+          "evidence": "uninstall restored every seeded config byte-for-byte",
+          "ms": 1778
+        },
+        "proxyinstall": {
+          "verdict": "ok-proxy",
+          "evidence": "wrote the base URL into .reasonix/config.toml, and `uninstall` put it back byte-for-byte",
+          "ms": 89
+        },
+        "proxykill": {
+          "verdict": "n/a",
+          "evidence": "not measured: the real kill-and-respawn needs the service enabled on this machine, which the product prints rather than runs (pass --supervise to let the bench do it and undo it)",
+          "ms": 0
+        },
+        "proxyboot": {
+          "verdict": "partial-proxy",
+          "evidence": "unit written at Library/LaunchAgents/com.tokenade.llm-proxy.plist declaring KeepAlive; enabling it needs `--enable`, which this pass did not run (run with --supervise)",
+          "ms": 35
+        },
+        "sysprompt": {
+          "verdict": "ok-bin",
+          "evidence": "AGENTS.md (7 command(s) named), CLAUDE.md (5 command(s) named), GEMINI.md (7 command(s) named)",
+          "ms": 142
+        },
+        "statusline": {
+          "verdict": "ko-bin",
+          "evidence": "no status-line surface to attach to: no statusLine/status_line key anywhere in the shipped code",
+          "ms": 62
+        },
+        "binaccess": {
+          "verdict": "ok-bin",
+          "evidence": "the channel invokes an ABSOLUTE path (/tmp/tokenade-compat/tokenade), which survives a PATH the agent does not control",
+          "ms": 0
+        }
+      },
+      "installExit": 0,
+      "installSaid": "detected agent(s): reasonix\nfix-up: no incompatible token tools to resolve.\n  note: --with-hook names the Claude Code hook specifically, so it does nothing here; reasonix is wired through its own hooks.\n  ✓ Reasonix hooks (Pre/PostToolUse on bash, SessionStart/…) → /var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-reasonix-56p9u2/home/.reasonix/settings.json\n✓ scaffolded 4 rules file(s) in /private/var/folders/sv/73lyvjnj3lsgl7grtb1m6c8h0000gn/T/tkc-reasonix-56p9u2/project: CLAUDE.md, AGENTS.md, REASONIX.md, ~/.config/git/ignore (+.tokenade/, +*.tokenade-original)\n\nLocal LLM proxy — install",
+      "wiredThrough": null,
+      "channelNote": null,
+      "rewroteBinaryPath": 1,
+      "rank4": {
+        "cmd": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 311198 → 7128 bytes (0.023)"
+        },
+        "web": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 144413 → 53034 bytes (0.367)"
+        },
+        "mcp": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 237177 → 116080 bytes (0.489)"
+        },
+        "codesearch": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 233254 → 5342 bytes (0.023)"
+        },
+        "docs": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 134316 → 3474 bytes (0.026)"
+        },
+        "redact": {
+          "verdict": "ok-proxy",
+          "evidence": "the planted credential never reaches the provider, on every tool result the proxy relays and with no hook to approve"
+        },
+        "subagents": {
+          "verdict": "ok-proxy",
+          "evidence": "folded in the outgoing history: 307198 → 7047 bytes (0.023)"
+        },
+        "context": {
+          "verdict": "ok-proxy",
+          "evidence": "the whole outgoing history shrinks: 358451 → 62639 bytes over a 4-tool history (0.175)"
+        },
+        "sobriety": {
+          "verdict": "ok-proxy",
+          "evidence": "the style preamble is prepended to the outgoing system prompt, and a preamble a rank-1 hook already placed is NOT duplicated (1 copy both ways)"
+        },
+        "readdedup": {
+          "verdict": "ok-proxy",
+          "evidence": "a repeated identical result costs 3130 bytes instead of 89465 on the wire"
+        }
+      }
+    }
+  ]
+}

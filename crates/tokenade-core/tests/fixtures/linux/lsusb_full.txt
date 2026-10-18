@@ -1,0 +1,21 @@
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 1397:0507 BEHRINGER International GmbH UMC202HD 192k
+Bus 001 Device 003: ID 174c:2074 ASMedia Technology Inc. ASM1074 High-Speed hub
+Bus 001 Device 004: ID 1462:7d78 Micro Star International MYSTIC LIGHT 
+Bus 001 Device 005: ID 046d:c08f Logitech, Inc. G403 HERO Gaming Mouse
+Bus 001 Device 006: ID 0e8d:0616 MediaTek Inc. Wireless_Device
+Bus 001 Device 007: ID 045b:0209 Hitachi, Ltd 
+Bus 001 Device 008: ID 045b:0209 Hitachi, Ltd 
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 002 Device 002: ID 046d:0893 Logitech, Inc. StreamCam
+Bus 002 Device 003: ID 174c:3074 ASMedia Technology Inc. ASM1074 SuperSpeed hub
+Bus 002 Device 004: ID 045b:0210 Hitachi, Ltd 
+Bus 002 Device 005: ID 045b:0210 Hitachi, Ltd 
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 003 Device 002: ID 2109:2812 VIA Labs, Inc. VL812 Hub
+Bus 003 Device 003: ID 24f0:0140 Metadot Das Keyboard 4
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 004 Device 002: ID 2109:0812 VIA Labs, Inc. VL812 Hub
+Bus 005 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 006 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 007 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub

@@ -1,0 +1,688 @@
+
+Dossier�: \
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Git for Windows Updater                  30/05/2026 20:32:55    Pr�t           
+MicrosoftEdgeUpdateTaskMachineCore       31/05/2026 01:25:52    Pr�t           
+MicrosoftEdgeUpdateTaskMachineUA         30/05/2026 03:55:52    Pr�t           
+Opera scheduled assistant Autoupdate 173 30/05/2026 20:28:24    Pr�t           
+Opera scheduled Autoupdate 1731007701    30/05/2026 20:28:28    Pr�t           
+
+Dossier�: \GoogleSystem
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+INFORMATION�: aucune t�che planifi�e n'est actuellement disponible � votre niveau d'acc�s.
+
+Dossier�: \GoogleSystem\GoogleUpdater
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+GoogleUpdaterTaskSystem149.0.7814.0{A942 30/05/2026 04:47:48    Pr�t           
+
+Dossier�: \Microsoft
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+INFORMATION�: aucune t�che planifi�e n'est actuellement disponible � votre niveau d'acc�s.
+
+Dossier�: \Microsoft\OneCore
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+INFORMATION�: aucune t�che planifi�e n'est actuellement disponible � votre niveau d'acc�s.
+
+Dossier�: \Microsoft\Windows
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+INFORMATION�: aucune t�che planifi�e n'est actuellement disponible � votre niveau d'acc�s.
+
+Dossier�: \Microsoft\Windows\.NET Framework
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+.NET Framework NGEN v4.0.30319           N/A                    Pr�t           
+.NET Framework NGEN v4.0.30319 64        N/A                    Pr�t           
+.NET Framework NGEN v4.0.30319 64 Critic N/A                    D�sactiv�      
+.NET Framework NGEN v4.0.30319 Critical  N/A                    D�sactiv�      
+
+Dossier�: \Microsoft\Windows\Active Directory Rights Management Services Client
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+AD RMS Rights Policy Template Management N/A                    D�sactiv�      
+AD RMS Rights Policy Template Management N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\AppID
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+EDP Policy Manager                       N/A                    Pr�t           
+PolicyConverter                          N/A                    D�sactiv�      
+VerifiedPublisherCertStoreCheck          N/A                    D�sactiv�      
+
+Dossier�: \Microsoft\Windows\Application Experience
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+MareBackup                               N/A                    Pr�t           
+Microsoft Compatibility Appraiser        31/05/2026 03:39:16    Pr�t           
+PcaPatchDbTask                           30/05/2026 16:45:25    Pr�t           
+PcaWallpaperAppDetect                    01/06/2026 12:00:02    Pr�t           
+ProgramDataUpdater                       N/A                    Pr�t           
+StartupAppTask                           N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\ApplicationData
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+appuriverifierdaily                      N/A                    Pr�t           
+appuriverifierinstall                    N/A                    Pr�t           
+CleanupTemporaryState                    N/A                    Pr�t           
+DsSvcCleanup                             N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\AppListBackup
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Backup                                   N/A                    Pr�t           
+BackupNonMaintenance                     31/05/2026 01:10:30    Pr�t           
+
+Dossier�: \Microsoft\Windows\AppxDeploymentClient
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Pre-staged app cleanup                   N/A                    D�sactiv�      
+UCPD velocity                            N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Autochk
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Proxy                                    N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\BitLocker
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+BitLocker Encrypt All Drives             N/A                    Pr�t           
+BitLocker MDM policy Refresh             N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Bluetooth
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+UninstallDeviceTask                      N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\BrokerInfrastructure
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+BgTaskRegistrationMaintenanceTask        N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\CertificateServicesClient
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+AikCertEnrollTask                        N/A                    Pr�t           
+CryptoPolicyTask                         N/A                    Pr�t           
+KeyPreGenTask                            N/A                    Pr�t           
+SystemTask                               N/A                    Pr�t           
+UserTask                                 N/A                    Pr�t           
+UserTask-Roam                            N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Chkdsk
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+ProactiveScan                            N/A                    Pr�t           
+SyspartRepair                            N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Clip
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+ClipESU                                  N/A                    Pr�t           
+ClipESUConsumer                          30/05/2026 08:20:37    Pr�t           
+ClipESUConsumerProcessECUpdate           N/A                    Pr�t           
+ClipEsuConsumerProcessPreOrder           01/06/2026 13:31:05    Pr�t           
+ClipEsuConsumerProcessRefund             08/06/2026 14:33:38    Pr�t           
+EnableClipESU                            30/05/2026 23:13:49    Pr�t           
+License Validation                       N/A                    D�sactiv�      
+LicenseImdsIntegration                   N/A                    D�sactiv�      
+
+Dossier�: \Microsoft\Windows\CloudExperienceHost
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+CreateObjectTask                         N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\CloudRestore
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Backup                                   31/05/2026 05:50:33    Pr�t           
+
+Dossier�: \Microsoft\Windows\ConsentUX
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+INFORMATION�: aucune t�che planifi�e n'est actuellement disponible � votre niveau d'acc�s.
+
+Dossier�: \Microsoft\Windows\ConsentUX\UnifiedConsent
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+UnifiedConsentSyncTask                   30/05/2026 13:09:55    Pr�t           
+
+Dossier�: \Microsoft\Windows\Customer Experience Improvement Program
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Consolidator                             30/05/2026 06:00:00    Pr�t           
+UsbCeip                                  N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Data Integrity Scan
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Data Integrity Check And Scan            30/05/2026 23:59:03    Pr�t           
+Data Integrity Scan                      N/A                    Pr�t           
+Data Integrity Scan for Crash Recovery   N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Defrag
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+ScheduledDefrag                          N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Device Information
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Device                                   31/05/2026 04:23:22    Pr�t           
+Device User                              N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Device Setup
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Metadata Refresh                         N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\DeviceDirectoryClient
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+HandleCommand                            N/A                    Pr�t           
+HandleWnsCommand                         N/A                    Pr�t           
+IntegrityCheck                           02/06/2026 12:38:22    Pr�t           
+LocateCommandUserSession                 N/A                    Pr�t           
+RegisterDeviceAccountChange              N/A                    Pr�t           
+RegisterDeviceLocationRightsChange       N/A                    D�sactiv�      
+RegisterDevicePeriodic24                 N/A                    D�sactiv�      
+RegisterDevicePolicyChange               N/A                    Pr�t           
+RegisterDeviceProtectionStateChanged     N/A                    Pr�t           
+RegisterDeviceSettingChange              N/A                    Pr�t           
+RegisterUserDevice                       N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Diagnosis
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+RecommendedTroubleshootingScanner        N/A                    Pr�t           
+Scheduled                                N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\DirectX
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+DirectXDatabaseUpdater                   N/A                    Pr�t           
+DXGIAdapterCache                         N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\DiskCleanup
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+SilentCleanup                            N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\DiskDiagnostic
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Microsoft-Windows-DiskDiagnosticDataColl N/A                    D�sactiv�      
+Microsoft-Windows-DiskDiagnosticResolver N/A                    D�sactiv�      
+
+Dossier�: \Microsoft\Windows\DiskFootprint
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Diagnostics                              N/A                    Pr�t           
+StorageSense                             N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\DUSM
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+dusmtask                                 N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\EDP
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+EDP App Launch Task                      N/A                    Pr�t           
+EDP Auth Task                            N/A                    Pr�t           
+EDP Inaccessible Credentials Task        N/A                    Pr�t           
+StorageCardEncryption Task               N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\ExploitGuard
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+ExploitGuard MDM policy Refresh          N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Feedback
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+INFORMATION�: aucune t�che planifi�e n'est actuellement disponible � votre niveau d'acc�s.
+
+Dossier�: \Microsoft\Windows\Feedback\Siuf
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+DmClient                                 N/A                    Pr�t           
+DmClientOnScenarioDownload               N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\File Classification Infrastructure
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Property Definition Sync                 N/A                    D�sactiv�      
+
+Dossier�: \Microsoft\Windows\FileHistory
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+File History (maintenance mode)          N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Flighting
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+INFORMATION�: aucune t�che planifi�e n'est actuellement disponible � votre niveau d'acc�s.
+
+Dossier�: \Microsoft\Windows\Flighting\FeatureConfig
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+ReconcileFeatures                        N/A                    Pr�t           
+UsageDataFlushing                        N/A                    Pr�t           
+UsageDataReporting                       N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Flighting\OneSettings
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+RefreshCache                             30/05/2026 04:58:37    Pr�t           
+
+Dossier�: \Microsoft\Windows\HelloFace
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+FODCleanupTask                           N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Input
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+LocalUserSyncDataAvailable               N/A                    Pr�t           
+MouseSyncDataAvailable                   N/A                    Pr�t           
+PenSyncDataAvailable                     N/A                    Pr�t           
+TouchpadSyncDataAvailable                N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\InstallService
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+ScanForUpdates                           31/05/2026 08:37:03    Pr�t           
+ScanForUpdatesAsUser                     N/A                    Pr�t           
+SmartRetry                               N/A                    Pr�t           
+WakeUpAndContinueUpdates                 N/A                    D�sactiv�      
+WakeUpAndScanForUpdates                  N/A                    D�sactiv�      
+
+Dossier�: \Microsoft\Windows\International
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Synchronize Language Settings            N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\LanguageComponentsInstaller
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Installation                             N/A                    Pr�t           
+ReconcileLanguageResources               N/A                    Pr�t           
+Uninstallation                           N/A                    D�sactiv�      
+
+Dossier�: \Microsoft\Windows\License Manager
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+TempSignedLicenseExchange                N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Live
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+INFORMATION�: aucune t�che planifi�e n'est actuellement disponible � votre niveau d'acc�s.
+
+Dossier�: \Microsoft\Windows\Location
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Notifications                            N/A                    Pr�t           
+WindowsActionDialog                      N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Maintenance
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+WinSAT                                   N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Management
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+INFORMATION�: aucune t�che planifi�e n'est actuellement disponible � votre niveau d'acc�s.
+
+Dossier�: \Microsoft\Windows\Management\Autopilot
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+DetectHardwareChange                     N/A                    D�sactiv�      
+RemediateHardwareChange                  N/A                    D�sactiv�      
+
+Dossier�: \Microsoft\Windows\Management\Provisioning
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Cellular                                 N/A                    Pr�t           
+Logon                                    N/A                    Pr�t           
+Retry                                    N/A                    D�sactiv�      
+RunOnReboot                              N/A                    D�sactiv�      
+
+Dossier�: \Microsoft\Windows\Maps
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+MapsToastTask                            N/A                    Pr�t           
+MapsUpdateTask                           N/A                    D�sactiv�      
+
+Dossier�: \Microsoft\Windows\MemoryDiagnostic
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+ProcessMemoryDiagnosticEvents            N/A                    Pr�t           
+RunFullMemoryDiagnostic                  N/A                    D�sactiv�      
+
+Dossier�: \Microsoft\Windows\Mobile Broadband Accounts
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+MNO Metadata Parser                      N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\MUI
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+LPRemove                                 N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Multimedia
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+SystemSoundsService                      N/A                    En cours       
+
+Dossier�: \Microsoft\Windows\NetTrace
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+GatherNetworkInfo                        N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\NlaSvc
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+WiFiTask                                 N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Offline Files
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Background Synchronization               N/A                    D�sactiv�      
+Logon Synchronization                    N/A                    D�sactiv�      
+
+Dossier�: \Microsoft\Windows\PI
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Secure-Boot-Update                       N/A                    Pr�t           
+Sqm-Tasks                                N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\PLA
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+INFORMATION�: aucune t�che planifi�e n'est actuellement disponible � votre niveau d'acc�s.
+
+Dossier�: \Microsoft\Windows\Plug and Play
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Device Install Group Policy              N/A                    Pr�t           
+Device Install Reboot Required           N/A                    Pr�t           
+Sysprep Generalize Drivers               N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Power Efficiency Diagnostics
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+AnalyzeSystem                            N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Printing
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+EduPrintProv                             N/A                    Pr�t           
+PrinterCleanupTask                       28/06/2026 12:00:00    Pr�t           
+
+Dossier�: \Microsoft\Windows\PushToInstall
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+LoginCheck                               N/A                    Pr�t           
+Registration                             30/05/2026 16:43:03    Pr�t           
+
+Dossier�: \Microsoft\Windows\Ras
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+MobilityManager                          N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\RecoveryEnvironment
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+VerifyWinRE                              N/A                    D�sactiv�      
+
+Dossier�: \Microsoft\Windows\Registry
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+RegIdleBackup                            N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\RemoteAssistance
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+RemoteAssistanceTask                     N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Servicing
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+StartComponentCleanup                    N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\SettingSync
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+BackgroundUploadTask                     N/A                    Pr�t           
+NetworkStateChangeTask                   N/A                    En cours       
+
+Dossier�: \Microsoft\Windows\SharedPC
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Account Cleanup                          N/A                    D�sactiv�      
+
+Dossier�: \Microsoft\Windows\Shell
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+CreateObjectTask                         N/A                    Pr�t           
+FamilySafetyMonitor                      N/A                    Pr�t           
+FamilySafetyRefreshTask                  N/A                    Pr�t           
+IndexerAutomaticMaintenance              N/A                    Pr�t           
+ThemesSyncedImageDownload                N/A                    Pr�t           
+UpdateUserPictureTask                    N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\SoftwareProtectionPlatform
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+SvcRestartTask                           N/A                    D�sactiv�      
+SvcRestartTaskLogon                      N/A                    D�sactiv�      
+SvcRestartTaskNetwork                    N/A                    D�sactiv�      
+
+Dossier�: \Microsoft\Windows\SpacePort
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+SpaceAgentTask                           N/A                    Pr�t           
+SpaceManagerTask                         N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Speech
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+SpeechModelDownloadTask                  31/05/2026 00:41:12    Pr�t           
+
+Dossier�: \Microsoft\Windows\StateRepository
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+MaintenanceTasks                         N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Storage Tiers Management
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Storage Tiers Management Initialization  N/A                    Pr�t           
+Storage Tiers Optimization               N/A                    D�sactiv�      
+
+Dossier�: \Microsoft\Windows\Subscription
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+EnableLicenseAcquisition                 N/A                    Pr�t           
+LicenseAcquisition                       N/A                    D�sactiv�      
+
+Dossier�: \Microsoft\Windows\Sysmain
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+HybridDriveCachePrepopulate              N/A                    D�sactiv�      
+HybridDriveCacheRebalance                N/A                    D�sactiv�      
+ResPriStaticDbSync                       N/A                    Pr�t           
+WsSwapAssessmentTask                     N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\SystemRestore
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+SR                                       N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Task Manager
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Interactive                              N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\TextServicesFramework
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+MsCtfMonitor                             N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Time Synchronization
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+ForceSynchronizeTime                     N/A                    Pr�t           
+SynchronizeTime                          N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Time Zone
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+SynchronizeTimeZone                      N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\TPM
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Tpm-HASCertRetr                          N/A                    Pr�t           
+Tpm-Maintenance                          N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\UNP
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+RunUpdateNotificationMgr                 N/A                    D�sactiv�      
+
+Dossier�: \Microsoft\Windows\UpdateOrchestrator
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+MusUx_UpdateInterval                     N/A                    Pr�t           
+Reboot_AC                                N/A                    D�sactiv�      
+Reboot_Battery                           N/A                    D�sactiv�      
+Report policies                          N/A                    Pr�t           
+Schedule Maintenance Work                N/A                    D�sactiv�      
+Schedule Scan                            30/05/2026 13:47:31    Pr�t           
+Schedule Scan Static Task                N/A                    Pr�t           
+Schedule Wake To Work                    N/A                    D�sactiv�      
+Schedule Work                            N/A                    D�sactiv�      
+Start Oobe Expedite Work                 N/A                    Pr�t           
+StartOobeAppsScanAfterUpdate             N/A                    Pr�t           
+StartOobeAppsScan_LicenseAccepted        N/A                    Pr�t           
+UpdateModelTask                          N/A                    Pr�t           
+USO_UxBroker                             31/05/2026 19:07:59    Pr�t           
+
+Dossier�: \Microsoft\Windows\UPnP
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+UPnPHostConfig                           N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\USB
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Usb-Notifications                        N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\User Profile Service
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+HiveUploadTask                           N/A                    D�sactiv�      
+
+Dossier�: \Microsoft\Windows\WaaSMedic
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+PerformRemediation                       31/05/2026 04:30:00    Pr�t           
+
+Dossier�: \Microsoft\Windows\WCM
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+WiFiTask                                 N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\WDI
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+ResolutionHost                           N/A                    En cours       
+
+Dossier�: \Microsoft\Windows\Windows Defender
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Windows Defender Cache Maintenance       N/A                    Pr�t           
+Windows Defender Cleanup                 N/A                    Pr�t           
+Windows Defender Scheduled Scan          N/A                    Pr�t           
+Windows Defender Verification            N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Windows Error Reporting
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+QueueReporting                           30/05/2026 06:04:57    Pr�t           
+
+Dossier�: \Microsoft\Windows\Windows Filtering Platform
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+BfeOnServiceStartTypeChange              N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Windows Media Sharing
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+UpdateLibrary                            N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\WindowsColorSystem
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Calibration Loader                       N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\WindowsUpdate
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Refresh Group Policy Cache               N/A                    Pr�t           
+Scheduled Start                          30/05/2026 16:41:17    Pr�t           
+
+Dossier�: \Microsoft\Windows\WindowsUpdate\RUXIM
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+PLUGScheduler                            30/05/2026 08:43:13    Pr�t           
+
+Dossier�: \Microsoft\Windows\Wininet
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+CacheTask                                N/A                    En cours       
+
+Dossier�: \Microsoft\Windows\WlanSvc
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+CDSSync                                  N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\WOF
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+WIM-Hash-Management                      N/A                    Pr�t           
+WIM-Hash-Validation                      N/A                    D�sactiv�      
+
+Dossier�: \Microsoft\Windows\Work Folders
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Work Folders Logon Synchronization       N/A                    Pr�t           
+Work Folders Maintenance Work            N/A                    Pr�t           
+
+Dossier�: \Microsoft\Windows\Workplace Join
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+Automatic-Device-Join                    N/A                    D�sactiv�      
+Device-Sync                              N/A                    D�sactiv�      
+Recovery-Check                           N/A                    D�sactiv�      
+
+Dossier�: \Microsoft\Windows\WwanSvc
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+NotificationTask                         N/A                    Pr�t           
+OobeDiscovery                            N/A                    Pr�t           
+
+Dossier�: \Microsoft\XblGameSave
+Nom de la t�che                          Prochaine ex�cution    Statut         
+======================================== ====================== ===============
+XblGameSaveTask                          N/A                    Pr�t           

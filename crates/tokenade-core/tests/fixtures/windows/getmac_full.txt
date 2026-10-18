@@ -1,0 +1,5 @@
+
+Nom de la connexion: Ethernet
+Carte r�seau:        Intel(R) PRO/1000 MT Desktop Adapter
+Adresse physique:    08-00-27-7E-4B-39
+Nom du transport:    N/A

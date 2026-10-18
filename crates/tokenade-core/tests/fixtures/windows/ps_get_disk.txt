@@ -1,0 +1,7 @@
+
+Number Friendly Name Serial Number                    HealthStatus         OperationalStatus      Total Size Partition 
+                                                                                                             Style     
+------ ------------- -------------                    ------------         -----------------      ---------- ----------
+0      VBOX HARDDISK VBc7703d61-929ee620              Healthy              Online                      50 GB MBR       
+
+

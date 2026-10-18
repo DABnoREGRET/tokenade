@@ -1,0 +1,8 @@
+node_modules/
+vendor/
+package-lock.json
+*.log
+.DS_Store
+# Copied from the repo root by the `prepack` script (npm pack / npm publish).
+LICENSE-MIT
+LICENSE-APACHE

@@ -1,0 +1,12 @@
+---
+source: crates/tokenade-core/tests/snapshot_compactors.rs
+expression: "format!(\"kind={:?}\\n---\\n{out}\", kind)"
+---
+kind=TerraformPlan
+---
+[tokenade:terraform] 30 `Refreshing state…` line(s) folded
+
+Terraform will perform the following actions:
+
+  # aws_instance.foo will be updated in-place
+Plan: 0 to add, 1 to change, 0 to destroy.

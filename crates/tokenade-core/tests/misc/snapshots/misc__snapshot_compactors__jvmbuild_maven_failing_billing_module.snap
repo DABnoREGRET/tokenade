@@ -1,0 +1,22 @@
+---
+source: crates/tokenade-core/tests/snapshot_compactors.rs
+assertion_line: 309
+expression: out
+---
+Maven BUILD FAILURE: 7 errors, 0 warnings
+[INFO] Total time:  12.789 s
+compiled (1):
+  [INFO] Compiling 47 source files with javac [debug release 17] to target/classes
+
+modules (2):
+  parent 1.0-SNAPSHOT                                      [1/3]
+  billing 1.0-SNAPSHOT                                     [2/3]
+
+errors (7 shown):
+  [ERROR] COMPILATION ERROR :
+  [ERROR] /home/ci/billing/src/main/java/com/example/billing/InvoiceService.java:[42,16] cannot find symbol
+  [ERROR] /home/ci/billing/src/main/java/com/example/billing/InvoiceService.java:[58,12] incompatible types: java.lang.String cannot be converted to com.example.billing.Money
+  [ERROR] /home/ci/billing/src/main/java/com/example/billing/PaymentHandler.java:[15,5] unreported exception java.io.IOException; must be caught or declared to be thrown
+  [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile (default-compile) on project billing: Compilation failure
+  [ERROR]
+  [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.

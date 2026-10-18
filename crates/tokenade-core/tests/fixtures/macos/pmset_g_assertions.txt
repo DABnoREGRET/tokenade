@@ -1,0 +1,14 @@
+2026-03-07 04:51:21 +0100 
+Assertion status system-wide:
+   BackgroundTask                 0
+   ApplePushServiceTask           0
+   UserIsActive                   0
+   PreventUserIdleDisplaySleep    0
+   PreventSystemSleep             0
+   ExternalMedia                  0
+   PreventUserIdleSystemSleep     0
+   NetworkClientActive            0
+Kernel Assertions: 0x4=USB
+   id=554  level=255 0x4=USB creat=05/03/2026 17:36 description=com.apple.usb.externaldevice.0c100000 owner=USB Keyboard
+   id=555  level=255 0x4=USB creat=05/03/2026 17:37 description=com.apple.usb.externaldevice.0c200000 owner=USB Tablet
+System sleep preventers: .Display_boot

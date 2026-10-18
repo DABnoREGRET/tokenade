@@ -1,0 +1,33 @@
+---
+source: crates/tokenade-core/tests/snapshot_compactors.rs
+assertion_line: 71
+expression: "format!(\"kind={:?}\\n---\\n{out}\", kind)"
+---
+kind=Dns
+---
+; <<>> DiG 9.18.0 <<>> example.com any
+;; ANSWER SECTION:
+example.com. 3600  IN  A  value-A-1
+example.com. 3600  IN  A  value-A-2
+example.com. 3600  IN  A  value-A-3
+example.com. 3600  IN  A  value-A-4
+example.com. 3600  IN  A  value-A-5
+example.com. 3600  IN  A  value-A-6
+example.com. 3600  IN  AAAA  value-AAAA-1
+example.com. 3600  IN  AAAA  value-AAAA-2
+example.com. 3600  IN  AAAA  value-AAAA-3
+example.com. 3600  IN  AAAA  value-AAAA-4
+example.com. 3600  IN  AAAA  value-AAAA-5
+example.com. 3600  IN  AAAA  value-AAAA-6
+example.com. 3600  IN  MX  value-MX-1
+example.com. 3600  IN  MX  value-MX-2
+example.com. 3600  IN  MX  value-MX-3
+example.com. 3600  IN  MX  value-MX-4
+example.com. 3600  IN  MX  value-MX-5
+example.com. 3600  IN  MX  value-MX-6
+example.com. 3600  IN  TXT  value-TXT-1
+example.com. 3600  IN  TXT  value-TXT-2
+example.com. 3600  IN  TXT  value-TXT-3
+example.com. 3600  IN  TXT  value-TXT-4
+example.com. 3600  IN  TXT  value-TXT-5
+example.com. 3600  IN  TXT  value-TXT-6

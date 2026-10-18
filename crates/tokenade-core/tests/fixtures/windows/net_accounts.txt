@@ -1,0 +1,11 @@
+Fermeture forc�e de la session apr�s expiration�?�:                    Jamais
+Dur�e de vie minimale du mot de passe (jours)�:                        0
+Dur�e de vie maximale du mot de passe (jours)�:                        42
+Longueur minimale du mot de passe�:                                    0
+Nombre de mots de passe ant�rieurs � conserver�:                       Aucune
+Seuil de verrouillage�:                                                10
+Dur�e du verrouillage (min)�:                                          10
+Fen�tre d'observation du verrouillage (min)�:                          10
+R�le de l'ordinateur�:                                                 STATION
+La commande s'est termin�e correctement.
+

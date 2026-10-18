@@ -1,0 +1,1 @@
+/Users/macos/.cargo/bin:/usr/bin:/bin:/usr/sbin:/sbin

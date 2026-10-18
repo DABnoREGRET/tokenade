@@ -1,0 +1,7 @@
+agg cwd=/w/a sessions=1 msgs=3 in=5251 out=1015 cc=7 cr=3 trt=6 tools=[("Bash", 6)] last=2026-01-02T11:00:02Z
+agg cwd=/w/b sessions=1 msgs=1 in=1 out=1 cc=0 cr=0 trt=3 tools=[("mcp__tokenade__map", 4), ("unknown", 3)] last=2026-01-03T12:00:00Z
+models={"2026-01-01": {"claude-x": (17, 5, 1)}, "2026-01-02": {"claude-y": (4342, 61, 3)}, "2026-01-03": {"claude-x": (1, 1, 1)}}
+cachecreate={"2026-01-01": 7}
+tooltokens=[("2026-01-01", {"Bash": 6}), ("2026-01-03", {"mcp__tokenade__map": 4, "unknown": 3})]
+sessmodel sess=sess-one model=claude-x start=1767261600000 end=1767441600000
+sessmodel sess=sess-one model=claude-y start=1767351599000 end=1767351601000

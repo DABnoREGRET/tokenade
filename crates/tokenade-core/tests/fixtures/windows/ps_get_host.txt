@@ -1,0 +1,15 @@
+
+
+Name             : ConsoleHost
+Version          : 5.1.19041.6456
+InstanceId       : 95992c71-d818-4eb9-bbbc-2fe105965fa2
+UI               : System.Management.Automation.Internal.Host.InternalHostUserInterface
+CurrentCulture   : fr-FR
+CurrentUICulture : fr-FR
+PrivateData      : Microsoft.PowerShell.ConsoleHost+ConsoleColorProxy
+DebuggerEnabled  : True
+IsRunspacePushed : False
+Runspace         : System.Management.Automation.Runspaces.LocalRunspace
+
+
+

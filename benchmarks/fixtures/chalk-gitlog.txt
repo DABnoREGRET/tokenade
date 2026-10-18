@@ -1,0 +1,41 @@
+commit aa06bb5ac3f14df9fda8cfb54274dfc165ddfdef
+Author: Mohamed Hamed <79021260+mdhamed238@users.noreply.github.com>
+Date:   Tue Jan 27 07:30:36 2026 +0100
+
+    Fix typos (#664)
+
+ .editorconfig                             |  12 ++
+ .gitattributes                            |   1 +
+ .github/funding.yml                       |   4 +
+ .github/security.md                       |   3 +
+ .github/workflows/main.yml                |  26 +++
+ .gitignore                                |   4 +
+ .npmrc                                    |   1 +
+ benchmark.js                              |  57 ++++++
+ code-of-conduct.md                        |  74 +++++++
+ contributing.md                           |   3 +
+ examples/rainbow.js                       |  38 ++++
+ examples/screenshot.js                    |  27 +++
+ license                                   |   9 +
+ media/logo.png                            | Bin 0 -> 25676 bytes
+ media/logo.svg                            |   1 +
+ media/screenshot.png                      | Bin 0 -> 240871 bytes
+ package.json                              |  83 ++++++++
+ readme.md                                 | 297 +++++++++++++++++++++++++++
+ source/index.d.ts                         | 325 ++++++++++++++++++++++++++++++
+ source/index.js                           | 225 +++++++++++++++++++++
+ source/index.test-d.ts                    | 179 ++++++++++++++++
+ source/utilities.js                       |  33 +++
+ source/vendor/ansi-styles/index.d.ts      | 236 ++++++++++++++++++++++
+ source/vendor/ansi-styles/index.js        | 223 ++++++++++++++++++++
+ source/vendor/supports-color/browser.d.ts |   1 +
+ source/vendor/supports-color/browser.js   |  34 ++++
+ source/vendor/supports-color/index.d.ts   |  55 +++++
+ source/vendor/supports-color/index.js     | 190 +++++++++++++++++
+ test/_fixture.js                          |   3 +
+ test/chalk.js                             | 126 ++++++++++++
+ test/instance.js                          |  24 +++
+ test/level.js                             |  43 ++++
+ test/no-color-support.js                  |  24 +++
+ test/visible.js                           |  39 ++++
+ 34 files changed, 2400 insertions(+)

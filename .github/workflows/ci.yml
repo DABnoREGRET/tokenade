@@ -1,0 +1,100 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: always
+  # Never let a test run reach out to the release endpoint.
+  TOKENADE_NO_AUTO_UPDATE: "1"
+
+jobs:
+  fmt:
+    name: rustfmt
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt
+      - run: cargo fmt --all -- --check
+
+  clippy:
+    name: clippy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Host linker (lld, see .cargo/config.toml)
+        run: sudo apt-get update && sudo apt-get install -y lld
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo clippy --workspace --all-targets --locked
+
+  test:
+    name: tests (linux)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Host linker (lld, see .cargo/config.toml)
+        run: sudo apt-get update && sudo apt-get install -y lld ripgrep
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: cargo-nextest
+      - name: nextest
+        run: cargo nextest run --workspace --locked --profile ci
+      - name: doctests (nextest skips them)
+        run: cargo test --workspace --doc --locked
+
+  npm:
+    name: npm wrapper
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node --check npm/install.js && node --check npm/platform.js && node --check npm/uninstall.js && node --check npm/bin/tokenade.js
+      - run: node scripts/ci/release.mjs check-version --tag "v$(node -p 'require(`./npm/package.json`).version')"
+      - name: npm pack (dry run)
+        working-directory: npm
+        run: npm pack --dry-run
+
+  build:
+    name: build (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-latest
+            target: aarch64-apple-darwin
+          - os: windows-latest
+            target: x86_64-pc-windows-gnu
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: ${{ matrix.target }}
+      - name: build
+        shell: bash
+        run: cargo build --locked --bin tokenade --target ${{ matrix.target }}
+      - name: smoke
+        shell: bash
+        run: target/${{ matrix.target }}/debug/tokenade --version

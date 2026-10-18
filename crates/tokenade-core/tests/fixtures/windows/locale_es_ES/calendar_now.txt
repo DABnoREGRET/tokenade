@@ -1,0 +1,6 @@
+
+MinSupportedDateTime MaxSupportedDateTime AlgorithmType CalendarType Eras TwoDigitYearMax IsReadOnly
+-------------------- -------------------- ------------- ------------ ---- --------------- ----------
+01/01/0001 0:00:00   31/12/9999 23:59:59  SolarCalendar    Localized {1}             2049      False
+
+

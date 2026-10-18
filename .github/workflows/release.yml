@@ -1,0 +1,216 @@
+name: Release
+
+# Push a tag `v<version>` (matching Cargo.toml and npm/package.json) to build
+# the 7 targets, publish a GitHub Release carrying the archives + the signed
+# update manifest, then publish the npm packages. See RELEASING.md.
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  CARGO_TERM_COLOR: always
+  TOKENADE_NO_AUTO_UPDATE: "1"
+  # Pinned toolchains for the cross builds.
+  ZIG_VERSION: 0.14.1
+  LLVM_MINGW: llvm-mingw-20241217-ucrt-ubuntu-20.04-x86_64
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.v.outputs.version }}
+      prerelease: ${{ steps.v.outputs.prerelease }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/ci/release.mjs check-version --tag "${{ github.ref_name }}"
+      - id: v
+        run: |
+          v="${GITHUB_REF_NAME#v}"
+          echo "version=$v" >> "$GITHUB_OUTPUT"
+          case "$v" in *-*) echo "prerelease=true" >> "$GITHUB_OUTPUT" ;; *) echo "prerelease=false" >> "$GITHUB_OUTPUT" ;; esac
+
+  build:
+    needs: check
+    name: build ${{ matrix.target }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # glibc build pinned to glibc 2.31 (Debian 11+, Ubuntu 20.04+) via zig.
+          - { target: x86_64-unknown-linux-gnu, os: ubuntu-latest, kind: zig, zig_target: x86_64-unknown-linux-gnu.2.31, run: true }
+          - { target: x86_64-unknown-linux-musl, os: ubuntu-latest, kind: zig, zig_target: x86_64-unknown-linux-musl, run: true }
+          - { target: aarch64-unknown-linux-musl, os: ubuntu-latest, kind: zig, zig_target: aarch64-unknown-linux-musl, run: false }
+          - { target: aarch64-apple-darwin, os: macos-latest, kind: native, run: true }
+          - { target: x86_64-apple-darwin, os: macos-latest, kind: native, run: false }
+          # Static mingw CRT (+crt-static, .cargo/config.toml): the .exe ships alone.
+          - { target: x86_64-pc-windows-gnu, os: windows-latest, kind: native, run: true }
+          - { target: aarch64-pc-windows-gnullvm, os: ubuntu-latest, kind: llvm-mingw, run: false }
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: release-${{ matrix.target }}
+
+      - name: zig + cargo-zigbuild
+        if: matrix.kind == 'zig'
+        uses: mlugg/setup-zig@v2
+        with:
+          version: ${{ env.ZIG_VERSION }}
+      - if: matrix.kind == 'zig'
+        uses: taiki-e/install-action@v2
+        with:
+          tool: cargo-zigbuild
+      - name: lld (host linker for the x86_64-gnu target, .cargo/config.toml)
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y lld
+
+      - name: llvm-mingw (Windows ARM64 cross toolchain)
+        if: matrix.kind == 'llvm-mingw'
+        run: |
+          curl -fsSL "https://github.com/mstorsjo/llvm-mingw/releases/download/20241217/${LLVM_MINGW}.tar.xz" | tar -xJ -C "$RUNNER_TEMP"
+          bin="$RUNNER_TEMP/${LLVM_MINGW}/bin"
+          echo "$bin" >> "$GITHUB_PATH"
+          {
+            echo "CC_aarch64_pc_windows_gnullvm=$bin/aarch64-w64-mingw32-clang"
+            echo "CXX_aarch64_pc_windows_gnullvm=$bin/aarch64-w64-mingw32-clang++"
+            echo "AR_aarch64_pc_windows_gnullvm=$bin/llvm-ar"
+            echo "CARGO_TARGET_AARCH64_PC_WINDOWS_GNULLVM_LINKER=$bin/aarch64-w64-mingw32-clang"
+          } >> "$GITHUB_ENV"
+
+      - name: rquickjs-sys bindings for gnullvm (alias the msvc ones, same ABI)
+        if: matrix.kind == 'llvm-mingw'
+        run: |
+          cargo fetch --locked --target "${{ matrix.target }}"
+          for b in "$CARGO_HOME"/registry/src/*/rquickjs-sys-*/src/bindings; do
+            [ -f "$b/aarch64-pc-windows-gnullvm.rs" ] || cp "$b/aarch64-pc-windows-msvc.rs" "$b/aarch64-pc-windows-gnullvm.rs"
+          done
+
+      - name: mingw toolchain present
+        if: matrix.target == 'x86_64-pc-windows-gnu'
+        shell: bash
+        run: gcc --version && g++ --version
+
+      - name: build
+        shell: bash
+        run: |
+          if [ "${{ matrix.kind }}" = zig ]; then
+            case "${{ matrix.target }}" in
+              *-musl)
+                # sqlite-vec uses BSD u_int*_t types absent from musl headers.
+                t="${{ matrix.target }}"; export "CFLAGS_${t//-/_}=-Du_int8_t=uint8_t -Du_int16_t=uint16_t -Du_int64_t=uint64_t" ;;
+            esac
+            cargo zigbuild --release --locked --bin tokenade --target "${{ matrix.zig_target }}"
+          else
+            cargo build --release --locked --bin tokenade --target "${{ matrix.target }}"
+          fi
+          exe=tokenade; case "${{ matrix.target }}" in *windows*) exe=tokenade.exe ;; esac
+          mkdir -p "dist/${{ matrix.target }}"
+          cp "target/${{ matrix.target }}/release/$exe" "dist/${{ matrix.target }}/"
+          ls -l "dist/${{ matrix.target }}"
+
+      - name: smoke
+        if: matrix.run
+        shell: bash
+        run: |
+          exe=tokenade; case "${{ matrix.target }}" in *windows*) exe=tokenade.exe ;; esac
+          "dist/${{ matrix.target }}/$exe" --version | grep -F "${{ needs.check.outputs.version }}"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bin-${{ matrix.target }}
+          path: dist/${{ matrix.target }}/
+          if-no-files-found: error
+
+  publish:
+    needs: [check, build]
+    runs-on: ubuntu-latest
+    environment: release
+    permissions:
+      contents: write
+    env:
+      VERSION: ${{ needs.check.outputs.version }}
+      PRERELEASE: ${{ needs.check.outputs.prerelease }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: bin-*
+          path: artifacts
+
+      - name: stage dist/<target>/
+        run: |
+          for d in artifacts/bin-*; do
+            t="${d#artifacts/bin-}"
+            mkdir -p "dist/$t" && cp "$d"/* "dist/$t/"
+            case "$t" in *windows*) ;; *) chmod 755 "dist/$t/tokenade" ;; esac
+          done
+          ls -lR dist
+
+      - name: archives + manifest
+        run: |
+          node scripts/ci/release.mjs pack --dist dist --version "$VERSION" --out out
+          node scripts/ci/release.mjs manifest --out out --version "$VERSION" --require-all \
+            --base-url "https://github.com/${GITHUB_REPOSITORY}/releases/download/v${VERSION}"
+
+      - name: sign manifest
+        env:
+          TOKENADE_UPDATE_SIGNING_KEY: ${{ secrets.TOKENADE_UPDATE_SIGNING_KEY }}
+        run: |
+          node scripts/ci/release.mjs sign out/manifest.json
+          node scripts/ci/release.mjs verify out/manifest.json
+
+      - name: release notes
+        run: |
+          awk -v h="## $VERSION" '$0==h{on=1;next} on&&/^## /{exit} on' PATCHNOTES.md > notes.md
+          [ -s notes.md ] || echo "Tokenade $VERSION" > notes.md
+          cat notes.md
+
+      - name: GitHub Release (draft, upload, then publish)
+        run: |
+          flags=()
+          if [ "$PRERELEASE" = true ]; then flags+=(--prerelease --latest=false); else flags+=(--latest); fi
+          gh release create "v$VERSION" --verify-tag --draft --title "Tokenade $VERSION" --notes-file notes.md "${flags[@]}"
+          gh release upload "v$VERSION" out/* --clobber
+          gh release edit "v$VERSION" --draft=false
+
+      - name: npm — per-platform packages
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          tag=latest; [ "$PRERELEASE" = true ] && tag=next
+          node scripts/ci/release.mjs npm-platform --dist dist --version "$VERSION" --out npm-out
+          for d in npm-out/*/; do
+            name=$(node -p "require('./$d/package.json').name")
+            if npm view "$name@$VERSION" version >/dev/null 2>&1; then echo "= $name@$VERSION already published"; continue; fi
+            (cd "$d" && npm publish --access public --tag "$tag")
+          done
+
+      - name: npm — @tokenade/cli
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        working-directory: npm
+        run: |
+          tag=latest; [ "$PRERELEASE" = true ] && tag=next
+          if npm view "@tokenade/cli@$VERSION" version >/dev/null 2>&1; then echo "already published"; exit 0; fi
+          npm publish --access public --tag "$tag"

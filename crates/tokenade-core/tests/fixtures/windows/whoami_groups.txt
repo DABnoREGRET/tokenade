@@ -1,0 +1,16 @@
+
+Informations de groupe
+----------------------
+
+Nom du groupe                                                Type              SID          Attributs                                                                   
+============================================================ ================= ============ ============================================================================
+Tout le monde                                                Groupe bien connu S-1-1-0      Groupe obligatoire, Activ� par d�faut, Groupe activ�                        
+AUTORITE NT\Compte local et membre du groupe Administrateurs Groupe bien connu S-1-5-114    Groupe obligatoire, Activ� par d�faut, Groupe activ�                        
+BUILTIN\Administrateurs                                      Alias             S-1-5-32-544 Groupe obligatoire, Activ� par d�faut, Groupe activ�, Propri�taire du groupe
+BUILTIN\Utilisateurs                                         Alias             S-1-5-32-545 Groupe obligatoire, Activ� par d�faut, Groupe activ�                        
+AUTORITE NT\RESEAU                                           Groupe bien connu S-1-5-2      Groupe obligatoire, Activ� par d�faut, Groupe activ�                        
+AUTORITE NT\Utilisateurs authentifi�s                        Groupe bien connu S-1-5-11     Groupe obligatoire, Activ� par d�faut, Groupe activ�                        
+AUTORITE NT\Cette organisation                               Groupe bien connu S-1-5-15     Groupe obligatoire, Activ� par d�faut, Groupe activ�                        
+AUTORITE NT\Compte local                                     Groupe bien connu S-1-5-113    Groupe obligatoire, Activ� par d�faut, Groupe activ�                        
+AUTORITE NT\Authentifications NTLM                           Groupe bien connu S-1-5-64-10  Groupe obligatoire, Activ� par d�faut, Groupe activ�                        
+�tiquette obligatoire\Niveau obligatoire �lev�               Nom               S-1-16-12288                                                                             

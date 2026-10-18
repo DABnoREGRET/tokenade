@@ -1,0 +1,25 @@
+
+Alias de \\DESKTOP-T2HFRGA
+
+-------------------------------------------------------------------------------
+*Administrateurs
+*Administrateurs Hyper-V
+*Duplicateurs
+*IIS_IUSRS
+*Invit�s
+*Lecteurs des journaux d'�v�nements
+*Op�rateurs d'assistance de contr�le d'acc�s
+*Op�rateurs de chiffrement
+*Op�rateurs de configuration r�seau
+*Op�rateurs de sauvegarde
+*Propri�taires d'appareils
+*System Managed Accounts Group
+*Utilisateurs
+*Utilisateurs avec pouvoir
+*Utilisateurs de gestion � distance
+*Utilisateurs de l'Analyseur de performances
+*Utilisateurs du Bureau � distance
+*Utilisateurs du journal de performances
+*Utilisateurs du mod�le COM distribu�
+La commande s'est termin�e correctement.
+

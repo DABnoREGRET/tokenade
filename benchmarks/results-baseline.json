@@ -1,0 +1,2632 @@
+[
+  {
+    "task": "nav:find-symbol",
+    "mechanism": "symbol-index",
+    "repo": "anyhow",
+    "tokens_before": 12,
+    "tokens_after": 6,
+    "savings_pct": 50.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "anyhow",
+    "tokens_before": 4687,
+    "tokens_after": 87,
+    "savings_pct": 98.14380200554726,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "anyhow",
+    "tokens_before": 2657,
+    "tokens_after": 31,
+    "savings_pct": 98.83327060594655,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "anyhow",
+    "tokens_before": 1791,
+    "tokens_after": 34,
+    "savings_pct": 98.10161920714685,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "overview:files-list",
+    "mechanism": "symbol-index",
+    "repo": "anyhow",
+    "tokens_before": 177,
+    "tokens_after": 116,
+    "savings_pct": 34.463276836158194,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "review:file-skeleton",
+    "mechanism": "context-compression",
+    "repo": "anyhow",
+    "tokens_before": 9738,
+    "tokens_after": 3736,
+    "savings_pct": 61.6348326144999,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:filter-gitlog",
+    "mechanism": "output-filter",
+    "repo": "anyhow",
+    "tokens_before": 723,
+    "tokens_after": 13,
+    "savings_pct": 98.20193637621023,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:find-symbol",
+    "mechanism": "symbol-index",
+    "repo": "byteorder",
+    "tokens_before": 38,
+    "tokens_after": 16,
+    "savings_pct": 57.89473684210527,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "byteorder",
+    "tokens_before": 15300,
+    "tokens_after": 19,
+    "savings_pct": 99.87581699346406,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "byteorder",
+    "tokens_before": 10544,
+    "tokens_after": 20,
+    "savings_pct": 99.81031866464339,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "byteorder",
+    "tokens_before": 3367,
+    "tokens_after": 0,
+    "savings_pct": 100.0,
+    "millis": 0,
+    "quality": 0.0
+  },
+  {
+    "task": "overview:files-list",
+    "mechanism": "symbol-index",
+    "repo": "byteorder",
+    "tokens_before": 10,
+    "tokens_after": 51,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "review:file-skeleton",
+    "mechanism": "context-compression",
+    "repo": "byteorder",
+    "tokens_before": 26330,
+    "tokens_after": 6131,
+    "savings_pct": 76.71477402202811,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:filter-gitlog",
+    "mechanism": "output-filter",
+    "repo": "byteorder",
+    "tokens_before": 180,
+    "tokens_after": 7,
+    "savings_pct": 96.11111111111111,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:find-symbol",
+    "mechanism": "symbol-index",
+    "repo": "chalk",
+    "tokens_before": 16,
+    "tokens_after": 11,
+    "savings_pct": 31.25,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "chalk",
+    "tokens_before": 4331,
+    "tokens_after": 23,
+    "savings_pct": 99.46894481643962,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "chalk",
+    "tokens_before": 233,
+    "tokens_after": 0,
+    "savings_pct": 100.0,
+    "millis": 0,
+    "quality": 0.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "chalk",
+    "tokens_before": 2324,
+    "tokens_after": 25,
+    "savings_pct": 98.92426850258175,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "overview:files-list",
+    "mechanism": "symbol-index",
+    "repo": "chalk",
+    "tokens_before": 59,
+    "tokens_after": 63,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "review:file-skeleton",
+    "mechanism": "context-compression",
+    "repo": "chalk",
+    "tokens_before": 1475,
+    "tokens_after": 534,
+    "savings_pct": 63.79661016949153,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:filter-gitlog",
+    "mechanism": "output-filter",
+    "repo": "chalk",
+    "tokens_before": 546,
+    "tokens_after": 7,
+    "savings_pct": 98.71794871794873,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:find-symbol",
+    "mechanism": "symbol-index",
+    "repo": "click",
+    "tokens_before": 31,
+    "tokens_after": 21,
+    "savings_pct": 32.25806451612903,
+    "millis": 2,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "click",
+    "tokens_before": 22355,
+    "tokens_after": 91,
+    "savings_pct": 99.59293222992619,
+    "millis": 2,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "click",
+    "tokens_before": 28744,
+    "tokens_after": 93,
+    "savings_pct": 99.67645421653215,
+    "millis": 2,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "click",
+    "tokens_before": 2599,
+    "tokens_after": 91,
+    "savings_pct": 96.49865332820315,
+    "millis": 1,
+    "quality": 1.0
+  },
+  {
+    "task": "overview:files-list",
+    "mechanism": "symbol-index",
+    "repo": "click",
+    "tokens_before": 426,
+    "tokens_after": 133,
+    "savings_pct": 68.7793427230047,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "review:file-skeleton",
+    "mechanism": "context-compression",
+    "repo": "click",
+    "tokens_before": 26480,
+    "tokens_after": 9657,
+    "savings_pct": 63.5309667673716,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:filter-gitlog",
+    "mechanism": "output-filter",
+    "repo": "click",
+    "tokens_before": 2275,
+    "tokens_after": 8,
+    "savings_pct": 99.64835164835165,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:find-symbol",
+    "mechanism": "symbol-index",
+    "repo": "cobra",
+    "tokens_before": 0,
+    "tokens_after": 8,
+    "savings_pct": 0.0,
+    "millis": 1,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "cobra",
+    "tokens_before": 702,
+    "tokens_after": 0,
+    "savings_pct": 100.0,
+    "millis": 1,
+    "quality": 0.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "cobra",
+    "tokens_before": 684,
+    "tokens_after": 0,
+    "savings_pct": 100.0,
+    "millis": 1,
+    "quality": 0.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "cobra",
+    "tokens_before": 246,
+    "tokens_after": 0,
+    "savings_pct": 100.0,
+    "millis": 1,
+    "quality": 0.0
+  },
+  {
+    "task": "overview:files-list",
+    "mechanism": "symbol-index",
+    "repo": "cobra",
+    "tokens_before": 168,
+    "tokens_after": 359,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "review:file-skeleton",
+    "mechanism": "context-compression",
+    "repo": "cobra",
+    "tokens_before": 17804,
+    "tokens_after": 8324,
+    "savings_pct": 53.24646146933273,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:filter-gitlog",
+    "mechanism": "output-filter",
+    "repo": "cobra",
+    "tokens_before": 903,
+    "tokens_after": 12,
+    "savings_pct": 98.67109634551495,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:find-symbol",
+    "mechanism": "symbol-index",
+    "repo": "flask-tiny",
+    "tokens_before": 202,
+    "tokens_after": 113,
+    "savings_pct": 44.05940594059406,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "flask-tiny",
+    "tokens_before": 2039,
+    "tokens_after": 67,
+    "savings_pct": 96.71407552721922,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "flask-tiny",
+    "tokens_before": 308,
+    "tokens_after": 30,
+    "savings_pct": 90.25974025974025,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "flask-tiny",
+    "tokens_before": 2512,
+    "tokens_after": 75,
+    "savings_pct": 97.01433121019109,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "overview:files-list",
+    "mechanism": "symbol-index",
+    "repo": "flask-tiny",
+    "tokens_before": 118,
+    "tokens_after": 150,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "review:file-skeleton",
+    "mechanism": "context-compression",
+    "repo": "flask-tiny",
+    "tokens_before": 1707,
+    "tokens_after": 594,
+    "savings_pct": 65.20210896309314,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:filter-gitlog",
+    "mechanism": "output-filter",
+    "repo": "flask-tiny",
+    "tokens_before": 730,
+    "tokens_after": 8,
+    "savings_pct": 98.9041095890411,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:find-symbol",
+    "mechanism": "symbol-index",
+    "repo": "fw:django-mini",
+    "tokens_before": 11,
+    "tokens_after": 100,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "fw:django-mini",
+    "tokens_before": 254,
+    "tokens_after": 9,
+    "savings_pct": 96.45669291338582,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "fw:django-mini",
+    "tokens_before": 56,
+    "tokens_after": 14,
+    "savings_pct": 75.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "fw:django-mini",
+    "tokens_before": 20,
+    "tokens_after": 8,
+    "savings_pct": 60.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "overview:files-list",
+    "mechanism": "symbol-index",
+    "repo": "fw:django-mini",
+    "tokens_before": 24,
+    "tokens_after": 74,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "review:file-skeleton",
+    "mechanism": "context-compression",
+    "repo": "fw:django-mini",
+    "tokens_before": 129,
+    "tokens_after": 120,
+    "savings_pct": 6.976744186046512,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:find-symbol",
+    "mechanism": "symbol-index",
+    "repo": "fw:nextjs-mini",
+    "tokens_before": 11,
+    "tokens_after": 17,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "fw:nextjs-mini",
+    "tokens_before": 334,
+    "tokens_after": 10,
+    "savings_pct": 97.0059880239521,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "fw:nextjs-mini",
+    "tokens_before": 14,
+    "tokens_after": 0,
+    "savings_pct": 100.0,
+    "millis": 0,
+    "quality": 0.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "fw:nextjs-mini",
+    "tokens_before": 42,
+    "tokens_after": 0,
+    "savings_pct": 100.0,
+    "millis": 0,
+    "quality": 0.0
+  },
+  {
+    "task": "overview:files-list",
+    "mechanism": "symbol-index",
+    "repo": "fw:nextjs-mini",
+    "tokens_before": 27,
+    "tokens_after": 96,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "review:file-skeleton",
+    "mechanism": "context-compression",
+    "repo": "fw:nextjs-mini",
+    "tokens_before": 236,
+    "tokens_after": 188,
+    "savings_pct": 20.33898305084746,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:find-symbol",
+    "mechanism": "symbol-index",
+    "repo": "gin",
+    "tokens_before": 0,
+    "tokens_after": 99,
+    "savings_pct": 0.0,
+    "millis": 1,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "gin",
+    "tokens_before": 5303,
+    "tokens_after": 81,
+    "savings_pct": 98.4725627003583,
+    "millis": 2,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "gin",
+    "tokens_before": 1419,
+    "tokens_after": 0,
+    "savings_pct": 100.0,
+    "millis": 2,
+    "quality": 0.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "gin",
+    "tokens_before": 905,
+    "tokens_after": 84,
+    "savings_pct": 90.7182320441989,
+    "millis": 2,
+    "quality": 1.0
+  },
+  {
+    "task": "overview:files-list",
+    "mechanism": "symbol-index",
+    "repo": "gin",
+    "tokens_before": 459,
+    "tokens_after": 526,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "review:file-skeleton",
+    "mechanism": "context-compression",
+    "repo": "gin",
+    "tokens_before": 25040,
+    "tokens_after": 6109,
+    "savings_pct": 75.60303514376997,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:filter-gitlog",
+    "mechanism": "output-filter",
+    "repo": "gin",
+    "tokens_before": 2197,
+    "tokens_after": 22,
+    "savings_pct": 98.99863450159309,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:find-symbol",
+    "mechanism": "symbol-index",
+    "repo": "lerna",
+    "tokens_before": 0,
+    "tokens_after": 23,
+    "savings_pct": 0.0,
+    "millis": 11,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "lerna",
+    "tokens_before": 1563,
+    "tokens_after": 0,
+    "savings_pct": 100.0,
+    "millis": 12,
+    "quality": 0.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "lerna",
+    "tokens_before": 580,
+    "tokens_after": 0,
+    "savings_pct": 100.0,
+    "millis": 11,
+    "quality": 0.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "lerna",
+    "tokens_before": 6585,
+    "tokens_after": 123,
+    "savings_pct": 98.13211845102505,
+    "millis": 11,
+    "quality": 1.0
+  },
+  {
+    "task": "overview:files-list",
+    "mechanism": "symbol-index",
+    "repo": "lerna",
+    "tokens_before": 7225,
+    "tokens_after": 216,
+    "savings_pct": 97.01038062283736,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "review:file-skeleton",
+    "mechanism": "context-compression",
+    "repo": "lerna",
+    "tokens_before": 556,
+    "tokens_after": 283,
+    "savings_pct": 49.10071942446043,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:filter-gitlog",
+    "mechanism": "output-filter",
+    "repo": "lerna",
+    "tokens_before": 23750,
+    "tokens_after": 17,
+    "savings_pct": 99.92842105263158,
+    "millis": 1,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:find-symbol",
+    "mechanism": "symbol-index",
+    "repo": "pydantic-core",
+    "tokens_before": 90,
+    "tokens_after": 100,
+    "savings_pct": 0.0,
+    "millis": 17,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "pydantic-core",
+    "tokens_before": 100830,
+    "tokens_after": 138,
+    "savings_pct": 99.86313597143706,
+    "millis": 5,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "pydantic-core",
+    "tokens_before": 95079,
+    "tokens_after": 170,
+    "savings_pct": 99.82120131679972,
+    "millis": 4,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "pydantic-core",
+    "tokens_before": 131235,
+    "tokens_after": 123,
+    "savings_pct": 99.90627500285747,
+    "millis": 7,
+    "quality": 1.0
+  },
+  {
+    "task": "overview:files-list",
+    "mechanism": "symbol-index",
+    "repo": "pydantic-core",
+    "tokens_before": 6279,
+    "tokens_after": 164,
+    "savings_pct": 97.38811912724957,
+    "millis": 2,
+    "quality": 1.0
+  },
+  {
+    "task": "review:file-skeleton",
+    "mechanism": "context-compression",
+    "repo": "pydantic-core",
+    "tokens_before": 58115,
+    "tokens_after": 20760,
+    "savings_pct": 64.27772520003442,
+    "millis": 1,
+    "quality": 1.0
+  },
+  {
+    "task": "output:filter-gitlog",
+    "mechanism": "output-filter",
+    "repo": "pydantic-core",
+    "tokens_before": 12087,
+    "tokens_after": 18,
+    "savings_pct": 99.85107967237528,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:find-symbol",
+    "mechanism": "symbol-index",
+    "repo": "ruff",
+    "tokens_before": 5290,
+    "tokens_after": 219,
+    "savings_pct": 95.8601134215501,
+    "millis": 96,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "ruff",
+    "tokens_before": 129900,
+    "tokens_after": 0,
+    "savings_pct": 100.0,
+    "millis": 37,
+    "quality": 0.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "ruff",
+    "tokens_before": 101881,
+    "tokens_after": 209,
+    "savings_pct": 99.79485870770802,
+    "millis": 30,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "ruff",
+    "tokens_before": 125838,
+    "tokens_after": 0,
+    "savings_pct": 100.0,
+    "millis": 32,
+    "quality": 0.0
+  },
+  {
+    "task": "overview:files-list",
+    "mechanism": "symbol-index",
+    "repo": "ruff",
+    "tokens_before": 80074,
+    "tokens_after": 217,
+    "savings_pct": 99.7290006743762,
+    "millis": 6,
+    "quality": 1.0
+  },
+  {
+    "task": "review:file-skeleton",
+    "mechanism": "context-compression",
+    "repo": "ruff",
+    "tokens_before": 74162,
+    "tokens_after": 44959,
+    "savings_pct": 39.377309134057874,
+    "millis": 2,
+    "quality": 1.0
+  },
+  {
+    "task": "output:filter-gitlog",
+    "mechanism": "output-filter",
+    "repo": "ruff",
+    "tokens_before": 163809,
+    "tokens_after": 13,
+    "savings_pct": 99.99206392811139,
+    "millis": 8,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:find-symbol",
+    "mechanism": "symbol-index",
+    "repo": "slugify",
+    "tokens_before": 0,
+    "tokens_after": 17,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "slugify",
+    "tokens_before": 172,
+    "tokens_after": 0,
+    "savings_pct": 100.0,
+    "millis": 0,
+    "quality": 0.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "slugify",
+    "tokens_before": 2679,
+    "tokens_after": 13,
+    "savings_pct": 99.51474430757744,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "slugify",
+    "tokens_before": 35,
+    "tokens_after": 0,
+    "savings_pct": 100.0,
+    "millis": 0,
+    "quality": 0.0
+  },
+  {
+    "task": "overview:files-list",
+    "mechanism": "symbol-index",
+    "repo": "slugify",
+    "tokens_before": 14,
+    "tokens_after": 43,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "review:file-skeleton",
+    "mechanism": "context-compression",
+    "repo": "slugify",
+    "tokens_before": 1035,
+    "tokens_after": 394,
+    "savings_pct": 61.93236714975845,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:filter-gitlog",
+    "mechanism": "output-filter",
+    "repo": "slugify",
+    "tokens_before": 204,
+    "tokens_after": 4,
+    "savings_pct": 98.0392156862745,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:find-symbol",
+    "mechanism": "symbol-index",
+    "repo": "zod",
+    "tokens_before": 21,
+    "tokens_after": 15,
+    "savings_pct": 28.57142857142857,
+    "millis": 6,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "zod",
+    "tokens_before": 3535,
+    "tokens_after": 0,
+    "savings_pct": 100.0,
+    "millis": 6,
+    "quality": 0.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "zod",
+    "tokens_before": 37477,
+    "tokens_after": 150,
+    "savings_pct": 99.59975451610322,
+    "millis": 7,
+    "quality": 1.0
+  },
+  {
+    "task": "nav:semantic-search",
+    "mechanism": "semantic-bm25",
+    "repo": "zod",
+    "tokens_before": 18437,
+    "tokens_after": 153,
+    "savings_pct": 99.17014698703693,
+    "millis": 6,
+    "quality": 1.0
+  },
+  {
+    "task": "overview:files-list",
+    "mechanism": "symbol-index",
+    "repo": "zod",
+    "tokens_before": 3984,
+    "tokens_after": 165,
+    "savings_pct": 95.85843373493977,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "review:file-skeleton",
+    "mechanism": "context-compression",
+    "repo": "zod",
+    "tokens_before": 37149,
+    "tokens_after": 16334,
+    "savings_pct": 56.03111793049611,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:filter-gitlog",
+    "mechanism": "output-filter",
+    "repo": "zod",
+    "tokens_before": 9269,
+    "tokens_after": 16,
+    "savings_pct": 99.82738159456252,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:filter-cargo",
+    "mechanism": "output-filter",
+    "repo": "ruff",
+    "tokens_before": 2481,
+    "tokens_after": 94,
+    "savings_pct": 96.21120515921,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:filter-pytest",
+    "mechanism": "output-filter",
+    "repo": "click",
+    "tokens_before": 8235,
+    "tokens_after": 725,
+    "savings_pct": 91.19611414693381,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "web:html-to-markdown",
+    "mechanism": "web-extract",
+    "repo": "wiki-software-engineering.html",
+    "tokens_before": 103972,
+    "tokens_after": 25904,
+    "savings_pct": 75.08559996922249,
+    "millis": 67,
+    "quality": 1.0
+  },
+  {
+    "task": "web:html-to-markdown",
+    "mechanism": "web-extract",
+    "repo": "wiki-tokenization.html",
+    "tokens_before": 41377,
+    "tokens_after": 10574,
+    "savings_pct": 74.44473983130725,
+    "millis": 18,
+    "quality": 1.0
+  },
+  {
+    "task": "web:a11y-snapshot",
+    "mechanism": "web-extract",
+    "repo": "playwright",
+    "tokens_before": 436,
+    "tokens_after": 315,
+    "savings_pct": 27.75229357798165,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:json-compact",
+    "mechanism": "json-compact",
+    "repo": "cargo-metadata.json",
+    "tokens_before": 1753,
+    "tokens_after": 1312,
+    "savings_pct": 25.15687393040502,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:json-compact",
+    "mechanism": "json-compact",
+    "repo": "gh-prs.json",
+    "tokens_before": 97610,
+    "tokens_after": 8238,
+    "savings_pct": 91.56029095379571,
+    "millis": 1,
+    "quality": 1.0
+  },
+  {
+    "task": "output:notebook-compact",
+    "mechanism": "notebook-compact",
+    "repo": "firecrawl-big.ipynb",
+    "tokens_before": 1179002,
+    "tokens_after": 7785,
+    "savings_pct": 99.3396957765975,
+    "millis": 1,
+    "quality": 1.0
+  },
+  {
+    "task": "output:notebook-compact",
+    "mechanism": "notebook-compact",
+    "repo": "firecrawl-medium.ipynb",
+    "tokens_before": 165818,
+    "tokens_after": 6082,
+    "savings_pct": 96.33212317118769,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:filter:cargo:mid-log-error",
+    "mechanism": "output-filter",
+    "repo": "adversarial",
+    "tokens_before": 2286,
+    "tokens_after": 193,
+    "savings_pct": 91.5573053368329,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:filter:cargo-test:single-failure",
+    "mechanism": "output-filter",
+    "repo": "adversarial",
+    "tokens_before": 532,
+    "tokens_after": 13,
+    "savings_pct": 97.55639097744361,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:filter:git-status:mixed-sections",
+    "mechanism": "output-filter",
+    "repo": "adversarial",
+    "tokens_before": 31,
+    "tokens_after": 19,
+    "savings_pct": 38.70967741935484,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:filter:pytest:rare-failure",
+    "mechanism": "output-filter",
+    "repo": "adversarial",
+    "tokens_before": 657,
+    "tokens_after": 16,
+    "savings_pct": 97.56468797564688,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:filter:false-positive-precision",
+    "mechanism": "output-filter",
+    "repo": "adversarial",
+    "tokens_before": 128,
+    "tokens_after": 19,
+    "savings_pct": 85.15625,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:skeleton-fidelity",
+    "mechanism": "context-compression",
+    "repo": "anyhow",
+    "tokens_before": 11359,
+    "tokens_after": 6633,
+    "savings_pct": 41.60577515626376,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:skeleton-fidelity",
+    "mechanism": "context-compression",
+    "repo": "byteorder",
+    "tokens_before": 26330,
+    "tokens_after": 6131,
+    "savings_pct": 76.71477402202811,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:skeleton-fidelity",
+    "mechanism": "context-compression",
+    "repo": "chalk",
+    "tokens_before": 1730,
+    "tokens_after": 450,
+    "savings_pct": 73.98843930635837,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:skeleton-fidelity",
+    "mechanism": "context-compression",
+    "repo": "click",
+    "tokens_before": 34480,
+    "tokens_after": 9298,
+    "savings_pct": 73.03364269141531,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:skeleton-fidelity",
+    "mechanism": "context-compression",
+    "repo": "cobra",
+    "tokens_before": 26458,
+    "tokens_after": 10978,
+    "savings_pct": 58.50782372061381,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:skeleton-fidelity",
+    "mechanism": "context-compression",
+    "repo": "flask-tiny",
+    "tokens_before": 3891,
+    "tokens_after": 903,
+    "savings_pct": 76.79259830377795,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:skeleton-fidelity",
+    "mechanism": "context-compression",
+    "repo": "fw:django-mini",
+    "tokens_before": 129,
+    "tokens_after": 120,
+    "savings_pct": 6.976744186046512,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:skeleton-fidelity",
+    "mechanism": "context-compression",
+    "repo": "fw:nextjs-mini",
+    "tokens_before": 236,
+    "tokens_after": 188,
+    "savings_pct": 20.33898305084746,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:skeleton-fidelity",
+    "mechanism": "context-compression",
+    "repo": "gin",
+    "tokens_before": 25040,
+    "tokens_after": 6109,
+    "savings_pct": 75.60303514376997,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:skeleton-fidelity",
+    "mechanism": "context-compression",
+    "repo": "lerna",
+    "tokens_before": 56985,
+    "tokens_after": 23,
+    "savings_pct": 99.95963850136,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:skeleton-fidelity",
+    "mechanism": "context-compression",
+    "repo": "pydantic-core",
+    "tokens_before": 98919,
+    "tokens_after": 18355,
+    "savings_pct": 81.44441411660046,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:skeleton-fidelity",
+    "mechanism": "context-compression",
+    "repo": "ruff",
+    "tokens_before": 113455,
+    "tokens_after": 33595,
+    "savings_pct": 70.38914106914635,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:skeleton-fidelity",
+    "mechanism": "context-compression",
+    "repo": "slugify",
+    "tokens_before": 2057,
+    "tokens_after": 379,
+    "savings_pct": 81.57510938259601,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:skeleton-fidelity",
+    "mechanism": "context-compression",
+    "repo": "zod",
+    "tokens_before": 40082,
+    "tokens_after": 17032,
+    "savings_pct": 57.50711042363156,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:index-recall",
+    "mechanism": "symbol-index",
+    "repo": "anyhow",
+    "tokens_before": 4,
+    "tokens_after": 7,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:index-recall",
+    "mechanism": "symbol-index",
+    "repo": "byteorder",
+    "tokens_before": 4,
+    "tokens_after": 6,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:index-recall",
+    "mechanism": "symbol-index",
+    "repo": "chalk",
+    "tokens_before": 4,
+    "tokens_after": 6,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:index-recall",
+    "mechanism": "symbol-index",
+    "repo": "click",
+    "tokens_before": 4,
+    "tokens_after": 7,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:index-recall",
+    "mechanism": "symbol-index",
+    "repo": "cobra",
+    "tokens_before": 4,
+    "tokens_after": 7,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:index-recall",
+    "mechanism": "symbol-index",
+    "repo": "flask-tiny",
+    "tokens_before": 4,
+    "tokens_after": 6,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:index-recall",
+    "mechanism": "symbol-index",
+    "repo": "fw:django-mini",
+    "tokens_before": 4,
+    "tokens_after": 6,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:index-recall",
+    "mechanism": "symbol-index",
+    "repo": "fw:nextjs-mini",
+    "tokens_before": 4,
+    "tokens_after": 6,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:index-recall",
+    "mechanism": "symbol-index",
+    "repo": "gin",
+    "tokens_before": 5,
+    "tokens_after": 7,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:index-recall",
+    "mechanism": "symbol-index",
+    "repo": "lerna",
+    "tokens_before": 4,
+    "tokens_after": 7,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:index-recall",
+    "mechanism": "symbol-index",
+    "repo": "pydantic-core",
+    "tokens_before": 5,
+    "tokens_after": 7,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:index-recall",
+    "mechanism": "symbol-index",
+    "repo": "ruff",
+    "tokens_before": 5,
+    "tokens_after": 7,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:index-recall",
+    "mechanism": "symbol-index",
+    "repo": "slugify",
+    "tokens_before": 4,
+    "tokens_after": 6,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:index-recall",
+    "mechanism": "symbol-index",
+    "repo": "zod",
+    "tokens_before": 4,
+    "tokens_after": 7,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:index:unicode-identifiers",
+    "mechanism": "symbol-index",
+    "repo": "adversarial",
+    "tokens_before": 12,
+    "tokens_after": 3,
+    "savings_pct": 75.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:web:broken-html",
+    "mechanism": "web-extract",
+    "repo": "adversarial",
+    "tokens_before": 58,
+    "tokens_after": 11,
+    "savings_pct": 81.03448275862068,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:web:script-injection",
+    "mechanism": "web-extract",
+    "repo": "adversarial",
+    "tokens_before": 102,
+    "tokens_after": 15,
+    "savings_pct": 85.29411764705883,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:json:hostile-keys",
+    "mechanism": "json-compact",
+    "repo": "adversarial",
+    "tokens_before": 27,
+    "tokens_after": 21,
+    "savings_pct": 22.22222222222222,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:json:huge-15mb",
+    "mechanism": "json-compact",
+    "repo": "adversarial",
+    "tokens_before": 3424432,
+    "tokens_after": 2899996,
+    "savings_pct": 15.314539754330061,
+    "millis": 206,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:notebook:base64-bomb",
+    "mechanism": "notebook-compact",
+    "repo": "adversarial",
+    "tokens_before": 1250073,
+    "tokens_after": 35,
+    "savings_pct": 99.99720016351044,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:web:cloudflare-challenge",
+    "mechanism": "stealth",
+    "repo": "adversarial",
+    "tokens_before": 66,
+    "tokens_after": 189,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:stealth:detector-coverage",
+    "mechanism": "stealth",
+    "repo": "adversarial",
+    "tokens_before": 0,
+    "tokens_after": 0,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:docs:docx-roundtrip",
+    "mechanism": "docs-extract",
+    "repo": "adversarial",
+    "tokens_before": 17,
+    "tokens_after": 468,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:stack:user-frame-preserved",
+    "mechanism": "stacktrace-compact",
+    "repo": "adversarial",
+    "tokens_before": 0,
+    "tokens_after": 0,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:stack:mixed-language",
+    "mechanism": "stacktrace-compact",
+    "repo": "adversarial",
+    "tokens_before": 35,
+    "tokens_after": 16,
+    "savings_pct": 54.285714285714285,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:csv-compact",
+    "mechanism": "csv-compact",
+    "repo": "synthetic-200x8",
+    "tokens_before": 12392,
+    "tokens_after": 785,
+    "savings_pct": 93.66526791478374,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:stacktrace-compact",
+    "mechanism": "stacktrace-compact",
+    "repo": "python-200frames",
+    "tokens_before": 6382,
+    "tokens_after": 119,
+    "savings_pct": 98.13538075838295,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:yaml-compact",
+    "mechanism": "yaml-compact",
+    "repo": "kubectl-deployment",
+    "tokens_before": 10783,
+    "tokens_after": 339,
+    "savings_pct": 96.85616247797459,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:yaml:managed-fields-bomb",
+    "mechanism": "yaml-compact",
+    "repo": "adversarial",
+    "tokens_before": 424767,
+    "tokens_after": 47,
+    "savings_pct": 99.98893511030754,
+    "millis": 23,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:yaml:pathological-indent",
+    "mechanism": "yaml-compact",
+    "repo": "adversarial",
+    "tokens_before": 30,
+    "tokens_after": 27,
+    "savings_pct": 10.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:curl-verbose-compact",
+    "mechanism": "logs",
+    "repo": "synth-curl-v",
+    "tokens_before": 735,
+    "tokens_after": 134,
+    "savings_pct": 81.7687074829932,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:logs:tls-handshake-bomb",
+    "mechanism": "logs",
+    "repo": "adversarial",
+    "tokens_before": 66466,
+    "tokens_after": 66,
+    "savings_pct": 99.90070111034213,
+    "millis": 3,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:logs:repeated-template",
+    "mechanism": "logs",
+    "repo": "adversarial",
+    "tokens_before": 230013,
+    "tokens_after": 38,
+    "savings_pct": 99.98347919465421,
+    "millis": 12,
+    "quality": 1.0
+  },
+  {
+    "task": "output:pdf-extract",
+    "mechanism": "pdf-extract",
+    "repo": "firecrawl-example.pdf",
+    "tokens_before": 1288,
+    "tokens_after": 100,
+    "savings_pct": 92.2360248447205,
+    "millis": 1,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:pdf:huge-fixture",
+    "mechanism": "pdf-extract",
+    "repo": "firecrawl-example-long.pdf",
+    "tokens_before": 299980,
+    "tokens_after": 93889,
+    "savings_pct": 68.70158010534035,
+    "millis": 2261,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:pdf:garbage-input",
+    "mechanism": "pdf-extract",
+    "repo": "adversarial",
+    "tokens_before": 7,
+    "tokens_after": 0,
+    "savings_pct": 100.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:diff-compact",
+    "mechanism": "diff",
+    "repo": "ruff-recent.patch",
+    "tokens_before": 21394996,
+    "tokens_after": 5849,
+    "savings_pct": 99.97266183176664,
+    "millis": 1161,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:diff:huge-multi-file",
+    "mechanism": "diff",
+    "repo": "adversarial",
+    "tokens_before": 4940,
+    "tokens_after": 585,
+    "savings_pct": 88.1578947368421,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:diff:binary-in-middle",
+    "mechanism": "diff",
+    "repo": "adversarial",
+    "tokens_before": 46,
+    "tokens_after": 44,
+    "savings_pct": 4.3478260869565215,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:archive-compact",
+    "mechanism": "archive",
+    "repo": "tar-3000-entries",
+    "tokens_before": 51173,
+    "tokens_after": 72,
+    "savings_pct": 99.85930080315791,
+    "millis": 2,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:archive:huge-50k-entries",
+    "mechanism": "archive",
+    "repo": "adversarial",
+    "tokens_before": 834723,
+    "tokens_after": 42,
+    "savings_pct": 99.99496839071165,
+    "millis": 45,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:archive:pathological-names",
+    "mechanism": "archive",
+    "repo": "adversarial",
+    "tokens_before": 66,
+    "tokens_after": 46,
+    "savings_pct": 30.303030303030305,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:terraform-compact",
+    "mechanism": "terraform",
+    "repo": "synth-terraform-800",
+    "tokens_before": 12677,
+    "tokens_after": 373,
+    "savings_pct": 97.05766348505168,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:terraform:refresh-bomb",
+    "mechanism": "terraform",
+    "repo": "adversarial",
+    "tokens_before": 149768,
+    "tokens_after": 60,
+    "savings_pct": 99.95993803749799,
+    "millis": 7,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:terraform:no-changes-plan",
+    "mechanism": "terraform",
+    "repo": "adversarial",
+    "tokens_before": 770,
+    "tokens_after": 61,
+    "savings_pct": 92.07792207792208,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:tabular-compact",
+    "mechanism": "tabular",
+    "repo": "kubectl-500-pods",
+    "tokens_before": 6584,
+    "tokens_after": 3880,
+    "savings_pct": 41.06925880923451,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:tabular:docker-ps-wide-columns",
+    "mechanism": "tabular",
+    "repo": "adversarial",
+    "tokens_before": 140,
+    "tokens_after": 70,
+    "savings_pct": 50.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:tabular:unknown-header-passthrough",
+    "mechanism": "tabular",
+    "repo": "adversarial",
+    "tokens_before": 27,
+    "tokens_after": 27,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:auto-dispatch",
+    "mechanism": "auto",
+    "repo": "8-format-mix",
+    "tokens_before": 47,
+    "tokens_after": 75,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 0.875
+  },
+  {
+    "task": "adv:auto:ambiguous-json-with-trace",
+    "mechanism": "auto",
+    "repo": "adversarial",
+    "tokens_before": 21,
+    "tokens_after": 21,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:auto:tiny-inputs",
+    "mechanism": "auto",
+    "repo": "adversarial",
+    "tokens_before": 2,
+    "tokens_after": 0,
+    "savings_pct": 100.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:env-compact",
+    "mechanism": "env",
+    "repo": "ci-env-dump",
+    "tokens_before": 407,
+    "tokens_after": 114,
+    "savings_pct": 71.99017199017199,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:env:bulk-secret-no-leak",
+    "mechanism": "env",
+    "repo": "adversarial",
+    "tokens_before": 3024,
+    "tokens_after": 933,
+    "savings_pct": 69.14682539682539,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:env:case-insensitive-secret",
+    "mechanism": "env",
+    "repo": "adversarial",
+    "tokens_before": 41,
+    "tokens_after": 45,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:markdown-compact",
+    "mechanism": "markdown",
+    "repo": "real-readme",
+    "tokens_before": 20188,
+    "tokens_after": 7503,
+    "savings_pct": 62.834357043788394,
+    "millis": 1,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:markdown:huge-code-block",
+    "mechanism": "markdown",
+    "repo": "adversarial",
+    "tokens_before": 104743,
+    "tokens_after": 28,
+    "savings_pct": 99.97326790334438,
+    "millis": 5,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:markdown:link-reference-dump",
+    "mechanism": "markdown",
+    "repo": "adversarial",
+    "tokens_before": 5608,
+    "tokens_after": 27,
+    "savings_pct": 99.51854493580599,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:lockfile-compact",
+    "mechanism": "lockfile",
+    "repo": "ruff-cargo-lock-5800",
+    "tokens_before": 33755,
+    "tokens_after": 2561,
+    "savings_pct": 92.41297585542883,
+    "millis": 2,
+    "quality": 1.0
+  },
+  {
+    "task": "output:lockfile-go-sum",
+    "mechanism": "lockfile",
+    "repo": "gin-go-sum",
+    "tokens_before": 2121,
+    "tokens_after": 525,
+    "savings_pct": 75.24752475247524,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:lockfile:huge-cargo",
+    "mechanism": "lockfile",
+    "repo": "adversarial",
+    "tokens_before": 116739,
+    "tokens_after": 8741,
+    "savings_pct": 92.51235662460702,
+    "millis": 6,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:lockfile:unusual-names",
+    "mechanism": "lockfile",
+    "repo": "adversarial",
+    "tokens_before": 53,
+    "tokens_after": 30,
+    "savings_pct": 43.39622641509434,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:sql-compact",
+    "mechanism": "sql",
+    "repo": "psql-500-rows",
+    "tokens_before": 9040,
+    "tokens_after": 832,
+    "savings_pct": 90.79646017699115,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:sql:unicode-and-nulls",
+    "mechanism": "sql",
+    "repo": "adversarial",
+    "tokens_before": 40,
+    "tokens_after": 49,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:sql:huge-mysql-5000",
+    "mechanism": "sql",
+    "repo": "adversarial",
+    "tokens_before": 32519,
+    "tokens_after": 227,
+    "savings_pct": 99.30194655432209,
+    "millis": 1,
+    "quality": 1.0
+  },
+  {
+    "task": "output:metrics-compact",
+    "mechanism": "metrics",
+    "repo": "prom-100x30",
+    "tokens_before": 41972,
+    "tokens_after": 12523,
+    "savings_pct": 70.16344229486324,
+    "millis": 3,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:metrics:histogram-explosion",
+    "mechanism": "metrics",
+    "repo": "adversarial",
+    "tokens_before": 772,
+    "tokens_after": 60,
+    "savings_pct": 92.2279792746114,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:metrics:cardinality-blowup",
+    "mechanism": "metrics",
+    "repo": "adversarial",
+    "tokens_before": 102239,
+    "tokens_after": 112,
+    "savings_pct": 99.89045276264439,
+    "millis": 6,
+    "quality": 1.0
+  },
+  {
+    "task": "output:accesslog-compact",
+    "mechanism": "accesslog",
+    "repo": "synth-10k-mixed",
+    "tokens_before": 356358,
+    "tokens_after": 92,
+    "savings_pct": 99.97418326514348,
+    "millis": 21,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:accesslog:huge-100k",
+    "mechanism": "accesslog",
+    "repo": "adversarial",
+    "tokens_before": 2276827,
+    "tokens_after": 39,
+    "savings_pct": 99.9982870898843,
+    "millis": 153,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:accesslog:malformed-mix",
+    "mechanism": "accesslog",
+    "repo": "adversarial",
+    "tokens_before": 1824,
+    "tokens_after": 44,
+    "savings_pct": 97.58771929824562,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:journal-compact",
+    "mechanism": "journal",
+    "repo": "journalctl-5070",
+    "tokens_before": 82637,
+    "tokens_after": 533,
+    "savings_pct": 99.35501046746614,
+    "millis": 5,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:journal:dmesg-100k",
+    "mechanism": "journal",
+    "repo": "adversarial",
+    "tokens_before": 825013,
+    "tokens_after": 39,
+    "savings_pct": 99.99527280176191,
+    "millis": 63,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:journal:mixed-garbage",
+    "mechanism": "journal",
+    "repo": "adversarial",
+    "tokens_before": 493,
+    "tokens_after": 38,
+    "savings_pct": 92.2920892494929,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:sourcemap-compact",
+    "mechanism": "sourcemap",
+    "repo": "synth-100src-700kB",
+    "tokens_before": 175854,
+    "tokens_after": 421,
+    "savings_pct": 99.76059685875784,
+    "millis": 9,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:sourcemap:huge-20MB",
+    "mechanism": "sourcemap",
+    "repo": "adversarial",
+    "tokens_before": 5001704,
+    "tokens_after": 422,
+    "savings_pct": 99.99156287537207,
+    "millis": 223,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:sourcemap:truncated",
+    "mechanism": "sourcemap",
+    "repo": "adversarial",
+    "tokens_before": 25,
+    "tokens_after": 25,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:openapi-compact",
+    "mechanism": "openapi",
+    "repo": "synth-80ep-40sc",
+    "tokens_before": 26536,
+    "tokens_after": 1104,
+    "savings_pct": 95.83961410913476,
+    "millis": 1,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:openapi:huge-1000ep",
+    "mechanism": "openapi",
+    "repo": "adversarial",
+    "tokens_before": 1081831,
+    "tokens_after": 3111,
+    "savings_pct": 99.71243197874713,
+    "millis": 57,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:openapi:hostile",
+    "mechanism": "openapi",
+    "repo": "adversarial",
+    "tokens_before": 14,
+    "tokens_after": 14,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:graphql-compact",
+    "mechanism": "graphql",
+    "repo": "synth-60types-8fields",
+    "tokens_before": 33199,
+    "tokens_after": 804,
+    "savings_pct": 97.57824030844301,
+    "millis": 2,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:graphql:huge-1000types",
+    "mechanism": "graphql",
+    "repo": "adversarial",
+    "tokens_before": 1501110,
+    "tokens_after": 7345,
+    "savings_pct": 99.51069541872349,
+    "millis": 85,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:graphql:hostile",
+    "mechanism": "graphql",
+    "repo": "adversarial",
+    "tokens_before": 190,
+    "tokens_after": 70,
+    "savings_pct": 63.1578947368421,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:strace-compact",
+    "mechanism": "strace",
+    "repo": "synth-5k-50err",
+    "tokens_before": 66807,
+    "tokens_after": 1658,
+    "savings_pct": 97.51822413818911,
+    "millis": 4,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:strace:huge-200k",
+    "mechanism": "strace",
+    "repo": "adversarial",
+    "tokens_before": 2652644,
+    "tokens_after": 6086,
+    "savings_pct": 99.77056853463941,
+    "millis": 183,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:strace:hostile",
+    "mechanism": "strace",
+    "repo": "adversarial",
+    "tokens_before": 119,
+    "tokens_after": 119,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:jvmbuild-compact",
+    "mechanism": "jvmbuild",
+    "repo": "synth-mvn-3mod-500dl-8err",
+    "tokens_before": 14076,
+    "tokens_after": 282,
+    "savings_pct": 97.99658994032396,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:jvmbuild:huge-mvn-50k",
+    "mechanism": "jvmbuild",
+    "repo": "adversarial",
+    "tokens_before": 1422207,
+    "tokens_after": 1550,
+    "savings_pct": 99.89101445851412,
+    "millis": 66,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:jvmbuild:hostile",
+    "mechanism": "jvmbuild",
+    "repo": "adversarial",
+    "tokens_before": 157,
+    "tokens_after": 116,
+    "savings_pct": 26.11464968152866,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:kubectl-compact",
+    "mechanism": "kubectl",
+    "repo": "synth-pod-30ev-5warn",
+    "tokens_before": 3277,
+    "tokens_after": 380,
+    "savings_pct": 88.40402807445834,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:kubectl:huge-1k-events",
+    "mechanism": "kubectl",
+    "repo": "adversarial",
+    "tokens_before": 22062,
+    "tokens_after": 1721,
+    "savings_pct": 92.19925664037711,
+    "millis": 1,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:kubectl:hostile",
+    "mechanism": "kubectl",
+    "repo": "adversarial",
+    "tokens_before": 248,
+    "tokens_after": 96,
+    "savings_pct": 61.29032258064516,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:ansible-compact",
+    "mechanism": "ansible",
+    "repo": "synth-5h-10t-1f",
+    "tokens_before": 19151,
+    "tokens_after": 326,
+    "savings_pct": 98.29773902146101,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:ansible:huge-recap-200",
+    "mechanism": "ansible",
+    "repo": "adversarial",
+    "tokens_before": 2051719,
+    "tokens_after": 5564,
+    "savings_pct": 99.72881276627062,
+    "millis": 95,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:ansible:hostile",
+    "mechanism": "ansible",
+    "repo": "adversarial",
+    "tokens_before": 332,
+    "tokens_after": 262,
+    "savings_pct": 21.084337349397593,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:ghactions-compact",
+    "mechanism": "ghactions",
+    "repo": "synth-25g-30lpg-3e-5w",
+    "tokens_before": 18224,
+    "tokens_after": 212,
+    "savings_pct": 98.83669885864794,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:ghactions:huge-monorepo-100k",
+    "mechanism": "ghactions",
+    "repo": "adversarial",
+    "tokens_before": 2392909,
+    "tokens_after": 1067,
+    "savings_pct": 99.95540992156408,
+    "millis": 123,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:ghactions:hostile",
+    "mechanism": "ghactions",
+    "repo": "adversarial",
+    "tokens_before": 159,
+    "tokens_after": 91,
+    "savings_pct": 42.76729559748428,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:pkginstall-compact",
+    "mechanism": "pkginstall",
+    "repo": "synth-pip-40pkg-3warn",
+    "tokens_before": 1819,
+    "tokens_after": 227,
+    "savings_pct": 87.52061572292469,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:pkginstall:huge-pip-500",
+    "mechanism": "pkginstall",
+    "repo": "adversarial",
+    "tokens_before": 22694,
+    "tokens_after": 951,
+    "savings_pct": 95.80946505684322,
+    "millis": 1,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:pkginstall:hostile",
+    "mechanism": "pkginstall",
+    "repo": "adversarial",
+    "tokens_before": 118,
+    "tokens_after": 78,
+    "savings_pct": 33.89830508474576,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:k8smanifest-compact",
+    "mechanism": "k8smanifest",
+    "repo": "synth-6deploy-4cm",
+    "tokens_before": 5980,
+    "tokens_after": 287,
+    "savings_pct": 95.20066889632108,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:k8smanifest:huge-helm-150",
+    "mechanism": "k8smanifest",
+    "repo": "adversarial",
+    "tokens_before": 236573,
+    "tokens_after": 4231,
+    "savings_pct": 98.21154569625443,
+    "millis": 12,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:k8smanifest:hostile",
+    "mechanism": "k8smanifest",
+    "repo": "adversarial",
+    "tokens_before": 177,
+    "tokens_after": 79,
+    "savings_pct": 55.367231638418076,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:gitlog-compact",
+    "mechanism": "gitlog",
+    "repo": "synth-100commits-10body-stat",
+    "tokens_before": 24068,
+    "tokens_after": 1839,
+    "savings_pct": 92.35914907761344,
+    "millis": 1,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:gitlog:huge-5k-commits",
+    "mechanism": "gitlog",
+    "repo": "adversarial",
+    "tokens_before": 785280,
+    "tokens_after": 9247,
+    "savings_pct": 98.82245823145884,
+    "millis": 46,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:gitlog:hostile",
+    "mechanism": "gitlog",
+    "repo": "adversarial",
+    "tokens_before": 276,
+    "tokens_after": 122,
+    "savings_pct": 55.79710144927537,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:dns-compact",
+    "mechanism": "dns",
+    "repo": "synth-dig-any-5answers",
+    "tokens_before": 327,
+    "tokens_after": 108,
+    "savings_pct": 66.97247706422019,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:dns:huge-trace-30",
+    "mechanism": "dns",
+    "repo": "adversarial",
+    "tokens_before": 7040,
+    "tokens_after": 2324,
+    "savings_pct": 66.98863636363637,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:dns:hostile",
+    "mechanism": "dns",
+    "repo": "adversarial",
+    "tokens_before": 229,
+    "tokens_after": 102,
+    "savings_pct": 55.45851528384279,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:ndjson-compact",
+    "mechanism": "ndjson",
+    "repo": "synth-2k-20err-20warn",
+    "tokens_before": 137727,
+    "tokens_after": 2146,
+    "savings_pct": 98.44184509936323,
+    "millis": 6,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:ndjson:huge-100k",
+    "mechanism": "ndjson",
+    "repo": "adversarial",
+    "tokens_before": 6982327,
+    "tokens_after": 10946,
+    "savings_pct": 99.84323277898615,
+    "millis": 330,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:ndjson:hostile",
+    "mechanism": "ndjson",
+    "repo": "adversarial",
+    "tokens_before": 140,
+    "tokens_after": 232,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:systemd-compact",
+    "mechanism": "systemd",
+    "repo": "synth-200journal-3err-4cgroup",
+    "tokens_before": 3653,
+    "tokens_after": 518,
+    "savings_pct": 85.81987407610183,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:systemd:huge-journal-10k",
+    "mechanism": "systemd",
+    "repo": "adversarial",
+    "tokens_before": 173893,
+    "tokens_after": 1445,
+    "savings_pct": 99.16902923061883,
+    "millis": 10,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:systemd:hostile",
+    "mechanism": "systemd",
+    "repo": "adversarial",
+    "tokens_before": 226,
+    "tokens_after": 301,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:filelist-compact",
+    "mechanism": "filelist",
+    "repo": "synth-1000files",
+    "tokens_before": 7088,
+    "tokens_after": 209,
+    "savings_pct": 97.05135440180587,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:filelist:huge-50k",
+    "mechanism": "filelist",
+    "repo": "adversarial",
+    "tokens_before": 368264,
+    "tokens_after": 218,
+    "savings_pct": 99.94080333673669,
+    "millis": 29,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:filelist:hostile",
+    "mechanism": "filelist",
+    "repo": "adversarial",
+    "tokens_before": 578,
+    "tokens_after": 160,
+    "savings_pct": 72.31833910034602,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:disk-compact",
+    "mechanism": "disk",
+    "repo": "synth-100dirs-10files",
+    "tokens_before": 6259,
+    "tokens_after": 327,
+    "savings_pct": 94.77552324652501,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:disk:huge-du-55k",
+    "mechanism": "disk",
+    "repo": "adversarial",
+    "tokens_before": 340860,
+    "tokens_after": 357,
+    "savings_pct": 99.89526491814821,
+    "millis": 27,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:disk:hostile",
+    "mechanism": "disk",
+    "repo": "adversarial",
+    "tokens_before": 78,
+    "tokens_after": 98,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:searchout-compact",
+    "mechanism": "searchout",
+    "repo": "synth-20files-100matches",
+    "tokens_before": 26769,
+    "tokens_after": 1922,
+    "savings_pct": 92.82005304643431,
+    "millis": 1,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:searchout:huge-50k",
+    "mechanism": "searchout",
+    "repo": "adversarial",
+    "tokens_before": 683445,
+    "tokens_after": 4788,
+    "savings_pct": 99.29943155630664,
+    "millis": 47,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:searchout:hostile",
+    "mechanism": "searchout",
+    "repo": "adversarial",
+    "tokens_before": 179,
+    "tokens_after": 126,
+    "savings_pct": 29.608938547486037,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:netstat-compact",
+    "mechanism": "netstat",
+    "repo": "synth-30L-500E-50TW",
+    "tokens_before": 13004,
+    "tokens_after": 654,
+    "savings_pct": 94.97077822208551,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:netstat:huge-105k",
+    "mechanism": "netstat",
+    "repo": "adversarial",
+    "tokens_before": 2405677,
+    "tokens_after": 916,
+    "savings_pct": 99.96192340035674,
+    "millis": 165,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:netstat:hostile",
+    "mechanism": "netstat",
+    "repo": "adversarial",
+    "tokens_before": 258,
+    "tokens_after": 172,
+    "savings_pct": 33.33333333333333,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:cargobench-compact",
+    "mechanism": "cargobench",
+    "repo": "synth-50bench-criterion",
+    "tokens_before": 5195,
+    "tokens_after": 1162,
+    "savings_pct": 77.63233878729548,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:cargobench:huge-500",
+    "mechanism": "cargobench",
+    "repo": "adversarial",
+    "tokens_before": 53018,
+    "tokens_after": 9726,
+    "savings_pct": 81.65528688369987,
+    "millis": 3,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:cargobench:hostile",
+    "mechanism": "cargobench",
+    "repo": "adversarial",
+    "tokens_before": 199,
+    "tokens_after": 176,
+    "savings_pct": 11.557788944723619,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:containerlogs-compact",
+    "mechanism": "containerlogs",
+    "repo": "synth-8streams-500lines",
+    "tokens_before": 56728,
+    "tokens_after": 874,
+    "savings_pct": 98.45931462417148,
+    "millis": 3,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:containerlogs:huge-100k",
+    "mechanism": "containerlogs",
+    "repo": "adversarial",
+    "tokens_before": 1459735,
+    "tokens_after": 2160,
+    "savings_pct": 99.85202793657753,
+    "millis": 95,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:containerlogs:hostile",
+    "mechanism": "containerlogs",
+    "repo": "adversarial",
+    "tokens_before": 197,
+    "tokens_after": 344,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:vmstat-compact",
+    "mechanism": "vmstat",
+    "repo": "synth-600samples-peak-at-300",
+    "tokens_before": 13290,
+    "tokens_after": 295,
+    "savings_pct": 97.78028592927012,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:vmstat:huge-10k",
+    "mechanism": "vmstat",
+    "repo": "adversarial",
+    "tokens_before": 221030,
+    "tokens_after": 296,
+    "savings_pct": 99.86608152739447,
+    "millis": 14,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:vmstat:hostile",
+    "mechanism": "vmstat",
+    "repo": "adversarial",
+    "tokens_before": 194,
+    "tokens_after": 289,
+    "savings_pct": 0.0,
+    "millis": 0,
+    "quality": 1.0
+  },
+  {
+    "task": "output:tcpdump-compact",
+    "mechanism": "tcpdump",
+    "repo": "synth-5kpkts-20flows",
+    "tokens_before": 132945,
+    "tokens_after": 536,
+    "savings_pct": 99.59682575501148,
+    "millis": 8,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:tcpdump:huge-100k",
+    "mechanism": "tcpdump",
+    "repo": "adversarial",
+    "tokens_before": 2721945,
+    "tokens_after": 1252,
+    "savings_pct": 99.95400347912981,
+    "millis": 172,
+    "quality": 1.0
+  },
+  {
+    "task": "adv:tcpdump:hostile",
+    "mechanism": "tcpdump",
+    "repo": "adversarial",
+    "tokens_before": 255,
+    "tokens_after": 163,
+    "savings_pct": 36.07843137254902,
+    "millis": 0,
+    "quality": 1.0
+  }
+]

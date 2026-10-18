@@ -1,0 +1,4 @@
+    Updating crates.io index
+     Locking 39 packages to latest compatible versions
+   Compiling anyhow v1.0.102 (/home/username/.devworkspace/projects/super-token-saver/benchmarks/repos/anyhow)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.78s

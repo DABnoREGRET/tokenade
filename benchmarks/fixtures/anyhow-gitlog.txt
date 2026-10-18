@@ -1,0 +1,61 @@
+commit 841522b2aa09732fecee40804440d2c35c68c480
+Author: David Tolnay <dtolnay@gmail.com>
+Date:   Mon Mar 23 19:44:29 2026 -0700
+
+    Raise minimum tested compiler to rust 1.85
+
+ .github/FUNDING.yml                 |    1 +
+ .github/workflows/ci.yml            |  146 +++++
+ .gitignore                          |    2 +
+ Cargo.toml                          |   36 ++
+ LICENSE-APACHE                      |  176 ++++++
+ LICENSE-MIT                         |   23 +
+ README.md                           |  179 ++++++
+ build.rs                            |  194 +++++++
+ rust-toolchain.toml                 |    2 +
+ src/backtrace.rs                    |   48 ++
+ src/chain.rs                        |  102 ++++
+ src/context.rs                      |  193 +++++++
+ src/ensure.rs                       |  935 +++++++++++++++++++++++++++++++
+ src/error.rs                        | 1059 +++++++++++++++++++++++++++++++++++
+ src/fmt.rs                          |  158 ++++++
+ src/kind.rs                         |  121 ++++
+ src/lib.rs                          |  728 ++++++++++++++++++++++++
+ src/macros.rs                       |  245 ++++++++
+ src/nightly.rs                      |   58 ++
+ src/ptr.rs                          |  187 +++++++
+ src/wrapper.rs                      |   84 +++
+ tests/common/mod.rs                 |   14 +
+ tests/compiletest.rs                |    7 +
+ tests/crate/.gitignore              |    2 +
+ tests/crate/Cargo.toml              |   17 +
+ tests/crate/test.rs                 |    3 +
+ tests/drop/mod.rs                   |   53 ++
+ tests/test_autotrait.rs             |   34 ++
+ tests/test_backtrace.rs             |   15 +
+ tests/test_boxed.rs                 |   45 ++
+ tests/test_chain.rs                 |   69 +++
+ tests/test_context.rs               |  172 ++++++
+ tests/test_convert.rs               |   46 ++
+ tests/test_downcast.rs              |  123 ++++
+ tests/test_ensure.rs                |  756 +++++++++++++++++++++++++
+ tests/test_ffi.rs                   |   19 +
+ tests/test_fmt.rs                   |   93 +++
+ tests/test_macros.rs                |   97 ++++
+ tests/test_repr.rs                  |   30 +
+ tests/test_source.rs                |   62 ++
+ tests/ui/chained-comparison.rs      |    8 +
+ tests/ui/chained-comparison.stderr  |   10 +
+ tests/ui/empty-ensure.rs            |    6 +
+ tests/ui/empty-ensure.stderr        |   12 +
+ tests/ui/ensure-nonbool.rs          |   40 ++
+ tests/ui/ensure-nonbool.stderr      |  113 ++++
+ tests/ui/must-use.rs                |   11 +
+ tests/ui/must-use.stderr            |   15 +
+ tests/ui/no-impl.rs                 |    8 +
+ tests/ui/no-impl.stderr             |   32 ++
+ tests/ui/temporary-value.rs         |    5 +
+ tests/ui/temporary-value.stderr     |   15 +
+ tests/ui/wrong-interpolation.rs     |    5 +
+ tests/ui/wrong-interpolation.stderr |    5 +
+ 54 files changed, 6619 insertions(+)

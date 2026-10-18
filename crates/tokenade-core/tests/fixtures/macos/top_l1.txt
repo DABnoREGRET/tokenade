@@ -1,0 +1,32 @@
+Processes: 428 total, 3 running, 425 sleeping, 1277 threads 
+2026/03/07 04:31:56
+Load Avg: 1.44, 1.19, 1.11 
+CPU usage: 38.46% user, 61.53% sys, 0.0% idle 
+SharedLibs: 226M resident, 33M data, 30M linkedit.
+MemRegions: 59137 total, 877M resident, 65M private, 197M shared.
+PhysMem: 4868M used (954M wired), 1059M unused.
+VM: 14T vsize, 3090M framework vsize, 33992(0) swapins, 109906(0) swapouts.
+Networks: packets: 603689/493M in, 30935893/19G out.
+Disks: 5477513/191G read, 9295410/389G written.
+
+PID    COMMAND          %CPU TIME     #TH #WQ #PORTS MEM   PURG CMPRS PGRP  PPID  STATE    BOOSTS  %CPU_ME %CPU_OTHRS UID FAULTS COW MSGSENT MSGRECV SYSBSD SYSMACH CSW     PAGEINS IDLEW POWER INSTRS CYCLES USER       #MREGS RPRVT VPRVT VSIZE KPRVT KSHRD
+68064  top              0.0  00:00.26 1/1 0   15     1448K 0B   0B    68064 68063 running  *0[1]   0.00000 0.00000    0   1533   145 149124  74551   2185   77258   72      0       0     0.0   0      0      root       N/A    N/A   N/A   N/A   N/A   N/A  
+68063  sshd             0.0  00:00.00 1   0   19     592K  0B   0B    68060 68060 sleeping *0[1]   0.00000 0.00000    501 416    137 36      18      122    73      15      0       0     0.0   0      0      macos      N/A    N/A   N/A   N/A   N/A   N/A  
+68060  sshd             0.0  00:00.04 3   2   29     1164K 0B   0B    68060 1     sleeping *0[1]   0.00000 0.00000    0   2489   374 138     63      5863   390     249     0       0     0.0   0      0      root       N/A    N/A   N/A   N/A   N/A   N/A  
+68015  kcm              0.0  00:00.02 4   3   22     600K  0B   0B    68015 1     sleeping *0[1]   0.00000 0.00000    0   1932   122 98      47      861    228     92      0       0     0.0   0      0      root       N/A    N/A   N/A   N/A   N/A   N/A  
+67712  PerfPowerService 0.0  00:02.25 4   2   656    3880K 280K 0B    67712 1     sleeping *0[128] 0.00000 0.00000    0   14543  239 15891   5807    89026  25548   20004   9       4516  0.0   0      0      root       N/A    N/A   N/A   N/A   N/A   N/A  
+66165  netbiosd         0.0  00:00.06 2   1   23     648K  0B   0B    66165 1     sleeping *0[1]   0.00000 0.00000    222 2294   142 114     38      2841   202     865     0       414   0.0   0      0      _netbios   N/A    N/A   N/A   N/A   N/A   N/A  
+66163  com.apple.AppleU 0.0  00:00.01 3   2   139    532K  0B   0B    66163 1     sleeping  0[1]   0.00000 0.00000    270 564    57  837     430     363    720     126     8       0     0.0   0      0      _driverkit N/A    N/A   N/A   N/A   N/A   N/A  
+65259  mdmclient        0.0  00:14.30 3   2   52     1504K 0B   712K  65259 1     sleeping *0[195] 0.00000 0.00000    0   4641   230 55993   2598    390163 121579  113572  6       9877  0.0   0      0      root       N/A    N/A   N/A   N/A   N/A   N/A  
+47287  installer        0.0  00:23.81 8   3   104    4408K 0B   3616K 47284 47286 sleeping *0[1]   0.00000 0.00000    0   4884   254 136513  2539    931777 269756  1041700 0       88504 0.0   0      0      root       N/A    N/A   N/A   N/A   N/A   N/A  
+47286  sudo             0.0  00:00.05 2   1   41     1236K 0B   932K  47284 47284 sleeping *0[1]   0.00000 0.00000    0   2255   190 153     448     3603   1202    1060    0       147   0.0   0      0      root       N/A    N/A   N/A   N/A   N/A   N/A  
+47284  zsh              0.0  00:00.00 1   0   21     488K  0B   472K  47284 1     sleeping *0[1]   0.00000 0.00000    501 649    158 71      26      345    133     22      0       0     0.0   0      0      macos      N/A    N/A   N/A   N/A   N/A   N/A  
+47217  installer        0.0  00:24.12 8   3   103    4412K 0B   3680K 47214 47216 sleeping *0[1]   0.00000 0.00000    0   4893   254 136753  2538    933908 270235  1042729 0       91113 0.0   0      0      root       N/A    N/A   N/A   N/A   N/A   N/A  
+47216  sudo             0.0  00:00.05 2   1   41     1236K 0B   932K  47214 47214 sleeping *0[1]   0.00000 0.00000    0   2252   190 153     448     3599   1208    1196    0       147   0.0   0      0      root       N/A    N/A   N/A   N/A   N/A   N/A  
+47214  zsh              0.0  00:00.00 1   0   21     488K  0B   472K  47214 1     sleeping *0[1]   0.00000 0.00000    501 649    158 71      26      345    133     23      0       0     0.0   0      0      macos      N/A    N/A   N/A   N/A   N/A   N/A  
+47122  installer        0.0  00:24.51 8   3   103    4416K 0B   3608K 47119 47121 sleeping *0[1]   0.00000 0.00000    0   4644   254 138306  2547    944814 273349  1055386 0       90522 0.0   0      0      root       N/A    N/A   N/A   N/A   N/A   N/A  
+47121  sudo             0.0  00:00.05 2   1   41     1240K 0B   936K  47119 47119 sleeping *0[1]   0.00000 0.00000    0   2272   190 153     452     3613   1216    1207    0       149   0.0   0      0      root       N/A    N/A   N/A   N/A   N/A   N/A  
+47119  zsh              0.0  00:00.00 1   0   21     488K  0B   472K  47119 1     sleeping *0[1]   0.00000 0.00000    501 650    158 71      26      345    133     23      0       0     0.0   0      0      macos      N/A    N/A   N/A   N/A   N/A   N/A  
+47044  installer        0.0  00:24.28 8   3   104    4408K 0B   3616K 47041 47043 sleeping *0[1]   0.00000 0.00000    0   4708   254 138563  2546    946725 273864  1057003 0       91117 0.0   0      0      root       N/A    N/A   N/A   N/A   N/A   N/A  
+47043  sudo             0.0  00:00.05 2   1   41     1248K 0B   936K  47041 47041 sleeping *0[1]   0.00000 0.00000    0   2305   189 153     452     3597   1210    1200    0       149   0.0   0      0      root       N/A    N/A   N/A   N/A   N/A   N/A  
+47041  zsh              0.0  00:00.00 1   0   21     488K  0B   472K  47041 1     sleeping *0[1]   0.00000 0.00000    501 650    158 71      26      345    133     22      0       0     0.0   0      0      macos      N/A    N/A   N/A   N/A   N/A   N/A  

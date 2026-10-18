@@ -1,0 +1,311 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/tokenade-core",
+    "crates/tokenade-cli",
+    "crates/tokenade-bench",
+]
+# tokenade-llama-sys is EXCLUDED from the workspace on purpose: its build.rs
+# compiles llama.cpp via cmake (very slow, needs a C/C++ toolchain), and the
+# local-llm sub-agent feature it backs is SHELVED. It stays an OPTIONAL path
+# dep of tokenade-cli, pulled ONLY by `--features local-llm` — a path dep does
+# not need to be a workspace member. Excluding it means `cargo build/test
+# --workspace` and the release build NEVER invoke cmake/llama.cpp; the feature
+# still resolves & compiles on demand with `-p tokenade-cli --features local-llm`.
+# Cloned competitor & benchmark corpora are inputs, not part of our workspace.
+exclude = ["crates/tokenade-llama-sys", "competitors", "benchmarks/repos", "experiments"]
+
+[workspace.package]
+version = "1.1.10"
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/tokenade/tokenade"
+description = "Tokenade — universal token-optimization engine for AI coding agents"
+
+[workspace.dependencies]
+# Snapshot testing — locks compactor outputs so a "saved 1 % more"
+# refactor that mangles the output gets caught instead of celebrated.
+# Workflow: `cargo insta test` to run, `cargo insta review` to accept
+# / reject diffs. Inspired by rtk's testing methodology.
+insta = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+regex = "1"
+# Lightweight ZIP reader (Office Open XML containers: docx/xlsx/pptx, odt, epub).
+# Default features disabled to avoid pulling in optional codecs; we only need
+# DEFLATE (which is baked in) and STORED.
+zip = { version = "2", default-features = false, features = ["deflate"] }
+# Pure-Rust PDF text extraction (MIT). Heavier than the rest of the stack
+# (~5 MB compiled) but PDF is a mission-priority case for Claude Code.
+pdf-extract = "0.12"
+# Same version pdf-extract resolves to — a direct handle on the content stream
+# so we can drop invisible text BEFORE extraction (see docs::strip_invisible_text).
+lopdf = "0.42"
+# PDF engine #2 — a RESCUE path, not a replacement. See docs::extract_pdf.
+pdf_oxide = "0.3"
+# Legacy-encoding decode for documents (Shift-JIS/GBK/Latin-1/UTF-16): pure
+# Rust, no system deps — the multi-OS constraint rules out iconv & friends.
+encoding_rs = "0.8"
+chardetng = "0.1"
+# Real BPE tokenizer (cl100k_base, o200k_base). Optional — enabled via the
+# `bpe` feature on `tokenade-core`. ~1.5 MB embedded vocab; off by default so the
+# zero-dep heuristic stays the shipping path.
+tiktoken-rs = "0.11"
+# SQLite for persistent memory + exploration log. `bundled` ships an in-tree
+# SQLite build so users don't need libsqlite3 on the system. This is the
+# default backend — zero config, zero install steps.
+rusqlite = { version = "0.32", features = ["bundled", "load_extension"] }
+# sqlite-vec — asg017's vector-search extension for SQLite. We wire it
+# in via `sqlite3_auto_extension` at process startup so every Memory
+# connection picks it up automatically. ~1.5 MB native code.
+sqlite-vec = "0.1"
+zerocopy = "0.7"
+# Tree-sitter — incremental parsing core + per-language grammars. The
+# regex extractor in index.rs handles the easy cases; tree-sitter
+# kicks in when available to catch string/comment false-positives
+# and multi-line signatures. Binary impact: ~10 MB total when all
+# grammars enabled.
+tree-sitter = "0.26"
+tree-sitter-rust = "0.24"
+tree-sitter-python = "0.25"
+tree-sitter-javascript = "0.25"
+tree-sitter-typescript = "0.23"
+tree-sitter-go = "0.25"
+tree-sitter-java = "0.23"
+tree-sitter-c = "0.24"
+tree-sitter-cpp = "0.23"
+tree-sitter-c-sharp = "0.23"
+tree-sitter-php = "0.24"
+tree-sitter-ruby = "0.23"
+tree-sitter-swift = "0.7"
+# `tree-sitter-kotlin` 0.3.x pins tree-sitter 0.20; `tree-sitter-kotlin-ng`
+# is the actively maintained fork tracking the modern API.
+tree-sitter-kotlin-ng = "1"
+tree-sitter-scala = "0.26"
+tree-sitter-html = "0.23"
+tree-sitter-css = "0.25"
+# tree-sitter-sql dropped: pins tree-sitter 0.19 which conflicts with
+# the 0.26 we use across the other 16 grammars. SQL doesn't have
+# navigable symbols (no functions / classes) so the loss is small.
+# Parallel iterators for index build. Threads scale linearly up to ~8 cores
+# on the symbol-extraction workload (regex-bound).
+rayon = "1"
+# Property-based testing. Dev-only.
+proptest = "1"
+# Compact binary serialisation for the semantic index. ~10× smaller than
+# JSON; pure-Rust, no_std-compatible.
+postcard = { version = "1", features = ["alloc"] }
+# File-system watcher for `tokenade watch`. Cross-platform (inotify/FSEvents/
+# ReadDirectoryChangesW).
+notify = "8"
+# Cross-process advisory file locking (flock on Unix, LockFileEx on Windows).
+# Used by the gain ledger so concurrent `tokenade mcp` / `tokenade ask` / `tokenade proxy`
+# can't interleave half-written records.
+fs2 = "0.4"
+# Minimal TOML parser for user-supplied command-rewrite presets (mcp-rtk-style
+# extension). Pure-Rust, no_std friendly, ~150 KB compiled.
+toml = { version = "0.8", default-features = false, features = ["parse"] }
+# Licensing (tokenade-core, M8-M9): Ed25519 verify of license blobs signed by
+# tokenade.net, SHA-256 machine-id hash, sync HTTP for activate + usage
+# reporter. No async runtime → binary stays under 10 MB.
+ed25519-dalek = { version = "2", default-features = false, features = ["std"] }
+sha2 = "0.10"
+hex = "0.4"
+base64 = "0.22"
+# Image downscaling (oversized images the agent reads → fewer vision tokens).
+# Minimal codecs only — png (screenshots) + jpeg (photos) — to keep the binary
+# lean; resize lives in core `image`.
+# Legacy Office spreadsheets (.xls BIFF, .xlsb). Pure Rust: no runtime binary,
+# so it works on every platform we ship — unlike a libreoffice shell-out.
+calamine = { version = "0.26", default-features = false }
+image = { version = "0.25", default-features = false, features = [
+    # Decode+re-encode set. Wider than png/jpeg because an image the agent
+    # cannot render natively (tiff, bmp, ico…) becomes readable once we
+    # re-encode it to png — the same "capability, then economy" the document
+    # path gives. AVIF/HEIC are deliberately absent: they need heavy C
+    # decoders (dav1d / libheif) that would bloat the shipped binary and
+    # break the static Windows build.
+    "png", "jpeg", "gif", "webp", "bmp", "tiff", "ico", "pnm", "tga", "qoi", "hdr", "ff",
+] }
+# The one in-process HTTP client for the whole tree (rustls/ring → zero C toolchain,
+# cross-compiles to musl + windows-gnu). curl is a demoted handshake fallback.
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "cookies", "gzip", "brotli", "deflate", "http2", "charset"] }
+tokio = { version = "1", default-features = false, features = ["rt-multi-thread", "time"] }
+flate2 = { version = "1", default-features = false, features = ["rust_backend"] }
+
+# Small, fast release binaries — keep it ultra-light.
+# Dev/test builds are LINK-bound, not compile-bound. Measured 2026-09-03 on
+# this workspace: a no-op freshness check takes 0 s, recompiling the whole
+# `tokenade-core` lib takes 4 s — and relinking ONE test binary after touching
+# core takes 7 s, times fifty-one test targets. Each of those binaries was
+# 660-730 MB, because the default dev profile emits full DWARF for the whole
+# dependency graph; `target/debug` had reached 212 GB.
+#
+# `line-tables-only` keeps what this project actually debugs with — file and
+# line in every panic and backtrace — and drops the variable/type tables no
+# one here inspects. Dependencies get nothing at all: a stack frame inside
+# `pdf-oxide` is not where a bug in this workspace is read, and its rlib alone
+# was 730 MB. `unpacked` leaves the remaining DWARF in the .o files instead of
+# copying it into every binary the linker produces.
+[profile.dev]
+debug = "line-tables-only"
+split-debuginfo = "unpacked"
+
+# Third-party code: no debug info. This is where the bytes were.
+[profile.dev.package."*"]
+debug = false
+
+# `test` inherits `dev`, but it is spelled out because the test targets are the
+# fifty-one binaries this is for, and an inherited default is easy to lose.
+[profile.test]
+debug = "line-tables-only"
+split-debuginfo = "unpacked"
+
+[profile.test.package."*"]
+debug = false
+
+[profile.release]
+opt-level = "z"
+# fat LTO + one codegen unit. This REPLACES `lto="thin"` / `codegen-units=16`,
+# which was chosen on the reasoning that "this is a CLI whose latency is
+# dominated by process startup + I/O + subprocess calls, so the tiny runtime
+# perf give-up from thin LTO is irrelevant". MEASURED 2026-08-04 with both
+# binaries kept side by side and run alternately, 60 invocations per round:
+#
+#                     thin/16              fat/1
+#   `echo hi`   9652 / 9660 / 9634   8503 / 8930 / 8627 µs   -9,6 %
+#   462 Ko      28577 / 27815        25371 / 25692 µs        -9,6 %
+#   binary      58 160 680           53 392 392              -8,2 %
+#   build         26 s                 253 s                 x9,7
+#
+# So the give-up was not tiny, and it was not only speed: fat LTO is ~10 %
+# faster on the MEDIAN command (the gain ledger's p50 is 52 tokens, so the
+# median invocation is almost all fixed cost) and 4,77 Mo smaller, which npm
+# ships on every install.
+#
+# What it costs is build time, and only build time: 26 s -> 253 s per target,
+# so a 6-target release goes from ~2,6 min to ~25 min of compilation. That is
+# paid by us, a few times a week; the 10 % is paid back to every user on every
+# command. Flip back to `thin`/`16` if release throughput ever matters more
+# than invocation latency — the numbers to re-derive the trade are right here.
+lto = "fat"
+codegen-units = 1
+# Startup carries ~0,9 ms of dynamic-loader work before `main` — MEASURED with
+# `LD_DEBUG=statistics ./tokenade --version`: 4 067 972 cycles in the loader, of
+# which 3 825 424 (94 %) are relocation processing over 80 991 relative
+# relocations, paid on EVERY invocation. Building non-PIE
+# (`-C relocation-model=static`) would remove most of it.
+#
+# REJECTED, and not on the numbers: it buys latency with ASLR, on a binary whose
+# job includes holding secrets long enough to redact them. We do not trade
+# security for speed. Do not re-propose it — the measurement is here so the
+# next person tempted by the 0,9 ms can see it was already found and declined.
+strip = true
+# `unwind`, deliberately, and the cost is measured. MEASURED 2026-08-04 on the
+# same code, two full builds: 53 419 144 -> 55 491 080 bytes (+3,88 %), and
+# `wrap` over a 40 000-line log 72 -> 73 ms across 15 interleaved runs — noise.
+#
+# What `abort` bought was 2 MB. What it cost was every `catch_unwind` in the
+# workspace: `catch_unwind` cannot fire under `panic = "abort"`, so the TWELVE
+# sites in `docs.rs`, `pdf_layout.rs`, `recalc.rs` and `filter.rs` were inert in
+# every shipped binary — including the ones written expressly because
+# "real-world PDFs trigger edge cases". A build setting that silently voids this
+# codebase's standard recovery idiom is worse than 3,9 % of a download, and it
+# mislead every author who reached for that idiom next.
+#
+# The fatal-signal guard (`crash_guard`) still covers what unwinding cannot: a
+# SIGSEGV/SIGBUS in a bundled C extension. The two compose — panics unwind and
+# are caught, native faults land in the handler, and both deliver any armed
+# output. Do not switch back without re-reading `deliver_salvage` and the
+# top-of-`main` guard, which exist to keep hooks failing OPEN under unwinding.
+panic = "unwind"
+
+# `opt-level = "z"` above is right for the 99 % of this binary that runs once
+# per invocation and is never the bottleneck — but it is charged to the few
+# modules that scan bytes, and to the regex engine underneath them, at roughly
+# 2x. MEASURED 2026-08-04 on 1,28 Mo through the real `wrap` path:
+#
+#                            "z"        3      binary
+#   redact::redact        819,6 ms  376,1 ms   55,83 -> 57,24 Mo (+2,5 %)
+#   logs::compact_generic  30,6 ms   12,9 ms
+#   tokenizer::estimate     9,2 ms    5,3 ms
+#
+# Raising the WHOLE graph to 3 buys ~nothing more (374,2 ms) and costs +13 %
+# of binary, which npm ships on every install. So it is spent here only.
+#
+# The regex stack is listed because `redact`'s time is INSIDE it, not in our
+# code: `tokenade-core` alone leaves redaction at 780 ms. Those crates already
+# dispatch SIMD at runtime internally; `-C target-cpu=native` on top of this
+# measured 373,7 ms, i.e. nothing. Do not reach for hand-written SIMD here —
+# the ceiling has been measured and this table is it.
+[profile.release.package.tokenade-core]
+opt-level = 3
+[profile.release.package.regex]
+opt-level = 3
+[profile.release.package.regex-automata]
+opt-level = 3
+[profile.release.package.regex-syntax]
+opt-level = 3
+[profile.release.package.aho-corasick]
+opt-level = 3
+[profile.release.package.memchr]
+opt-level = 3
+
+# `tree-sitter` is the C parser runtime behind `skeleton`, `map`, `query` and
+# the Read-hook code strip — the commands an agent runs to avoid reading files
+# whole, i.e. the ones whose latency the product exists to save. At "z" it is
+# compiled `-Oz`. MEASURED 2026-08-04, warm, on 297 Ko of Rust:
+#
+#                                "z"        3
+#   treesitter::extract_full   48,14 ms  28,19 ms   (1,71x)
+#   treesitter::skeleton_spans 31,67 ms  19,73 ms   (1,61x)
+#
+# for +45 Ko of binary (+0,08 %).
+#
+# The 16 GRAMMAR crates are deliberately NOT listed. Raising all 18 measured
+# 31,14 / 20,23 ms — the same numbers within noise — for +159 Ko instead of
+# +45 Ko. A generated grammar is a lookup table, not hot code; the parse loop
+# that walks it lives here. Do not add them back without a measurement that
+# says otherwise.
+[profile.release.package.tree-sitter]
+opt-level = 3
+[profile.release.package.tree-sitter-language]
+opt-level = 3
+
+# Reading a .pdf or an oversized .png IS a shipped capability — the Read hook
+# routes both — and both are decode-bound, which is the one workload where
+# `-Oz` costs the most. MEASURED 2026-08-04, 10-20 repetitions each:
+#
+#                              "z"         3
+#   pdf_small   81 Ko      48,59 ms   25,40 ms   1,91x
+#   pdf_mid    500 Ko     207,12 ms  147,83 ms   1,40x
+#   pdf_large 2,65 Mo     475,67 ms  108,32 ms   4,39x
+#   png        316 Ko     112,96 ms   36,20 ms   3,12x
+#   png        516 Ko     104,32 ms   32,59 ms   3,20x
+#
+# for +862 Ko of binary (+1,5 %).
+#
+# THREE candidate sets were measured and REFUTED — do not re-add them:
+#   * the compression layer (miniz_oxide, flate2, adler2, simd-adler32,
+#     fdeflate, crc32fast) — 48,72 ms on pdf_small against 47,75 baseline.
+#     Inflate is not where PDF spends its time.
+#   * `pdf-extract` + `lopdf` — pdf_large unchanged at 468 ms. The engine that
+#     actually runs on these documents is `pdf_oxide`.
+#   * `encoding_rs` + the JPEG decoders — no gain, and the first reading that
+#     suggested one came from a single-repetition measurement.
+[profile.release.package.image]
+opt-level = 3
+[profile.release.package.png]
+opt-level = 3
+[profile.release.package.pdf_oxide]
+opt-level = 3
+
+# NOT listed, and measured rather than assumed: `rusqlite` +
+# `libsqlite3-sys`. MEASURED 2026-08-04 against a throwaway 200 k-row
+# database — insert 179,43 -> 153,09 ms, indexed SELECT x2000 5,96 -> 5,66 ms,
+# LIKE scan 8,13 -> 6,92 ms, 4 Mo blob read/write unchanged — so 1,17x at best,
+# for +1 015 Ko of binary (+1,75 %). `tree-sitter` above buys 1,71x for 45 Ko;
+# this is twenty times the size per unit of speed, on a path that is not hot in
+# normal use (the index build amortises its inserts). Rejected on the ratio,
+# not on principle: re-measure if the index ever moves onto a request path.
+

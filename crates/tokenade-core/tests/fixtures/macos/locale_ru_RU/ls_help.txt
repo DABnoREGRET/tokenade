@@ -1,0 +1,2 @@
+ls: unrecognized option `--help'
+usage: ls [-@ABCFGHILOPRSTUWabcdefghiklmnopqrstuvwxy1%,] [--color=when] [-D format] [file ...]

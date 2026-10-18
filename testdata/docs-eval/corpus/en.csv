@@ -1,0 +1,3 @@
+Region,Ingest,Errors,Retries
+NEEDLE N01,ingest,257,3
+EMEA,batch,42,7

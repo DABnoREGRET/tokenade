@@ -1,0 +1,8 @@
+
+Name   ScopeName Path       Description              
+----   --------- ----       -----------              
+ADMIN$ *         C:\Windows Administration � distance
+C$     *         C:\        Partage par d�faut       
+IPC$   *                    IPC distant              
+
+

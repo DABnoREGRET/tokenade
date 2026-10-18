@@ -1,0 +1,6 @@
+
+Name                      InterfaceDescription                    ifIndex Status       MacAddress             LinkSpeed
+----                      --------------------                    ------- ------       ----------             ---------
+Ethernet                  Intel(R) PRO/1000 MT Desktop Adapter          9 Up           08-00-27-7E-4B-39         1 Gbps
+
+

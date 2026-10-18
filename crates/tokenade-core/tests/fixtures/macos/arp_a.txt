@@ -1,0 +1,2 @@
+? (10.0.2.2) at 52:54:0:12:35:0 on en0 ifscope [ethernet]
+mdns.mcast.net (224.0.0.251) at 1:0:5e:0:0:fb on en0 ifscope permanent [ethernet]

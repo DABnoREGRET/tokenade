@@ -1,0 +1,13 @@
+# Don't let the agent auto-load these (saves startup tokens).
+node_modules/
+.next/
+dist/
+build/
+target/
+__pycache__/
+.venv/
+vendor/
+.tokenade/cache/
+.claude/sessions/
+.claude/completions/
+docs/archive/

@@ -1,0 +1,24 @@
+[package]
+name = "tk-agents"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Tokenade — the AGENTS layer: recognise installed agents, read their transcripts, count what they spend"
+
+[dependencies]
+tk-base = { path = "../tk-base" }
+tk-fold = { path = "../tk-fold" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+rusqlite = { workspace = true }
+# Measured, not guessed: `toml` (reading agent configs), `flate2` and
+# `postcard` (the transcript cache), `rayon` (the parsers run in
+# parallel), `fs2` (the cache's file lock).
+toml = { workspace = true }
+flate2 = { workspace = true }
+postcard = { workspace = true }
+rayon = { workspace = true }
+fs2 = { workspace = true }
+
+[lints]
+workspace = true

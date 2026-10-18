@@ -1,0 +1,30 @@
++-o Root  <class IORegistryEntry, id 0x100000100, retain 8>
+  +-o iMac11,3  <class IOPlatformExpertDevice, id 0x100000113, registered, matched, active, busy 0 (27553 ms), retain 26>
+    +-o AppleACPIPlatformExpert  <class AppleACPIPlatformExpert, id 0x100000114, registered, matched, active, busy 0 (9749 ms), retain 29>
+    | +-o IOSystemStateNotification  <class IOSystemStateNotification, id 0x100000118, registered, matched, active, busy 0 (4 ms), retain 6>
+    | +-o IOPMrootDomain  <class IOPMrootDomain, id 0x100000119, registered, matched, active, busy 0 (756 ms), retain 101>
+    | | +-o IORootParent  <class IORootParent, id 0x10000011a, !registered, !matched, active, busy 0, retain 7>
+    | | +-o RootDomainUserClient  <class RootDomainUserClient, id 0x10000021a, !registered, !matched, active, busy 0, retain 5>
+    | | +-o RootDomainUserClient  <class RootDomainUserClient, id 0x10000021b, !registered, !matched, active, busy 0, retain 5>
+    | | +-o RootDomainUserClient  <class RootDomainUserClient, id 0x10000021c, !registered, !matched, active, busy 0, retain 5>
+    | | +-o RootDomainUserClient  <class RootDomainUserClient, id 0x10000021d, !registered, !matched, active, busy 0, retain 5>
+    | | +-o RootDomainUserClient  <class RootDomainUserClient, id 0x100000220, !registered, !matched, active, busy 0, retain 5>
+    | | +-o RootDomainUserClient  <class RootDomainUserClient, id 0x100000221, !registered, !matched, active, busy 0, retain 5>
+    | | +-o RootDomainUserClient  <class RootDomainUserClient, id 0x100000228, !registered, !matched, active, busy 0, retain 5>
+    | | +-o RootDomainUserClient  <class RootDomainUserClient, id 0x10000022c, !registered, !matched, active, busy 0, retain 5>
+    | | +-o RootDomainUserClient  <class RootDomainUserClient, id 0x100000231, !registered, !matched, active, busy 0, retain 5>
+    | | +-o RootDomainUserClient  <class RootDomainUserClient, id 0x100000235, !registered, !matched, active, busy 0, retain 5>
+    | | +-o RootDomainUserClient  <class RootDomainUserClient, id 0x100000236, !registered, !matched, active, busy 0, retain 5>
+    | | +-o RootDomainUserClient  <class RootDomainUserClient, id 0x100000237, !registered, !matched, active, busy 0, retain 5>
+    | | +-o RootDomainUserClient  <class RootDomainUserClient, id 0x100000238, !registered, !matched, active, busy 0, retain 5>
+    | | +-o RootDomainUserClient  <class RootDomainUserClient, id 0x100000239, !registered, !matched, active, busy 0, retain 5>
+    | | +-o RootDomainUserClient  <class RootDomainUserClient, id 0x10000023b, !registered, !matched, active, busy 0, retain 5>
+    | | +-o RootDomainUserClient  <class RootDomainUserClient, id 0x10000023c, !registered, !matched, active, busy 0, retain 5>
+    | | +-o RootDomainUserClient  <class RootDomainUserClient, id 0x100000266, !registered, !matched, active, busy 0, retain 5>
+    | | +-o RootDomainUserClient  <class RootDomainUserClient, id 0x1000002ba, !registered, !matched, active, busy 0, retain 5>
+    | | +-o RootDomainUserClient  <class RootDomainUserClient, id 0x1000002d4, !registered, !matched, active, busy 0, retain 5>
+    | | +-o RootDomainUserClient  <class RootDomainUserClient, id 0x1000002e7, !registered, !matched, active, busy 0, retain 5>
+    | | +-o RootDomainUserClient  <class RootDomainUserClient, id 0x1000002f1, !registered, !matched, active, busy 0, retain 5>
+    | | +-o RootDomainUserClient  <class RootDomainUserClient, id 0x1000002f2, !registered, !matched, active, busy 0, retain 5>
+    | | +-o RootDomainUserClient  <class RootDomainUserClient, id 0x100000319, !registered, !matched, active, busy 0, retain 5>
+    | | +-o RootDomainUserClient  <class RootDomainUserClient, id 0x10000031d, !registered, !matched, active, busy 0, retain 5>

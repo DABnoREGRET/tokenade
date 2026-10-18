@@ -1,0 +1,30 @@
+   Device Identifier:         disk1s5s1
+   Device Node:               /dev/disk1s5s1
+   Whole:                     No
+   Part of Whole:             disk1
+
+   Volume Name:               Disque
+   Mounted:                   Yes
+   Mount Point:               /
+
+   Partition Type:            41504653-0000-11AA-AA11-00306543ECAC
+   File System Personality:   APFS
+   Type (Bundle):             apfs
+   Name (User Visible):       APFS
+   Owners:                    Enabled
+
+   OS Can Be Installed:       No
+   Booter Disk:               disk1s2
+   Recovery Disk:             disk1s3
+   Media Type:                Generic
+   Protocol:                  SATA
+   SMART Status:              Not Supported
+   Volume UUID:               88553ECB-06DC-4345-A12A-9D7419DB1B5E
+   Disk / Partition UUID:     88553ECB-06DC-4345-A12A-9D7419DB1B5E
+
+   Disk Size:                 107.2 GB (107164426240 Bytes) (exactly 209305520 512-Byte-Units)
+   Device Block Size:         4096 Bytes
+
+   Container Total Space:     107.2 GB (107164426240 Bytes) (exactly 209305520 512-Byte-Units)
+   Container Free Space:      38.6 GB (38565605376 Bytes) (exactly 75323448 512-Byte-Units)
+   Allocation Block Size:     4096 Bytes

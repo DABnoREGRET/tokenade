@@ -1,0 +1,25 @@
+
+Status   Name               DisplayName                           
+------   ----               -----------                           
+Stopped  AarSvc_5b590       Agent Activation Runtime_5b590        
+Stopped  AJRouter           Service de routeur AllJoyn            
+Stopped  ALG                Service de la passerelle de la couc...
+Stopped  AppIDSvc           Identit� de l'application             
+Running  Appinfo            Informations d'application            
+Stopped  AppMgmt            Gestion d'applications                
+Stopped  AppReadiness       Pr�paration des applications          
+Stopped  AppVClient         Microsoft App-V Client                
+Stopped  AppXSvc            Service de d�ploiement AppX (AppXSVC) 
+Stopped  AssignedAccessM... Service AssignedAccessManager         
+Running  AudioEndpointBu... G�n�rateur de points de terminaison...
+Running  Audiosrv           Audio Windows                         
+Stopped  autotimesvc        Heure cellulaire                      
+Stopped  AxInstSV           Programme d'installation ActiveX (A...
+Stopped  BcastDVRUserSer... Service utilisateur de diffusion et...
+Stopped  BDESVC             Service de chiffrement de lecteur B...
+Running  BFE                Moteur de filtrage de base            
+Stopped  BITS               Service de transfert intelligent en...
+Stopped  BluetoothUserSe... Service de support des utilisateurs...
+Running  Bonjour Service    Service Bonjour                       
+
+

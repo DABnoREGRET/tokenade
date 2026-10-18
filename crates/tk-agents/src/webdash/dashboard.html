@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tokenade Dashboard</title>
+<style>
+__STYLES__
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="brand"><span class="mark"></span>Tokenade Dashboard<span class="ver">v__VERSION__</span></div>
+    <span id="hookbadge" class="pill"></span>
+    <div class="grow"></div>
+    <div class="seg" id="range">
+      <button data-r="7" data-i18n="range_7">7d</button>
+      <button data-r="30" class="on" data-i18n="range_30">30d</button>
+      <button data-r="90" data-i18n="range_90">90d</button>
+      <button data-r="0" data-i18n="range_all">All</button>
+    </div>
+    <div class="seg" id="gran">
+      <button data-g="day" class="on" data-i18n="gran_day">Day</button>
+      <button data-g="week" data-i18n="gran_week">Week</button>
+      <button data-g="month" data-i18n="gran_month">Month</button>
+    </div>
+  </div>
+</div>
+
+<div class="shell">
+
+<p class="hero-sub" id="windowline" style="margin:0 0 14px;color:var(--fg-3);font-size:12.5px"></p>
+
+<div class="hero">
+  <div class="card hero-main">
+    <div class="hero-label" id="hero-label"></div>
+    <div class="hero-value" id="hero-value"></div>
+    <div class="hero-sub" id="hero-sub"></div>
+    <svg class="hero-spark" id="hero-spark" preserveAspectRatio="none"></svg>
+  </div>
+  <div class="card hero-side">
+    <svg class="gauge" id="gauge" viewBox="0 0 120 120"></svg>
+    <div class="gauge-facts" id="gauge-facts"></div>
+  </div>
+</div>
+
+<div class="kpis" id="kpis"></div>
+
+<div class="panel">
+  <div class="panel-head">
+    <div>
+      <h2 data-i18n="chart_h">With vs without tokenade</h2>
+      <p class="sub" data-i18n="chart_sub">Full bar = what your agents would have consumed. The blue
+      part is what they actually consumed after compaction. Click a bar to drill into that period.</p>
+    </div>
+    <div class="grow"></div>
+    <span class="scope" id="chart-scope"></span>
+  </div>
+  <div class="panel-body">
+    <svg id="chart" preserveAspectRatio="none"></svg>
+    <div class="legend">
+      <span><i style="background:var(--spend)"></i><span data-i18n="leg_spent">spent (with tokenade)</span></span>
+      <span><i style="background:var(--save)"></i><span data-i18n="leg_saved">saved (measured)</span></span>
+      <span><i style="background:repeating-linear-gradient(45deg,var(--save),var(--save) 3px,transparent 3px,transparent 6px)"></i><span data-i18n="leg_est">saved (code-intel estimate)</span></span>
+      <span><i style="background:repeating-linear-gradient(90deg,var(--fg-3),var(--fg-3) 3px,transparent 3px,transparent 6px);height:2px;border-radius:0"></i><span data-i18n="leg_cum">cumulative saved</span></span>
+    </div>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-head">
+    <div>
+      <h2 data-i18n="break_h">Breakdown</h2>
+      <p class="sub" id="tab-sub"></p>
+    </div>
+    <div class="grow"></div>
+    <span class="scope" id="tab-scope"></span>
+  </div>
+  <div class="tabs" id="tabs"></div>
+  <div class="panel-body" style="padding-top:0"><div id="tabtable"></div></div>
+</div>
+
+<div class="panel">
+  <div class="panel-head">
+    <div>
+      <h2 data-i18n="heat_h">Activity</h2>
+      <p class="sub" data-i18n="heat_sub">Tokens saved per day over the last 26 weeks. Click a day to
+      drill into it.</p>
+    </div>
+    <div class="grow"></div>
+    <span class="scope life" data-i18n="scope_life">lifetime</span>
+  </div>
+  <div class="panel-body"><svg id="heat" preserveAspectRatio="xMinYMid meet"></svg></div>
+  <details class="foldout" id="coverage-fold">
+    <summary data-i18n="coverage_h">Agents we can't (fully) measure</summary>
+    <div class="inner">
+      <p class="sub" style="margin:0 0 10px;color:var(--fg-3);font-size:12.5px" data-i18n="coverage_sub">Everything
+      here comes from transcripts agents leave on this machine. When an agent doesn't write something
+      down it is missing, which means &#8220;not measurable&#8221;, not &#8220;zero usage&#8221;.</p>
+      <ul class="notes" id="coverage"></ul>
+    </div>
+  </details>
+</div>
+
+<footer>
+  <span data-i18n="privacy">100% local — this page is a static file, no network calls, nothing leaves this machine.</span>
+  <span class="sep">·</span><span id="genat"></span>
+  <span class="sep">·</span><code id="ledger"></code>
+  <br>
+  <span id="foot-index"></span>
+  <span class="sep">·</span>
+  <button class="btn" id="btn-copy" data-i18n="copy_btn">copy summary</button>
+  <button class="btn" id="btn-csv">CSV</button>
+  <button class="btn" id="btn-json">JSON</button>
+  <br>
+  <span data-i18n="foot_est">"est." rows are heuristic estimates for code-intelligence tools whose
+  savings can't be measured directly.</span>
+  <span class="sep">·</span>
+  <span data-i18n="foot_regen">regenerate anytime with <code>tokenade dashboard</code></span>
+  <span class="sep">·</span><a href="https://tokenade.net">tokenade.net</a>
+</footer>
+
+</div>
+<div class="tooltip" id="tip"></div>
+
+<script id="data" type="application/json">__PAYLOAD__</script>
+<script>
+__SCRIPT__
+</script>
+</body>
+</html>

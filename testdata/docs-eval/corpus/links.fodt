@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<office:document xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
+ xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ office:version="1.3" office:mimetype="application/vnd.oasis.opendocument.text">
+ <office:body><office:text>
+  <text:h text:outline-level="1">NEEDLE-LINK-TITRE</text:h>
+  <text:p>Voir <text:a xlink:href="https://exemple.test/NEEDLE-LINK-CIBLE">le guide</text:a> avant de commencer.</text:p>
+  <text:p>Ecrire a <text:a xlink:href="mailto:NEEDLE-LINK-MAIL@exemple.test">l equipe</text:a>.</text:p>
+  <text:p>Voir <text:a xlink:href="#NEEDLE-LINK-ANCRE">plus haut</text:a>.</text:p>
+ </office:text></office:body></office:document>

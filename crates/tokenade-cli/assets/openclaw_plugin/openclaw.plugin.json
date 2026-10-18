@@ -1,0 +1,1 @@
+{"activation":{"onStartup":false},"configSchema":{"additionalProperties":false,"type":"object"},"description":"Compacts tool results via the tokenade binary.","enabledByDefault":true,"id":"tokenade","name":"Tokenade"}

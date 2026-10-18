@@ -1,0 +1,17 @@
+total 9
+drwxrwxr-x   7 root  admin   224 Jan 22 01:27 Applications
+drwxr-xr-x  66 root  wheel  2112 Sep  5  2025 Library
+drwxr-xr-x@  9 root  wheel   288 Oct 18  2021 System
+drwxr-xr-x   5 root  admin   160 Apr 30  2025 Users
+drwxr-xr-x   3 root  wheel    96 Jan 22 01:02 Volumes
+drwxr-xr-x@ 38 root  wheel  1216 Oct 18  2021 bin
+drwxrwxr-t   2 root  admin    64 Oct 18  2021 cores
+dr-xr-xr-x   3 root  wheel  4238 Jan 22 01:02 dev
+lrwxr-xr-x@  1 root  wheel    11 Oct 18  2021 etc -> private/etc
+lrwxr-xr-x   1 root  wheel    25 Jan 22 01:02 home -> /System/Volumes/Data/home
+drwxr-xr-x   2 root  wheel    64 Oct 18  2021 opt
+drwxr-xr-x   6 root  wheel   192 Oct 18  2021 private
+drwxr-xr-x@ 65 root  wheel  2080 Oct 18  2021 sbin
+lrwxr-xr-x@  1 root  wheel    11 Oct 18  2021 tmp -> private/tmp
+drwxr-xr-x@ 11 root  wheel   352 Oct 18  2021 usr
+lrwxr-xr-x@  1 root  wheel    11 Oct 18  2021 var -> private/var

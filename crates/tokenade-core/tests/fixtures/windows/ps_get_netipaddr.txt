@@ -1,0 +1,15 @@
+
+IPAddress                            InterfaceAlias             
+---------                            --------------             
+fe80::4d4:f2c8:d747:79bf%9           Ethernet                   
+fd17:625c:f037:2:d80e:aca4:20c8:e73d Ethernet                   
+fd17:625c:f037:2:d5d2:fbe5:de74:32d8 Ethernet                   
+fd17:625c:f037:2:9c6f:d68c:cc13:79e  Ethernet                   
+fd17:625c:f037:2:8de5:ad8d:b0d4:56d5 Ethernet                   
+fd17:625c:f037:2:402a:b2d2:5856:e0a3 Ethernet                   
+fd17:625c:f037:2:38eb:1600:264a:5e35 Ethernet                   
+::1                                  Loopback Pseudo-Interface 1
+10.0.2.15                            Ethernet                   
+127.0.0.1                            Loopback Pseudo-Interface 1
+
+

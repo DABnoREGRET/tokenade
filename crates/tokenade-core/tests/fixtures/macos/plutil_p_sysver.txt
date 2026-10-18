@@ -1,0 +1,8 @@
+{
+  "iOSSupportVersion" => "15.0"
+  "ProductBuildVersion" => "21A559"
+  "ProductCopyright" => "1983-2021 Apple Inc."
+  "ProductName" => "macOS"
+  "ProductUserVisibleVersion" => "12.0.1"
+  "ProductVersion" => "12.0.1"
+}

@@ -1,0 +1,71 @@
+{
+  "name": "@tokenade/cli",
+  "version": "2.0.0",
+  "description": "Tokenade — cut your AI coding agent's token bill. Installs the open-source Tokenade CLI (local token reduction for Claude Code, Codex, Cursor, Copilot and more).",
+  "homepage": "https://tokenade.net",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pi-infected/tokenade.git",
+    "directory": "npm"
+  },
+  "bugs": {
+    "url": "https://github.com/pi-infected/tokenade/issues"
+  },
+  "license": "MIT OR Apache-2.0",
+  "author": "Paul Irolla",
+  "bin": {
+    "tokenade": "bin/tokenade.js"
+  },
+  "scripts": {
+    "prepack": "node -e \"for (const f of ['LICENSE-MIT','LICENSE-APACHE']) require('fs').copyFileSync('../'+f, f)\"",
+    "postinstall": "node install.js",
+    "preuninstall": "node uninstall.js"
+  },
+  "dependencies": {
+    "tar": "^7.5.16"
+  },
+  "optionalDependencies": {
+    "@tokenade/cli-linux-x64": "2.0.0",
+    "@tokenade/cli-linux-x64-musl": "2.0.0",
+    "@tokenade/cli-linux-arm64-musl": "2.0.0",
+    "@tokenade/cli-darwin-arm64": "2.0.0",
+    "@tokenade/cli-darwin-x64": "2.0.0",
+    "@tokenade/cli-win32-x64": "2.0.0",
+    "@tokenade/cli-win32-arm64": "2.0.0"
+  },
+  "files": [
+    "bin/",
+    "platform.js",
+    "install.js",
+    "uninstall.js",
+    "README.md",
+    "LICENSE-MIT",
+    "LICENSE-APACHE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "cpu": [
+    "x64",
+    "arm64"
+  ],
+  "keywords": [
+    "tokenade",
+    "ai",
+    "tokens",
+    "mcp",
+    "claude",
+    "coding-agent",
+    "cli"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "install.js",
+  "type": "commonjs"
+}

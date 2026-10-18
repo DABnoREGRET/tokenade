@@ -1,0 +1,68 @@
+
+Nom de l'h�te:                              DESKTOP-T2HFRGA
+Nom du syst�me d'exploitation:              Microsoft Windows 10 Professionnel
+Version du syst�me:                         10.0.19045 N/A build 19045
+Fabricant du syst�me d'exploitation:        Microsoft Corporation
+Configuration du syst�me d'exploitation:    Station de travail autonome
+Type de build du syst�me d'exploitation:    Multiprocessor Free
+Propri�taire enregistr�:                    Virtualbox
+Organisation enregistr�e:                   
+Identificateur de produit:                  00331-10000-00001-AA157
+Date d'installation originale:              02/06/2023, 22:19:40
+Heure de d�marrage du syst�me:              25/05/2026, 17:32:51
+Fabricant du syst�me:                       innotek GmbH
+Mod�le du syst�me:                          VirtualBox
+Type du syst�me:                            x64-based PC
+Processeur(s):                              1 processeur(s) install�(s).
+                                            [01]�: AMD64 Family 25 Model 97 Stepping 2 AuthenticAMD ~4295 MHz
+Version du BIOS:                            innotek GmbH VirtualBox, 01/12/2006
+R�pertoire Windows:                         C:\Windows
+R�pertoire syst�me:                         C:\Windows\system32
+P�riph�rique d'amor�age:                    \Device\HarddiskVolume1
+Option r�gionale du syst�me:                fr;Fran�ais (France)
+Param�tres r�gionaux d'entr�e:              fr;Fran�ais (France)
+Fuseau horaire:                             (UTC+01:00) Bruxelles, Copenhague, Madrid, Paris
+M�moire physique totale:                    9�064 Mo
+M�moire physique disponible:                6�098 Mo
+M�moire virtuelle�: taille maximale:        12�913 Mo
+M�moire virtuelle�: disponible:             10�053 Mo
+M�moire virtuelle�: en cours d'utilisation: 2�860 Mo
+Emplacements des fichiers d'�change:        C:\pagefile.sys
+Domaine:                                    WORKGROUP
+Serveur d'ouverture de session:             \\DESKTOP-T2HFRGA
+Correctif(s):                               20 Corrections install�es.
+                                            [01]: KB5066130
+                                            [02]: KB5027122
+                                            [03]: KB5011048
+                                            [04]: KB5011058
+                                            [05]: KB5015684
+                                            [06]: KB5020683
+                                            [07]: KB5033052
+                                            [08]: KB5072653
+                                            [09]: KB5071959
+                                            [10]: KB5014032
+                                            [11]: KB5025315
+                                            [12]: KB5026879
+                                            [13]: KB5043935
+                                            [14]: KB5043130
+                                            [15]: KB5046823
+                                            [16]: KB5052916
+                                            [17]: KB5054682
+                                            [18]: KB5063261
+                                            [19]: KB5066790
+                                            [20]: KB5071982
+Carte(s) r�seau:                            1 carte(s) r�seau install�e(s).
+                                            [01]: Intel(R) PRO/1000 MT Desktop Adapter
+                                                  Nom de la connexion�: Ethernet
+                                                  DHCP activ��:         Oui
+                                                  Serveur DHCP�:        10.0.2.2
+                                                  Adresse(s) IP
+                                                  [01]: 10.0.2.15
+                                                  [02]: fe80::4d4:f2c8:d747:79bf
+                                                  [03]: fd17:625c:f037:2:d5d2:fbe5:de74:32d8
+                                                  [04]: fd17:625c:f037:2:9c6f:d68c:cc13:79e
+                                                  [05]: fd17:625c:f037:2:8de5:ad8d:b0d4:56d5
+                                                  [06]: fd17:625c:f037:2:402a:b2d2:5856:e0a3
+                                                  [07]: fd17:625c:f037:2:38eb:1600:264a:5e35
+                                                  [08]: fd17:625c:f037:2:d80e:aca4:20c8:e73d
+Configuration requise pour Hyper-V:         Un hyperviseur a �t� d�tect�. Les fonctionnalit�s n�cessaires � Hyper-V ne seront pas affich�es.

@@ -1,0 +1,18 @@
+[package]
+name = "tk-formats"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Tokenade — the FORMATS layer: recognise a format and make it shorter, without a heavy dependency"
+
+[dependencies]
+tk-base = { path = "../tk-base" }
+tk-fold = { path = "../tk-fold" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+regex = { workspace = true }
+base64 = { workspace = true }
+encoding_rs = { workspace = true }
+
+[lints]
+workspace = true

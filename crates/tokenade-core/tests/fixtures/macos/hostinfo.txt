@@ -1,0 +1,10 @@
+Mach kernel version:
+	 Darwin Kernel Version 21.1.0: Wed Oct 13 17:33:23 PDT 2021; root:xnu-8019.41.5~1/RELEASE_X86_64
+Kernel configured for a single processor only.
+1 processor is physically available.
+1 processor is logically available.
+Processor type: i486 (Intel 80486)
+Processor active: 0
+Primary memory available: 5.79 gigabytes
+Default processor set: 428 tasks, 1258 threads, 1 processors
+Load average: 3.91, Mach factor: 0.15

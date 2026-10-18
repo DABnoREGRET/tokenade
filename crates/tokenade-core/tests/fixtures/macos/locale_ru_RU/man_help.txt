@@ -1,0 +1,10 @@
+man, version 1.6g
+
+usage: man [-adfhktwW] [section] [-M path] [-P pager] [-S list]
+	[-m system] [-p string] name ...
+
+  a : find all matching entries
+  c : do not use cat file
+  d : print gobs of debugging information
+  D : as for -d, but also display the pages
+  f : same as whatis(1)

@@ -1,0 +1,56 @@
+
+Informations sur l'utilisateur
+------------------------
+
+Nom d'utilisateur          SID                                          
+========================== =============================================
+desktop-t2hfrga\virtualbox S-1-5-21-294619556-3647737281-3426681034-1001
+
+
+Informations de groupe
+----------------------
+
+Nom du groupe                                                Type              SID          Attributs                                                                   
+============================================================ ================= ============ ============================================================================
+Tout le monde                                                Groupe bien connu S-1-1-0      Groupe obligatoire, Activ� par d�faut, Groupe activ�                        
+AUTORITE NT\Compte local et membre du groupe Administrateurs Groupe bien connu S-1-5-114    Groupe obligatoire, Activ� par d�faut, Groupe activ�                        
+BUILTIN\Administrateurs                                      Alias             S-1-5-32-544 Groupe obligatoire, Activ� par d�faut, Groupe activ�, Propri�taire du groupe
+BUILTIN\Utilisateurs                                         Alias             S-1-5-32-545 Groupe obligatoire, Activ� par d�faut, Groupe activ�                        
+AUTORITE NT\RESEAU                                           Groupe bien connu S-1-5-2      Groupe obligatoire, Activ� par d�faut, Groupe activ�                        
+AUTORITE NT\Utilisateurs authentifi�s                        Groupe bien connu S-1-5-11     Groupe obligatoire, Activ� par d�faut, Groupe activ�                        
+AUTORITE NT\Cette organisation                               Groupe bien connu S-1-5-15     Groupe obligatoire, Activ� par d�faut, Groupe activ�                        
+AUTORITE NT\Compte local                                     Groupe bien connu S-1-5-113    Groupe obligatoire, Activ� par d�faut, Groupe activ�                        
+AUTORITE NT\Authentifications NTLM                           Groupe bien connu S-1-5-64-10  Groupe obligatoire, Activ� par d�faut, Groupe activ�                        
+�tiquette obligatoire\Niveau obligatoire �lev�               Nom               S-1-16-12288                                                                             
+
+
+Informations de privil�ges
+----------------------
+
+Nom de privil�ge                          Description                                                                        �tat  
+========================================= ================================================================================== ======
+SeIncreaseQuotaPrivilege                  Ajuster les quotas de m�moire pour un processus                                    Activ�
+SeSecurityPrivilege                       G�rer le journal d'audit et de s�curit�                                            Activ�
+SeTakeOwnershipPrivilege                  Prendre possession de fichiers ou d'autres objets                                  Activ�
+SeLoadDriverPrivilege                     Charger et d�charger les pilotes de p�riph�riques                                  Activ�
+SeSystemProfilePrivilege                  Performance syst�me du profil                                                      Activ�
+SeSystemtimePrivilege                     Modifier l'heure syst�me                                                           Activ�
+SeProfileSingleProcessPrivilege           Processus unique du profil                                                         Activ�
+SeIncreaseBasePriorityPrivilege           Augmenter la priorit� de planification                                             Activ�
+SeCreatePagefilePrivilege                 Cr�er un fichier d'�change                                                         Activ�
+SeBackupPrivilege                         Sauvegarder les fichiers et les r�pertoires                                        Activ�
+SeRestorePrivilege                        Restaurer les fichiers et les r�pertoires                                          Activ�
+SeShutdownPrivilege                       Arr�ter le syst�me                                                                 Activ�
+SeDebugPrivilege                          D�boguer les programmes                                                            Activ�
+SeSystemEnvironmentPrivilege              Modifier les valeurs de l'environnement du microprogramme                          Activ�
+SeChangeNotifyPrivilege                   Contourner la v�rification de parcours                                             Activ�
+SeRemoteShutdownPrivilege                 Forcer l'arr�t � partir d'un syst�me distant                                       Activ�
+SeUndockPrivilege                         Retirer l'ordinateur de la station d'accueil                                       Activ�
+SeManageVolumePrivilege                   Effectuer les t�ches de maintenance de volume                                      Activ�
+SeImpersonatePrivilege                    Emprunter l'identit� d'un client apr�s l'authentification                          Activ�
+SeCreateGlobalPrivilege                   Cr�er des objets globaux                                                           Activ�
+SeIncreaseWorkingSetPrivilege             Augmenter une plage de travail de processus                                        Activ�
+SeTimeZonePrivilege                       Changer le fuseau horaire                                                          Activ�
+SeCreateSymbolicLinkPrivilege             Cr�er des liens symboliques                                                        Activ�
+SeDelegateSessionUserImpersonatePrivilege Obtenir un jeton d'emprunt d'identit� pour un autre utilisateur de la m�me session Activ�
+

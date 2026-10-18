@@ -1,0 +1,15 @@
+
+Name           Used (GB)     Free (GB) Provider      Root                                               CurrentLocation
+----           ---------     --------- --------      ----                                               ---------------
+Alias                                  Alias                                                                           
+C                  44,38          5,05 FileSystem    C:\                                               Users\Virtualbox
+Cert                                   Certificate   \                                                                 
+D                   0,05          0,00 FileSystem    D:\                                                               
+Env                                    Environment                                                                     
+Function                               Function                                                                        
+HKCU                                   Registry      HKEY_CURRENT_USER                                                 
+HKLM                                   Registry      HKEY_LOCAL_MACHINE                                                
+Variable                               Variable                                                                        
+WSMan                                  WSMan                                                                           
+
+

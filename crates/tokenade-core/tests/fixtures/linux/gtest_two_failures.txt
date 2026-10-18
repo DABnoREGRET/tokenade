@@ -1,0 +1,394 @@
+Running main() from gtest_main.cc
+[==========] Running 180 tests from 3 test suites.
+[----------] Global test environment set-up.
+[----------] 60 tests from ParserTest
+[ RUN      ] ParserTest.Case00
+[       OK ] ParserTest.Case00 (0 ms)
+[ RUN      ] ParserTest.Case01
+[       OK ] ParserTest.Case01 (0 ms)
+[ RUN      ] ParserTest.Case02
+[       OK ] ParserTest.Case02 (0 ms)
+[ RUN      ] ParserTest.Case03
+[       OK ] ParserTest.Case03 (0 ms)
+[ RUN      ] ParserTest.Case04
+[       OK ] ParserTest.Case04 (0 ms)
+[ RUN      ] ParserTest.Case05
+[       OK ] ParserTest.Case05 (0 ms)
+[ RUN      ] ParserTest.Case06
+[       OK ] ParserTest.Case06 (0 ms)
+[ RUN      ] ParserTest.Case07
+[       OK ] ParserTest.Case07 (0 ms)
+[ RUN      ] ParserTest.Case08
+[       OK ] ParserTest.Case08 (0 ms)
+[ RUN      ] ParserTest.Case09
+[       OK ] ParserTest.Case09 (0 ms)
+[ RUN      ] ParserTest.Case10
+[       OK ] ParserTest.Case10 (0 ms)
+[ RUN      ] ParserTest.Case11
+[       OK ] ParserTest.Case11 (0 ms)
+[ RUN      ] ParserTest.Case12
+[       OK ] ParserTest.Case12 (0 ms)
+[ RUN      ] ParserTest.Case13
+[       OK ] ParserTest.Case13 (0 ms)
+[ RUN      ] ParserTest.Case14
+[       OK ] ParserTest.Case14 (0 ms)
+[ RUN      ] ParserTest.Case15
+[       OK ] ParserTest.Case15 (0 ms)
+[ RUN      ] ParserTest.Case16
+[       OK ] ParserTest.Case16 (0 ms)
+[ RUN      ] ParserTest.Case17
+[       OK ] ParserTest.Case17 (0 ms)
+[ RUN      ] ParserTest.Case18
+[       OK ] ParserTest.Case18 (0 ms)
+[ RUN      ] ParserTest.Case19
+[       OK ] ParserTest.Case19 (0 ms)
+[ RUN      ] ParserTest.Case20
+[       OK ] ParserTest.Case20 (0 ms)
+[ RUN      ] ParserTest.Case21
+[       OK ] ParserTest.Case21 (0 ms)
+[ RUN      ] ParserTest.Case22
+[       OK ] ParserTest.Case22 (0 ms)
+[ RUN      ] ParserTest.Case23
+[       OK ] ParserTest.Case23 (0 ms)
+[ RUN      ] ParserTest.Case24
+[       OK ] ParserTest.Case24 (0 ms)
+[ RUN      ] ParserTest.Case25
+[       OK ] ParserTest.Case25 (0 ms)
+[ RUN      ] ParserTest.Case26
+[       OK ] ParserTest.Case26 (0 ms)
+[ RUN      ] ParserTest.Case27
+[       OK ] ParserTest.Case27 (0 ms)
+[ RUN      ] ParserTest.Case28
+[       OK ] ParserTest.Case28 (0 ms)
+[ RUN      ] ParserTest.Case29
+[       OK ] ParserTest.Case29 (0 ms)
+[ RUN      ] ParserTest.Case30
+[       OK ] ParserTest.Case30 (0 ms)
+[ RUN      ] ParserTest.Case31
+[       OK ] ParserTest.Case31 (0 ms)
+[ RUN      ] ParserTest.Case32
+[       OK ] ParserTest.Case32 (0 ms)
+[ RUN      ] ParserTest.Case33
+[       OK ] ParserTest.Case33 (0 ms)
+[ RUN      ] ParserTest.Case34
+[       OK ] ParserTest.Case34 (0 ms)
+[ RUN      ] ParserTest.Case35
+[       OK ] ParserTest.Case35 (0 ms)
+[ RUN      ] ParserTest.Case36
+[       OK ] ParserTest.Case36 (0 ms)
+[ RUN      ] ParserTest.Case37
+[       OK ] ParserTest.Case37 (0 ms)
+[ RUN      ] ParserTest.Case38
+[       OK ] ParserTest.Case38 (0 ms)
+[ RUN      ] ParserTest.Case39
+[       OK ] ParserTest.Case39 (0 ms)
+[ RUN      ] ParserTest.Case40
+[       OK ] ParserTest.Case40 (0 ms)
+[ RUN      ] ParserTest.Case41
+[       OK ] ParserTest.Case41 (0 ms)
+[ RUN      ] ParserTest.Case42
+[       OK ] ParserTest.Case42 (0 ms)
+[ RUN      ] ParserTest.Case43
+[       OK ] ParserTest.Case43 (0 ms)
+[ RUN      ] ParserTest.Case44
+[       OK ] ParserTest.Case44 (0 ms)
+[ RUN      ] ParserTest.Case45
+[       OK ] ParserTest.Case45 (0 ms)
+[ RUN      ] ParserTest.Case46
+[       OK ] ParserTest.Case46 (0 ms)
+[ RUN      ] ParserTest.Case47
+[       OK ] ParserTest.Case47 (0 ms)
+[ RUN      ] ParserTest.Case48
+[       OK ] ParserTest.Case48 (0 ms)
+[ RUN      ] ParserTest.Case49
+[       OK ] ParserTest.Case49 (0 ms)
+[ RUN      ] ParserTest.Case50
+[       OK ] ParserTest.Case50 (0 ms)
+[ RUN      ] ParserTest.Case51
+[       OK ] ParserTest.Case51 (0 ms)
+[ RUN      ] ParserTest.Case52
+[       OK ] ParserTest.Case52 (0 ms)
+[ RUN      ] ParserTest.Case53
+[       OK ] ParserTest.Case53 (0 ms)
+[ RUN      ] ParserTest.Case54
+[       OK ] ParserTest.Case54 (0 ms)
+[ RUN      ] ParserTest.Case55
+[       OK ] ParserTest.Case55 (0 ms)
+[ RUN      ] ParserTest.Case56
+[       OK ] ParserTest.Case56 (0 ms)
+[ RUN      ] ParserTest.Case57
+[       OK ] ParserTest.Case57 (0 ms)
+[ RUN      ] ParserTest.Case58
+[       OK ] ParserTest.Case58 (0 ms)
+[ RUN      ] ParserTest.Case59
+[       OK ] ParserTest.Case59 (0 ms)
+[----------] 60 tests from ParserTest (0 ms total)
+
+[----------] 60 tests from SchedulerTest
+[ RUN      ] SchedulerTest.Case00
+[       OK ] SchedulerTest.Case00 (0 ms)
+[ RUN      ] SchedulerTest.Case01
+[       OK ] SchedulerTest.Case01 (0 ms)
+[ RUN      ] SchedulerTest.Case02
+[       OK ] SchedulerTest.Case02 (0 ms)
+[ RUN      ] SchedulerTest.Case03
+[       OK ] SchedulerTest.Case03 (0 ms)
+[ RUN      ] SchedulerTest.Case04
+[       OK ] SchedulerTest.Case04 (0 ms)
+[ RUN      ] SchedulerTest.Case05
+[       OK ] SchedulerTest.Case05 (0 ms)
+[ RUN      ] SchedulerTest.Case06
+[       OK ] SchedulerTest.Case06 (0 ms)
+[ RUN      ] SchedulerTest.Case07
+[       OK ] SchedulerTest.Case07 (0 ms)
+[ RUN      ] SchedulerTest.Case08
+[       OK ] SchedulerTest.Case08 (0 ms)
+[ RUN      ] SchedulerTest.Case09
+[       OK ] SchedulerTest.Case09 (0 ms)
+[ RUN      ] SchedulerTest.Case10
+[       OK ] SchedulerTest.Case10 (0 ms)
+[ RUN      ] SchedulerTest.Case11
+[       OK ] SchedulerTest.Case11 (0 ms)
+[ RUN      ] SchedulerTest.Case12
+[       OK ] SchedulerTest.Case12 (0 ms)
+[ RUN      ] SchedulerTest.Case13
+[       OK ] SchedulerTest.Case13 (0 ms)
+[ RUN      ] SchedulerTest.Case14
+[       OK ] SchedulerTest.Case14 (0 ms)
+[ RUN      ] SchedulerTest.Case15
+[       OK ] SchedulerTest.Case15 (0 ms)
+[ RUN      ] SchedulerTest.Case16
+[       OK ] SchedulerTest.Case16 (0 ms)
+[ RUN      ] SchedulerTest.Case17
+mla_tests.cpp:81: Failure
+Expected equality of these values:
+  std::accumulate(v.begin(), v.end(), 0)
+    Which is: 6
+  7
+sum of Scheduler batch 17
+
+[  FAILED  ] SchedulerTest.Case17 (0 ms)
+[ RUN      ] SchedulerTest.Case18
+[       OK ] SchedulerTest.Case18 (0 ms)
+[ RUN      ] SchedulerTest.Case19
+[       OK ] SchedulerTest.Case19 (0 ms)
+[ RUN      ] SchedulerTest.Case20
+[       OK ] SchedulerTest.Case20 (0 ms)
+[ RUN      ] SchedulerTest.Case21
+[       OK ] SchedulerTest.Case21 (0 ms)
+[ RUN      ] SchedulerTest.Case22
+[       OK ] SchedulerTest.Case22 (0 ms)
+[ RUN      ] SchedulerTest.Case23
+[       OK ] SchedulerTest.Case23 (0 ms)
+[ RUN      ] SchedulerTest.Case24
+[       OK ] SchedulerTest.Case24 (0 ms)
+[ RUN      ] SchedulerTest.Case25
+[       OK ] SchedulerTest.Case25 (0 ms)
+[ RUN      ] SchedulerTest.Case26
+[       OK ] SchedulerTest.Case26 (0 ms)
+[ RUN      ] SchedulerTest.Case27
+[       OK ] SchedulerTest.Case27 (0 ms)
+[ RUN      ] SchedulerTest.Case28
+[       OK ] SchedulerTest.Case28 (0 ms)
+[ RUN      ] SchedulerTest.Case29
+[       OK ] SchedulerTest.Case29 (0 ms)
+[ RUN      ] SchedulerTest.Case30
+[       OK ] SchedulerTest.Case30 (0 ms)
+[ RUN      ] SchedulerTest.Case31
+[       OK ] SchedulerTest.Case31 (0 ms)
+[ RUN      ] SchedulerTest.Case32
+[       OK ] SchedulerTest.Case32 (0 ms)
+[ RUN      ] SchedulerTest.Case33
+[       OK ] SchedulerTest.Case33 (0 ms)
+[ RUN      ] SchedulerTest.Case34
+[       OK ] SchedulerTest.Case34 (0 ms)
+[ RUN      ] SchedulerTest.Case35
+[       OK ] SchedulerTest.Case35 (0 ms)
+[ RUN      ] SchedulerTest.Case36
+[       OK ] SchedulerTest.Case36 (0 ms)
+[ RUN      ] SchedulerTest.Case37
+[       OK ] SchedulerTest.Case37 (0 ms)
+[ RUN      ] SchedulerTest.Case38
+[       OK ] SchedulerTest.Case38 (0 ms)
+[ RUN      ] SchedulerTest.Case39
+[       OK ] SchedulerTest.Case39 (0 ms)
+[ RUN      ] SchedulerTest.Case40
+[       OK ] SchedulerTest.Case40 (0 ms)
+[ RUN      ] SchedulerTest.Case41
+[       OK ] SchedulerTest.Case41 (0 ms)
+[ RUN      ] SchedulerTest.Case42
+[       OK ] SchedulerTest.Case42 (0 ms)
+[ RUN      ] SchedulerTest.Case43
+[       OK ] SchedulerTest.Case43 (0 ms)
+[ RUN      ] SchedulerTest.Case44
+[       OK ] SchedulerTest.Case44 (0 ms)
+[ RUN      ] SchedulerTest.Case45
+[       OK ] SchedulerTest.Case45 (0 ms)
+[ RUN      ] SchedulerTest.Case46
+[       OK ] SchedulerTest.Case46 (0 ms)
+[ RUN      ] SchedulerTest.Case47
+[       OK ] SchedulerTest.Case47 (0 ms)
+[ RUN      ] SchedulerTest.Case48
+[       OK ] SchedulerTest.Case48 (0 ms)
+[ RUN      ] SchedulerTest.Case49
+[       OK ] SchedulerTest.Case49 (0 ms)
+[ RUN      ] SchedulerTest.Case50
+[       OK ] SchedulerTest.Case50 (0 ms)
+[ RUN      ] SchedulerTest.Case51
+[       OK ] SchedulerTest.Case51 (0 ms)
+[ RUN      ] SchedulerTest.Case52
+[       OK ] SchedulerTest.Case52 (0 ms)
+[ RUN      ] SchedulerTest.Case53
+[       OK ] SchedulerTest.Case53 (0 ms)
+[ RUN      ] SchedulerTest.Case54
+[       OK ] SchedulerTest.Case54 (0 ms)
+[ RUN      ] SchedulerTest.Case55
+[       OK ] SchedulerTest.Case55 (0 ms)
+[ RUN      ] SchedulerTest.Case56
+[       OK ] SchedulerTest.Case56 (0 ms)
+[ RUN      ] SchedulerTest.Case57
+[       OK ] SchedulerTest.Case57 (0 ms)
+[ RUN      ] SchedulerTest.Case58
+[       OK ] SchedulerTest.Case58 (0 ms)
+[ RUN      ] SchedulerTest.Case59
+[       OK ] SchedulerTest.Case59 (0 ms)
+[----------] 60 tests from SchedulerTest (0 ms total)
+
+[----------] 60 tests from CodecTest
+[ RUN      ] CodecTest.Case00
+[       OK ] CodecTest.Case00 (0 ms)
+[ RUN      ] CodecTest.Case01
+[       OK ] CodecTest.Case01 (0 ms)
+[ RUN      ] CodecTest.Case02
+[       OK ] CodecTest.Case02 (0 ms)
+[ RUN      ] CodecTest.Case03
+[       OK ] CodecTest.Case03 (0 ms)
+[ RUN      ] CodecTest.Case04
+[       OK ] CodecTest.Case04 (0 ms)
+[ RUN      ] CodecTest.Case05
+[       OK ] CodecTest.Case05 (0 ms)
+[ RUN      ] CodecTest.Case06
+[       OK ] CodecTest.Case06 (0 ms)
+[ RUN      ] CodecTest.Case07
+[       OK ] CodecTest.Case07 (0 ms)
+[ RUN      ] CodecTest.Case08
+[       OK ] CodecTest.Case08 (0 ms)
+[ RUN      ] CodecTest.Case09
+[       OK ] CodecTest.Case09 (0 ms)
+[ RUN      ] CodecTest.Case10
+[       OK ] CodecTest.Case10 (0 ms)
+[ RUN      ] CodecTest.Case11
+[       OK ] CodecTest.Case11 (0 ms)
+[ RUN      ] CodecTest.Case12
+[       OK ] CodecTest.Case12 (0 ms)
+[ RUN      ] CodecTest.Case13
+[       OK ] CodecTest.Case13 (0 ms)
+[ RUN      ] CodecTest.Case14
+[       OK ] CodecTest.Case14 (0 ms)
+[ RUN      ] CodecTest.Case15
+[       OK ] CodecTest.Case15 (0 ms)
+[ RUN      ] CodecTest.Case16
+[       OK ] CodecTest.Case16 (0 ms)
+[ RUN      ] CodecTest.Case17
+[       OK ] CodecTest.Case17 (0 ms)
+[ RUN      ] CodecTest.Case18
+[       OK ] CodecTest.Case18 (0 ms)
+[ RUN      ] CodecTest.Case19
+[       OK ] CodecTest.Case19 (0 ms)
+[ RUN      ] CodecTest.Case20
+[       OK ] CodecTest.Case20 (0 ms)
+[ RUN      ] CodecTest.Case21
+[       OK ] CodecTest.Case21 (0 ms)
+[ RUN      ] CodecTest.Case22
+[       OK ] CodecTest.Case22 (0 ms)
+[ RUN      ] CodecTest.Case23
+[       OK ] CodecTest.Case23 (0 ms)
+[ RUN      ] CodecTest.Case24
+[       OK ] CodecTest.Case24 (0 ms)
+[ RUN      ] CodecTest.Case25
+[       OK ] CodecTest.Case25 (0 ms)
+[ RUN      ] CodecTest.Case26
+[       OK ] CodecTest.Case26 (0 ms)
+[ RUN      ] CodecTest.Case27
+[       OK ] CodecTest.Case27 (0 ms)
+[ RUN      ] CodecTest.Case28
+[       OK ] CodecTest.Case28 (0 ms)
+[ RUN      ] CodecTest.Case29
+[       OK ] CodecTest.Case29 (0 ms)
+[ RUN      ] CodecTest.Case30
+[       OK ] CodecTest.Case30 (0 ms)
+[ RUN      ] CodecTest.Case31
+[       OK ] CodecTest.Case31 (0 ms)
+[ RUN      ] CodecTest.Case32
+[       OK ] CodecTest.Case32 (0 ms)
+[ RUN      ] CodecTest.Case33
+[       OK ] CodecTest.Case33 (0 ms)
+[ RUN      ] CodecTest.Case34
+[       OK ] CodecTest.Case34 (0 ms)
+[ RUN      ] CodecTest.Case35
+[       OK ] CodecTest.Case35 (0 ms)
+[ RUN      ] CodecTest.Case36
+[       OK ] CodecTest.Case36 (0 ms)
+[ RUN      ] CodecTest.Case37
+[       OK ] CodecTest.Case37 (0 ms)
+[ RUN      ] CodecTest.Case38
+[       OK ] CodecTest.Case38 (0 ms)
+[ RUN      ] CodecTest.Case39
+[       OK ] CodecTest.Case39 (0 ms)
+[ RUN      ] CodecTest.Case40
+[       OK ] CodecTest.Case40 (0 ms)
+[ RUN      ] CodecTest.Case41
+[       OK ] CodecTest.Case41 (0 ms)
+[ RUN      ] CodecTest.Case42
+mla_tests.cpp:166: Failure
+Expected equality of these values:
+  std::accumulate(v.begin(), v.end(), 0)
+    Which is: 6
+  7
+sum of Codec batch 42
+
+[  FAILED  ] CodecTest.Case42 (0 ms)
+[ RUN      ] CodecTest.Case43
+[       OK ] CodecTest.Case43 (0 ms)
+[ RUN      ] CodecTest.Case44
+[       OK ] CodecTest.Case44 (0 ms)
+[ RUN      ] CodecTest.Case45
+[       OK ] CodecTest.Case45 (0 ms)
+[ RUN      ] CodecTest.Case46
+[       OK ] CodecTest.Case46 (0 ms)
+[ RUN      ] CodecTest.Case47
+[       OK ] CodecTest.Case47 (0 ms)
+[ RUN      ] CodecTest.Case48
+[       OK ] CodecTest.Case48 (0 ms)
+[ RUN      ] CodecTest.Case49
+[       OK ] CodecTest.Case49 (0 ms)
+[ RUN      ] CodecTest.Case50
+[       OK ] CodecTest.Case50 (0 ms)
+[ RUN      ] CodecTest.Case51
+[       OK ] CodecTest.Case51 (0 ms)
+[ RUN      ] CodecTest.Case52
+[       OK ] CodecTest.Case52 (0 ms)
+[ RUN      ] CodecTest.Case53
+[       OK ] CodecTest.Case53 (0 ms)
+[ RUN      ] CodecTest.Case54
+[       OK ] CodecTest.Case54 (0 ms)
+[ RUN      ] CodecTest.Case55
+[       OK ] CodecTest.Case55 (0 ms)
+[ RUN      ] CodecTest.Case56
+[       OK ] CodecTest.Case56 (0 ms)
+[ RUN      ] CodecTest.Case57
+[       OK ] CodecTest.Case57 (0 ms)
+[ RUN      ] CodecTest.Case58
+[       OK ] CodecTest.Case58 (0 ms)
+[ RUN      ] CodecTest.Case59
+[       OK ] CodecTest.Case59 (0 ms)
+[----------] 60 tests from CodecTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 180 tests from 3 test suites ran. (0 ms total)
+[  PASSED  ] 178 tests.
+[  FAILED  ] 2 tests, listed below:
+[  FAILED  ] SchedulerTest.Case17
+[  FAILED  ] CodecTest.Case42
+
+ 2 FAILED TESTS

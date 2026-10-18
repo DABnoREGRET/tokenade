@@ -1,0 +1,5 @@
+    
+Ethernet:
+Adresse IP du noeud�: [10.0.2.15] ID d'�tendue�: []
+
+    Aucun nom dans le cache

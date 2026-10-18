@@ -1,0 +1,4 @@
++-o Root  <class IORegistryEntry, id 0x100000100, retain 8>
+  +-o AppleUSBXHCI Root Hub Simulation@0c000000  <class AppleUSBRootHubDevice, id 0x1000001fa, registered, matched, active, busy 0 (0 ms), retain 10>
+    +-o USB Keyboard@0c100000  <class AppleUSBDevice, id 0x1000039de, registered, matched, active, busy 0 (0 ms), retain 11>
+    +-o USB Tablet@0c200000  <class AppleUSBDevice, id 0x1000039ee, registered, matched, active, busy 0 (0 ms), retain 11>

@@ -1,0 +1,10 @@
+0000000    #   #  \n   #       H   o   s   t       D   a   t   a   b   a
+0000020    s   e  \n   #  \n   #       l   o   c   a   l   h   o   s   t
+0000040        i   s       u   s   e   d       t   o       c   o   n   f
+0000060    i   g   u   r   e       t   h   e       l   o   o   p   b   a
+0000100    c   k       i   n   t   e   r   f   a   c   e  \n   #       w
+0000120    h   e   n       t   h   e       s   y   s   t   e   m       i
+0000140    s       b   o   o   t   i   n   g   .           D   o       n
+0000160    o   t       c   h   a   n   g   e       t   h   i   s       e
+0000200    n   t   r   y   .  \n   #   #  \n   1   2   7   .   0   .   0
+0000220    .   1  \t   l   o   c   a   l   h   o   s   t  \n   2   5   5

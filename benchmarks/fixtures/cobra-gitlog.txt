@@ -1,0 +1,73 @@
+commit ad460ea8f249db69c943a365fb84f3a59042d54e
+Author: takanuva15 <6986426+takanuva15@users.noreply.github.com>
+Date:   Sat Apr 25 19:07:41 2026 -0400
+
+    Add cobra unique args validator (#2397)
+
+ .github/dependabot.yml                 |   12 +
+ .github/labeler.yml                    |   24 +
+ .github/workflows/labeler.yml          |   18 +
+ .github/workflows/test.yml             |  125 +
+ .gitignore                             |   39 +
+ .golangci.yml                          |   66 +
+ .mailmap                               |    3 +
+ CONDUCT.md                             |   37 +
+ CONTRIBUTING.md                        |   50 +
+ LICENSE.txt                            |  174 ++
+ MAINTAINERS                            |   13 +
+ Makefile                               |   35 +
+ README.md                              |  133 +
+ SECURITY.md                            |  105 +
+ active_help.go                         |   60 +
+ active_help_test.go                    |  400 ++++
+ args.go                                |  144 ++
+ args_test.go                           |  578 +++++
+ assets/CobraMain.png                   |  Bin 0 -> 73479 bytes
+ bash_completions.go                    |  709 ++++++
+ bash_completionsV2.go                  |  484 ++++
+ bash_completionsV2_test.go             |   33 +
+ bash_completions_test.go               |  289 +++
+ cobra.go                               |  246 ++
+ cobra_test.go                          |  301 +++
+ command.go                             | 2072 ++++++++++++++++
+ command_notwin.go                      |   20 +
+ command_test.go                        | 2954 +++++++++++++++++++++++
+ command_win.go                         |   41 +
+ completions.go                         | 1024 ++++++++
+ completions_test.go                    | 4129 ++++++++++++++++++++++++++++++++
+ doc/cmd_test.go                        |  105 +
+ doc/man_docs.go                        |  246 ++
+ doc/man_docs_test.go                   |  231 ++
+ doc/man_examples_test.go               |   49 +
+ doc/md_docs.go                         |  158 ++
+ doc/md_docs_test.go                    |  125 +
+ doc/rest_docs.go                       |  186 ++
+ doc/rest_docs_test.go                  |  112 +
+ doc/util.go                            |   52 +
+ doc/yaml_docs.go                       |  175 ++
+ doc/yaml_docs_test.go                  |  100 +
+ fish_completions.go                    |  292 +++
+ fish_completions_test.go               |  143 ++
+ flag_groups.go                         |  290 +++
+ flag_groups_test.go                    |  195 ++
+ go.mod                                 |   10 +
+ go.sum                                 |   12 +
+ powershell_completions.go              |  350 +++
+ powershell_completions_test.go         |   33 +
+ shell_completions.go                   |   98 +
+ site/content/active_help.md            |  168 ++
+ site/content/completions/_index.md     |  616 +++++
+ site/content/completions/bash.md       |   93 +
+ site/content/completions/fish.md       |    4 +
+ site/content/completions/powershell.md |    3 +
+ site/content/completions/zsh.md        |   48 +
+ site/content/docgen/_index.md          |   17 +
+ site/content/docgen/man.md             |   31 +
+ site/content/docgen/md.md              |  115 +
+ site/content/docgen/rest.md            |  114 +
+ site/content/docgen/yaml.md            |  112 +
+ site/content/projects_using_cobra.md   |   73 +
+ site/content/user_guide.md             |  887 +++++++
+ zsh_completions.go                     |  308 +++
+ zsh_completions_test.go                |   33 +
+ 66 files changed, 19902 insertions(+)

@@ -1,0 +1,40 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Core -> /src/demo/Core/bin/Debug/net10.0/Core.dll
+  Core.Tests -> /src/demo/Core.Tests/bin/Debug/net10.0/Core.Tests.dll
+Test run for /src/demo/Core.Tests/bin/Debug/net10.0/Core.Tests.dll (.NETCoreApp,Version=v10.0)
+VSTest version 18.0.2-dev (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:00.12]     Core.Tests.CalcTests.Div_zero [FAIL]
+  Failed Core.Tests.CalcTests.Div_zero [< 1 ms]
+  Error Message:
+   System.DivideByZeroException : Attempted to divide by zero.
+  Stack Trace:
+     at Core.Calc.Div(Int32 a, Int32 b) in /src/demo/Core/Calc.cs:line 6
+   at Core.Tests.CalcTests.Div_zero() in /src/demo/Core.Tests/CalcTests.cs:line 67
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:00.15]     Core.Tests.CalcTests.Add_theory(a: 2, b: 2, e: 5) [FAIL]
+  Failed Core.Tests.CalcTests.Add_theory(a: 2, b: 2, e: 5) [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 5
+Actual:   4
+  Stack Trace:
+     at Core.Tests.CalcTests.Add_theory(Int32 a, Int32 b, Int32 e) in /src/demo/Core.Tests/CalcTests.cs:line 68
+   at InvokeStub_CalcTests.Add_theory(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:00.15]     Core.Tests.CalcTests.Sub_wrong [FAIL]
+  Failed Core.Tests.CalcTests.Sub_wrong [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 5
+Actual:   7
+  Stack Trace:
+     at Core.Tests.CalcTests.Sub_wrong() in /src/demo/Core.Tests/CalcTests.cs:line 66
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+
+Failed!  - Failed:     3, Passed:    62, Skipped:     0, Total:    65, Duration: 42 ms - Core.Tests.dll (net10.0)

@@ -1,0 +1,4 @@
+The operation couldn’t be completed. (NSURLErrorDomain error -1012.)
+Software Update Tool
+
+Finding available software

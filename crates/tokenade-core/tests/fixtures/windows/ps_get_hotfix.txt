@@ -1,0 +1,15 @@
+
+Source        Description      HotFixID      InstalledBy          InstalledOn               
+------        -----------      --------      -----------          -----------               
+DESKTOP-T2... Update           KB5066130     AUTORITE NT\Syst�me  23/10/2025 00:00:00       
+DESKTOP-T2... Update           KB5027122     AUTORITE NT\Syst�me  23/06/2023 00:00:00       
+DESKTOP-T2... Update           KB5011048     AUTORITE NT\Syst�me  18/09/2024 00:00:00       
+DESKTOP-T2... Update           KB5011058     AUTORITE NT\Syst�me  19/09/2024 00:00:00       
+DESKTOP-T2... Update           KB5015684                          05/05/2023 00:00:00       
+DESKTOP-T2... Update           KB5020683     AUTORITE NT\Syst�me  02/06/2023 00:00:00       
+DESKTOP-T2... Update           KB5033052     AUTORITE NT\Syst�me  18/09/2024 00:00:00       
+DESKTOP-T2... Security Update  KB5072653     AUTORITE NT\Syst�me  18/11/2025 00:00:00       
+DESKTOP-T2... Security Update  KB5071959     AUTORITE NT\Syst�me  17/11/2025 00:00:00       
+DESKTOP-T2... Security Update  KB5014032                          05/05/2023 00:00:00       
+
+

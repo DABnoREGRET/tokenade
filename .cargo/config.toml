@@ -1,0 +1,72 @@
+# Cap on parallel link jobs.
+#
+# `[profile.release]` uses `lto = "fat"` with `codegen-units = 1`, so EVERY
+# binary links the whole graph. One bench link peaks at ~2.3 GB; `cargo build
+# --release -p tokenade-bench` builds 14 of them, and uncapped `-j 24` links
+# them together — enough to exhaust a 61 GB machine.
+#
+# Four parallel links hold under load (another test suite, a browser). This is
+# not a comfort setting: it is the bound that keeps a library build from taking
+# the machine down. Build ONE binary (`--bin residue_census`), never the whole
+# bench crate. The bench instruments compute their own job count from
+# `MemAvailable` (`tokenade_bench::safe_build_jobs`), since a static cap cannot
+# know what else is running.
+[build]
+jobs = 4
+
+# Host linker: lld instead of GNU ld. Dev/test builds here are link-bound —
+# fifty-one test binaries relink whenever `tokenade-core` changes — and lld is
+# already installed on this machine. Scoped to the host target so the Windows
+# and musl cross-builds above keep the linkers they were tuned for.
+[target.x86_64-unknown-linux-gnu]
+rustflags = ["-C", "link-arg=-fuse-ld=lld"]
+
+# Windows GNU: statically link the mingw CRT (libgcc, libwinpthread, libstdc++)
+# so the shipped tokenade.exe is self-contained — the npm
+# tarball ships ONLY the .exe, no runtime DLLs. Scoped to this target; native
+# linux/macOS builds are unaffected.
+[target.x86_64-pc-windows-gnu]
+rustflags = ["-C", "target-feature=+crt-static"]
+
+# Windows on ARM (Windows 11 ARM64). Same static-CRT philosophy as the x64-GNU
+# build above: the gnullvm (llvm-mingw) toolchain yields a self-contained
+# aarch64 tokenade.exe with no MSVC-runtime dependency, so the npm tarball ships
+# ONLY the .exe. gnullvm (not msvc) keeps the static-mingw lineage and
+# cross-builds from Linux. NOTE: unsigned like every Windows build — Smart App
+# Control still blocks it until Authenticode signing lands; native ARM64 fixes
+# emulation, not the SAC gate.
+[target.aarch64-pc-windows-gnullvm]
+rustflags = ["-C", "target-feature=+crt-static"]
+
+[env]
+
+# `disclose::threshold_tokens()` multiplies its threshold by `TOKENADE_PRESSURE`
+# (0.2–1.0), which the hook entry points set from the session depth. That is
+# right in production — a line delivered inline is re-billed as a cache read on
+# every remaining turn — and poisonous for a MEASUREMENT: a suite launched from
+# a tokenade-wrapped shell inherits e.g. `TOKENADE_PRESSURE=0.75`, pages drop
+# under the stash threshold, get delivered as a SUMMARY, and corpus tests fail
+# for reasons that say nothing about the code.
+#
+# `force = true` because the INHERITED value is exactly the one to override.
+# 1.0 is the documented no-op of `pressure_factor()`. `cargo nextest` has no
+# `env` key, so cargo sets the variable and the test processes inherit it.
+TOKENADE_PRESSURE = { value = "1.0", force = true }
+
+# Convenience alias. `cargo t` runs the DEFAULT test suite: the whole workspace
+# (tokenade-core / tokenade-cli / tokenade-bench). tokenade-llama-sys is NOT a
+# workspace member — its build.rs compiles llama.cpp via cmake (very slow, needs
+# a C/C++ toolchain) and the local-llm sub-agent feature it backs is shelved —
+# so `cargo test --workspace` (and this alias) NEVER invoke cmake/llama.cpp.
+# Exercise that crate on demand only, with the feature that pulls it in:
+#   cargo test -p tokenade-cli --features local-llm
+[alias]
+t = "test --workspace"
+# The fast path: nextest puts every test from all 51 binaries into ONE parallel
+# pool, where `cargo test` runs the binaries in series. Measured 2026-09-03 on
+# this workspace, same tests, same machine: 391 s -> 78 s.
+#
+# `t` is KEPT and is not an alias for this one, because nextest does not run
+# doctests at all — it skips them silently. Use `cargo nt` while iterating and
+# `cargo test --doc` (or `cargo t`) before calling something done.
+nt = "nextest run --workspace"

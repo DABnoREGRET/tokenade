@@ -1,0 +1,8 @@
+apple.com has address 17.253.144.10
+apple.com has IPv6 address 2620:149:af0::10
+apple.com mail is handled by 10 mx-in.g.apple.com.
+apple.com mail is handled by 20 mx-in-ma.apple.com.
+apple.com mail is handled by 20 mx-in-rn.apple.com.
+apple.com mail is handled by 20 mx-in-sg.apple.com.
+apple.com mail is handled by 20 mx-in-hfd.apple.com.
+apple.com mail is handled by 20 mx-in-vib.apple.com.

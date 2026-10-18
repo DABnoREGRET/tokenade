@@ -1,0 +1,4 @@
+ 5:00  up 4 days, 18:51, 2 users, load averages: 1,84 1,45 1,33
+USER     TTY      FROM              LOGIN@  IDLE WHAT
+macos    console  -                26ян� 39days -
+macos    s000     -                26ян� 39days -zsh          ��    /bin/zsh 

@@ -1,0 +1,63 @@
+
+Connexions actives
+
+  Proto  Adresse locale         Adresse distante       �tat
+  TCP    0.0.0.0:22             0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:135            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:445            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:5040           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:5357           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:7680           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49664          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49665          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49666          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49667          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49668          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49670          0.0.0.0:0              LISTENING
+  TCP    10.0.2.15:22           10.0.2.2:40322         ESTABLISHED
+  TCP    10.0.2.15:139          0.0.0.0:0              LISTENING
+  TCP    10.0.2.15:60983        98.66.133.184:443      ESTABLISHED
+  TCP    10.0.2.15:61267        72.154.7.106:443       ESTABLISHED
+  TCP    10.0.2.15:61268        72.154.7.106:443       ESTABLISHED
+  TCP    10.0.2.15:61269        72.154.7.109:443       TIME_WAIT
+  TCP    10.0.2.15:61270        72.154.7.104:443       ESTABLISHED
+  TCP    127.0.0.1:5354         0.0.0.0:0              LISTENING
+  TCP    [::]:22                [::]:0                 LISTENING
+  TCP    [::]:135               [::]:0                 LISTENING
+  TCP    [::]:445               [::]:0                 LISTENING
+  TCP    [::]:5357              [::]:0                 LISTENING
+  TCP    [::]:7680              [::]:0                 LISTENING
+  TCP    [::]:49664             [::]:0                 LISTENING
+  TCP    [::]:49665             [::]:0                 LISTENING
+  TCP    [::]:49666             [::]:0                 LISTENING
+  TCP    [::]:49667             [::]:0                 LISTENING
+  TCP    [::]:49668             [::]:0                 LISTENING
+  TCP    [::]:49670             [::]:0                 LISTENING
+  UDP    0.0.0.0:123            *:*                    
+  UDP    0.0.0.0:3702           *:*                    
+  UDP    0.0.0.0:3702           *:*                    
+  UDP    0.0.0.0:5050           *:*                    
+  UDP    0.0.0.0:5353           *:*                    
+  UDP    0.0.0.0:5355           *:*                    
+  UDP    0.0.0.0:52535          *:*                    
+  UDP    0.0.0.0:52537          *:*                    
+  UDP    10.0.2.15:137          *:*                    
+  UDP    10.0.2.15:138          *:*                    
+  UDP    10.0.2.15:1900         *:*                    
+  UDP    10.0.2.15:5353         *:*                    
+  UDP    10.0.2.15:63239        *:*                    
+  UDP    127.0.0.1:1900         *:*                    
+  UDP    127.0.0.1:52539        *:*                    
+  UDP    127.0.0.1:63240        *:*                    
+  UDP    [::]:123               *:*                    
+  UDP    [::]:3702              *:*                    
+  UDP    [::]:3702              *:*                    
+  UDP    [::]:5353              *:*                    
+  UDP    [::]:5355              *:*                    
+  UDP    [::]:52536             *:*                    
+  UDP    [::]:52538             *:*                    
+  UDP    [::1]:1900             *:*                    
+  UDP    [::1]:5353             *:*                    
+  UDP    [::1]:63238            *:*                    
+  UDP    [fe80::4d4:f2c8:d747:79bf%9]:1900  *:*                    
+  UDP    [fe80::4d4:f2c8:d747:79bf%9]:63237  *:*                    

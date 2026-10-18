@@ -1,0 +1,10 @@
+
+Index Time         EntryType   Source   InstanceID Message                                           
+----- ----         ---------   ------   ---------- -------                                           
+11292 Mai 30 12:00 Information EventLog 2147489661 La durée active du système est de 412029 secondes.
+11291 Mai 30 11:59 Information EventLog 2147489661 La durée active du système est de 412028 secondes.
+11290 Mai 30 11:59 Information EventLog 2147489661 La durée active du système est de 412011 secondes.
+11289 Mai 30 11:56 Information EventLog 2147489661 La durée active du système est de 411825 secondes.
+11288 Mai 30 11:20 Information EventLog 2147489661 La durée active du système est de 409652 secondes.
+
+

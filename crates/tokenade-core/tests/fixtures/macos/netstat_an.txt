@@ -1,0 +1,40 @@
+Active Internet connections (including servers)
+Proto Recv-Q Send-Q  Local Address          Foreign Address        (state)    
+tcp4       0      0  10.0.2.15.22           10.0.2.2.51100         ESTABLISHED
+tcp46      0      0  *.3283                 *.*                    LISTEN     
+tcp4       0      0  *.88                   *.*                    LISTEN     
+tcp6       0      0  *.88                   *.*                    LISTEN     
+tcp4       0      0  *.5900                 *.*                    LISTEN     
+tcp6       0      0  *.5900                 *.*                    LISTEN     
+tcp4       0      0  *.22                   *.*                    LISTEN     
+tcp6       0      0  *.22                   *.*                    LISTEN     
+udp4       0      0  127.0.0.1.32376        *.*                               
+udp4       0      0  *.3283                 *.*                               
+udp46      0      0  *.3283                 *.*                               
+udp4       0      0  *.*                    *.*                               
+udp4       0      0  *.*                    *.*                               
+udp46      0      0  *.*                    *.*                               
+udp4       0      0  *.*                    *.*                               
+udp4       0      0  *.88                   *.*                               
+udp6       0      0  *.88                   *.*                               
+udp6       0      0  *.5353                 *.*                               
+udp4       0      0  *.5353                 *.*                               
+udp4       0      0  *.138                  *.*                               
+udp4       0      0  *.137                  *.*                               
+Active Multipath Internet connections
+Proto/ID  Flags      Local Address          Foreign Address        (state)    
+icm6       0      0  *.*                    *.*                               
+Active LOCAL (UNIX) domain sockets
+Address          Type   Recv-Q Send-Q            Inode             Conn             Refs          Nextref Addr
+628550565d1ad0b1 stream      0      0                0 628550565d1acfe9                0                0
+628550565d1acfe9 stream      0      0                0 628550565d1ad0b1                0                0
+628550565d1ad179 stream      0      0                0                0                0                0
+628550566d21e621 stream      0      0                0 628550566d21e559                0                0 /var/run/mDNSResponder
+628550566d21e559 stream      0      0                0 628550566d21e621                0                0
+628550566d220c69 stream      0      0                0 628550566d220ad9                0                0 /var/run/mDNSResponder
+628550566d220ad9 stream      0      0                0 628550566d220c69                0                0
+628550566d220179 stream      0      0                0 628550565d1acf21                0                0 /var/run/mDNSResponder
+628550565d1acf21 stream      0      0                0 628550566d220179                0                0
+628550566d220df9 stream      0      0                0 628550566d220d31                0                0 /var/run/mDNSResponder
+628550566d220d31 stream      0      0                0 628550566d220df9                0                0
+628550566d21fd91 stream      0      0                0 628550566d21fcc9                0                0 /var/run/mDNSResponder

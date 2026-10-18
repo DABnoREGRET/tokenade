@@ -1,0 +1,9 @@
+Filesystem       Size   Used  Avail Capacity iused     ifree %iused  Mounted on
+/dev/disk1s5s1  100Gi   24Gi   36Gi    40%  575614 376617280    0%   /
+devfs           183Ki  183Ki    0Bi   100%     634         0  100%   /dev
+/dev/disk1s4    100Gi  1.0Gi   36Gi     3%       2 376617280    0%   /System/Volumes/VM
+/dev/disk1s2    100Gi  219Mi   36Gi     1%     721 376617280    0%   /System/Volumes/Preboot
+/dev/disk1s6    100Gi  100Mi   36Gi     1%     394 376617280    0%   /System/Volumes/Update
+/dev/disk1s1    100Gi   38Gi   36Gi    52%  466764 376617280    0%   /System/Volumes/Data
+map auto_home     0Bi    0Bi    0Bi   100%       0         0  100%   /System/Volumes/Data/home
+/dev/disk1s5    100Gi   24Gi   36Gi    40%  502390 376617280    0%   /System/Volumes/Update/mnt1

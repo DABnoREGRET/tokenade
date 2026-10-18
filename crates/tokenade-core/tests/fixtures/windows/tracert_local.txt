@@ -1,0 +1,7 @@
+
+D�termination de l'itin�raire vers DESKTOP-T2HFRGA [::1]
+avec un maximum de 3 sauts�:
+
+  1    <1 ms    <1 ms    <1 ms  DESKTOP-T2HFRGA [::1] 
+
+Itin�raire d�termin�.

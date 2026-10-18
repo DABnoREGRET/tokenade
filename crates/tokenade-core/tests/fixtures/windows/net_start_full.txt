@@ -1,0 +1,93 @@
+Les services Windows suivants ont �t� lanc�s�:
+
+   Alimentation
+   Appel de proc�dure distante (RPC)
+   Assistance IP
+   Assistance NetBIOS sur TCP/IP
+   Audio Windows
+   Centre de s�curit�
+   Client de suivi de lien distribu�
+   Client DHCP
+   Client DNS
+   Connaissance des emplacements r�seau
+   Consommation des donn�es
+   CoreMessaging
+   D�couverte SSDP
+   D�tection mat�riel noyau
+   Exp�riences des utilisateurs connect�s et t�l�m�trie
+   Gestionnaire de comptes de s�curit�
+   Gestionnaire de comptes web
+   Gestionnaire de session locale
+   Gestionnaire des connexions d'acc�s � distance
+   Gestionnaire des connexions Windows
+   Gestionnaire des utilisateurs
+   Gestionnaire d'informations d'identification
+   G�n�rateur de points de terminaison du service Audio Windows
+   H�te de synchronisation_5b590
+   H�te du fournisseur de d�couverte de fonctions
+   H�te syst�me de diagnostics
+   Informations d'application
+   Infrastructure de gestion Windows
+   Installation du service Microsoft Store
+   Isolation de cl� CNG
+   Journal d'�v�nements Windows
+   Lanceur de processus serveur DCOM
+   Mappeur de point de terminaison RPC
+   Microsoft Defender Service de base
+   Moteur de filtrage de base
+   OpenSSH SSH Server
+   Optimisation de livraison
+   Pare-feu Windows Defender
+   Planificateur de t�ches
+   Plug-and-Play
+   Programme d'installation pour les modules Windows
+   Protection logicielle
+   Publication des ressources de d�couverte de fonctions
+   Serveur
+   Serveur Gestionnaire de licences Windows
+   Service antivirus Microsoft Defender
+   Service AVCTP
+   Service Bonjour
+   Service Broker des �v�nements syst�me
+   Service Broker pour les connexions r�seau
+   Service Broker pour les �v�nements horaires
+   Service de biom�trie Windows
+   Service de cache de police Windows
+   Service de d�couverte automatique de Proxy Web pour les services HTTP Windows
+   Service de gestion radio
+   Service de l'Assistant Compatibilit� des programmes
+   Service de notification d'�v�nements syst�me
+   Service de partage des donn�es
+   Service de plateforme des appareils connect�s
+   Service de profil utilisateur
+   Service de stockage
+   Service de strat�gie d'affichage
+   Service de strat�gie de diagnostic
+   Service du clavier tactile et du volet d'�criture manuscrite
+   Service du syst�me de notifications Push Windows
+   Service d'infrastructure des t�ches en arri�re-plan
+   Service d'inspection r�seau de l'antivirus Microsoft Defender
+   Service h�te WDIServiceHost
+   Service Interface du magasin r�seau
+   Service Liste des r�seaux
+   Service Medic de Windows Update
+   Service Orchestrator pour les mises � jour
+   Service pour utilisateur de plateforme d'appareils connect�s_5b590
+   Service State Repository (StateRepository)
+   Service S�curit� Windows
+   Service utilisateur de notifications Push Windows_5b590
+   Service utilisateur du Presse-papiers_5b590
+   Services de chiffrement
+   Service�SSTP (Secure Socket Tunneling Protocol)
+   Spouleur d'impression
+   Station de travail
+   SysMain
+   Syst�me d'�v�nement COM+
+   Temps Windows
+   Th�mes
+   VirtualBox Guest Additions Service
+   Windows Phone IP over USB Transport (IpOverUsbSvc)
+   Windows Search
+
+La commande s'est termin�e correctement.
+

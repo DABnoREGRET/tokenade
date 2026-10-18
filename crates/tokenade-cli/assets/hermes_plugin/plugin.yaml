@@ -1,0 +1,3 @@
+name: tokenade
+version: "1"
+description: Compacts large tool results via the tokenade binary to save tokens.

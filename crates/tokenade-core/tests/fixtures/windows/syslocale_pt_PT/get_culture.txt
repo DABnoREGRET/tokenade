@@ -1,0 +1,6 @@
+
+LCID             Name             DisplayName                                                                          
+----             ----             -----------                                                                          
+2070             pt-PT            Portugais (Portugal)                                                                 
+
+

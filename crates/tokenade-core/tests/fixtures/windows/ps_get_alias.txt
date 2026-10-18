@@ -1,0 +1,25 @@
+
+CommandType     Name                                               Version    Source                                   
+-----------     ----                                               -------    ------                                   
+Alias           % -> ForEach-Object                                                                                    
+Alias           ? -> Where-Object                                                                                      
+Alias           ac -> Add-Content                                                                                      
+Alias           asnp -> Add-PSSnapin                                                                                   
+Alias           cat -> Get-Content                                                                                     
+Alias           cd -> Set-Location                                                                                     
+Alias           CFS -> ConvertFrom-String                          3.1.0.0    Microsoft.PowerShell.Utility             
+Alias           chdir -> Set-Location                                                                                  
+Alias           clc -> Clear-Content                                                                                   
+Alias           clear -> Clear-Host                                                                                    
+Alias           clhy -> Clear-History                                                                                  
+Alias           cli -> Clear-Item                                                                                      
+Alias           clp -> Clear-ItemProperty                                                                              
+Alias           cls -> Clear-Host                                                                                      
+Alias           clv -> Clear-Variable                                                                                  
+Alias           cnsn -> Connect-PSSession                                                                              
+Alias           compare -> Compare-Object                                                                              
+Alias           copy -> Copy-Item                                                                                      
+Alias           cp -> Copy-Item                                                                                        
+Alias           cpi -> Copy-Item                                                                                       
+
+

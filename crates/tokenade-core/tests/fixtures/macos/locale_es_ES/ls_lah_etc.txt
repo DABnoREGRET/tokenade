@@ -1,0 +1,1 @@
+lrwxr-xr-x@ 1 root  wheel    11B 18 oct  2021 /etc -> private/etc

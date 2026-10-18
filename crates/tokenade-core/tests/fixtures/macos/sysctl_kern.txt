@@ -1,0 +1,30 @@
+kern.ostype: Darwin
+kern.osrelease: 21.1.0
+kern.osrevision: 199506
+kern.version: Darwin Kernel Version 21.1.0: Wed Oct 13 17:33:23 PDT 2021; root:xnu-8019.41.5~1/RELEASE_X86_64
+kern.maxvnodes: 95888
+kern.maxproc: 2088
+kern.maxfiles: 30720
+kern.argmax: 1048576
+kern.securelevel: 0
+kern.hostname: MacOS.local
+kern.hostid: 0
+kern.clockrate: { hz = 100, tick = 10000, tickadj = 0, profhz = 100, stathz = 100 }
+kern.posix1version: 200112
+kern.ngroups: 16
+kern.job_control: 1
+kern.saved_ids: 1
+kern.boottime: { sec = 1772442555, usec = 886531 } Mon Mar  2 10:09:15 2026
+kern.nisdomainname: 
+kern.maxfilesperproc: 10240
+kern.maxprocperuid: 1392
+kern.ipc.maxsockbuf: 6291456
+kern.ipc.sockbuf_waste_factor: 8
+kern.ipc.somaxconn: 128
+kern.ipc.nmbclusters: 49152
+kern.ipc.soqlimitcompat: 1
+kern.ipc.io_policy.log: 0
+kern.ipc.io_policy.uuid: 1
+kern.ipc.mb_drain_force: 0
+kern.ipc.mb_drain_maxint: 0
+kern.ipc.mb_memory_pressure_percentage: 80

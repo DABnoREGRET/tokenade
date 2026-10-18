@@ -1,0 +1,105 @@
+{
+  "_comment": "Ground truth for the mixed docs-qa task. `needle` items are exact-match (a planted ZK code). `open` items are judged by an LLM against `expect` (facts that MUST be present) and `reject` (a wrong answer signature). The agent never sees this file; the judge does. Questions are anchored in the real content of each document.",
+  "items": [
+    {
+      "id": "q1",
+      "type": "open",
+      "doc": "pdf_small.pdf (Balboa MoodEFX spa-light manual, FR)",
+      "question": "What is the single safety action the manual says to take before ANY troubleshooting or maintenance on the bath lighting, and what hazard does it prevent?",
+      "expect": [
+        "disconnect / cut power to the bath lighting at the circuit breaker (disjoncteur) before intervening",
+        "the hazard is electric shock / electrocution (risque de choc électrique, possibly fatal)"
+      ],
+      "reject": "an answer that gives an unrelated step or omits the circuit breaker / power-off action"
+    },
+    {
+      "id": "q2",
+      "type": "open",
+      "doc": "pdf_mid.pdf (academic paper, EN)",
+      "question": "What problem does the academic paper address, and in which application domain?",
+      "expect": [
+        "systematically characterizing a group of sequences by its common subsequences (of any length) / proposing a new algorithm for it",
+        "the application domain is Android malware detection / classification (from dynamic-analysis event sequences)"
+      ],
+      "reject": "a generic 'it is about sequences/data' answer with no mention of Android malware detection/classification"
+    },
+    {
+      "id": "q3",
+      "type": "open",
+      "doc": "pdf_large.pdf (Gecko in.xe troubleshooting guide, FR, long)",
+      "question": "For error code FLO on the spa controller, give at least two of the concrete actions the guide recommends.",
+      "expect": [
+        "wait about 2 minutes (attendez environ 2 minutes) / re-check the LED status after a delay",
+        "ensure the installation meets the minimum required water flow (débit d'eau minimum); possibly replace the heater (chauffe-eau) if the error is permanent"
+      ],
+      "reject": "an answer that invents actions not tied to water flow / waiting / heater, or that addresses a different error code"
+    },
+    {
+      "id": "q4",
+      "type": "open",
+      "doc": "docx.docx (LinkedIn prospector persona, FR)",
+      "question": "Describe the target customer persona in this document: gender, age range, and two of the sales sectors mentioned.",
+      "expect": [
+        "generally a man (homme), aged roughly 25 to 45",
+        "at least two B2B sectors from: energy/green economy, IT, health, real estate, finance, agri-food (énergie, IT, santé, immobilier, finance, agro-alimentaire)"
+      ],
+      "reject": "wrong age range, or no real sectors from the document"
+    },
+    {
+      "id": "q5",
+      "type": "open",
+      "doc": "odt.odt (essay 'Le Mojo', FR)",
+      "question": "What metaphor does the author use to explain why the 'Mojo' is elusive?",
+      "expect": [
+        "the video-game designer / creator: because you built the game from A to Z and know every detail, you cannot enjoy playing it — knowing/being aware of the Mojo makes you lose it"
+      ],
+      "reject": "an answer that misses the game-designer metaphor or invents a different one"
+    },
+    {
+      "id": "q6",
+      "type": "open",
+      "doc": "epub.epub (calibre quick-start guide, FR)",
+      "question": "According to the guide, where should a user look FIRST for help?",
+      "expect": [
+        "the Preferences dialog (la boîte de dialogue 'Préférences'), where every option has a clear description"
+      ],
+      "reject": "an answer pointing at a forum/website/other place instead of the Preferences dialog"
+    },
+    {
+      "id": "q7",
+      "type": "open",
+      "doc": "odp.odp (slide deck on GPT prompt chaining, FR)",
+      "question": "What limitation of GPTs does this deck identify, and what solution does it propose?",
+      "expect": [
+        "the limitation: once there are too many instructions, the GPT stops following them / a single prompt cannot express a long precise process",
+        "the solution: chained prompts (prompts chaînés)"
+      ],
+      "reject": "an answer that names neither the too-many-instructions problem nor chained prompts"
+    },
+    {
+      "id": "q8",
+      "type": "open",
+      "doc": "cross-document reasoning",
+      "question": "Across the whole document set, which single document is an academic research paper, and what is its subject?",
+      "expect": [
+        "the academic paper is pdf_mid.pdf (Systematic Characterization of a Sequence Group)",
+        "subject: characterizing sequence groups by common subsequences, applied to Android malware detection/classification"
+      ],
+      "reject": "naming a manual/guide/persona document as the paper, or the wrong subject"
+    },
+    {
+      "id": "q9",
+      "type": "needle",
+      "doc": "pdf_small.pdf",
+      "token": "ZK-4417",
+      "question": "Find the incident escalation code to quote on a severity-1 fault."
+    },
+    {
+      "id": "q10",
+      "type": "needle",
+      "doc": "epub.epub",
+      "token": "ZK-6218",
+      "question": "Find the field code given in the appendix."
+    }
+  ]
+}

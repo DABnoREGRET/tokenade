@@ -1,0 +1,33 @@
+NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+loop0         7:0    0    74M  1 loop /var/lib/snapd/snap/core22/2411
+loop1         7:1    0  63,8M  1 loop /var/lib/snapd/snap/core20/2769
+loop2         7:2    0  55,5M  1 loop /var/lib/snapd/snap/core18/2999
+loop3         7:3    0     4K  1 loop /var/lib/snapd/snap/bare/5
+loop4         7:4    0  63,8M  1 loop /var/lib/snapd/snap/core20/2866
+loop5         7:5    0  50,3M  1 loop /var/lib/snapd/snap/snapd/27738
+loop6         7:6    0    74M  1 loop /var/lib/snapd/snap/core22/2437
+loop7         7:7    0   4,8M  1 loop /var/lib/snapd/snap/dalfox/1313
+loop8         7:8    0 164,8M  1 loop /var/lib/snapd/snap/gnome-3-28-1804/198
+loop9         7:9    0  91,7M  1 loop /var/lib/snapd/snap/gtk-common-themes/1535
+loop11        7:11   0  50,1M  1 loop /var/lib/snapd/snap/snapd/27710
+loop12        7:12   0 165,6M  1 loop /var/lib/snapd/snap/somiibo/98
+loop13        7:13   0 303,1M  1 loop /var/lib/snapd/snap/wine-platform-5-stable/18
+loop14        7:14   0 346,7M  1 loop /var/lib/snapd/snap/wine-platform-runtime/409
+loop15        7:15   0   4,9M  1 loop /var/lib/snapd/snap/dalfox/1438
+sda           8:0    0   9,1T  0 disk 
+└─sda1        8:1    0   9,1T  0 part 
+sdb           8:16   0   9,1T  0 disk 
+└─sdb1        8:17   0   9,1T  0 part 
+sdc           8:32   0   9,1T  0 disk 
+└─sdc1        8:33   0   9,1T  0 part 
+sdd           8:48   0   9,1T  0 disk 
+└─sdd1        8:49   0   9,1T  0 part 
+sde           8:64   0   5,5T  0 disk 
+└─sde1        8:65   0   5,5T  0 part 
+sr0          11:0    1  1024M  0 rom  
+nvme0n1     259:0    0   1,8T  0 disk 
+├─nvme0n1p1 259:1    0   100M  0 part /boot/efi
+├─nvme0n1p2 259:2    0    16M  0 part 
+├─nvme0n1p3 259:3    0 194,3G  0 part /run/media/user/A496D1FA96D1CCC4
+├─nvme0n1p4 259:4    0   882M  0 part 
+└─nvme0n1p5 259:5    0   1,6T  0 part /

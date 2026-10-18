@@ -1,0 +1,11 @@
+    
+Ethernet:
+Adresse IP du noeud�: [10.0.2.15] ID d'�tendue�: []
+
+                Table nom local NetBIOS
+
+       Nom                Type         Statut
+    ---------------------------------------------
+    DESKTOP-T2HFRGA<20>  UNIQUE      Inscrit 
+    DESKTOP-T2HFRGA<00>  UNIQUE      Inscrit 
+    WORKGROUP      <00>  Groupe      Inscrit 

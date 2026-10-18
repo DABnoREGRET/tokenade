@@ -1,0 +1,10 @@
+
+Status  Name         DisplayName                                      
+------  ----         -----------                                      
+Stopped AarSvc_5b590 Agent Activation Runtime_5b590                   
+Stopped AJRouter     Service de routeur AllJoyn                       
+Stopped ALG          Service de la passerelle de la couche Application
+Stopped AppIDSvc     Identité de l’application                        
+Running Appinfo      Informations d’application                       
+
+

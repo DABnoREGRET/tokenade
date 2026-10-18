@@ -1,0 +1,3 @@
+Nombre total d'octets libres        :  5�423�550�464 ( 5,1 Go)
+Nombre total d'octets             : 53�069�357�056 (49,4 Go)
+Nombre total d'octets de quota  :  5�423�550�464 ( 5,1 Go)

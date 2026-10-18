@@ -1,0 +1,9 @@
+
+
+BuildNumber=19045
+Caption=Microsoft Windows 10 Professionnel
+OSArchitecture=64 bits
+Version=10.0.19045
+
+
+

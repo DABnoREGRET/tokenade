@@ -1,0 +1,2 @@
+ Le volume dans le lecteur C n'a pas de nom.
+ Le num�ro de s�rie du volume est 4E07-707C

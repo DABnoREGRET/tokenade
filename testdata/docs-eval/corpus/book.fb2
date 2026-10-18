@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FictionBook xmlns="http://www.gribuser.ru/xml/fictionbook/2.0" xmlns:l="http://www.w3.org/1999/xlink">
+<description><title-info><genre>sf</genre><author><first-name>Ada</first-name><last-name>Lovelace</last-name></author><book-title>The Analytical Engine</book-title><annotation><p>An annotation about engines.</p></annotation><lang>en</lang></title-info></description>
+<body>
+<title><p>The Analytical Engine</p></title>
+<epigraph><p>Numbers are the poetry of reason.</p><text-author>Anonymous</text-author></epigraph>
+<section><title><p>Chapter One</p><p>Beginnings</p></title>
+<p>The engine weaves <emphasis>algebraic patterns</emphasis> just as the Jacquard loom weaves flowers.<a l:href="#n1" type="note">[1]</a></p>
+<poem><title><p>Ode to Gears</p></title><stanza><v>Turn, turn, the brass wheel turns,</v><v>and every cog its purpose learns.</v></stanza></poem>
+<cite><p>That brain of mine is something more than merely mortal.</p><text-author>A. L.</text-author></cite>
+<p>Second paragraph with <strong>bold claim</strong> and a table below.</p>
+<table><tr><th>Part</th><th>Count</th></tr><tr><td>Mill</td><td>1</td></tr><tr><td>Store</td><td>1000</td></tr></table>
+<image l:href="#fig1.png"/>
+<subtitle>* * *</subtitle>
+<p>Final words of chapter one.</p>
+</section>
+<section><title><p>Chapter Two</p></title><p>The second chapter speaks of Bernoulli numbers.</p></section>
+</body>
+<body name="notes"><title><p>Notes</p></title><section id="n1"><title><p>1</p></title><p>Joseph Marie Jacquard invented the loom in 1804.</p></section></body>
+<binary id="fig1.png" content-type="image/png">iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==</binary>
+</FictionBook>

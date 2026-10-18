@@ -1,0 +1,682 @@
+
+> @auto-website/tokenadenet@0.1.0 test:affiliate /repo
+> tsx --test tests/affiliate.test.ts
+
+TAP version 13
+# Subtest: generateAffiliateCode
+    # Subtest: produces 8-char a-z0-9 slugs
+    ok 1 - produces 8-char a-z0-9 slugs
+      ---
+      duration_ms: 0.983702
+      type: 'test'
+      ...
+    # Subtest: is deterministic under an injected rng
+    ok 2 - is deterministic under an injected rng
+      ---
+      duration_ms: 0.141898
+      type: 'test'
+      ...
+    # Subtest: spreads across the space (no obvious collisions)
+    ok 3 - spreads across the space (no obvious collisions)
+      ---
+      duration_ms: 2.261122
+      type: 'test'
+      ...
+    1..3
+ok 1 - generateAffiliateCode
+  ---
+  duration_ms: 3.81268
+  type: 'suite'
+  ...
+# Subtest: normalizeIban
+    # Subtest: accepts well-formed IBANs and normalizes spacing/case
+    ok 1 - accepts well-formed IBANs and normalizes spacing/case
+      ---
+      duration_ms: 0.156309
+      type: 'test'
+      ...
+    # Subtest: rejects malformed input
+    ok 2 - rejects malformed input
+      ---
+      duration_ms: 0.064249
+      type: 'test'
+      ...
+    1..2
+ok 2 - normalizeIban
+  ---
+  duration_ms: 0.298658
+  type: 'suite'
+  ...
+# Subtest: normalizeBic
+    # Subtest: accepts 8 and 11 char BICs, normalizing spacing/case
+    ok 1 - accepts 8 and 11 char BICs, normalizing spacing/case
+      ---
+      duration_ms: 0.138429
+      type: 'test'
+      ...
+    # Subtest: rejects malformed input
+    ok 2 - rejects malformed input
+      ---
+      duration_ms: 0.141929
+      type: 'test'
+      ...
+    1..2
+ok 3 - normalizeBic
+  ---
+  duration_ms: 0.390427
+  type: 'suite'
+  ...
+# Subtest: normalizeEmail (self-referral comparison)
+    # Subtest: lowercases + trims every provider
+    ok 1 - lowercases + trims every provider
+      ---
+      duration_ms: 0.109359
+      type: 'test'
+      ...
+    # Subtest: collapses Gmail dot + '+alias' variants to one identity
+    ok 2 - collapses Gmail dot + '+alias' variants to one identity
+      ---
+      duration_ms: 0.092229
+      type: 'test'
+      ...
+    # Subtest: leaves non-Gmail local parts structurally intact
+    ok 3 - leaves non-Gmail local parts structurally intact
+      ---
+      duration_ms: 0.126909
+      type: 'test'
+      ...
+    # Subtest: does not crash on garbage
+    ok 4 - does not crash on garbage
+      ---
+      duration_ms: 0.05567
+      type: 'test'
+      ...
+    1..4
+ok 4 - normalizeEmail (self-referral comparison)
+  ---
+  duration_ms: 0.468377
+  type: 'suite'
+  ...
+# Subtest: applyReferralBonus (permanent referee +20%)
+    # Subtest: free 10M → 12M, pro 100M → 120M
+    ok 1 - free 10M → 12M, pro 100M → 120M
+      ---
+      duration_ms: 0.078959
+      type: 'test'
+      ...
+    # Subtest: no bonus → cap untouched; unlimited (0) stays unlimited
+    ok 2 - no bonus → cap untouched; unlimited (0) stays unlimited
+      ---
+      duration_ms: 0.03933
+      type: 'test'
+      ...
+    1..2
+ok 5 - applyReferralBonus (permanent referee +20%)
+  ---
+  duration_ms: 0.190469
+  type: 'suite'
+  ...
+# Subtest: accrueBonusBank (one-time credit of free-referee savings)
+    # Subtest: credits floor(20%) of the newly-reported savings
+    ok 1 - credits floor(20%) of the newly-reported savings
+      ---
+      duration_ms: 0.098039
+      type: 'test'
+      ...
+    # Subtest: CLAMPS growth at 1× the sponsor's capBase (anti payg-dodge)
+    ok 2 - CLAMPS growth at 1× the sponsor's capBase (anti payg-dodge)
+      ---
+      duration_ms: 0.050629
+      type: 'test'
+      ...
+    # Subtest: never SLASHES a balance already above the cap (plan downgrade)
+    ok 3 - never SLASHES a balance already above the cap (plan downgrade)
+      ---
+      duration_ms: 0.0393
+      type: 'test'
+      ...
+    # Subtest: unlimited sponsor plan (capBase 0) accrues nothing
+    ok 4 - unlimited sponsor plan (capBase 0) accrues nothing
+      ---
+      duration_ms: 0.03496
+      type: 'test'
+      ...
+    # Subtest: floors fractions and guards zero/negative/garbage input
+    ok 5 - floors fractions and guards zero/negative/garbage input
+      ---
+      duration_ms: 0.048489
+      type: 'test'
+      ...
+    1..5
+ok 6 - accrueBonusBank (one-time credit of free-referee savings)
+  ---
+  duration_ms: 0.331967
+  type: 'suite'
+  ...
+# Subtest: consumeBonusBank (month rollover — bank consumed LAST)
+    # Subtest: no overage → bank untouched (usage below the plan cap)
+    ok 1 - no overage → bank untouched (usage below the plan cap)
+      ---
+      duration_ms: 0.094699
+      type: 'test'
+      ...
+    # Subtest: overage draws the bank down by exactly the beyond-cap part
+    ok 2 - overage draws the bank down by exactly the beyond-cap part
+      ---
+      duration_ms: 0.06856
+      type: 'test'
+      ...
+    # Subtest: overage beyond the bank exhausts it, never negative
+    ok 3 - overage beyond the bank exhausts it, never negative
+      ---
+      duration_ms: 0.047619
+      type: 'test'
+      ...
+    # Subtest: carries over untouched across idle months (used = 0)
+    ok 4 - carries over untouched across idle months (used = 0)
+      ---
+      duration_ms: 0.03837
+      type: 'test'
+      ...
+    # Subtest: unlimited plan (capBase 0) never consumes
+    ok 5 - unlimited plan (capBase 0) never consumes
+      ---
+      duration_ms: 0.035149
+      type: 'test'
+      ...
+    # Subtest: exact boundary: used == cap consumes nothing; +1 consumes 1
+    ok 6 - exact boundary: used == cap consumes nothing; +1 consumes 1
+      ---
+      duration_ms: 0.03546
+      type: 'test'
+      ...
+    1..6
+ok 7 - consumeBonusBank (month rollover — bank consumed LAST)
+  ---
+  duration_ms: 0.392427
+  type: 'suite'
+  ...
+# Subtest: revshareCents (paying referees, 20% of excl-tax amount)
+    # Subtest: takes 20% (floored)
+    ok 1 - takes 20% (floored)
+      ---
+      duration_ms: 0.058889
+      type: 'test'
+      ...
+    # Subtest: guards zero/negative/garbage amounts
+    ok 2 - guards zero/negative/garbage amounts
+      ---
+      duration_ms: 0.03484
+      type: 'test'
+      ...
+    1..2
+ok 8 - revshareCents (paying referees, 20% of excl-tax amount)
+  ---
+  duration_ms: 0.140089
+  type: 'suite'
+  ...
+# Subtest: maskEmail
+    # Subtest: keeps only the first char of the local part
+    ok 1 - keeps only the first char of the local part
+      ---
+      duration_ms: 0.066159
+      type: 'test'
+      ...
+    # Subtest: degrades safely on malformed input
+    ok 2 - degrades safely on malformed input
+      ---
+      duration_ms: 0.04188
+      type: 'test'
+      ...
+    1..2
+ok 9 - maskEmail
+  ---
+  duration_ms: 0.150218
+  type: 'suite'
+  ...
+# Subtest: monthKeyOf
+    # Subtest: formats "YYYY-MM" and matches MONTH_KEY_RE
+    ok 1 - formats "YYYY-MM" and matches MONTH_KEY_RE
+      ---
+      duration_ms: 0.206838
+      type: 'test'
+      ...
+    # Subtest: MONTH_KEY_RE rejects garbage
+    ok 2 - MONTH_KEY_RE rejects garbage
+      ---
+      duration_ms: 0.082609
+      type: 'test'
+      ...
+    1..2
+ok 10 - monthKeyOf
+  ---
+  duration_ms: 0.351647
+  type: 'suite'
+  ...
+# Subtest: formatCents / formatCurrencyCents (multi-currency display)
+    # Subtest: formats a single amount per locale
+    ok 1 - formats a single amount per locale
+      ---
+      duration_ms: 8.178715
+      type: 'test'
+      ...
+    # Subtest: joins currencies with " + ", zeros masked, stable alpha order
+    ok 2 - joins currencies with " + ", zeros masked, stable alpha order
+      ---
+      duration_ms: 0.700445
+      type: 'test'
+      ...
+    # Subtest: empty / all-zero map renders a zero in the fallback currency
+    ok 3 - empty / all-zero map renders a zero in the fallback currency
+      ---
+      duration_ms: 0.175788
+      type: 'test'
+      ...
+    # Subtest: negative balances (refunds exceeding due) still render
+    ok 4 - negative balances (refunds exceeding due) still render
+      ---
+      duration_ms: 0.134969
+      type: 'test'
+      ...
+    # Subtest: survives an unknown currency code (no throw)
+    ok 5 - survives an unknown currency code (no throw)
+      ---
+      duration_ms: 0.085289
+      type: 'test'
+      ...
+    1..5
+ok 11 - formatCents / formatCurrencyCents (multi-currency display)
+  ---
+  duration_ms: 9.389855
+  type: 'suite'
+  ...
+# Subtest: resolveDisplayCurrency (European → €, otherwise $)
+    # Subtest: maps European locales to eur, en + others to usd
+    ok 1 - maps European locales to eur, en + others to usd
+      ---
+      duration_ms: 0.190028
+      type: 'test'
+      ...
+    # Subtest: a reliable country signal wins over the locale
+    ok 2 - a reliable country signal wins over the locale
+      ---
+      duration_ms: 0.06235
+      type: 'test'
+      ...
+    # Subtest: formatSavings picks the matching cents from the {usd,eur} pair
+    ok 3 - formatSavings picks the matching cents from the {usd,eur} pair
+      ---
+      duration_ms: 0.183598
+      type: 'test'
+      ...
+    1..3
+ok 12 - resolveDisplayCurrency (European → €, otherwise $)
+  ---
+  duration_ms: 0.500916
+  type: 'suite'
+  ...
+# Subtest: addCurrencyCents / isZeroCurrencyCents
+    # Subtest: adds per currency and drops exact-zero results
+    ok 1 - adds per currency and drops exact-zero results
+      ---
+      duration_ms: 0.430746
+      type: 'test'
+      ...
+    # Subtest: zero detection
+    ok 2 - zero detection
+      ---
+      duration_ms: 0.076849
+      type: 'test'
+      ...
+    1..2
+ok 13 - addCurrencyCents / isZeroCurrencyCents
+  ---
+  duration_ms: 0.559665
+  type: 'suite'
+  ...
+# Subtest: anonRefBonusEligible (anonymous grant bump — first contact only)
+    # Subtest: new machine (null) and pristine known machine are eligible
+    ok 1 - new machine (null) and pristine known machine are eligible
+      ---
+      duration_ms: 0.085879
+      type: 'test'
+      ...
+    # Subtest: already-referred machine is not re-brandable
+    ok 2 - already-referred machine is not re-brandable
+      ---
+      duration_ms: 0.04468
+      type: 'test'
+      ...
+    # Subtest: no retroactive bump after exhaustion (burn-then-ref abuse)
+    ok 3 - no retroactive bump after exhaustion (burn-then-ref abuse)
+      ---
+      duration_ms: 0.053869
+      type: 'test'
+      ...
+    # Subtest: converted machines belong to the account flow, not the anon grant
+    ok 4 - converted machines belong to the account flow, not the anon grant
+      ---
+      duration_ms: 0.05155
+      type: 'test'
+      ...
+    # Subtest: the bumped grant is applyReferralBonus(10M, 20) = 12M (DRY check)
+    ok 5 - the bumped grant is applyReferralBonus(10M, 20) = 12M (DRY check)
+      ---
+      duration_ms: 0.044209
+      type: 'test'
+      ...
+    1..5
+ok 14 - anonRefBonusEligible (anonymous grant bump — first contact only)
+  ---
+  duration_ms: 0.357897
+  type: 'suite'
+  ...
+# Subtest: comparableIp (never match on unusable values)
+    # Subtest: normalizes trim + case
+    ok 1 - normalizes trim + case
+      ---
+      duration_ms: 0.07613
+      type: 'test'
+      ...
+    # Subtest: rejects "", "unknown" (clientIp fallback), null and oversize
+    ok 2 - rejects "", "unknown" (clientIp fallback), null and oversize
+      ---
+      duration_ms: 0.05274
+      type: 'test'
+      ...
+    1..2
+ok 15 - comparableIp (never match on unusable values)
+  ---
+  duration_ms: 0.169579
+  type: 'suite'
+  ...
+# Subtest: referralSuspicion (freeze classification)
+    # Subtest: shared machine wins over everything (strongest signal)
+    ok 1 - shared machine wins over everything (strongest signal)
+      ---
+      duration_ms: 0.094439
+      type: 'test'
+      ...
+    # Subtest: same IP (any referee-side IP vs sponsor's last IP) → same-ip
+    ok 2 - same IP (any referee-side IP vs sponsor's last IP) → same-ip
+      ---
+      duration_ms: 0.048979
+      type: 'test'
+      ...
+    # Subtest: different IPs → clean
+    ok 3 - different IPs → clean
+      ---
+      duration_ms: 0.04533
+      type: 'test'
+      ...
+    # Subtest: unusable IPs ("unknown", empty, missing) NEVER match — a proxy
+    ok 4 - unusable IPs ("unknown", empty, missing) NEVER match — a proxy
+      ---
+      duration_ms: 0.04517
+      type: 'test'
+      ...
+    1..4
+ok 16 - referralSuspicion (freeze classification)
+  ---
+  duration_ms: 0.300717
+  type: 'suite'
+  ...
+# Subtest: INVARIANT: no account => no sponsor credit, ever
+    # Subtest: anonymous routes never reference a sponsor-credit surface
+    ok 1 - anonymous routes never reference a sponsor-credit surface
+      ---
+      duration_ms: 0.342097
+      type: 'test'
+      ...
+    # Subtest: sponsor credit lives ONLY on the licensed usage route + webhook
+    ok 2 - sponsor credit lives ONLY on the licensed usage route + webhook
+      ---
+      duration_ms: 0.136699
+      type: 'test'
+      ...
+    1..2
+ok 17 - INVARIANT: no account => no sponsor credit, ever
+  ---
+  duration_ms: 0.527306
+  type: 'suite'
+  ...
+# Subtest: INVARIANT: same-email self-referral => frozen + hidden from sponsor
+    # Subtest: claimReferral flags a same-email pair as suspect via normalizeEmail
+    ok 1 - claimReferral flags a same-email pair as suspect via normalizeEmail
+      ---
+      duration_ms: 0.127649
+      type: 'test'
+      ...
+    # Subtest: getSponsorFunnel hides same-email referrals from the sponsor
+    ok 2 - getSponsorFunnel hides same-email referrals from the sponsor
+      ---
+      duration_ms: 0.089349
+      type: 'test'
+      ...
+    1..2
+ok 18 - INVARIANT: same-email self-referral => frozen + hidden from sponsor
+  ---
+  duration_ms: 0.266318
+  type: 'suite'
+  ...
+# Subtest: isDisposableEmail (P1.3)
+    # Subtest: bundles a realistic list (>= 200 domains)
+    ok 1 - bundles a realistic list (>= 200 domains)
+      ---
+      duration_ms: 0.080319
+      type: 'test'
+      ...
+    # Subtest: flags common temp-mail providers
+    ok 2 - flags common temp-mail providers
+      ---
+      duration_ms: 0.125009
+      type: 'test'
+      ...
+    # Subtest: catches provider subdomains via suffix walk
+    ok 3 - catches provider subdomains via suffix walk
+      ---
+      duration_ms: 0.057319
+      type: 'test'
+      ...
+    # Subtest: passes real providers through
+    ok 4 - passes real providers through
+      ---
+      duration_ms: 0.06659
+      type: 'test'
+      ...
+    # Subtest: never throws on malformed input
+    ok 5 - never throws on malformed input
+      ---
+      duration_ms: 0.056029
+      type: 'test'
+      ...
+    1..5
+ok 19 - isDisposableEmail (P1.3)
+  ---
+  duration_ms: 0.467086
+  type: 'suite'
+  ...
+# Subtest: payout hold + maturation (P0.1)
+    # Subtest: default hold is 30 days
+    ok 1 - default hold is 30 days
+      ---
+      duration_ms: 0.067799
+      type: 'test'
+      ...
+    # Subtest: payableAtOf = createdAt + holdDays
+    ok 2 - payableAtOf = createdAt + holdDays
+      ---
+      duration_ms: 0.06503
+      type: 'test'
+      ...
+    # Subtest: isEarningMatured flips exactly at the boundary
+    ok 3 - isEarningMatured flips exactly at the boundary
+      ---
+      duration_ms: 0.06911
+      type: 'test'
+      ...
+    1..3
+ok 20 - payout hold + maturation (P0.1)
+  ---
+  duration_ms: 0.270078
+  type: 'suite'
+  ...
+# Subtest: min-payout threshold (P0.2)
+    # Subtest: default floor is 5000 cents
+    ok 1 - default floor is 5000 cents
+      ---
+      duration_ms: 0.056029
+      type: 'test'
+      ...
+    # Subtest: meetsPayoutThreshold gates on >= floor and > 0
+    ok 2 - meetsPayoutThreshold gates on >= floor and > 0
+      ---
+      duration_ms: 0.06093
+      type: 'test'
+      ...
+    1..2
+ok 21 - min-payout threshold (P0.2)
+  ---
+  duration_ms: 0.170038
+  type: 'suite'
+  ...
+# Subtest: bank-change hold (P0.4)
+    # Subtest: null timestamp is never a hold
+    ok 1 - null timestamp is never a hold
+      ---
+      duration_ms: 0.075639
+      type: 'test'
+      ...
+    # Subtest: holds within the window, releases after
+    ok 2 - holds within the window, releases after
+      ---
+      duration_ms: 0.04775
+      type: 'test'
+      ...
+    1..2
+ok 22 - bank-change hold (P0.4)
+  ---
+  duration_ms: 0.166509
+  type: 'suite'
+  ...
+# Subtest: activity gate (P1.1)
+    # Subtest: needs >= min distinct days (default 2)
+    ok 1 - needs >= min distinct days (default 2)
+      ---
+      duration_ms: 0.067709
+      type: 'test'
+      ...
+    # Subtest: a single intense day never unlocks (temporal spread, not volume)
+    ok 2 - a single intense day never unlocks (temporal spread, not volume)
+      ---
+      duration_ms: 0.0363
+      type: 'test'
+      ...
+    # Subtest: min is clamped to >= 1
+    ok 3 - min is clamped to >= 1
+      ---
+      duration_ms: 0.036069
+      type: 'test'
+      ...
+    1..3
+ok 23 - activity gate (P1.1)
+  ---
+  duration_ms: 0.188548
+  type: 'suite'
+  ...
+# Subtest: clawback / hold / threshold classifier (P0.1 + P0.2)
+    # Subtest: matured net >= threshold ⇒ payable
+    ok 1 - matured net >= threshold ⇒ payable
+      ---
+      duration_ms: 0.112339
+      type: 'test'
+      ...
+    # Subtest: all positive but still in hold ⇒ hold, nothing payable
+    ok 2 - all positive but still in hold ⇒ hold, nothing payable
+      ---
+      duration_ms: 0.05518
+      type: 'test'
+      ...
+    # Subtest: matured but under threshold ⇒ below-threshold
+    ok 3 - matured but under threshold ⇒ below-threshold
+      ---
+      duration_ms: 0.04962
+      type: 'test'
+      ...
+    # Subtest: refund nets a matured slice below the floor
+    ok 4 - refund nets a matured slice below the floor
+      ---
+      duration_ms: 0.044589
+      type: 'test'
+      ...
+    # Subtest: net < 0 ⇒ negative (clawback) wins over any matured slice
+    ok 5 - net < 0 ⇒ negative (clawback) wins over any matured slice
+      ---
+      duration_ms: 0.04282
+      type: 'test'
+      ...
+    # Subtest: negative even with a held positive present
+    ok 6 - negative even with a held positive present
+      ---
+      duration_ms: 0.03864
+      type: 'test'
+      ...
+    # Subtest: mixed: matured payable above threshold WITH an immature slice held
+    ok 7 - mixed: matured payable above threshold WITH an immature slice held
+      ---
+      duration_ms: 0.042409
+      type: 'test'
+      ...
+    1..7
+ok 24 - clawback / hold / threshold classifier (P0.1 + P0.2)
+  ---
+  duration_ms: 0.498546
+  type: 'suite'
+  ...
+# Subtest: INVARIANT: new 0029 reasons funnel through the same freeze
+    # Subtest: disposable-email freezes via markReferralSuspect at claim
+    ok 1 - disposable-email freezes via markReferralSuspect at claim
+      ---
+      duration_ms: 0.097339
+      type: 'test'
+      ...
+    # Subtest: velocity-paid is a SuspectReason gated by the boolean
+    ok 2 - velocity-paid is a SuspectReason gated by the boolean
+      ---
+      duration_ms: 0.107719
+      type: 'test'
+      ...
+    1..2
+ok 25 - INVARIANT: new 0029 reasons funnel through the same freeze
+  ---
+  duration_ms: 0.245718
+  type: 'suite'
+  ...
+# Subtest: device-flow referral helpers
+    # Subtest: normalizeRefCode trims, lowercases, rejects junk
+    ok 1 - normalizeRefCode trims, lowercases, rejects junk
+      ---
+      duration_ms: 0.077719
+      type: 'test'
+      ...
+    # Subtest: withinReferralClaimWindow: fresh yes, old no, unknown fails open
+    ok 2 - withinReferralClaimWindow: fresh yes, old no, unknown fails open
+      ---
+      duration_ms: 0.152469
+      type: 'test'
+      ...
+    1..2
+ok 26 - device-flow referral helpers
+  ---
+  duration_ms: 0.279888
+  type: 'suite'
+  ...
+1..26
+# tests 81
+# suites 26
+# pass 81
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 159.236909

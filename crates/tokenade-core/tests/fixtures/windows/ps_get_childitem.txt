@@ -1,0 +1,29 @@
+
+
+    R�pertoire�: C:\Windows
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----        07/12/2019     15:51                addins                                                               
+d-----        21/10/2024     11:19                appcompat                                                            
+d-----        24/10/2025     03:18                apppatch                                                             
+d-----        04/03/2026     15:18                AppReadiness                                                         
+d-r---        24/03/2025     15:17                assembly                                                             
+d-----        24/10/2025     03:18                bcastdvr                                                             
+d-----        18/09/2024     23:54                Boot                                                                 
+d-----        07/12/2019     10:14                Branding                                                             
+d-----        18/11/2025     05:40                CbsTemp                                                              
+d-----        07/12/2019     16:15                Containers                                                           
+d-----        02/06/2023     22:21                CSC                                                                  
+d-----        07/12/2019     10:14                Cursors                                                              
+d-----        02/06/2023     22:36                debug                                                                
+d-----        07/12/2019     10:31                diagnostics                                                          
+d-----        19/11/2024     00:02                DiagTrack                                                            
+d-----        07/12/2019     15:50                DigitalLocker                                                        
+d---s-        07/12/2019     10:14                Downloaded Program Files                                             
+d-----        07/12/2019     15:50                en-US                                                                
+d-r-s-        24/10/2025     03:18                Fonts                                                                
+d-----        23/10/2025     17:35                fr-FR                                                                
+
+

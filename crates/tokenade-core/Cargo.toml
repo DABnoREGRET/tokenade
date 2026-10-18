@@ -1,0 +1,185 @@
+[package]
+name = "tokenade-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Core token-optimization mechanisms for Tokenade"
+
+# Test targets are DECLARED, not discovered.
+#
+# Cargo makes each `tests/*.rs` a crate: it compiles and LINKS it separately.
+# This crate carried 87 of them, for 192 executables in `target/debug/deps` of which
+# the biggest weighs 194 MB — and that is where the hours of the suite were, not
+# in execution (`nextest` measures 101 s for 9 193 tests).
+#
+# `autotests = false` freezes the number of binaries: a file added under
+# `tests/` can no longer create a new one by accident. The flip side is that it
+# would not say anything either — that is why the guard lives in a TEST
+# (`guards/one_test_binary_per_subject.rs`), which fails naming the file:
+# a `.rs` at the root of `tests/`, a group without `main.rs`, or a subject
+# that no `mod` declares. The last case happened during the regrouping,
+# on two groups, and only a before/after count showed it.
+autotests = false
+
+[features]
+default = []
+# Opt-in real BPE tokenization (cl100k_base) for exact token counts. Pulls in
+# tiktoken-rs and a bundled ~1.5 MB vocabulary; the default build keeps the
+# zero-dep heuristic which is calibrated to within 5 % of cl100k for the
+# typical compactor workload.
+bpe = ["tk-base/bpe"]
+# A browser's TLS + HTTP/2 fingerprint for the last rung of the web-fetch
+# escalation ladder (see `web_impersonate`). OFF by default: the stack is
+# BoringSSL, which wants cmake and a C++ toolchain at build time — the exact
+# cost the reqwest+rustls transport was chosen to avoid across the eight
+# release targets. Turning it on is a pipeline decision, not a source one.
+impersonate = ["dep:wreq", "dep:wreq-util"]
+# `srcsweep`: "the half of a source file that ships", used by the guards in
+# this repo that lint their own source. Test-only by default so it never
+# reaches a release binary; tokenade-cli turns it on for its dev builds
+# because its own guards had each grown a copy, and two carried brace bugs.
+# Gates nothing any more: `srcsweep` is an ordinary module.
+# Kept DECLARED so that the documented suite command
+# (`--features tokenade-core/srcsweep`) stays valid; do not name it in
+# tooling, a distinct feature set forces a full rebuild.
+srcsweep = []
+
+[dependencies]
+# The base layer, extracted into a crate on 2026-09-13.
+tk-base = { path = "../tk-base" }
+tk-fold = { path = "../tk-fold" }
+# Already in the lockfile (via reqwest): resolving relative links (web::resolve_links).
+url = "2"
+tk-formats = { path = "../tk-formats" }
+tk-agents = { path = "../tk-agents" }
+# QuickJS, for pages whose text only exists after their own scripts run
+# (see js_render.rs). Default features only: the `bindgen` feature would put
+# libclang on the critical path of every platform release build, and the
+# pre-generated bindings cover the targets we ship.
+rquickjs = "0.12.1"
+serde = { workspace = true }
+serde_json = { workspace = true }
+regex = { workspace = true }
+zip = { workspace = true }
+pdf-extract = { workspace = true }
+lopdf = { workspace = true }
+pdf_oxide = { workspace = true }
+encoding_rs = { workspace = true }
+chardetng = { workspace = true }
+rusqlite = { workspace = true }
+sqlite-vec = { workspace = true }
+zerocopy = { workspace = true }
+tree-sitter = { workspace = true }
+tree-sitter-rust = { workspace = true }
+tree-sitter-python = { workspace = true }
+tree-sitter-javascript = { workspace = true }
+tree-sitter-typescript = { workspace = true }
+tree-sitter-go = { workspace = true }
+tree-sitter-java = { workspace = true }
+tree-sitter-c = { workspace = true }
+tree-sitter-cpp = { workspace = true }
+tree-sitter-c-sharp = { workspace = true }
+tree-sitter-php = { workspace = true }
+tree-sitter-ruby = { workspace = true }
+tree-sitter-swift = { workspace = true }
+tree-sitter-kotlin-ng = { workspace = true }
+tree-sitter-scala = { workspace = true }
+tree-sitter-html = { workspace = true }
+tree-sitter-css = { workspace = true }
+rayon = { workspace = true }
+postcard = { workspace = true }
+fs2 = { workspace = true }
+# Static-embedding model (model2vec). The 63 MB `potion-code-16M` weights
+# live under `assets/model2vec/potion-code-16M/` and are loaded from disk
+# at startup. `local-only` disables the HF Hub downloader entirely — no
+# more `XDG_CACHE_HOME` mucking (the L100 20 GB tmpfs leak source).
+fst = "0.4"
+memmap2 = "0.9"
+tokenizers = { version = "0.21", default-features = false, features = ["onig"] }
+scraper = "0.27"
+ego-tree = "0.11"
+model2vec-rs = { version = "0.2", default-features = false, features = ["local-only", "fancy-regex"] }
+# Sparse BM25 retrieval. Hybridised with the dense embedder via RRF in
+# `semantic_search` and `file_search`.
+bm25 = "2"
+infer = { version = "0.16", default-features = false }
+toml = { workspace = true }
+
+flate2 = { workspace = true }
+ed25519-dalek = { workspace = true }
+sha2 = { workspace = true }
+hex = { workspace = true }
+base64 = { workspace = true }
+image = { workspace = true }
+calamine = { workspace = true }
+cfb = { workspace = true }
+reqwest = { workspace = true }
+wreq = { version = "=0.15.3", optional = true, features = ["cookies", "gzip", "brotli", "deflate", "zstd"] }
+wreq-util = { version = "=0.1.0", optional = true, features = ["emulation"] }
+tokio = { workspace = true }
+
+# Unix-only: fatal-signal crash guard (see crash_guard.rs). Stops a native
+# crash in a bundled C extension (sqlite-vec / tree-sitter) or the embedding
+# runtime from dumping core on every hook invocation (the Fedora PC-slowdown
+# report). No-op / not linked on Windows.
+[target.'cfg(unix)'.dependencies]
+libc = "0.2"
+
+# Only for the liveness question in `process_util`: Windows has no `kill(pid, 0)`,
+# and without a real answer the scratch sweep reclaims nothing there.
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = [
+    "Win32_Foundation",
+    "Win32_System_Threading",
+] }
+
+[dev-dependencies]
+insta = { workspace = true }
+proptest = { workspace = true }
+
+[[test]]
+name = "corpus"
+path = "tests/corpus/main.rs"
+
+[[test]]
+name = "fold"
+path = "tests/fold/main.rs"
+
+[[test]]
+name = "fold_virgin"
+path = "tests/fold_virgin/main.rs"
+
+[[test]]
+name = "fold_no_replay"
+path = "tests/fold_no_replay/main.rs"
+
+[[test]]
+name = "gain_virgin"
+path = "tests/gain_virgin/main.rs"
+
+[[test]]
+name = "guards"
+path = "tests/guards/main.rs"
+
+[[test]]
+name = "hostile"
+path = "tests/hostile/main.rs"
+
+[[test]]
+name = "misc"
+path = "tests/misc/main.rs"
+
+[[test]]
+name = "probes"
+path = "tests/probes/main.rs"
+
+[[test]]
+name = "stores"
+path = "tests/stores/main.rs"
+
+[[test]]
+name = "web"
+path = "tests/web/main.rs"
+
+[lints]
+workspace = true

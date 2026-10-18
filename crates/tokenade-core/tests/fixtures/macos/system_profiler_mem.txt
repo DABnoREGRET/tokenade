@@ -1,0 +1,17 @@
+Memory:
+
+    Memory Slots:
+
+      ECC: Disabled
+      Upgradeable Memory: Yes
+
+        Bank 0/DIMM 0:
+
+          Size: 5,79 GB
+          Type: DRAM
+          Speed: 1600 MHz
+          Status: OK
+          Manufacturer: innotek GmbH
+          Part Number: -
+          Serial Number: -
+

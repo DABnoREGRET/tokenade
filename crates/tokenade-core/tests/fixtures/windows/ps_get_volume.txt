@@ -1,0 +1,9 @@
+
+DriveLetter FriendlyName       FileSystemType DriveType HealthStatus OperationalStatus SizeRemaining     Size
+----------- ------------       -------------- --------- ------------ ----------------- -------------     ----
+D           VBox_GAs_7.2.8     Unknown        CD-ROM    Healthy      OK                          0 B 50.97 MB
+            R�serv� au syst�me NTFS           Fixed     Healthy      OK                     19.59 MB    50 MB
+C                              NTFS           Fixed     Healthy      OK                      5.05 GB 49.42 GB
+                               NTFS           Fixed     Healthy      OK                     82.56 MB   536 MB
+
+

@@ -1,0 +1,12 @@
+---
+source: crates/tokenade-core/tests/snapshot_compactors.rs
+assertion_line: 134
+expression: out
+---
+Traceback (most recent call last):
+… 4 framework frame(s) (e.g. /usr/lib/python3.11/asyncio/runners.py:118) …
+/usr/lib/python3.11/site-packages/django/core/handlers/base.py:220 in _get_response_async   response = await wrapped_callback(request, *callback_args, **callback_kwargs)
+/usr/lib/python3.11/site-packages/django/views/decorators/cache.py:73 in _wrapped_view_func   return view_func(request, *args, **kwargs)
+/app/myapp/views/billing.py:47 in charge_card   customer = stripe_client.lookup_customer(user_id)
+/app/myapp/integrations/stripe.py:89 in lookup_customer   raise CustomerNotFoundError(f"no customer for user_id={user_id}")
+myapp.errors.CustomerNotFoundError: no customer for user_id=42

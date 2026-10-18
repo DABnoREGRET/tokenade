@@ -1,0 +1,8 @@
+
+
+Manufacturer=innotek GmbH
+SMBIOSBIOSVersion=VirtualBox
+Version=VBOX   - 1
+
+
+

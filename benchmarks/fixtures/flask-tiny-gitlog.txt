@@ -1,0 +1,57 @@
+commit 672971d66a2ef9f85151e53283113f33d642dabd
+Author: David Lord <davidism@gmail.com>
+Date:   Sat Jun 14 13:35:42 2025 -0700
+
+    Merge branch 'stable'
+
+ .devcontainer/devcontainer.json            |   17 +
+ .devcontainer/on-create-command.sh         |   17 +
+ .editorconfig                              |   13 +
+ .github/ISSUE_TEMPLATE/bug-report.md       |   27 +
+ .github/ISSUE_TEMPLATE/config.yml          |    8 +
+ .github/ISSUE_TEMPLATE/feature-request.md  |   15 +
+ .github/pull_request_template.md           |   25 +
+ .github/workflows/lock.yaml                |   24 +
+ .github/workflows/pre-commit.yaml          |   25 +
+ .github/workflows/publish.yaml             |   47 ++
+ .github/workflows/tests.yaml               |   49 ++
+ .gitignore                                 |    8 +
+ .pre-commit-config.yaml                    |   18 +
+ .readthedocs.yaml                          |   10 +
+ CHANGES.rst                                |  292 +++++++
+ LICENSE.txt                                |   28 +
+ README.md                                  |   50 ++
+ docs/Makefile                              |   19 +
+ docs/_static/itsdangerous-icon.svg         |   28 +
+ docs/_static/itsdangerous-logo.svg         |   30 +
+ docs/_static/itsdangerous-name.svg         |   31 +
+ docs/changes.rst                           |    4 +
+ docs/concepts.rst                          |  154 ++++
+ docs/conf.py                               |   55 ++
+ docs/encoding.rst                          |    8 +
+ docs/exceptions.rst                        |   22 +
+ docs/index.rst                             |   63 ++
+ docs/license.rst                           |    5 +
+ docs/make.bat                              |   35 +
+ docs/serializer.rst                        |  112 +++
+ docs/signer.rst                            |   49 ++
+ docs/timed.rst                             |   28 +
+ docs/url_safe.rst                          |   21 +
+ pyproject.toml                             |  205 +++++
+ src/itsdangerous/__init__.py               |   17 +
+ src/itsdangerous/_json.py                  |   18 +
+ src/itsdangerous/encoding.py               |   54 ++
+ src/itsdangerous/exc.py                    |  106 +++
+ src/itsdangerous/py.typed                  |    0
+ src/itsdangerous/serializer.py             |  404 ++++++++++
+ src/itsdangerous/signer.py                 |  266 +++++++
+ src/itsdangerous/timed.py                  |  228 ++++++
+ src/itsdangerous/url_safe.py               |   83 ++
+ tests/test_itsdangerous/__init__.py        |    0
+ tests/test_itsdangerous/test_encoding.py   |   37 +
+ tests/test_itsdangerous/test_serializer.py |  196 +++++
+ tests/test_itsdangerous/test_signer.py     |  109 +++
+ tests/test_itsdangerous/test_timed.py      |  115 +++
+ tests/test_itsdangerous/test_url_safe.py   |   24 +
+ uv.lock                                    | 1186 ++++++++++++++++++++++++++++
+ 50 files changed, 4385 insertions(+)

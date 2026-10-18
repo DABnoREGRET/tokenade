@@ -1,0 +1,9 @@
+
+Nom partage  Ressource                       Remarque
+
+-------------------------------------------------------------------------------
+C$           C:\                             Partage par d�faut                
+IPC$                                         IPC distant                       
+ADMIN$       C:\Windows                      Administration � distance         
+La commande s'est termin�e correctement.
+

@@ -1,0 +1,310 @@
+{
+  "100000__www_dogforum_de.html": {
+    "p_fidelity": 1.0,
+    "nonp_fidelity": 0.8059701492537313,
+    "md_chars": 11871,
+    "p_grams": 318,
+    "nonp_grams": 201
+  },
+  "10000__natiga_qalubiaedu_org.html": {
+    "p_fidelity": 0.7897196261682243,
+    "nonp_fidelity": 0.9,
+    "md_chars": 4250,
+    "p_grams": 214,
+    "nonp_grams": 60
+  },
+  "10000__www_latercera_com.html": {
+    "p_fidelity": 0.05714285714285714,
+    "nonp_fidelity": 0.9945325314379442,
+    "md_chars": 33595,
+    "p_grams": 35,
+    "nonp_grams": 1829
+  },
+  "1000__www_franceinfo_fr.html": {
+    "p_fidelity": 0.8629605688429218,
+    "nonp_fidelity": 0.9951690821256038,
+    "md_chars": 72281,
+    "p_grams": 3094,
+    "nonp_grams": 207
+  },
+  "aljazeera_ar.html": {
+    "p_fidelity": 0.99609375,
+    "nonp_fidelity": 0.9761904761904762,
+    "md_chars": 8201,
+    "p_grams": 256,
+    "nonp_grams": 168
+  },
+  "archwiki_page.html": {
+    "p_fidelity": 0.9602593010146562,
+    "nonp_fidelity": 0.9743119266055047,
+    "md_chars": 54618,
+    "p_grams": 3548,
+    "nonp_grams": 545
+  },
+  "arxiv_abs.html": {
+    "p_fidelity": 1.0,
+    "nonp_fidelity": 0.835820895522388,
+    "md_chars": 8695,
+    "p_grams": 67,
+    "nonp_grams": 67
+  },
+  "bbc_article.html": {
+    "p_fidelity": 0.9688385269121812,
+    "nonp_fidelity": 0.9827586206896551,
+    "md_chars": 15951,
+    "p_grams": 706,
+    "nonp_grams": 522
+  },
+  "bbc_home.html": {
+    "p_fidelity": 0.9784946236559139,
+    "nonp_fidelity": 0.9902702702702704,
+    "md_chars": 29362,
+    "p_grams": 1023,
+    "nonp_grams": 925
+  },
+  "discourse_leaf.html": {
+    "p_fidelity": 0.9130434782608695,
+    "nonp_fidelity": 0.9254807692307694,
+    "md_chars": 6798,
+    "p_grams": 69,
+    "nonp_grams": 416
+  },
+  "django_leaf.html": {
+    "p_fidelity": 0.968670618120237,
+    "nonp_fidelity": 0.9071782178217822,
+    "md_chars": 60869,
+    "p_grams": 5905,
+    "nonp_grams": 808
+  },
+  "docsrs.html": {
+    "p_fidelity": 0.9554455445544554,
+    "nonp_fidelity": 0.8846153846153846,
+    "md_chars": 5792,
+    "p_grams": 202,
+    "nonp_grams": 104
+  },
+  "fastapi_leaf.html": {
+    "p_fidelity": 0.9845814977973568,
+    "nonp_fidelity": 1.0,
+    "md_chars": 13167,
+    "p_grams": 908,
+    "nonp_grams": 60
+  },
+  "go_pkg.html": {
+    "p_fidelity": 0.9826872012745619,
+    "nonp_fidelity": 0.7656477438136826,
+    "md_chars": 174478,
+    "p_grams": 9415,
+    "nonp_grams": 687
+  },
+  "gov_uk_guide.html": {
+    "p_fidelity": 0.7190476190476189,
+    "nonp_fidelity": 0.7380952380952381,
+    "md_chars": 3714,
+    "p_grams": 420,
+    "nonp_grams": 42
+  },
+  "gov_uk_home.html": {
+    "p_fidelity": 0.4811715481171548,
+    "nonp_fidelity": 0.7671232876712328,
+    "md_chars": 3682,
+    "p_grams": 239,
+    "nonp_grams": 73
+  },
+  "guardian_article.html": {
+    "p_fidelity": 0.9948717948717949,
+    "nonp_fidelity": 1.0,
+    "md_chars": 8481,
+    "p_grams": 1170,
+    "nonp_grams": 15
+  },
+  "guardian_home.html": {
+    "p_fidelity": 0.42857142857142855,
+    "nonp_fidelity": 0.8428884026258205,
+    "md_chars": 31102,
+    "p_grams": 14,
+    "nonp_grams": 2285
+  },
+  "guardian_sec.html": {
+    "p_fidelity": 1.0,
+    "nonp_fidelity": 0.9665178571428571,
+    "md_chars": 7546,
+    "p_grams": 0,
+    "nonp_grams": 448
+  },
+  "hn_thread.html": {
+    "p_fidelity": 1.0,
+    "nonp_fidelity": 0.891156462585034,
+    "md_chars": 1714,
+    "p_grams": 0,
+    "nonp_grams": 147
+  },
+  "ikea_cat.html": {
+    "p_fidelity": 0.8693586698337292,
+    "nonp_fidelity": 0.90625,
+    "md_chars": 12812,
+    "p_grams": 421,
+    "nonp_grams": 64
+  },
+  "ikea_product.html": {
+    "p_fidelity": 0.7,
+    "nonp_fidelity": 0.8823529411764706,
+    "md_chars": 5646,
+    "p_grams": 190,
+    "nonp_grams": 51
+  },
+  "investopedia_h.html": {
+    "p_fidelity": 0.6844660194174758,
+    "nonp_fidelity": 0.5263157894736842,
+    "md_chars": 12663,
+    "p_grams": 206,
+    "nonp_grams": 19
+  },
+  "investopedia_l.html": {
+    "p_fidelity": 0.9559304960967012,
+    "nonp_fidelity": 0.8767123287671232,
+    "md_chars": 39326,
+    "p_grams": 3971,
+    "nonp_grams": 73
+  },
+  "k8s_doc.html": {
+    "p_fidelity": 0.9747414000481116,
+    "nonp_fidelity": 0.9859154929577465,
+    "md_chars": 58531,
+    "p_grams": 4157,
+    "nonp_grams": 71
+  },
+  "mdn_doc.html": {
+    "p_fidelity": 0.798469387755102,
+    "nonp_fidelity": 0.5346062052505967,
+    "md_chars": 7397,
+    "p_grams": 392,
+    "nonp_grams": 419
+  },
+  "mdnjp_leaf.html": {
+    "p_fidelity": 0.4369747899159664,
+    "nonp_fidelity": 0.13636363636363635,
+    "md_chars": 2930,
+    "p_grams": 119,
+    "nonp_grams": 198
+  },
+  "newegg_cat.html": {
+    "p_fidelity": 0.9193857965451057,
+    "nonp_fidelity": 0.1492204899777283,
+    "md_chars": 31283,
+    "p_grams": 521,
+    "nonp_grams": 449
+  },
+  "newegg_product.html": {
+    "p_fidelity": 0.3181818181818182,
+    "nonp_fidelity": 1.0,
+    "md_chars": 7516,
+    "p_grams": 44,
+    "nonp_grams": 277
+  },
+  "nhs_home.html": {
+    "p_fidelity": 0.9567901234567902,
+    "nonp_fidelity": 0.9791666666666665,
+    "md_chars": 2603,
+    "p_grams": 162,
+    "nonp_grams": 48
+  },
+  "nhs_leaf.html": {
+    "p_fidelity": 0.9743589743589743,
+    "nonp_fidelity": 0.5,
+    "md_chars": 9163,
+    "p_grams": 39,
+    "nonp_grams": 2
+  },
+  "pmc_article.html": {
+    "p_fidelity": 0.9755410874538096,
+    "nonp_fidelity": 0.9421965317919075,
+    "md_chars": 68867,
+    "p_grams": 5683,
+    "nonp_grams": 173
+  },
+  "py_glossary.html": {
+    "p_fidelity": 0.9693343305908751,
+    "nonp_fidelity": 0.968681208725235,
+    "md_chars": 84184,
+    "p_grams": 9359,
+    "nonp_grams": 9994
+  },
+  "rubygems_pkg.html": {
+    "p_fidelity": 0.7555555555555555,
+    "nonp_fidelity": 0.8571428571428571,
+    "md_chars": 2349,
+    "p_grams": 45,
+    "nonp_grams": 14
+  },
+  "rust_book.html": {
+    "p_fidelity": 0.9931389365351628,
+    "nonp_fidelity": 0.96,
+    "md_chars": 27433,
+    "p_grams": 3498,
+    "nonp_grams": 25
+  },
+  "slack.com.html": {
+    "p_fidelity": 0.9130434782608695,
+    "nonp_fidelity": 0.9695121951219512,
+    "md_chars": 11398,
+    "p_grams": 161,
+    "nonp_grams": 164
+  },
+  "sportingnews_art.html": {
+    "p_fidelity": 0.9878378378378379,
+    "nonp_fidelity": 1.0,
+    "md_chars": 15937,
+    "p_grams": 1480,
+    "nonp_grams": 139
+  },
+  "stackexch_q.html": {
+    "p_fidelity": 0.8914342629482072,
+    "nonp_fidelity": 0.5,
+    "md_chars": 14775,
+    "p_grams": 1004,
+    "nonp_grams": 24
+  },
+  "stripe_api.html": {
+    "p_fidelity": 0.9386562804284323,
+    "nonp_fidelity": 0.3673469387755102,
+    "md_chars": 17045,
+    "p_grams": 1027,
+    "nonp_grams": 196
+  },
+  "vogue_article.html": {
+    "p_fidelity": 0.745173745173745,
+    "nonp_fidelity": 0.9,
+    "md_chars": 7084,
+    "p_grams": 259,
+    "nonp_grams": 10
+  },
+  "wikipedia_art.html": {
+    "p_fidelity": 0.899802122683936,
+    "nonp_fidelity": 0.43227091633466136,
+    "md_chars": 141899,
+    "p_grams": 5559,
+    "nonp_grams": 502
+  },
+  "wikipedia_math.html": {
+    "p_fidelity": 0.9185919922583767,
+    "nonp_fidelity": 0.3594674556213018,
+    "md_chars": 129158,
+    "p_grams": 8267,
+    "nonp_grams": 676
+  },
+  "yahoofin_quote.html": {
+    "p_fidelity": 0.9951259138911455,
+    "nonp_fidelity": 0.9862288135593221,
+    "md_chars": 21417,
+    "p_grams": 1231,
+    "nonp_grams": 944
+  },
+  "zhwiki.html": {
+    "p_fidelity": 0.04440275171982489,
+    "nonp_fidelity": 0.0749665327978581,
+    "md_chars": 16981,
+    "p_grams": 1599,
+    "nonp_grams": 1494
+  }
+}

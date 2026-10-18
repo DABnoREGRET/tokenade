@@ -1,0 +1,14 @@
+preferred-count	0
+boot-args	usb=0x800 keepsyms=1
+auto-boot	true
+prev-lang:kbd	fr:1
+SystemAudioVolumeDB	%ed
+previous-system-uuid	503638B8-7F0A-465D-AE22-3A35BEFC0AD7
+platform-uuid	%d8)%9e%b9%ee%13%e1F%87FA%19,%e8#%fb
+prev-lang-diags:kbd	fr%00
+multiupdater-state	%01%00%00%00%00%00%00%00%00%00%00%00
+multiupdater-retry-limits	%01%00%00%00%00%00%00%00
+efi-boot-device-data	%02%01%0c%00%d0A%03%0a%00%00%00%00%01%01%06%00%02%1f%03%12%0a%00%00%00%00%00%00%00%04%01*%00%02%00%00%00(@%06%00%00%00%00%00%b0%bfy%0c%00%00%00%00@%05%f7"%1c%1f%96H%b8%db%d6%9d%0bOi%b1%02%02%04%03$%00%f7%fct%be|%0b%f3I%91G%01%f4%04.hB\x%ac%10%d1%cf&D%b1%c0%cd;P%e6%cb%c4%04%04%9a%00\%005%000%003%006%003%008%00B%008%00-%007%00F%000%00A%00-%004%006%005%00D%00-%00A%00E%002%002%00-%003%00A%003%005%00B%00E%00F%00C%000%00A%00D%007%00\%00S%00y%00s%00t%00e%00m%00\%00L%00i%00b%00r%00a%00r%00y%00\%00C%00o%00r%00e%00S%00e%00r%00v%00i%00c%00e%00s%00\%00b%00o%00o%00t%00.%00e%00f%00i%00%00%00%7f%ff%04%00
+efi-boot-device	<array><dict><key>IOMatch</key><dict><key>IOProviderClass</key><string>IOMedia</string><key>IOPropertyMatch</key><dict><key>UUID</key><string>10AC785C-CFD1-4426-B1C0-CD3B50E6CBC4</string></dict></dict><key>BLLastBSDName</key><string>disk1s2</string></dict><dict><key>IOEFIDevicePathType</key><string>MediaFilePath</string><key>Path</key><string>\503638B8-7F0A-465D-AE22-3A35BEFC0AD7\System\Library\CoreServices\boot.efi</string></dict></array>%00
+SystemAudioVolume	e
+fmm-computer-name	MacOS

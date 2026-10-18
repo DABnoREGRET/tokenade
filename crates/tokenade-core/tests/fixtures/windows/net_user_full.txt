@@ -1,0 +1,8 @@
+
+comptes d'utilisateurs de \\DESKTOP-T2HFRGA
+
+-------------------------------------------------------------------------------
+Administrateur           DefaultAccount           Invit�                   
+Virtualbox               WDAGUtilityAccount       
+La commande s'est termin�e correctement.
+

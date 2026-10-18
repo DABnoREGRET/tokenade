@@ -1,0 +1,6 @@
+
+LCID             Name             DisplayName                                                                          
+----             ----             -----------                                                                          
+1036             fr-FR            French (France)                                                                      
+
+
