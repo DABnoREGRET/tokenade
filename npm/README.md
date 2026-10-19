@@ -2,7 +2,7 @@
 
 **Cut your AI coding agent's token bill — locally, automatically, on every prompt.**
 
-Open source (MIT OR Apache-2.0) · no account · no telemetry ·
+Free and open source (MIT OR Apache-2.0) ·
 **#1 on [THOL](https://tokenade.net/en/thol): 39% cheaper on long sessions.**
 
 ```sh

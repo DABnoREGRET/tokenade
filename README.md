@@ -127,9 +127,9 @@ Claude Desktop's Code tab runs Claude Code and gets full integration.
 `tokenade install --only <agent>` limits the install to one agent;
 `tokenade uninstall` removes everything it added.
 
-## Privacy: zero telemetry
+## Network access
 
-Tokenade has **no account, no licence key and no telemetry**. Your savings
+Your savings
 ledger and dashboard (`tokenade gain`, `tokenade dashboard`) stay on your
 machine. The only network calls are:
 
