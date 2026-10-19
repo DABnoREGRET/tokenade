@@ -273,7 +273,5 @@ EXAMPLES:
   tokenade install --dry-run             # preview changes
   tokenade install --per-project         # ./.claude/ instead of ~/.claude/
 
-No account, no telemetry: everything stays on this machine.
-
 See `tokenade help` for the top-level command list."
 }

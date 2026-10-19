@@ -669,6 +669,43 @@ fn a_question_reaches_the_source_strip_path() {
     );
 }
 
+/// A RELATIVE path gets the same editable-source exception as an absolute one.
+///
+/// The git-repo walk climbed the path's own parents, which for `handler.go`
+/// stop at `""` — so from a repo's subdirectory the `.git` above was never
+/// seen and the file the agent was about to edit came back without comments.
+#[test]
+fn read_relative_path_in_git_subdir_is_not_stripped() {
+    let home = crate::TempHome::new("read-relative-git");
+    let repo = home.path().join("proj");
+    let sub = repo.join("src");
+    std::fs::create_dir_all(repo.join(".git")).unwrap();
+    std::fs::create_dir_all(&sub).unwrap();
+    let body: String = (0..400)
+        .map(|i| format!("// what handler {i} does, at some length so it counts\nfunc handler{i}() {{ return }}\n"))
+        .collect();
+    std::fs::write(sub.join("handler.go"), &body).unwrap();
+
+    let (out, _e, rc) = crate::run_in(&["read", "handler.go"], home.path(), &sub);
+    assert_eq!(rc, 0);
+    assert!(
+        out.contains("// what handler 0 does") && !out.contains("mode=comments"),
+        "a relative path inside a git repo lost its comments: {}",
+        out.lines().next().unwrap_or("")
+    );
+
+    // Control: the same relative read outside any repo IS stripped, so the
+    // assertion above is about the repo check and not about the fixture.
+    std::fs::remove_dir_all(repo.join(".git")).unwrap();
+    let (out, _e, rc) = crate::run_in(&["read", "handler.go"], home.path(), &sub);
+    assert_eq!(rc, 0);
+    assert!(
+        out.contains("mode=comments"),
+        "outside a repo the file should be stripped: {}",
+        out.lines().next().unwrap_or("")
+    );
+}
+
 /// A typo must not rewrite the agent's MCP config for every server it has.
 ///
 /// `first_positional` skipped every `-`-prefixed token, so an unimplemented

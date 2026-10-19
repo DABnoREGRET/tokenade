@@ -49,15 +49,12 @@ static HELP_TEXTS: &[(&[&str], fn() -> &'static str)] = &[
     // `tokenade xref --help` — an alias `tokenade --help` documents on the
     // same run — fell all the way through to the 100-line catalogue.
     (
-        &[
-            "expand-ref",
-            "expand_ref",
-            "xref",
-            "expand-fold",
-            "expand_fold",
-            "xfold",
-        ],
+        &["expand-ref", "expand_ref", "xref"],
         crate::expand_ref_help_text,
+    ),
+    (
+        &["expand-fold", "expand_fold", "xfold"],
+        crate::expand_fold_help_text,
     ),
     (&["install"], crate::install_help_text),
     (&["dashboard", "dash", "stats"], crate::dashboard_help_text),
@@ -267,6 +264,24 @@ mod tests {
              and leave the rest to the generic fallback:\n  {}",
             split.join("\n  ")
         );
+    }
+
+    /// `expand-fold` shared a row with `expand-ref`, so its `--help` printed
+    /// the other command's usage (hashes, `--prompt`, `--raw`), none of
+    /// which `expand-fold` accepts.
+    #[test]
+    fn expand_fold_has_its_own_help() {
+        for name in ["expand-fold", "expand_fold", "xfold"] {
+            let (_, text) = HELP_TEXTS
+                .iter()
+                .find(|(names, _)| names.contains(&name))
+                .unwrap_or_else(|| panic!("{name} has no help row"));
+            let t = text();
+            assert!(
+                t.starts_with("tokenade expand-fold") && t.contains("--max N"),
+                "{name} --help does not describe expand-fold: {t}"
+            );
+        }
     }
 
     #[test]

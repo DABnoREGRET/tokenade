@@ -301,8 +301,13 @@ pub(crate) fn cmd_hookwrap_postread() -> i32 {
 /// P1c (flow analysis 2026-06) — editable-source guard support. Walks
 /// up from the file looking for a `.git` entry (dir for work trees,
 /// file for worktrees/submodules). Capped to keep the hook O(depth).
+///
+/// A RELATIVE path is resolved against the cwd first: its parents run out at
+/// `""`, so `tokenade read lib.rs` from a repo's subdirectory never reached
+/// the `.git` above it and the file about to be edited lost its comments.
 pub(crate) fn inside_git_work_tree(path: &std::path::Path) -> bool {
-    let mut dir = path.parent();
+    let abs = std::path::absolute(path).unwrap_or_else(|_| path.to_path_buf());
+    let mut dir = abs.parent();
     for _ in 0..64 {
         let Some(d) = dir else { return false };
         if d.join(".git").exists() {

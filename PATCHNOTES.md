@@ -1,4 +1,11 @@
 # Tokenade — what's new
+## 2.0.2
+- `tokenade gain` no longer prints a `metered:` line (and `gain --json` no longer has `operations_as_metered` / `saved_as_metered`): they described the metering of the former paid service.
+- `tokenade read` with a relative path from a subdirectory of a git repository now recognises the repository, so a source file you are about to edit comes back unchanged instead of with its comments stripped.
+- `tokenade read --help` now describes what happens to source code: unchanged when it is likely to be edited (inside a git repository, under ~20k tokens), comments stripped for other source files over 3 KB, `TOKENADE_NO_CODE_STRIP=1` to turn the stripping off.
+- `tokenade expand-fold --help` shows its own help instead of the `expand-ref` one, and `expand-fold <template_id> --max N` no longer reads `N` as the content hash.
+- Help texts and the one-time open-source notice trimmed.
+
 ## 2.0.1
 - The 1.x → 2.0 cleanup now also removes `last-report.zip` (the support bundle of the removed `tokenade report`, which held a copy of agent transcripts) and a stray `reporter.lock`, including on machines already migrated to 2.0.0.
 

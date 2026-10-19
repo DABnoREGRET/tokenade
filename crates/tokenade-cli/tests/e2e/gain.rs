@@ -1114,18 +1114,15 @@ fn e2e_distinct_commands_in_one_second_are_each_credited() {
 }
 
 #[test]
-fn e2e_gain_says_what_the_server_will_meter() {
-    // The local scan credits an event once on `credit_key`; the server's
-    // ingest dedups on the coarser `server_dedup_key`. Three comments asserted
-    // the two were the same key, and they stopped being the same the day the
-    // local one gained the label and the session — after which no surface said
-    // so, and a user comparing a receipt to an account had nothing to go on.
-    let h = TempHome::new("gain-metered");
+fn e2e_gain_prints_no_metered_figure() {
+    // 2.0.2: the paid service that metered savings is gone, but `gain` still
+    // printed a `metered:` line (and `*_as_metered` JSON fields) about "the
+    // server's ingest". This ledger is the one that used to trigger it: three
+    // events the coarser server key would have merged into one.
+    let h = TempHome::new("gain-no-metered");
     let tk = h.path().join(".tokenade");
     std::fs::create_dir_all(&tk).unwrap();
     let mut led = String::new();
-    // Three command variants the server cannot tell apart: same second, same
-    // op, same two token counts. Locally three events; metered, one.
     for label in [
         "kubectl get pods",
         "kubectl get po -A",
@@ -1136,84 +1133,21 @@ fn e2e_gain_says_what_the_server_will_meter() {
         ));
         led.push('\n');
     }
-    // One row the two keys agree about, so the figures are not merely a
-    // multiple of each other.
-    led.push_str(
-        r#"{"op":"widget","label":"w","before":8000,"after":800,"saved":7200,"source":"wrap","agent":"claude-code","sess":"s1","project":"p","ts":1788360920}"#,
-    );
-    led.push('\n');
     std::fs::write(tk.join("gain.jsonl"), &led).unwrap();
-    assert!(
-        tk.join("gain.jsonl").exists(),
-        "HOME was not redirected: the probe read the real store"
-    );
-
     let (out, _e, rc) = run(&["gain", "--json"], h.path());
     assert_eq!(rc, 0, "gain --json failed: {out}");
     let v: serde_json::Value = serde_json::from_str(&out).expect("json");
-    assert_eq!(v["operations"].as_u64(), Some(4), "local events: {out}");
-    assert_eq!(
-        v["operations_as_metered"].as_u64(),
-        Some(2),
-        "the metered count is not the coarse-key count: {out}"
-    );
-    assert_eq!(
-        v["saved"].as_u64(),
-        Some(3 * 2524 + 7200),
-        "local saved: {out}"
-    );
-    assert_eq!(
-        v["saved_as_metered"].as_u64(),
-        Some(2524 + 7200),
-        "the metered saving is not the coarse-key saving: {out}"
-    );
-    // The direction is the safety argument: never above the local figure.
+    assert_eq!(v["operations"].as_u64(), Some(3), "local events: {out}");
+    assert_eq!(v["saved"].as_u64(), Some(3 * 2524), "local saved: {out}");
     assert!(
-        v["saved_as_metered"].as_u64().unwrap() <= v["saved"].as_u64().unwrap(),
-        "the metered figure exceeds the local one, so the key is not finer: {out}"
+        v.get("operations_as_metered").is_none() && v.get("saved_as_metered").is_none(),
+        "gain --json still reports a metered figure: {out}"
     );
-
-    // The human surface says it too, and only when the two actually differ.
-    let (text, _e, rc) = run(&["gain"], h.path());
-    assert_eq!(rc, 0, "gain failed: {text}");
-    let line = text
-        .lines()
-        .find(|l| l.starts_with("metered:"))
-        .unwrap_or_else(|| panic!("no surface names the metered figure: {text}"));
-    assert!(
-        line.contains("9724") && line.contains("2 events"),
-        "the line names neither the metered saving nor its event count: {line}"
-    );
-}
-
-#[test]
-fn e2e_no_metered_line_when_the_two_keys_agree() {
-    // A caveat printed unconditionally stops being read. When every row is
-    // distinct on the coarse key there is nothing to warn about.
-    let h = TempHome::new("gain-metered-quiet");
-    let tk = h.path().join(".tokenade");
-    std::fs::create_dir_all(&tk).unwrap();
-    let mut led = String::new();
-    for (i, label) in ["a", "b", "c"].iter().enumerate() {
-        led.push_str(&format!(
-            r#"{{"op":"widget","label":"{label}","before":{},"after":800,"saved":1,"source":"wrap","agent":"claude-code","sess":"s1","project":"p","ts":178836100{i}}}"#,
-            9000 + i * 100
-        ));
-        led.push('\n');
-    }
-    std::fs::write(tk.join("gain.jsonl"), &led).unwrap();
     let (text, _e, rc) = run(&["gain"], h.path());
     assert_eq!(rc, 0, "gain failed: {text}");
     assert!(
-        !text.lines().any(|l| l.starts_with("metered:")),
-        "the metered caveat printed when the two keys agree: {text}"
-    );
-    let (out, _e, _rc) = run(&["gain", "--json"], h.path());
-    let v: serde_json::Value = serde_json::from_str(&out).expect("json");
-    assert_eq!(
-        v["saved_as_metered"].as_u64(),
-        v["saved"].as_u64(),
-        "the two keys should agree on this ledger: {out}"
+        !text.to_lowercase().contains("metered") && !text.contains("server"),
+        "gain still talks about server metering: {text}"
     );
 }
 

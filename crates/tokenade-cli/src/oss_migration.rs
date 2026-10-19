@@ -44,8 +44,7 @@ const DONE: &str = "oss-migrated";
 const DONE_LATE: &str = "oss-migrated-2";
 const NOTICE_PENDING: &str = "oss-notice-pending";
 
-pub(crate) const NOTICE: &str =
-    "Tokenade is now open source (MIT OR Apache-2.0) — no account, no telemetry.";
+pub(crate) const NOTICE: &str = "Tokenade is now open source (MIT OR Apache-2.0).";
 
 /// Run at most once per machine; cheap (one `stat`) afterwards.
 pub(crate) fn run() {

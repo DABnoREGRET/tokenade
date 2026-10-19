@@ -99,7 +99,7 @@ The page is a static local file: a period selector that drives EVERY panel
 (hero, KPIs, chart, breakdown tables), click-to-drill detail per period
 (functions, layers, agents, projects, models), a with/without-tokenade
 comparison chart, and an 'outside tokenade' tab. 100% local — no server, no
-requests, no telemetry; your stats never leave the machine.
+requests; your stats never leave the machine.
 
 Terminal sections (--text, and the headless fallback):
 
@@ -378,7 +378,7 @@ pub(crate) fn auto_help_text() -> &'static str {
 USAGE:
   curl -s api/x | tokenade read -
   tokenade read blob.txt
-  tokenade read src/main.rs        # source-code path → passthrough (#570)
+  tokenade read src/main.rs        # source code: see SOURCE CODE below
 
 FLAGS:
   --prompt \"q1, q2\"   return only the passages that answer, several
@@ -396,11 +396,17 @@ FLAGS:
 
 This is the catch-all entry point used by the PostToolUse Bash hook
 and the MCP auto_compact tool. When the path is on argv, the file's
-extension feeds the detector first (so a .rs file routes to source-
-passthrough even if the byte content looks SERP-ish, #570/#571).
+extension feeds the detector first (so a .rs file is treated as
+source code even if the byte content looks SERP-ish, #570/#571).
+
+SOURCE CODE:
+  A file you are likely to edit (inside a git work tree, under ~20k
+  tokens) comes back unchanged. Other source files over 3 KB come back
+  with comments stripped, under a `mode=comments` banner.
+  TOKENADE_NO_CODE_STRIP=1 disables the stripping.
 
 Detection priority (first match wins):
-  * source-code extension → passthrough (no compaction; #570)
+  * source-code extension → source code (see SOURCE CODE above)
   * JSON / NDJSON / YAML / TOML / Markdown / CSV / TSV / XML
   * `git log --stat` → gitlog
   * `git diff` / `diff -u` → unified diff

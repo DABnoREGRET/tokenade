@@ -29,8 +29,9 @@
 //! Cadence:
 //!   - First invocation per UTC day checks for updates.
 //!   - 24h TTL stored in `~/.tokenade/update-check.json`.
-//!   - Disable: `TOKENADE_NO_AUTO_UPDATE=1` (env var, also persisted to
-//!     `~/.tokenade/opt-out.json` if the user runs `tokenade upgrade --off`).
+//!   - Disable: `TOKENADE_NO_AUTO_UPDATE=1` (env var, one shot), or
+//!     persistently with `tokenade upgrade --off`, which writes the marker
+//!     file `~/.tokenade/auto-update-off` (`--on` removes it).
 //!
 //! Manifest schema (`v=1`):
 //! ```json

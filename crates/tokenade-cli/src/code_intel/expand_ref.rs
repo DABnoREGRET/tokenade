@@ -378,17 +378,34 @@ fn book_recovery_cost() {
     tokenade_core::gain::record_recovery_turn("cli", "expand-ref");
 }
 
+/// The positionals of `expand-fold`: every non-flag word EXCEPT the value of
+/// `--max N`. Filtering on the leading `-` alone kept that value, so
+/// `expand-fold <id> --max 5` looked up content_hash `5`.
+fn expand_fold_positionals(rest: &[String]) -> Vec<&str> {
+    let mut pos = Vec::new();
+    let mut it = rest.iter();
+    while let Some(s) = it.next() {
+        if s == "--max" {
+            it.next();
+            continue;
+        }
+        if s.starts_with('-') {
+            continue;
+        }
+        let s = unkey(s);
+        if !s.is_empty() {
+            pos.push(s);
+        }
+    }
+    pos
+}
+
 /// `tokenade expand-fold <template_id> [content_hash] [--max N]` — CLI
 /// twin of MCP `expand_fold`. Expands a folded repeated-run marker back
 /// to its matched lines. With no content_hash, resolves the most recent
 /// fold for the template_id (the common case from a fold marker).
 pub(crate) fn cmd_expand_fold(rest: &[String]) -> i32 {
-    let pos: Vec<&str> = rest
-        .iter()
-        .filter(|s| !s.starts_with('-'))
-        .map(|s| unkey(s))
-        .filter(|s| !s.is_empty())
-        .collect();
+    let pos = expand_fold_positionals(rest);
     let template_id = match pos.first() {
         Some(t) if !t.trim().is_empty() => *t,
         _ => {
@@ -496,6 +513,29 @@ mod a_failing_recovery_says_what_to_do {
 #[cfg(test)]
 mod raw_budget_tests {
     use super::*;
+
+    /// The value of `--max N` is not a positional: with no content_hash
+    /// given, it used to be read AS the hash.
+    #[test]
+    fn expand_fold_max_value_is_not_the_hash() {
+        let argv = |v: &[&str]| v.iter().map(|s| s.to_string()).collect::<Vec<_>>();
+        assert_eq!(
+            expand_fold_positionals(&argv(&["t1", "--max", "5"])),
+            vec!["t1"]
+        );
+        assert_eq!(
+            expand_fold_positionals(&argv(&["--max", "5", "t1"])),
+            vec!["t1"]
+        );
+        assert_eq!(
+            expand_fold_positionals(&argv(&["t1", "--max", "5", "abc123"])),
+            vec!["t1", "abc123"]
+        );
+        assert_eq!(
+            expand_fold_positionals(&argv(&["t1", "--max=5", "abc123"])),
+            vec!["t1", "abc123"]
+        );
+    }
 
     /// Every value-taking flag must be skipped when hashes are collected, or
     /// the value is read as a hash. `--from-line 900` did exactly that.

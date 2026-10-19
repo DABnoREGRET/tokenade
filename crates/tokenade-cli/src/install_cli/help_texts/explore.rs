@@ -204,3 +204,21 @@ Reach for `--prompt` or `--grep` first. `--raw` puts the stored bytes back
 in context, which is what the fold existed to avoid — so it stops at a
 budget and hands you the exact command to continue from where it stopped."
 }
+
+pub(crate) fn expand_fold_help_text() -> &'static str {
+    "tokenade expand-fold — expand a folded run of repeated lines.
+
+USAGE:
+  tokenade expand-fold <template_id> [content_hash] [--max N]
+
+When a compactor folds a run of near-identical log lines into one marker,
+the marker names a template_id. This returns the lines it stood for.
+
+  <template_id>     from the fold marker
+  [content_hash]    which fold; omitted, the most recent fold of that
+                    template_id is used
+  --max N           return at most N matched lines
+
+Alias: xfold. For a whole folded blob (a hash from a compactor banner),
+use `tokenade expand-ref` instead."
+}

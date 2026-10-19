@@ -150,12 +150,6 @@ pub(super) struct GainTotals {
     /// The signed receipt calls the same number `tokens_saved_approximated`;
     /// that name is frozen by the signature and cannot be aligned.
     approximated_saved: u64,
-    /// The same rows credited on the server's coarser dedup key. Never above
-    /// the local figure: `credit_key` is `server_dedup_key` plus two fields,
-    /// so it can only split groups the server keeps together.
-    metered_count: u64,
-    metered_before: u64,
-    metered_after: u64,
     count: u64,
     per_op: std::collections::BTreeMap<String, (u64, u64, u64)>,
     /// Of `per_op`, the share of `saved` whose baseline is BORROWED from the
@@ -216,17 +210,6 @@ pub(super) fn scan_gain_ledger(
     // against 4 736 778 on this install). Same rule, one function, both
     // scanners.
     let mut approximated_saved = 0u64;
-    // The same rows credited on the COARSER key the server's ingest uses
-    // (`gain::server_dedup_key`). `credit_key` is that key plus the label and
-    // the session, so this can only be lower — and the gap is the one number a
-    // user needs when their receipt and their account disagree. Three comments
-    // asserted the gap was zero; it stopped being zero the day the local key
-    // gained those two fields, and no surface said so.
-    let mut metered_credited: std::collections::HashSet<(u64, String, u64, u64)> =
-        std::collections::HashSet::new();
-    let mut metered_count = 0u64;
-    let mut metered_before = 0u64;
-    let mut metered_after = 0u64;
     let mut count = 0u64;
     let mut per_op: std::collections::BTreeMap<String, (u64, u64, u64)> = Default::default();
     let mut per_op_borrowed: std::collections::BTreeMap<String, u64> = Default::default();
@@ -309,11 +292,6 @@ pub(super) fn scan_gain_ledger(
             count += row.calls;
             total_before += b;
             total_after += a;
-            if metered_credited.insert(tokenade_core::gain::server_dedup_key(&v)) {
-                metered_count += row.calls;
-                metered_before += b;
-                metered_after += a;
-            }
             approximated_saved =
                 approximated_saved.saturating_add(tokenade_core::coefficients::approximated_slice(
                     v["agent"].as_str().unwrap_or(""),
@@ -381,9 +359,6 @@ pub(super) fn scan_gain_ledger(
         estimated_calls,
         borrowed_ratio_saved,
         approximated_saved,
-        metered_count,
-        metered_before,
-        metered_after,
         count,
         per_op,
         per_op_borrowed,
@@ -441,11 +416,8 @@ pub(crate) fn cmd_gain(rest: &[String]) -> i32 {
     // that counterfactual assumes a model turn that never happened — measured,
     // a `cat` loop at ~37 identical events/second put 89 M tokens into a single
     // day, 28 % of this install's lifetime figure, for ~20 s of work. The key
-    // is `gain::credit_key`, which is `gain::server_dedup_key` plus the label
-    // and the session — FINER than what the server's ingest dedups on, so this
-    // headline can sit above the metered number (measured: 0.24 %). It is not
-    // the same key, and this comment said it was for a day. Rows are never
-    // dropped from the ledger; only the credit is collapsed.
+    // is `gain::credit_key`. Rows are never dropped from the ledger; only the
+    // credit is collapsed.
     let GainTotals {
         total_before,
         total_after,
@@ -453,9 +425,6 @@ pub(crate) fn cmd_gain(rest: &[String]) -> i32 {
         estimated_calls,
         borrowed_ratio_saved,
         approximated_saved,
-        metered_count,
-        metered_before,
-        metered_after,
         count,
         per_op,
         per_op_borrowed,
@@ -544,12 +513,6 @@ pub(crate) fn cmd_gain(rest: &[String]) -> i32 {
             // `tokens_saved_approximated`; that name is frozen by the
             // signature, so the two differ in spelling only.
             "approximated_saved": approximated_saved,
-            // The same rows credited on the COARSER key the server's ingest
-            // dedups on. `credit_key` is that key plus the label and the
-            // session, so `saved` can sit above this; the gap is what a
-            // receipt and an account will disagree by.
-            "operations_as_metered": metered_count,
-            "saved_as_metered": metered_before.saturating_sub(metered_after),
             // Honest, prompt-cache-aware framing is the DEFAULT, not an
             // opt-in: net savings land on the *fresh* (uncacheable) fraction
             // of folded output; a cached re-read bills ~flat regardless of
@@ -657,17 +620,6 @@ pub(crate) fn cmd_gain(rest: &[String]) -> i32 {
         total_before.saturating_sub(total_after),
         overall.percent()
     );
-    // The server's ingest dedups more coarsely than this scan does, so the
-    // figure above can sit over what the account meters. Printed only when the
-    // two actually differ: a caveat that is always there stops being read.
-    let metered_saved = metered_before.saturating_sub(metered_after);
-    let local_saved = total_before.saturating_sub(total_after);
-    if local_saved > metered_saved {
-        println!(
-            "metered: {metered_saved} ({metered_count} events) is what the server's ingest \
-             counts — it dedups more coarsely, so `saved:` above can exceed it"
-        );
-    }
     // `saved:` is a measured total, but not all of it is exact arithmetic:
     // where the agent would have REFUSED an oversized payload rather than
     // truncating it, crediting the delivery cap is a deliberate stand-in. That
