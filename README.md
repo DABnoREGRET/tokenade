@@ -162,7 +162,8 @@ tokenade query parse_config         # locate a symbol
 tokenade skeleton src/lib.rs        # signatures only
 tokenade semantic "where is auth"   # search by meaning
 tokenade expand-ref <hash>          # get folded bytes back
-tokenade gain                       # what you saved
+tokenade dashboard                  # what you saved: graphical local report
+tokenade gain                       # same totals, in the terminal
 tokenade help                       # everything else
 ```
 
