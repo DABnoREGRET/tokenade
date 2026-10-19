@@ -1,4 +1,7 @@
 # Tokenade — what's new
+## 2.0.1
+- The 1.x → 2.0 cleanup now also removes `last-report.zip` (the support bundle of the removed `tokenade report`, which held a copy of agent transcripts) and a stray `reporter.lock`, including on machines already migrated to 2.0.0.
+
 
 ## 2.0.0
 - **Tokenade is open source** (MIT OR Apache-2.0). No account, no login, no licence key, no trial, no quota: every feature works out of the box.

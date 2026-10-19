@@ -33,7 +33,15 @@ pub(crate) const LEGACY_STATE: &[&str] = &[
     "report/last-upload-ts",
 ];
 
+/// Left behind by 2.0.0: `reporter.lock` re-created by a 1.x process still
+/// running during the swap, and the support bundle of the removed
+/// `tokenade report` (a copy of agent transcripts nothing in 2.x reads or
+/// sends). Swept once more, separately, so machines already past `DONE` get it.
+pub(crate) const LEGACY_STATE_LATE: &[&str] =
+    &["reporter.lock", "last-report.zip", "quota.json.bak"];
+
 const DONE: &str = "oss-migrated";
+const DONE_LATE: &str = "oss-migrated-2";
 const NOTICE_PENDING: &str = "oss-notice-pending";
 
 pub(crate) const NOTICE: &str =
@@ -43,6 +51,7 @@ pub(crate) const NOTICE: &str =
 pub(crate) fn run() {
     let dir = tokenade_core::platform::tokenade_state_dir();
     migrate_at(&dir);
+    sweep_late_at(&dir);
     if std::io::stderr().is_terminal() {
         if let Some(msg) = take_notice_at(&dir) {
             eprintln!("[tokenade] {msg}");
@@ -73,6 +82,19 @@ pub(crate) fn migrate_at(dir: &Path) -> usize {
         "legacy_state_removed",
         serde_json::json!({ "files": removed }),
     );
+    removed
+}
+
+/// Second, silent pass (sentinel `DONE_LATE`). Returns how many files went.
+pub(crate) fn sweep_late_at(dir: &Path) -> usize {
+    if !dir.is_dir() || dir.join(DONE_LATE).exists() {
+        return 0;
+    }
+    let removed = LEGACY_STATE_LATE
+        .iter()
+        .filter(|rel| std::fs::remove_file(dir.join(rel)).is_ok())
+        .count();
+    let _ = std::fs::write(dir.join(DONE_LATE), env!("CARGO_PKG_VERSION"));
     removed
 }
 
@@ -120,6 +142,22 @@ mod tests {
         std::fs::write(d.join("license.key"), b"x").unwrap();
         assert_eq!(migrate_at(&d), 0);
         assert!(d.join("license.key").exists());
+        let _ = std::fs::remove_dir_all(&d);
+    }
+
+    #[test]
+    fn the_late_sweep_runs_once_even_after_the_first_migration() {
+        let d = tmp("late");
+        std::fs::write(d.join(DONE), b"2.0.0").unwrap();
+        for f in LEGACY_STATE_LATE {
+            std::fs::write(d.join(f), b"x").unwrap();
+        }
+        assert_eq!(sweep_late_at(&d), LEGACY_STATE_LATE.len());
+        assert_eq!(take_notice_at(&d), None, "no second notice");
+        std::fs::write(d.join("last-report.zip"), b"x").unwrap();
+        assert_eq!(sweep_late_at(&d), 0);
+        assert!(d.join("last-report.zip").exists());
+        assert!(!d.join("absent").exists() && sweep_late_at(&d.join("absent")) == 0);
         let _ = std::fs::remove_dir_all(&d);
     }
 
