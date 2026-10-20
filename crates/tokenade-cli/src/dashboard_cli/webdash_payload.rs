@@ -667,7 +667,26 @@ pub(crate) fn cmd_dashboard_web(explicit_path: Option<std::path::PathBuf>, open:
         println!("  ✓ dashboard opened in your browser (new tab)");
     }
     println!("  ⤷ {url}");
+    // The interactive run only (`--html` / `--no-open` are scripted exports),
+    // and only once the page has saved tokens to show.
+    if open && payload_saved_tokens(&payload) > 0 {
+        crate::star_invite::maybe_show();
+    }
     0
+}
+
+/// Tokens saved across the payload's day rows (`b` before, `a` after).
+fn payload_saved_tokens(payload: &serde_json::Value) -> u64 {
+    payload["days"].as_array().map_or(0, |days| {
+        days.iter()
+            .map(|d| {
+                d["b"]
+                    .as_u64()
+                    .unwrap_or(0)
+                    .saturating_sub(d["a"].as_u64().unwrap_or(0))
+            })
+            .sum()
+    })
 }
 
 /// #684/#731 — given a gain.jsonl row's `source`, `label`, and `op`,

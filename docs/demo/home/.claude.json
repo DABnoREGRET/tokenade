@@ -1,0 +1,17 @@
+{
+  "hasCompletedOnboarding": true,
+  "theme": "dark",
+  "hasSeenAutoDefaultNotice": true,
+  "hasSeenAutoModeEntryWarning": true,
+  "hasSeenTasksHint": true,
+  "lastReleaseNotesSeen": "99.0.0",
+  "fullscreenUpsellSeenCount": 99,
+  "passesUpsellSeenCount": 99,
+  "pushNotifUpsellSeenCount": 99,
+  "remoteControlUpsellSeenCount": 99,
+  "promoStartupSeenCount": 99,
+  "opus46FeedSeenCount": 99,
+  "projects": {
+    "/demo": { "hasTrustDialogAccepted": true, "hasCompletedProjectOnboarding": true }
+  }
+}

@@ -1,4 +1,7 @@
 # Tokenade — what's new
+## 2.0.3
+- After a successful `tokenade install` (or, if that run was not in a terminal, the first `tokenade dashboard` with saved tokens to show), one line says Tokenade is open source and links the GitHub repository. Shown once per machine, never when stdout is not a terminal or under CI, and `TOKENADE_NO_STAR_INVITE=1` turns it off. It makes no network call.
+
 ## 2.0.2
 - `tokenade gain` no longer prints a `metered:` line (and `gain --json` no longer has `operations_as_metered` / `saved_as_metered`): they described the metering of the former paid service.
 - `tokenade read` with a relative path from a subdirectory of a git repository now recognises the repository, so a source file you are about to edit comes back unchanged instead of with its comments stripped.

@@ -323,7 +323,11 @@ pub(crate) fn cmd_install(rest: &[String]) -> i32 {
     wrap_configured_mcps(wrap_mcps, dry_run);
 
     offer_llm_proxy(&targets, dry_run);
-    print_install_report(mcp_ok, mcp_fail, dry_run)
+    let rc = print_install_report(mcp_ok, mcp_fail, dry_run);
+    if rc == 0 && !dry_run {
+        crate::star_invite::maybe_show();
+    }
+    rc
 }
 
 /// Offer rank 4 to the agents where it would add a FEATURE, and to no others.

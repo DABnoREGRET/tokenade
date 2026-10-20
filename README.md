@@ -11,6 +11,10 @@
 </p>
 
 <p align="center">
+  <img src="docs/assets/demo.gif" alt="Demo: npm install -g @tokenade/cli, tokenade install, then a Claude Code session runs pytest -v and Tokenade folds the 342 passing-test lines; the dashboard shows the tokens saved." width="900" />
+</p>
+
+<p align="center">
   <a href="#license"><img src="https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue" alt="license" /></a>
   <a href="https://www.npmjs.com/package/@tokenade/cli"><img src="https://img.shields.io/npm/v/@tokenade/cli?label=%40tokenade%2Fcli&logo=npm" alt="npm" /></a>
   <a href="https://tokenade.net/en/thol"><img src="https://img.shields.io/badge/THOL-%231-ffd103" alt="#1 on THOL" /></a>
@@ -143,6 +147,9 @@ Turn auto-update off with `TOKENADE_NO_AUTO_UPDATE=1` (or
 `tokenade upgrade --off`); `tokenade upgrade` updates on demand.
 `TOKENADE_NO_WEBSEARCH=1` / `TOKENADE_NO_WEBFETCH=1` keep your agent's own
 web tools.
+
+`tokenade install` ends with a one-time line inviting you to star the
+repository; `TOKENADE_NO_STAR_INVITE=1` turns it off.
 
 ## Upgrading from 1.x
 

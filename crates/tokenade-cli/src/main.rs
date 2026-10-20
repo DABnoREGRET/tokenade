@@ -21,6 +21,7 @@ mod bounded_input;
 mod edit_hint;
 mod oss_migration;
 mod semantic_cli;
+mod star_invite;
 use edit_hint::{
     edited_file_path, emit_edit_diff_hint_from_stdin, path_within_root, touch_cross_project_index,
 };

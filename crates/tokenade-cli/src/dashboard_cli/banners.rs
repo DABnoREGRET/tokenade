@@ -31,6 +31,9 @@ pub(crate) fn cmd_dashboard_text(window_days: u32) -> i32 {
         window_cutoff,
         data.tokens_before.saturating_sub(data.tokens_after),
     );
+    if data.tokens_before > data.tokens_after {
+        crate::star_invite::maybe_show();
+    }
     0
 }
 
