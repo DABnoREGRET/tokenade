@@ -386,11 +386,8 @@ async function server() {
 }
 
 // v2 entrypoint (opencode >= 2). Hooks are registered on their domain, and
-// the callback receives ONE mutable event instead of (input, output). The
-// text the model will read is `event.result.output` (v1 `output.output`) or,
-// for tools that set it, the single text part of `event.result.content` —
-// both are written back, because either can win when the host assembles the
-// tool output.
+// the callback receives ONE mutable event instead of (input, output); the
+// model-visible text lives in `event.result.content`, see `execute.after`.
 async function setup(ctx) {
   const controller = new AbortController();
   void (async () => {
@@ -415,28 +412,33 @@ async function setup(ctx) {
     if (event?.status !== "completed") return;
     const result = event?.result;
     if (!result) return;
-    const parts = Array.isArray(result.content) ? result.content : null;
-    const textPart = parts ? parts.find((p) => p && p.type === "text" && typeof p.text === "string") : null;
-    const carried =
-      typeof result.output === "string"
-        ? result.output
-        : typeof result.content === "string"
-          ? result.content
-          : textPart?.text;
-    if (typeof carried !== "string") return;
+    // Read what the MODEL reads, in the host's own order (core `normalizeContent`):
+    // `content` when it is a string or a non-empty array, `output` only when
+    // `content` is empty. `output` is often STRUCTURED (the shell tool's is
+    // `{ output, exit, truncated, … }`), so it is never overwritten unless it
+    // was itself the string we folded. In an array only the first text part —
+    // the payload — is folded: the shell tool appends its exit/timeout notice
+    // as a second part, which must survive.
+    const content = result.content;
+    let carried;
+    let write;
+    if (typeof content === "string") {
+      carried = content;
+      write = (text) => { result.content = text; };
+    } else if (Array.isArray(content) && content.length > 0) {
+      const i = content.findIndex((p) => p && p.type === "text" && typeof p.text === "string");
+      if (i < 0) return;
+      carried = content[i].text;
+      write = (text) => { result.content = content.map((p, j) => (j === i ? { ...p, text } : p)); };
+    } else if (typeof result.output === "string") {
+      carried = result.output;
+      write = (text) => { result.output = text; };
+    } else {
+      return;
+    }
     const out = { output: carried, args: event?.input, metadata: result.metadata };
     await onToolAfter({ tool: event?.tool, args: event?.input, sessionID: event?.sessionID }, out);
-    if (out.output === carried) return;
-    // v1 semantics: write back the field we read. When a text part carried the
-    // payload, replace that part rather than the (possibly unused) `output`.
-    result.output = out.output;
-    if (Array.isArray(result.content)) {
-      result.content = result.content.map((p) =>
-        p && p.type === "text" && typeof p.text === "string" ? { ...p, text: out.output } : p,
-      );
-    } else if (typeof result.content === "string") {
-      result.content = out.output;
-    }
+    if (out.output !== carried) write(out.output);
   });
 
   // A returned truthy NON-function is treated as a cleanup function and

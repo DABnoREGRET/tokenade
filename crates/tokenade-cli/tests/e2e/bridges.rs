@@ -134,6 +134,17 @@ out.opencode_terminal = o2.output.length;
                result: { output: body } };
   await v2["execute.after"](e2);
   out.opencode_v2_terminal = e2.result.output.length;
+  // The real shell tool: structured `output`, the model reads `content`
+  // (payload part + exit notice part).
+  const structured = { output: body, exit: 0, truncated: false };
+  const e3 = { tool: "shell", sessionID: "s1", input: { command: "journalctl -n 600" },
+               status: "completed",
+               result: { output: structured, content: [{ type: "text", text: body },
+                                                      { type: "text", text: "exit 1" }] } };
+  await v2["execute.after"](e3);
+  out.opencode_v2_content = e3.result.content[0].text.length;
+  out.opencode_v2_notice_kept = e3.result.content[1].text === "exit 1";
+  out.opencode_v2_output_kept = e3.result.output === structured && structured.output === body;
 }
 
 const pi = (await import("./pi.ts")).default;
@@ -365,6 +376,23 @@ console.log(JSON.stringify(out));
         v["opencode_v2_terminal"].as_u64().unwrap_or(0),
         before,
         "the v2 path folded a live `terminal` session"
+    );
+    // opencode 2's shell tool returns a structured `output` and puts the text
+    // the model reads in `content`: fold the payload part only.
+    let v2_content = v["opencode_v2_content"].as_u64().unwrap_or(before);
+    assert!(
+        v2_content * 4 < before,
+        "the v2 path did not fold `result.content` ({v2_content} chars for {before})"
+    );
+    assert_eq!(
+        v["opencode_v2_notice_kept"].as_bool(),
+        Some(true),
+        "the v2 path overwrote the shell tool's exit notice part"
+    );
+    assert_eq!(
+        v["opencode_v2_output_kept"].as_bool(),
+        Some(true),
+        "the v2 path replaced the shell tool's structured `output`"
     );
 
     // The command hint. Measured 2026-08-08: with a tool named
