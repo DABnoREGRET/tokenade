@@ -105,7 +105,10 @@ const body = fs.readFileSync("./body.txt", "utf8");
 const out = {};
 
 const oc = (await import("./oc.ts")).default;
-const ocHooks = await oc({});
+// opencode 2 requires a DEFINITION object ({id, setup}); opencode 1 and Kilo
+// Code still call `server()`. Both entry shapes must exist, and both must fold.
+out.opencode_v2_definition = typeof oc.id === "string" && typeof oc.setup === "function";
+const ocHooks = await oc.server();
 const o1 = { output: body };
 await ocHooks["tool.execute.after"]({ tool: "bash", args: { command: "journalctl -n 600" } }, o1);
 out.opencode = o1.output.length;
@@ -113,6 +116,25 @@ out.opencode = o1.output.length;
 const o2 = { output: body };
 await ocHooks["tool.execute.after"]({ tool: "terminal", args: {} }, o2);
 out.opencode_terminal = o2.output.length;
+
+// The v2 path: one mutable event instead of (input, output), and hooks are
+// registered on their domain. Driven through a stub context — the shape the
+// real loader hands `setup`.
+{
+  const v2 = {};
+  await oc.setup({
+    tool: { hook: async (n, fn) => { v2[n] = fn; return { dispose: async () => {} }; } },
+    event: { subscribe: async function* () {} },
+  });
+  const e1 = { tool: "bash", sessionID: "s1", input: { command: "journalctl -n 600" },
+               status: "completed", result: { output: body } };
+  await v2["execute.after"](e1);
+  out.opencode_v2 = e1.result.output.length;
+  const e2 = { tool: "terminal", sessionID: "s1", input: {}, status: "completed",
+               result: { output: body } };
+  await v2["execute.after"](e2);
+  out.opencode_v2_terminal = e2.result.output.length;
+}
 
 const pi = (await import("./pi.ts")).default;
 let piHandler = null;
@@ -323,6 +345,26 @@ console.log(JSON.stringify(out));
         v["opencode_terminal"].as_u64().unwrap_or(0),
         before,
         "a live `terminal` session was folded — that is a PTY, not a finished result"
+    );
+
+    // opencode 2 default-exports a definition with an `id` and a `setup`
+    // function; without it the loader rejects the file outright
+    // (`PluginModule.LoadError: Plugin must export a default definition …`)
+    // and the bridge folds nothing for the rest of the install.
+    assert_eq!(
+        v["opencode_v2_definition"].as_bool(),
+        Some(true),
+        "the opencode asset does not default-export a v2 definition (id + setup) —          opencode 2 refuses to load it"
+    );
+    let v2_after = v["opencode_v2"].as_u64().unwrap_or(before);
+    assert!(
+        v2_after * 4 < before,
+        "the v2 path of the opencode bridge returned {v2_after} chars for {before} —          the definition loads but its `setup` registers no working hook"
+    );
+    assert_eq!(
+        v["opencode_v2_terminal"].as_u64().unwrap_or(0),
+        before,
+        "the v2 path folded a live `terminal` session"
     );
 
     // The command hint. Measured 2026-08-08: with a tool named

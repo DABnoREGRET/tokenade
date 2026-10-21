@@ -16,10 +16,19 @@
 // and already-folded text no longer shrinks. Only genuinely interactive
 // `terminal` sessions are skipped (live PTY, not a finished command result).
 //
-// MUST `export default` a FUNCTION (factory) that RETURNS the hooks object —
-// opencode's loader rejects a plain object literal. No SDK import needed (the
-// `@opencode-ai/plugin` types are erased); node:child_process is provided by
-// the Bun runtime opencode runs under, so all real work stays in the Rust bin.
+// The ENTRY SHAPE differs per host, and one file serves both:
+//   * opencode 1.x / Kilo Code: a v1 plugin default-exports a FACTORY that
+//     RETURNS the hooks object;
+//   * opencode 2.x: the default export must be a DEFINITION object with a
+//     stable `id` and a `setup(ctx)` (or `effect`) function. A function there
+//     fails as `PluginModule.LoadError: Plugin must export a default definition
+//     with an id and an effect or setup function (cause: SchemaError(Expected
+//     object at ["default"]))` and the bridge folds nothing, silently.
+// So the default export is an object carrying BOTH: `setup` for v2 and
+// `server()` for v1 (the v1 loader has honoured an object entrypoint with a
+// `server` method since 1.18.29). No SDK import needed (the plugin types are
+// erased); node:child_process is provided by the Bun runtime opencode runs
+// under, so all real work stays in the Rust bin.
 import { spawn, spawnSync } from "node:child_process";
 
 const SKIP = new Set(["terminal"]);
@@ -262,104 +271,178 @@ function sessionKey(...candidates) {
 // saved"), no title, at the host's default duration — and the single-slot
 // problem would remain whole.
 
-export default async function tokenade(_input) {
+// The hook bodies are shared by both entry shapes below. They are written
+// against the v1 payload (`input` = {tool, args, sessionID}, `output` = the
+// tool result) because that is the common denominator; the v2 adapters map
+// `event` onto it.
+function onEvent({ event }) {
+  // `session.compacted` (SDK `EventSessionCompacted`, `properties.sessionID`).
+  if (event?.type === "session.compacted") {
+    tickSession(sessionKey(event?.properties?.sessionID), AGENT, true);
+  }
+}
+
+// The subagent inherits the FOLDING simply by running on the same host;
+// it does not inherit the INSTRUCTIONS, which live in the delegation
+// prompt. `tool.execute.before` exposes `output.args` as writable, so we
+// prefix there what Claude Code's PreToolUse hook prefixes elsewhere.
+//
+// The text is NOT copied here: `tokenade subagent-brief` builds it,
+// decides the gate and counts the overhead once. Two copies of the brief
+// would be the "two lists describing a single fact" class, the one that
+// has already cost four fixes on this product.
+async function onToolBefore(input, output) {
+  tickSession(sessionKey(input?.sessionID, input?.sessionId), AGENT);
+  try {
+    if (!isDelegationTool(input?.tool)) return;
+    const args = output?.args;
+    const key = promptKey(args);
+    if (!key) return;
+    const original = args[key];
+    const r = runTokenade(
+      ["subagent-brief", "--type", String(args?.subagent_type ?? args?.agent ?? "")],
+      {
+        input: original,
+        encoding: "utf8",
+        timeout: TIMEOUT_MS,
+        maxBuffer: 4 * 1024 * 1024,
+        env: {
+          ...process.env,
+          TOKENADE_AGENT: AGENT,
+          TOKENADE_SESSION: sessionKey(input?.sessionID, input?.sessionId),
+        },
+      },
+    );
+    if (r.status === 0 && typeof r.stdout === "string" && r.stdout.length > original.length) {
+      args[key] = r.stdout;
+    }
+  } catch {
+    // fail-open: never break a delegation over a prefix
+  }
+}
+
+async function onToolAfter(input, output) {
+  if (SKIP.has(String(input?.tool || "").toLowerCase())) return;
+  const text = output?.output;
+  if (typeof text !== "string" || text.length > MAX_CHARS) return;
+  // The floor below is about FOLDING and about scanning for secrets, and a
+  // document read is neither: the words are in the FILE, not in what the
+  // host handed back, so a host that decoded nothing must not close the
+  // door on the extractor. Everything else still stops here.
+  const docPath = isReadTool(input?.tool) ? readTargetPath(input?.args) : null;
+  if (text.length < REDACT_MIN_CHARS && !docPath) return;
+  // A base64/data-URI blob won't fold and could be mangled by text compaction.
+  if (text.startsWith("data:") || text.charCodeAt(0) === 0) return;
+  try {
+    const session = sessionKey(input?.sessionID, input?.sessionId);
+    // Documents first: extract from the FILE, not from what the host made
+    // of it. Falls through to the generic fold when there is nothing to
+    // gain, so a plain text read keeps the cheaper stdin path.
+    const rp = docPath;
+    if (rp) {
+      const d = runTokenade(["read", rp], {
+        encoding: "utf8",
+        timeout: TIMEOUT_MS,
+        maxBuffer: 64 * 1024 * 1024,
+        env: { ...process.env, TOKENADE_AGENT: AGENT, TOKENADE_SESSION: session },
+      });
+      // Not a fold, so not the fold's rule: with an empty host result "is
+      // it smaller?" is false for every extraction, and the words are lost.
+      if (d.status === 0 && d.stdout && (text.length === 0 || d.stdout.length < text.length || scrubbed(d))) {
+        output.output = d.stdout;
+        return;
+      }
+    }
+    const hint = commandHint(input, output);
+    const argv = hint ? ["read", "-", "--cmd", hint] : ["read", "-"];
+    const r = runTokenade(argv, {
+      input: text,
+      encoding: "utf8",
+      timeout: TIMEOUT_MS,
+      maxBuffer: 64 * 1024 * 1024,
+      env: {
+        ...process.env,
+        TOKENADE_AGENT: AGENT,
+        TOKENADE_SESSION: session,
+      },
+    });
+    // Fail-open: only replace when tokenade actually shrank it.
+    if (r.status === 0 && r.stdout && (r.stdout.length < text.length || scrubbed(r))) {
+      output.output = r.stdout;
+    }
+  } catch {
+    /* leave output.output untouched */
+  }
+}
+
+// v1 entrypoint (opencode 1.x, and Kilo Code which mirrors that API). Kept
+// callable so a host whose loader predates object entrypoints still works.
+async function server() {
   return {
-    // `session.compacted` (SDK `EventSessionCompacted`, `properties.sessionID`).
-    event: async ({ event }) => {
-      if (event?.type === "session.compacted") {
-        tickSession(sessionKey(event?.properties?.sessionID), AGENT, true);
-      }
-    },
-    // The subagent inherits the FOLDING simply by running on the same host;
-    // it does not inherit the INSTRUCTIONS, which live in the delegation
-    // prompt. `tool.execute.before` exposes `output.args` as writable, so we
-    // prefix there what Claude Code's PreToolUse hook prefixes elsewhere.
-    //
-    // The text is NOT copied here: `tokenade subagent-brief` builds it,
-    // decides the gate and counts the overhead once. Two copies of the brief
-    // would be the "two lists describing a single fact" class, the one that
-    // has already cost four fixes on this product.
-    "tool.execute.before": async (input, output) => {
-      tickSession(sessionKey(input?.sessionID, input?.sessionId), AGENT);
-      try {
-        if (!isDelegationTool(input?.tool)) return;
-        const args = output?.args;
-        const key = promptKey(args);
-        if (!key) return;
-        const original = args[key];
-        const r = runTokenade(
-          ["subagent-brief", "--type", String(args?.subagent_type ?? args?.agent ?? "")],
-          {
-            input: original,
-            encoding: "utf8",
-            timeout: TIMEOUT_MS,
-            maxBuffer: 4 * 1024 * 1024,
-            env: {
-              ...process.env,
-              TOKENADE_AGENT: AGENT,
-              TOKENADE_SESSION: sessionKey(input?.sessionID, input?.sessionId),
-            },
-          },
-        );
-        if (r.status === 0 && typeof r.stdout === "string" && r.stdout.length > original.length) {
-          args[key] = r.stdout;
-        }
-      } catch {
-        // fail-open: never break a delegation over a prefix
-      }
-    },
-    "tool.execute.after": async (input, output) => {
-      if (SKIP.has(String(input?.tool || "").toLowerCase())) return;
-      const text = output?.output;
-      if (typeof text !== "string" || text.length > MAX_CHARS) return;
-      // The floor below is about FOLDING and about scanning for secrets, and a
-      // document read is neither: the words are in the FILE, not in what the
-      // host handed back, so a host that decoded nothing must not close the
-      // door on the extractor. Everything else still stops here.
-      const docPath = isReadTool(input?.tool) ? readTargetPath(input?.args) : null;
-      if (text.length < REDACT_MIN_CHARS && !docPath) return;
-      // A base64/data-URI blob won't fold and could be mangled by text compaction.
-      if (text.startsWith("data:") || text.charCodeAt(0) === 0) return;
-      try {
-        const session = sessionKey(input?.sessionID, input?.sessionId);
-        // Documents first: extract from the FILE, not from what the host made
-        // of it. Falls through to the generic fold when there is nothing to
-        // gain, so a plain text read keeps the cheaper stdin path.
-        const rp = docPath;
-        if (rp) {
-          const d = runTokenade(["read", rp], {
-            encoding: "utf8",
-            timeout: TIMEOUT_MS,
-            maxBuffer: 64 * 1024 * 1024,
-            env: { ...process.env, TOKENADE_AGENT: AGENT, TOKENADE_SESSION: session },
-          });
-          // Not a fold, so not the fold's rule: with an empty host result "is
-          // it smaller?" is false for every extraction, and the words are lost.
-          if (d.status === 0 && d.stdout && (text.length === 0 || d.stdout.length < text.length || scrubbed(d))) {
-            output.output = d.stdout;
-            return;
-          }
-        }
-        const hint = commandHint(input, output);
-        const argv = hint ? ["read", "-", "--cmd", hint] : ["read", "-"];
-        const r = runTokenade(argv, {
-          input: text,
-          encoding: "utf8",
-          timeout: TIMEOUT_MS,
-          maxBuffer: 64 * 1024 * 1024,
-          env: {
-            ...process.env,
-            TOKENADE_AGENT: AGENT,
-            TOKENADE_SESSION: session,
-          },
-        });
-        // Fail-open: only replace when tokenade actually shrank it.
-        if (r.status === 0 && r.stdout && (r.stdout.length < text.length || scrubbed(r))) {
-          output.output = r.stdout;
-        }
-      } catch {
-        /* leave output.output untouched */
-      }
-    },
+    event: onEvent,
+    "tool.execute.before": onToolBefore,
+    "tool.execute.after": onToolAfter,
   };
 }
+
+// v2 entrypoint (opencode >= 2). Hooks are registered on their domain, and
+// the callback receives ONE mutable event instead of (input, output). The
+// text the model will read is `event.result.output` (v1 `output.output`) or,
+// for tools that set it, the single text part of `event.result.content` —
+// both are written back, because either can win when the host assembles the
+// tool output.
+async function setup(ctx) {
+  const controller = new AbortController();
+  void (async () => {
+    try {
+      for await (const event of ctx.event.subscribe({ signal: controller.signal })) {
+        const compacted = event?.type === "session.compacted";
+        if (compacted) tickSession(sessionKey(event?.properties?.sessionID), AGENT, true);
+      }
+    } catch {
+      /* the subscription ends with the plugin */
+    }
+  })();
+
+  await ctx.tool.hook("execute.before", async (event) => {
+    await onToolBefore(
+      { tool: event?.tool, args: event?.input, sessionID: event?.sessionID },
+      { args: event?.input },
+    );
+  });
+
+  await ctx.tool.hook("execute.after", async (event) => {
+    if (event?.status !== "completed") return;
+    const result = event?.result;
+    if (!result) return;
+    const parts = Array.isArray(result.content) ? result.content : null;
+    const textPart = parts ? parts.find((p) => p && p.type === "text" && typeof p.text === "string") : null;
+    const carried =
+      typeof result.output === "string"
+        ? result.output
+        : typeof result.content === "string"
+          ? result.content
+          : textPart?.text;
+    if (typeof carried !== "string") return;
+    const out = { output: carried, args: event?.input, metadata: result.metadata };
+    await onToolAfter({ tool: event?.tool, args: event?.input, sessionID: event?.sessionID }, out);
+    if (out.output === carried) return;
+    // v1 semantics: write back the field we read. When a text part carried the
+    // payload, replace that part rather than the (possibly unused) `output`.
+    result.output = out.output;
+    if (Array.isArray(result.content)) {
+      result.content = result.content.map((p) =>
+        p && p.type === "text" && typeof p.text === "string" ? { ...p, text: out.output } : p,
+      );
+    } else if (typeof result.content === "string") {
+      result.content = out.output;
+    }
+  });
+
+  // A returned truthy NON-function is treated as a cleanup function and
+  // called, so only this controller is returned. Hook registrations are
+  // scoped to the plugin and need no disposal.
+  return () => controller.abort();
+}
+
+export default { id: "tokenade", setup, server };
