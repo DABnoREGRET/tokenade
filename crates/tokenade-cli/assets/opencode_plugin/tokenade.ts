@@ -18,7 +18,7 @@
 //
 // EXPORT SHAPE: OpenCode V2 requires the default export to be an OBJECT
 // definition (`{ id, setup(ctx) }`) — a function export fails schema
-// validation with `SchemaError(Expected object at ["default"])` (err_a3493547).
+// validation with `SchemaError(Expected object at ["default"])`.
 // The V1 hook-object API is kept under `server()` for V1 hosts ≥ 1.18.29,
 // which call `server()`; V2 reads only `id` + `setup()` and ignores it.
 // No SDK import: the object form validates without `Plugin.define`, and
